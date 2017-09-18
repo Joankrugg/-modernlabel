@@ -1,0 +1,9 @@
+<div class="top-artists">
+  <h2 class="negative">
+    RELEASES
+  </h2>
+</div>
+<% @releases.each do |r|%>
+  <%= render "release", release: r %>
+<% end %>
+<%= link_to 'new', new_release_path, {class: "btn btn-primary"}  %>

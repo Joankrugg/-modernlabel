@@ -1,0 +1,7 @@
+<%= render 'shared/artistcard'  %>
+<%= link_to 'edit', edit_artist_path, {class: "btn btn-primary"}  %>
+<%= link_to "Delete", artist_path(@artist),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+

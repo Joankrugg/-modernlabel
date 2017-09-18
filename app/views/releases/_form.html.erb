@@ -1,0 +1,14 @@
+<%= simple_form_for (@release) do |f| %>
+  <% if @release.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @release.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :title %>
+  <%= f.association :record %>
+  <%= f.submit %>
+<% end %>

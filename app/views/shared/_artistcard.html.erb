@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="picture">
+    <div class="card-photo">
+    <%= cl_image_tag @artist.photo, height: 800, width: 1440, crop: :fill, class: "img-responsive" %>
+    </div>
+  </div>
+  <br>
+  <div class="negative">
+    <%= @artist.name %>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="card-description col-lg-6 col-sm-6">
+        géoloc
+      </div>
+      <div class="card-description col-lg-6 col-sm-6">
+        <%= @artist.description %>
+      </div>
+    </div>
+  </div>
+</div>

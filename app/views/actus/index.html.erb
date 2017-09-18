@@ -1,0 +1,9 @@
+<div class="top-artists">
+  <h2 class="negative">
+    NEWS
+  </h2>
+</div>
+<% @actus.each do |a|%>
+  <%= render "actu", actu: a %>
+<% end %>
+<%= link_to 'new', new_actu_path, {class: "btn btn-primary"}  %>

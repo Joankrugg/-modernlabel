@@ -1,0 +1,2 @@
+class Actu < ApplicationRecord
+end

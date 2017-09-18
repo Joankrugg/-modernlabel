@@ -1,0 +1,20 @@
+<div class="top-artists">
+  <h2 class="negative">
+    ARTISTS
+  </h2>
+</div>
+
+
+<div class="row">
+  <% @artists.each do |a|%>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="card">
+        <%= render "artist", artist: a %><br>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'new', new_artist_path, {class: "btn btn-primary"}  %>
+
+

@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <h2><%= @actu.title %></h2>
+  </div>
+  <div class="card-description">
+    <p><%= @actu.content %></p>
+  </div>
+</div>
+<%= link_to 'edit', edit_actu_path, {class: "btn btn-primary"}  %>
+<%= link_to "Delete", actu_path(@actu),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
