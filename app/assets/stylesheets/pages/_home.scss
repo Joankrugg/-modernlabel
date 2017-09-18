@@ -47,7 +47,9 @@ html,body {
 
 .page-header {
   margin-top: 290px;
-
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .page-header p {
@@ -58,3 +60,19 @@ html,body {
   text-shadow: 1px 1px 2px black, 0 0 25px #efcc1c, 0 0 5px #efcc1c;
   text-align: center;
 }
+.btn-medium {
+  color: white;
+  padding: 5px 25px;
+  border-radius: 40px;
+  font-weight: bold;
+  background: #efcc1c;
+  transition: background 0.3s ease;
+}
+.btn-medium:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+
+

@@ -1,5 +1,5 @@
 class ReleasesController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_release, only: [:show, :edit, :update]
   def index
     @releases = Release.all

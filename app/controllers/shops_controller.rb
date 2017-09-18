@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
   def index
     @shops = Shop.all
