@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170919172140) do
 
   create_table "releases", force: :cascade do |t|
     t.string   "title"
-    t.integer  "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "record_id"
