@@ -8,7 +8,11 @@
       </ul>
     </div>
   <% end %>
-  <%= f.input :title %>
-  <%= f.association :record %>
-  <%= f.submit %>
+  <div class="container">
+    <%= f.input :title %>
+    <%= f.association :record %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit %>
+  </div>
 <% end %>

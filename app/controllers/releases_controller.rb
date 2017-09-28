@@ -41,6 +41,6 @@ class ReleasesController < ApplicationController
   end
 
   def release_params
-      params.require(:release).permit(:title, :record_id)
+      params.require(:release).permit(:title, :record_id, :photo, :photo_cache)
   end
 end
