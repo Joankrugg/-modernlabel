@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928182855) do
+ActiveRecord::Schema.define(version: 20170928184310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,11 @@ ActiveRecord::Schema.define(version: 20170928182855) do
 
   create_table "releases", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "record_id"
     t.string   "photo"
+    t.text     "description"
     t.index ["record_id"], name: "index_releases_on_record_id", using: :btree
   end
 
