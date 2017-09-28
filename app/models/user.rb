@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :artists, dependent: :destroy
   validates :description, presence: true
+  validates :city, presence: true
+  # [...]
 end
