@@ -41,6 +41,6 @@ class ActusController < ApplicationController
   end
 
   def actu_params
-      params.require(:actu).permit(:title, :content, :photo, :photo_cache)
+      params.require(:actu).permit(:title, :content, :photo, :photo_cache, :edition)
   end
 end
