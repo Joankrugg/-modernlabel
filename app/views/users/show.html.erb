@@ -1,2 +1,38 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.email %></h1>
+<div class="profile-header-wrapper">
+  <div class="container profile-header-container text-center">
+    <div class="tabs">
+      <a class="tab active" data-target="#profile">
+        <h3>Mon profil</h3>
+      </a>
+      <a class="tab" data-target="#artists">
+        <h3>Mes projets rock</h3>
+      </a>
+      <a class="tab" data-target="#shop">
+        <h3>Mes achats</h3>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="tab-content" id="profile">
+    <div class="my-profile" id="profile">
+      <%= render 'user', user: @user %>
+    </div>
+    <p>Edit my profile </p>
+    <i class="fa fa-pencil" data-toggle="collapse" data-target="#collapseProfile" aria-expanded="false" aria-controls="collapseProfile" ></i>
+    <div class="change-profile">
+      <div class="collapse" id="collapseProfile">
+        <div class="well" id="well">
+          <%= render 'form', user: @user %>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content hidden" id="artists">
+    </div>
+    <div class="tab-content hidden" id="shop">
+    </div>
+  </div>
+</div>
+

@@ -21,15 +21,19 @@
       <a href="https://soundcloud.com/modern-box"><i class="fa fa-soundcloud networks-item" aria-hidden="true"></i>
       <a href="https://twitter.com/Modern_box_rec"><i class="fa fa-twitter networks-item" aria-hidden="true"></i>
       <!-- Avatar with dropdown menu -->
-    <% if user_signed_in? %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fa fa-sign-out networks-item"></i>
-    <% end %>
-    <% else %>
-        <%= link_to new_user_session_path do %>
-          <i class="fa fa-sign-in networks-item"></i>
-    <% end %>
-    <% end %>
+        <% if user_signed_in? %>
+          <%= link_to current_user do %>
+            <i class="fa fa-home"></i>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out networks-item"></i>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path do %>
+            <i class="fa fa-sign-in networks-item"></i>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
     <!-- Dropdown list appearing on mobile only -->
