@@ -6,6 +6,7 @@ class Artist < ApplicationRecord
   validates :number_of_musicians, presence: true
   validates :facebook_link, uniqueness: true, presence: true
   validates :insta_link, uniqueness: true
+  validates :youtube_channel, uniqueness: true
   mount_uploader :photo, PhotoUploader
   belongs_to :users, required: true
 end
