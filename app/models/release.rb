@@ -3,4 +3,6 @@ class Release < ApplicationRecord
   belongs_to :record, required: true
   mount_uploader :photo, PhotoUploader
   validates :description, presence: true
+  validates :price, presence: true
+  validates :creation, presence: true
 end
