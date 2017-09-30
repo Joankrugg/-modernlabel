@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :artists, dependent: :destroy
-  validates :description, presence: true
-  validates :city, presence: true
+
+
   # [...]
 end

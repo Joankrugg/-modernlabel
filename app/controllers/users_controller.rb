@@ -10,9 +10,15 @@ before_action :set_user, only: [:show, :edit, :update]
   def update
     @user.update(user_params)
     if @user.save
-      redirect_to @user
+      respond_to do |format|
+        format.html { redirect_to @user }
+        format.js
+      end
     else
-      render :show
+      respond_to do |format|
+        format.html { render 'users/show' }
+        format.js
+      end
     end
   end
 
