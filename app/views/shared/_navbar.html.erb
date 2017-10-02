@@ -11,7 +11,7 @@
       <%= link_to "Releases", releases_path, class: "navbar-item navbar-wagon-link" %>
       <%= link_to "Shop", shops_path, class: "navbar-item navbar-wagon-link" %>
       <%= link_to "News", actus_path, class: "navbar-item navbar-wagon-link" %>
-      <%= link_to "Apply", actus_path, class: "navbar-item navbar-wagon-link" %>
+      <%= link_to "Crew", rails_admin_path, class: "navbar-item navbar-wagon-link" %>
     </div>
   </div>
   <div class="networks">
@@ -24,7 +24,10 @@
       <!-- Avatar with dropdown menu -->
         <% if user_signed_in? %>
           <%= link_to current_user do %>
-            <i class="fa fa-home"></i>
+            <i class="fa fa-home networks-item"></i>
+          <% end %>
+          <%= link_to rails_admin_path do %>
+            <i class="fa fa-unlock-alt networks-item" ></i>
           <% end %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-sign-out networks-item"></i>
@@ -38,7 +41,7 @@
     </div>
   </div>
     <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-item hidden-md hidden-lg">
+  <div class="navbar-item hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -54,23 +57,33 @@
         </li>
         <li>
           <%= link_to releases_path do %>
-            <i class="fa fa-handshake-o"></i>" <%= t(".index", default: "Releases") %>
+            <i class="fa fa-handshake-o"></i> <%= t(".index", default: "Releases") %>
           <% end %>
         </li>
         <li>
           <%= link_to shops_path do %>
-            <i class="fa fa-shopping-bag"></i>" <%= t(".index", default: "Shop") %>
+            <i class="fa fa-shopping-bag"></i>  <%= t(".index", default: "Shop") %>
           <% end %>
         </li>
         <li>
           <%= link_to actus_path do %>
-            <i class="fa fa-newspaper-o"></i>" <%= t(".index", default: "News") %>
+            <i class="fa fa-newspaper-o"></i>  <%= t(".index", default: "News") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to rails_admin_path do %>
+            <i class="fa fa-address-card"></i>  <%= t(".index", default: "Community") %>
           <% end %>
         </li>
     <% if user_signed_in? %>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>
+            <i class="fa fa-sign-out"></i>  <%= t(".index", default: "Quit") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to rails_admin_path do %>
+            <i class="fa fa-unlock-alt" ></i>" <%= t(".index", default: "Admin") %>
           <% end %>
         </li>
 
@@ -78,7 +91,7 @@
 
       <li>
         <%= link_to new_user_session_path do %>
-          <i class="fa fa-sign-in"></i>
+          <i class="fa fa-sign-in"></i>" <%= t(".index", default: "Log in") %>
       </li>
     <% end %>
     <% end %>
