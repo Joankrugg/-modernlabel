@@ -19,6 +19,8 @@ gem 'uglifier'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'geocoder'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 group :development, :test do
   gem 'pry-byebug'
