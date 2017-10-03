@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002114924) do
+ActiveRecord::Schema.define(version: 20171003145056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20171002114924) do
   create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "photo"
     t.integer  "year_of_creation"
     t.string   "city"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20171002114924) do
     t.string   "soundcloud_link"
     t.string   "twitter_link"
     t.integer  "user_id"
+    t.boolean  "signed",              default: false
     t.index ["user_id"], name: "index_artists_on_user_id", using: :btree
   end
 

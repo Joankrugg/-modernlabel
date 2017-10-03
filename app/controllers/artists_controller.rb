@@ -5,6 +5,10 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  def signed
+    @artists = Artist.where(signed: true)
+  end
+
   def new
     @artist = Artist.new
   end

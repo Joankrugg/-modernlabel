@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/label'
   resources :users, only: [:show, :edit, :update]
-  resources :artists
+  resources :artists do
+    collection do
+      get 'signed', to: "artists#signed"
+    end
+  end
   resources :releases
   resources :shops
   resources :actus
