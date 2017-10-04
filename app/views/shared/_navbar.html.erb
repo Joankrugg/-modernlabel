@@ -7,7 +7,7 @@
   <!-- Right Navigation -->
       <div class="web-browsing hidden-xs hidden-sm hidden-md">
         <%= link_to "Label", pages_label_path, {class: "navbar-item navbar-wagon-link"}%>
-        <%= link_to "Artists", artists_path, {class: "navbar-item navbar-wagon-link"} %>
+        <%= link_to "People", artists_path, {class: "navbar-item navbar-wagon-link"} %>
         <%= link_to "Releases", releases_path, class: "navbar-item navbar-wagon-link" %>
         <%= link_to "Shop", shops_path, class: "navbar-item navbar-wagon-link" %>
         <%= link_to "News", actus_path, class: "navbar-item navbar-wagon-link" %>
@@ -51,7 +51,7 @@
         </li>
         <li>
           <%= link_to artists_path do %>
-            <i class="fa fa-music"></i>" <%= t(".index", default: "Artists") %>
+            <i class="fa fa-music"></i>" <%= t(".index", default: "People") %>
           <% end %>
         </li>
         <li>
@@ -67,11 +67,6 @@
         <li>
           <%= link_to actus_path do %>
             <i class="fa fa-newspaper-o"></i>  <%= t(".index", default: "News") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to rails_admin_path do %>
-            <i class="fa fa-address-card"></i>  <%= t(".index", default: "Community") %>
           <% end %>
         </li>
     <% if user_signed_in? %>

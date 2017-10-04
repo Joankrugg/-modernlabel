@@ -1,8 +1,9 @@
 <%= simple_form_for user, remote: true do |f| %>
   <%= f.error_notification %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
   <%= f.input :email %>
   <%= f.input :city %>
   <%= f.input :description %>
-  <%= f.input :admin %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= f.button :submit, class: 'btn btn-medium' %>
 <% end %>
