@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010104904) do
+ActiveRecord::Schema.define(version: 20171010171338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20171010104904) do
     t.string   "twitter_link"
     t.integer  "user_id"
     t.boolean  "signed",              default: false
+    t.string   "contact"
     t.index ["user_id"], name: "index_artists_on_user_id", using: :btree
   end
 
@@ -68,6 +69,8 @@ ActiveRecord::Schema.define(version: 20171010104904) do
     t.text     "description"
     t.integer  "price"
     t.date     "creation"
+    t.integer  "artist_id"
+    t.index ["artist_id"], name: "index_releases_on_artist_id", using: :btree
     t.index ["record_id"], name: "index_releases_on_record_id", using: :btree
   end
 
@@ -104,5 +107,6 @@ ActiveRecord::Schema.define(version: 20171010104904) do
 
   add_foreign_key "artists", "users"
   add_foreign_key "performances", "artists"
+  add_foreign_key "releases", "artists"
   add_foreign_key "releases", "records"
 end

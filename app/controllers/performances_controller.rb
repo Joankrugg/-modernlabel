@@ -9,6 +9,7 @@ class PerformancesController < ApplicationController
     @performance = Performance.new(performance_params)
     @performance.artist = Artist.find(params[:artist_id])
     @performance.save
+    redirect_to artist_path
   end
 
   private

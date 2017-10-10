@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :artists do
     resources :performances, only: [ :new, :create ]
+
       collection do
         get 'signed', to: "artists#signed"
     end

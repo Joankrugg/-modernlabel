@@ -1,5 +1,5 @@
 <%= simple_form_for [@artist, @performance] do |f| %>
+  <%= f.association :artist, as: :hidden %>
   <%= f.input :start_time %>
-  <%= f.input :end_time %>
   <%= f.submit "Create performance", class: "btn btn-primary" %>
 <% end %>
