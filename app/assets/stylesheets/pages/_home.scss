@@ -1,3 +1,12 @@
+.well {
+background-color: $black;
+}
+
+.well:hover{
+background-color: #efcc1c;
+
+}
+
 .banner {
   color: white;
   text-align: center;
