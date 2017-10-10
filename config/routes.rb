@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get 'pages/label'
   resources :users, only: [:show, :edit, :update]
   resources :artists do
-    collection do
-      get 'signed', to: "artists#signed"
+    resources :performances, only: [ :new, :create ]
+      collection do
+        get 'signed', to: "artists#signed"
     end
   end
   resources :releases

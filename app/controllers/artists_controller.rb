@@ -32,7 +32,7 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update(artist_params)
-    redirect_to artist_path(@artist)
+      redirect_to artist_path(@artist)
     else
       render :edit
     end
@@ -51,6 +51,6 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-      params.require(:artist).permit(:name, :description, :photo, :photo_cache, :year_of_creation, :city, :number_of_musicians, :facebook_link, :insta_link, :youtube_channel, :soundcloud_link, :twitter_link)
+    params.require(:artist).permit(:name, :description, :photo, :photo_cache, :year_of_creation, :city, :number_of_musicians, :facebook_link, :insta_link, :youtube_channel, :soundcloud_link, :twitter_link, :user_id)
   end
 end
