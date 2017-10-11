@@ -23,7 +23,8 @@ class ArtistsController < ApplicationController
   end
 
   def show
-
+    @artist = Artist.find(params[:id])
+    @artist_coordinates = { lat: @artist.latitude, lng: @artist.longitude }
   end
 
   def edit

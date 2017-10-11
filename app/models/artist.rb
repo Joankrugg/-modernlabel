@@ -8,6 +8,6 @@ class Artist < ApplicationRecord
   validates :number_of_musicians, presence: true
   validates :facebook_link, uniqueness: true, presence: true
   mount_uploader :photo, PhotoUploader
-
-
+  geocoded_by :city
+  after_validation :geocode, if: :city_changed?
 end
