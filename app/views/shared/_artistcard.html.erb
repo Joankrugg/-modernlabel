@@ -38,25 +38,37 @@
       </div>
     </div>
       <div class="[ col-sm-6 col-md-4 ]">
-      <div class="[ info-card ]">
-        <div id="map" style="width: 100%; height: 400px;"></div>
-        <% content_for(:after_js) do %>
-          <%= javascript_tag do %>
-            const coord = <%= raw @artist_coordinates.to_json %>;
-            alert('artist coordinates are ' + coord.lat + ', ' + coord.lng);
+        <div class="[ info-card ]">
+          <div id="map" style="width: 100%; height: 400px;"></div>
+
+          <% content_for(:after_js) do %>
+            <%= javascript_tag do %>
+              var handler = Gmaps.build('Google');
+              handler.buildMap({ internal: { id: 'map' } }, function() {
+                markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+                if (markers.length == 0) {
+                  handler.getMap().setZoom(2);
+                } else if (markers.length == 1) {
+                  handler.getMap().setZoom(14);
+                }
+              });
+            <% end %>
           <% end %>
-        <% end %>
-        <div class="[ info-card-details ] animate">
-          <div class="[ info-card-header ]">
-            <h1>Nombre de musiciens: <%= @artist.number_of_musicians %> </h1>
-            <h3>Année de création: <%= @artist.year_of_creation %> </h3>
-          </div>
-          <div class="[ info-card-detail ]">
-            <!-- Description -->
-            <p><%= @artist.description%></p>
+          <div class="[ info-card-details ] animate">
+            <div class="[ info-card-header ]">
+              <h1>Nombre de musiciens: <%= @artist.number_of_musicians %> </h1>
+              <h3>Année de création: <%= @artist.year_of_creation %> </h3>
+            </div>
+            <div class="[ info-card-detail ]">
+              <!-- Description -->
+              <p><%= @artist.description%></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

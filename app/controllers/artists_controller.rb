@@ -24,7 +24,11 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    @artist_coordinates = { lat: @artist.latitude, lng: @artist.longitude }
+    @artist_coordinates = {lat: @artist.latitude, lng: @artist.longitude}
+    @hash = Gmaps4rails.build_markers(@artist) do |artist, marker|
+      marker.lat artist.latitude
+      marker.lng artist.longitude
+    end
   end
 
   def edit
