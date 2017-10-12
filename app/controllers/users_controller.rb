@@ -29,6 +29,6 @@ before_action :set_user, only: [:show, :edit, :update]
   end
 
   def user_params
-    params.require(:user).permit(:description, :email, :city, :first_name, :last_name)
+    params.require(:user).permit(:description, :email, :city)
   end
 end
