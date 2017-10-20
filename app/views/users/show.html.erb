@@ -5,7 +5,7 @@
         <h3>Profil hors musique</h3>
       </a>
       <a class="tab" data-target="#artists">
-        <h3>Mes projets rock</h3>
+        <h3>Mon profil artiste</h3>
       </a>
       <a class="tab" data-target="#performances">
         <h3>Mes dates de concert</h3>
@@ -31,21 +31,24 @@
   </div>
   <div class="tab-content hidden" id="artists">
     <div class="my-profile" id="profile">
-      <%= @user.artists.each do |artist| %>
-      <%= link_to artist, class: 'product-inherit' do %>
-        <%= cl_image_tag artist.photo, height: 400, crop: :fill, class: "product-image hidden-xs" %>
+      <%= link_to @user.artist, class: 'product-inherit' do %>
+        <%= cl_image_tag @user.artist.photo, height: 400, crop: :fill, class: "product-image hidden-xs" %>
         <div class='product-body'>
-          <h3><%= artist.name %></h3>
-          <p><%= artist.city %></p>
+          <h3><%= @user.artist.name %></h3>
+          <p><%= @user.artist.city %></p>
           <h5>Description</h5>
-          <% artist.description %>
+          <% @user.artist.description %>
           <% end %>
         </div>
-      <% end %>
-
+      <% if @user.artist %>
+      <h2><%= link_to "modifier profil artiste", edit_artist_path, class: 'btn btn-medium' %></h2>
+      <% else %>
       <h2><%= link_to "ajouter un artiste", new_artist_path, class: 'btn btn-medium' %></h2>
+      <% end %>
+      <h2><%= link_to "ajouter un release", new_release_path, class: 'btn btn-medium' %></h2>
     </div>
   <div class="tab-content hidden" id="performances">
+          <h2><%= link_to "ajouter une date", new_performance_path, class: 'btn btn-medium' %></h2>
     </div>
   </div>
 </div>

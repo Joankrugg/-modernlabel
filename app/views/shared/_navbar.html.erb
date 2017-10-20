@@ -6,7 +6,7 @@
     <div class="content">
   <!-- Right Navigation -->
       <div class="web-browsing hidden-xs hidden-sm hidden-md">
-        <%= link_to "Label", signed_artists_path, {class: "navbar-item navbar-wagon-link"}%>
+        <%= link_to "On stage", signed_artists_path, {class: "navbar-item navbar-wagon-link"}%>
         <%= link_to "Releases", releases_path, class: "navbar-item navbar-wagon-link" %>
         <%= link_to "News", actus_path, class: "navbar-item navbar-wagon-link" %>
         <%= link_to "Shop", shops_path, class: "navbar-item navbar-wagon-link" %>
@@ -15,15 +15,10 @@
     </div>
     <div class="networks">
       <div class="links hidden-xs hidden-sm hidden-md">
-        <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs"><i class="fa fa-facebook networks-item" aria-hidden="true"></i>
-        <a href="https://www.instagram.com/modernboxrecords/"><i class="fa fa-instagram networks-item" aria-hidden="true"></i>
-        <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber"><i class="fa fa-youtube networks-item" aria-hidden="true"></i>
-        <a href="https://soundcloud.com/modern-box"><i class="fa fa-soundcloud networks-item" aria-hidden="true"></i>
-        <a href="https://twitter.com/Modern_box_rec"><i class="fa fa-twitter networks-item" aria-hidden="true"></i>
         <!-- Avatar with dropdown menu -->
           <% if user_signed_in? %>
             <%= link_to current_user do %>
-              <i class="fa fa-home networks-item"></i>
+              <i class="fa fa-user-circle networks-item"></i>
             <% end %>
             <%= link_to rails_admin_path do %>
               <i class="fa fa-unlock-alt networks-item" ></i>
@@ -69,6 +64,11 @@
           <% end %>
         </li>
     <% if user_signed_in? %>
+        <li>
+            <%= link_to current_user do %>
+              <i class="fa fa-user-circle"></i> <%= t(".index", default: "home") %>
+            <% end %>
+        </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-sign-out"></i>  <%= t(".index", default: "Quit") %>

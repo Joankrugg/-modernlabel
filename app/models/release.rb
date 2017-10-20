@@ -1,4 +1,5 @@
 class Release < ApplicationRecord
+  belongs_to :user, required: true
   validates :title, uniqueness: true, presence: true
   belongs_to :record, required: true
   mount_uploader :photo, PhotoUploader

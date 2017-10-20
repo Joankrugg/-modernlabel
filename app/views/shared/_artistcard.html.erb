@@ -5,66 +5,50 @@
   <br>
 <div class="container">
   <div class="row">
-    <div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
+    <div class="[ col-sm-6 col-md-offset-3 col-md-6 ]">
       <div class="[ info-card ]">
-        <%= cl_image_tag @artist.photo, height: 400, crop: :fill %>
+        <%= cl_image_tag @artist.photo, height: 500, crop: :fit %>
         <div class="[ info-card-details ] animate">
           <div class="[ info-card-header ]">
             <h1><%= @artist.name %></h1>
-            <h3><%= @artist.city %></h3>
+            <h3>Ville :<%= @artist.city %></h3>
+            <h3>Nombre de musiciens: <%= @artist.number_of_musicians %> </h3>
+            <h3>Année de création: <%= @artist.year_of_creation %> </h3>
+            <h3><%=@artist.contact %></h3>
           </div>
           <div class="[ info-card-detail ]">
             <!-- Description -->
             <div class="social">
+              <% if @artist.facebook_link.present? %>
               <%= link_to @artist.facebook_link do %>
                 <i class="fa fa-facebook-square [ social-icon facebook ] animate"></i>
               <% end %>
+              <% end %>
+              <% if @artist.insta_link.present? %>
               <%= link_to @artist.insta_link do %>
                 <i class="fa fa-instagram [ social-icon facebook ] animate"></i>
               <% end %>
+              <% end %>
+              <% if @artist.soundcloud_link.present? %>
               <%= link_to @artist.soundcloud_link do %>
                 <i class="fa fa-soundcloud [ social-icon facebook ] animate"></i>
               <% end %>
+              <% end %>
+              <% if @artist.twitter_link.present? %>
               <%= link_to @artist.twitter_link do %>
                 <i class="fa fa-twitter-square [ social-icon facebook ] animate"></i>
               <% end %>
+              <% end %>
+              <% if @artist.youtube_channel.present? %>
               <%= link_to @artist.youtube_channel do %>
                 <i class="fa fa-youtube-square [ social-icon facebook ] animate"></i>
               <% end %>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      <div class="[ col-sm-6 col-md-4 ]">
-        <div class="[ info-card ]">
-          <div id="map" style="width: 100%; height: 400px;"></div>
-
-          <% content_for(:after_js) do %>
-            <%= javascript_tag do %>
-              var handler = Gmaps.build('Google');
-              handler.buildMap({ internal: { id: 'map' } }, function() {
-                markers = handler.addMarkers(<%= raw @hash.to_json %>);
-                handler.bounds.extendWith(markers);
-                handler.fitMapToBounds();
-                if (markers.length == 0) {
-                  handler.getMap().setZoom(2);
-                } else if (markers.length == 1) {
-                  handler.getMap().setZoom(14);
-                }
-              });
-            <% end %>
-          <% end %>
-          <div class="[ info-card-details ] animate">
-            <div class="[ info-card-header ]">
-              <h1>Nombre de musiciens: <%= @artist.number_of_musicians %> </h1>
-              <h3>Année de création: <%= @artist.year_of_creation %> </h3>
-            </div>
-            <div class="[ info-card-detail ]">
-              <!-- Description -->
-              <p><%= @artist.description%></p>
-              <h3><%=@artist.contact %></h3>
+              <% end %>
+              <% if @artist.bandcamp_link.present? %>
+              <%= link_to @artist.bandcamp_link do %>
+                <i class="fa fa-bandcamp [ social-icon facebook ] animate"></i>
+              <% end %>
+              <% end %>
             </div>
           </div>
         </div>

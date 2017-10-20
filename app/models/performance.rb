@@ -1,3 +1,4 @@
 class Performance < ApplicationRecord
-  belongs_to :artist
+  belongs_to :user, required: true
+  mount_uploader :photo, PhotoUploader
 end

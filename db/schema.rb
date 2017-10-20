@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012130250) do
+ActiveRecord::Schema.define(version: 20171019152859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,11 +50,13 @@ ActiveRecord::Schema.define(version: 20171012130250) do
 
   create_table "performances", force: :cascade do |t|
     t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer  "artist_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_performances_on_artist_id", using: :btree
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "city"
+    t.integer  "price"
+    t.string   "place_address"
+    t.string   "facebook_event"
+    t.string   "photo"
   end
 
   create_table "records", force: :cascade do |t|
@@ -65,16 +67,18 @@ ActiveRecord::Schema.define(version: 20171012130250) do
 
   create_table "releases", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "record_id"
     t.string   "photo"
     t.text     "description"
     t.integer  "price"
     t.date     "creation"
-    t.integer  "artist_id"
-    t.index ["artist_id"], name: "index_releases_on_artist_id", using: :btree
+    t.integer  "user_id"
+    t.string   "bandcamp_link"
+    t.string   "youtube_link"
     t.index ["record_id"], name: "index_releases_on_record_id", using: :btree
+    t.index ["user_id"], name: "index_releases_on_user_id", using: :btree
   end
 
   create_table "shops", force: :cascade do |t|
@@ -114,7 +118,6 @@ ActiveRecord::Schema.define(version: 20171012130250) do
   end
 
   add_foreign_key "artists", "users"
-  add_foreign_key "performances", "artists"
-  add_foreign_key "releases", "artists"
   add_foreign_key "releases", "records"
+  add_foreign_key "releases", "users"
 end

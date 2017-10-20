@@ -2,7 +2,22 @@
   <div class="banner-content">
     <h1 id="title">Modern Box<br>Records</h1>
       <p>Tune makers, Place owners & Party lovers</p>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "call-to-action btn-medium btn" %>
+      <div class="row">
+        <div class="col-lg-6 col-sm-6">
+      <%= link_to t(".sign_in", default: "Get in!"), new_user_session_path, class: "call-to-action btn-medium btn" %>
+        </div>
+        <div class="col-lg-6 col-sm-6">
+      <%= link_to t(".actions", default: "Actions"), action_users_path, class: "call-to-action btn-medium btn" %>
+        </div>
+      </div>
+      <br>
+      <div class="banner-links">
+        <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs"><i class="fa fa-facebook-square banner-links" aria-hidden="true"></i>
+        <a href="https://www.instagram.com/modernboxrecords/"><i class="fa fa-instagram banner-links" aria-hidden="true"></i>
+        <a href="https://soundcloud.com/modern-box"><i class="fa fa-soundcloud banner-links" aria-hidden="true"></i>
+        <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber"><i class="fa fa-youtube-square banner-links" aria-hidden="true"></i>
+        <a href="https://twitter.com/Modern_box_rec"><i class="fa fa-twitter-square banner-links" aria-hidden="true"></i>
+      </div>
     </div>
   </div>
 </div>

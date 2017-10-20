@@ -10,7 +10,7 @@ class ReleasesController < ApplicationController
   end
 
   def create
-    @release = Release.new(release_params)
+    @release = current_user.releases.new(release_params)
     if @release.save
       redirect_to release_path(@release)
     else
@@ -41,6 +41,6 @@ class ReleasesController < ApplicationController
   end
 
   def release_params
-      params.require(:release).permit(:title, :record_id, :photo, :photo_cache, :description, :price, :creation)
+    params.require(:release).permit(:title, :record_id, :photo, :photo_cache, :description, :price, :creation, :user_id, :youtube_link, :bandcamp_link)
   end
 end
