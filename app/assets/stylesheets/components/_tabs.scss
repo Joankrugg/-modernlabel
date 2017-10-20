@@ -1,7 +1,7 @@
 .tabs {
   background: $black;
   display: flex;
-  padding: 10px 100px 0 100px;
+  padding: 30px;
 }
 .tabs a {
   color: white;
@@ -27,12 +27,7 @@
   text-align: center;
   padding: 20px 0;
 }
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
-}
+
 .tab.active {
   background: $black;
   color: #E9ECF9;

@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = current_user.artists.new(artist_params)
+    @artist = current_user.build_artist(artist_params)
     if @artist.save
       redirect_to artist_path(@artist)
     else
@@ -23,12 +23,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
-    @artist_coordinates = {lat: @artist.latitude, lng: @artist.longitude}
-    @hash = Gmaps4rails.build_markers(@artist) do |artist, marker|
-      marker.lat artist.latitude
-      marker.lng artist.longitude
-    end
+
   end
 
   def edit
@@ -56,6 +51,6 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :description, :photo, :photo_cache, :year_of_creation, :city, :number_of_musicians, :facebook_link, :insta_link, :youtube_channel, :soundcloud_link, :twitter_link, :bandcamp_link, :user_id, :performances)
+    params.require(:artist).permit(:name, :description, :photo, :photo_cache, :year_of_creation, :city, :number_of_musicians, :facebook_link, :insta_link, :youtube_channel, :soundcloud_link, :twitter_link, :bandcamp_link, :user_id)
   end
 end

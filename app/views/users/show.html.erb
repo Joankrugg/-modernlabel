@@ -1,55 +1,71 @@
 <div class="profile-header-wrapper">
-  <div class="container profile-header-container text-center">
+  <div class="profile-header-container text-center">
     <div class="tabs">
       <a class="tab active" data-target="#profile">
-        <h3>Profil hors musique</h3>
+        <h3>Contact informations</h3>
       </a>
-      <a class="tab" data-target="#artists">
-        <h3>Mon profil artiste</h3>
+      <a class="tab" data-target="#artistic-profil">
+        <h3>Artistic profil</h3>
       </a>
       <a class="tab" data-target="#performances">
-        <h3>Mes dates de concert</h3>
+        <h3>Next availaibilities</h3>
       </a>
     </div>
   </div>
 </div>
 
 <div class="container text-center">
-  <div class="tab-content" id="profile">
-    <div class="my-profile" id="profile">
-      <%= render 'user', user: @user %>
-    </div>
-    <p>Changer mon profil </p>
-    <i class="fa fa-user-circle" data-toggle="collapse" data-target="#collapseProfile" aria-expanded="false" aria-controls="collapseProfile" ></i>
-    <div class="change-profile">
-      <div class="collapse" id="collapseProfile">
-        <div class="well" id="well">
-          <%= render 'form', user: @user %>
-        </div>
+  <div class="tab-content hidden" id="profile">
+    <%= render 'user', user: @user %>
+  </div>
+  <div class="tab-content hidden container" id="artistic-profil">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12">
+        <% if @user.artist || nil %>
+          <div class='artist'>
+            <%= link_to artist_url, class: 'product-inherit' do %>
+              <%= cl_image_tag @user.artist.photo, height: 400, crop: :fill, class: "img-responsive" %>
+            <% end %>
+            <h3><%= @user.artist.name %></h3>
+            <h3><%= @user.artist.city %></h3>
+            <h3><%= @user.artist.description %></h3>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <% if @user.releases || nil %>
+          <%= @user.releases.each do |release| %>
+            <div class='releases'>
+              <%= link_to release, class: 'product-inherit' do %>
+                <%= cl_image_tag release.photo, height: 400, crop: :fill, class: "img-responsive" %>
+              <% end %>
+              <h3><%= release.title %></h3>
+              <h3><%= release.record_id %></h3>
+              <h3><%= release.youtube_link %></h3>
+              <h3><%= release.bandcamp_link %></h3>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <% if @user.performances || nil %>
+          <%= @user.performances.each do |performance| %>
+            <div class='performances'>
+              <%= link_to performance, class: 'product-inherit' do %>
+                <%= cl_image_tag performance.photo, height: 400, crop: :fill, class: "img-responsive" %>
+              <% end %>
+              <h3><%= performance.city %></h3>
+              <h3><%= performance.place_address %></h3>
+              <h3><%= performance.start_time %></h3>
+              <h3><%= performance.price %></h3>
+              <h3><%= performance.facebook_event %></h3>
+              <h3><%= performance.photo %></h3>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
-  <div class="tab-content hidden" id="artists">
-    <div class="my-profile" id="profile">
-      <%= link_to @user.artist, class: 'product-inherit' do %>
-        <%= cl_image_tag @user.artist.photo, height: 400, crop: :fill, class: "product-image hidden-xs" %>
-        <div class='product-body'>
-          <h3><%= @user.artist.name %></h3>
-          <p><%= @user.artist.city %></p>
-          <h5>Description</h5>
-          <% @user.artist.description %>
-          <% end %>
-        </div>
-      <% if @user.artist %>
-      <h2><%= link_to "modifier profil artiste", edit_artist_path, class: 'btn btn-medium' %></h2>
-      <% else %>
-      <h2><%= link_to "ajouter un artiste", new_artist_path, class: 'btn btn-medium' %></h2>
-      <% end %>
-      <h2><%= link_to "ajouter un release", new_release_path, class: 'btn btn-medium' %></h2>
-    </div>
-  <div class="tab-content hidden" id="performances">
-          <h2><%= link_to "ajouter une date", new_performance_path, class: 'btn btn-medium' %></h2>
-    </div>
-  </div>
 </div>
+
 
