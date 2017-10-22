@@ -3,7 +3,16 @@
     RELEASES
   </h2>
 </div>
-<% @releases.each do |r|%>
-  <%= render "release", release: r %>
-<% end %>
-
+<div class="row">
+  <% @releases.each do |release|%>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="card">
+        <div class="card-photo">
+          <%= link_to release, class: 'product-inherit' do %>
+            <%= cl_image_tag release.photo, height: 600, width: 900, crop: :fill, class: "img-responsive" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

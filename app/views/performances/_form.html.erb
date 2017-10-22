@@ -1,4 +1,14 @@
-<%= simple_form_for [@performance] do |f| %>
+<%= simple_form_for (@performance) do |f| %>
+  <% if @performance.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @performance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.association :artist %>
   <%= f.input :city %>
   <%= f.input :place_address %>
   <%= f.input :price %>

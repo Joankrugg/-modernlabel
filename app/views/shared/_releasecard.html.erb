@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="negative">
+    <%= @release.title %>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="[ col-sm-6 col-md-offset-3 col-md-6 ]">
+        <div class="[ info-card ]">
+          <%= cl_image_tag @release.photo, height: 500, crop: :fit %>
+          <div class="[ info-card-details ] animate">
+            <div class="[ info-card-header ]">
+              <h3><%= @release.record.name %></h3>
+              <h3>Out on the <%= @release.creation %></h3>
+              <h3><%= @release.price %>Euros</h3>
+            </div>
+            <%= cl_image_tag @release.photo, height: 200, crop: :fit , class: "style_image"%>
+            <div class="[ info-card-detail ]">
+              <!-- Description -->
+              <div class="social">
+                <% if @release.youtube_link? %>
+                <%= link_to @release.youtube_link do %>
+                  <i class="fa fa-youtube-square [ social-icon facebook ] animate"></i>
+                <% end %>
+                <% end %>
+                <% if @release.bandcamp_link? %>
+                <%= link_to @release.bandcamp_link do %>
+                  <i class="fa fa-bandcamp [ social-icon facebook ] animate"></i>
+                <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

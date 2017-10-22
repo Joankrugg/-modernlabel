@@ -1,26 +1,30 @@
 class PerformancesController < ApplicationController
-  before_action :set_perf, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_performance, only: [:show, :edit, :update]
   def index
     @performances = Performance.all
   end
+
   def new
+    @artist = current_user.artist
     @performance = Performance.new
   end
 
   def create
-    @performance = current_user.performances.new(performance_params)
+    @performance = Performance.new(performance_params)
     if @performance.save
-      redirect_to current_user
+      redirect_to performance_path(@performance)
     else
       render :new
     end
   end
 
   def show
+
   end
 
   def edit
+
   end
 
   def update
@@ -31,22 +35,13 @@ class PerformancesController < ApplicationController
     end
   end
 
-  def destroy
-    @performance = @performance.destroy
-    redirect_to performances_path
-  end
-
-
   private
 
-  def set_perf
+  def set_performance
     @performance = Performance.find(params[:id])
   end
 
   def performance_params
-    params.require(:performance).permit(:start_time, :city, :place_address, :price, :photo, :photo_cache, :facebook_event, :user_id)
+    params.require(:performance).permit(:start_time, :place_address, :city, :artist_id, :facebook_event, :user_id)
   end
-
-
 end
-

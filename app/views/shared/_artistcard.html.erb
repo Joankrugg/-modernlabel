@@ -16,10 +16,8 @@
             <h3>Année de création: <%= @artist.year_of_creation %> </h3>
             <h3><%=@artist.contact %></h3>
           </div>
-          <%= link_to @artist.user, class: 'product-inherit' do %>
-          <%= cl_image_tag @artist.photo, height: 200, crop: :fit %>
+          <%= cl_image_tag @artist.photo, height: 200, crop: :fit , class: "style_image"%>
           <div class="[ info-card-detail ]">
-          <% end %>
             <!-- Description -->
             <div class="social">
               <% if @artist.facebook_link.present? %>

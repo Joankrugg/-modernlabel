@@ -1,6 +1,6 @@
 class Artist < ApplicationRecord
   belongs_to :user, required: true
-  has_many :performances, dependent: :destroy
+  has_many :performances
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
   validates :city, presence: true

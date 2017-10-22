@@ -1,4 +1,4 @@
-<%= simple_form_for(@artist) do |f| %>
+<%= simple_form_for @artist, defaults: { label_html: { class: 'labels' } } do |f| %>
   <% if @artist.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -8,21 +8,59 @@
       </ul>
     </div>
   <% end %>
-  <div class="container">
-    <%= f.input :name %>
-    <%= f.input :city %>
-    <%= f.input :year_of_creation %>
-    <%= f.input :number_of_musicians %>
-    <%= f.input :description %>
-    <%= f.input :facebook_link %>
-    <%= f.input :insta_link %>
-    <%= f.input :contact %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :youtube_channel %>
-    <%= f.input :soundcloud_link %>
-    <%= f.input :twitter_link %>
-    <%= f.input :bandcamp_link %>
+  <div class="container group">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12">
+        <%= f.input :name, required: false, label: 'Artist or Band name', placeholder: 'we need one' %>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <%= f.input :city, required: false, placeholder: 'we need one'%>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <%= f.input :number_of_musicians, required: false, collection: 1..12 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-sm-12">
+        <%= f.input :contact, placeholder: 'band@gmail.com' %>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <%= f.input :year_of_creation, required: false, collection: 1990..2017 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <%= f.input :description, required: false, placeholder: 'we need these few words (max 140 characters)', input_html: { maxlength: 140 }%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :facebook_link, required: false, placeholder: 'we need one' %>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :insta_link, placeholder: "optional, but you'd better have one to give"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :youtube_channel, placeholder: "optional, but you'd better have one to give"%>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :soundcloud_link, placeholder: "optional, but you'd better have one to give" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :twitter_link, placeholder: "optional, but you'd better have one to give" %>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :bandcamp_link, placeholder: "optional, but you'd better have one to give" %>
+      </div>
+    </div>
     <%= f.submit %>
   </div>
 <% end %>

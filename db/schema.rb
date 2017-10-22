@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020122702) do
+ActiveRecord::Schema.define(version: 20171021223054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20171020122702) do
     t.string   "facebook_event"
     t.string   "photo"
     t.integer  "user_id"
+    t.integer  "artist_id"
+    t.index ["artist_id"], name: "index_performances_on_artist_id", using: :btree
     t.index ["user_id"], name: "index_performances_on_user_id", using: :btree
   end
 
@@ -76,9 +78,9 @@ ActiveRecord::Schema.define(version: 20171020122702) do
     t.text     "description"
     t.integer  "price"
     t.date     "creation"
-    t.integer  "user_id"
     t.string   "bandcamp_link"
     t.string   "youtube_link"
+    t.integer  "user_id"
     t.index ["record_id"], name: "index_releases_on_record_id", using: :btree
     t.index ["user_id"], name: "index_releases_on_user_id", using: :btree
   end
@@ -120,6 +122,7 @@ ActiveRecord::Schema.define(version: 20171020122702) do
   end
 
   add_foreign_key "artists", "users"
+  add_foreign_key "performances", "artists"
   add_foreign_key "performances", "users"
   add_foreign_key "releases", "records"
   add_foreign_key "releases", "users"

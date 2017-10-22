@@ -2,67 +2,66 @@
   <div class="profile-header-container text-center">
     <div class="tabs">
       <a class="tab active" data-target="#profile">
-        <h3>Contact informations</h3>
+        <div class=" btn-medium btn ">Actions</div>
       </a>
-      <a class="tab" data-target="#artistic-profil">
-        <h3>Artistic profil</h3>
-      </a>
-      <a class="tab" data-target="#performances">
-        <h3>Next availaibilities</h3>
+      <a class="tab" data-target="#Search">
+        <div class=" btn-medium btn ">Search</div>
       </a>
     </div>
   </div>
 </div>
 
-<div class="container text-center">
-  <div class="tab-content hidden" id="profile">
-    <%= render 'user', user: @user %>
-  </div>
-  <div class="tab-content hidden container" id="artistic-profil">
-    <div class="row">
-      <div class="col-lg-4 col-sm-12">
-        <% if @user.artist || nil %>
-          <div class='artist'>
-            <%= link_to artist_url, class: 'product-inherit' do %>
-              <%= cl_image_tag @user.artist.photo, height: 400, crop: :fill, class: "img-responsive" %>
-            <% end %>
-            <h3><%= @user.artist.name %></h3>
-            <h3><%= @user.artist.city %></h3>
-            <h3><%= @user.artist.description %></h3>
-          </div>
+<div class="container">
+  <div class="tab-content" id="profile">
+    <div class="top-artists">
+      <h2 class="negative">
+        ACTIONS
+      </h2>
+    </div>
+    <div class="information">
+      <div class="welcome">
+        Welcome
+        <% if current_user.first_name || nil %>
+        <%= current_user.first_name %>
         <% end %>
+        !
       </div>
-      <div class="col-lg-4 col-sm-12">
-        <% if @user.releases || nil %>
-          <%= @user.releases.each do |release| %>
-            <div class='releases'>
-              <%= link_to release, class: 'product-inherit' do %>
-                <%= cl_image_tag release.photo, height: 400, crop: :fill, class: "img-responsive" %>
-              <% end %>
-              <h3><%= release.title %></h3>
-              <h3><%= release.record_id %></h3>
-              <h3><%= release.youtube_link %></h3>
-              <h3><%= release.bandcamp_link %></h3>
-            </div>
+      <h4>Perform an action</h4>
+      <h4> and get into modern box records' network </h4>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
+          <div class="action"></div><br>
+          <% if current_user.artist || nil %>
+          <%=link_to "Update artist", edit_artist_path %>
+          <% else %>
+          <%=link_to "Create artist", new_artist_path %>
           <% end %>
-        <% end %>
+        </div>
+        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
+          <div class="action"></div><br>
+            <%=link_to "Check artists ", artists_path %>
+        </div>
+        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
+          <div class="action"></div><br>
+            <%=link_to "Create release", new_release_path %>
+        </div>
+        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
+          <div class="action"></div><br>
+            <%=link_to "Check releases ", releases_path %>
+        </div>
       </div>
-      <div class="col-lg-4 col-sm-12">
-        <% if @user.performances || nil %>
-          <%= @user.performances.each do |performance| %>
-            <div class='performances'>
-              <%= link_to performance, class: 'product-inherit' do %>
-                <%= cl_image_tag performance.photo, height: 400, crop: :fill, class: "img-responsive" %>
-              <% end %>
-              <h3><%= performance.city %></h3>
-              <h3><%= performance.place_address %></h3>
-              <h3><%= performance.start_time %></h3>
-              <h3><%= performance.price %></h3>
-              <h3><%= performance.facebook_event %></h3>
-              <h3><%= performance.photo %></h3>
-            </div>
-          <% end %>
-        <% end %>
+
+      <div class="row">
+        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
+          <div class="action"></div><br>
+            <%=link_to "create performance", new_performance_path %>
+        </div>
+        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
+          <div class="action"></div><br>
+            <%=link_to "check performance", performances_path %>
+        </div>
       </div>
     </div>
   </div>
