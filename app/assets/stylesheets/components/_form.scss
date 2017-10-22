@@ -1,12 +1,13 @@
 .labels{
   color: white;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  text-shadow: 1px 1px 2px black, 0 0 25px #9B445A, 0 0 5px #9B445A;
+  text-shadow: 1px 1px 2px black, 0 0 25px #606668, 0 0 5px #606668;
 }
 
 .group{
-  background: linear-gradient(to right, rgba(255,0,0,0), rgba(166,51,87,1));
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(96,102,104,1));
   margin-top: 50px;
   padding: 20px 20px 20px 20px;
-  border-radius: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

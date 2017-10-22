@@ -1,8 +1,7 @@
 <div class="card">
   <div class="card-photo">
     <%= link_to artist, class: 'product-inherit' do %>
-      <%= cl_image_tag artist.photo, height: 600, width: 900, crop: :fill, class: "img-responsive style_image" %>
+      <%= cl_image_tag artist.photo, :effect=>"grayscale", height: 300, width: 450, crop: :fill, class: "img-responsive style_image" %>
     <% end %>
   </div>
 </div>
-

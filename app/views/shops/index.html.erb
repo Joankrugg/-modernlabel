@@ -1,9 +1,14 @@
-<div class="top-artists">
-  <h2 class="negative">
+<div class="container">
+  <h2 class="negative top">
     SHOP
   </h2>
 </div>
-<% @shops.each do |s|%>
-  <%= render "shop", shop: s %>
-<% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <% @shops.each do |s|%>
+        <%= render "shop", shop: s %>
+      <% end %>
+    </div>
+  </div>
+</div>
