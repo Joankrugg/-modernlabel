@@ -1,17 +1,7 @@
 .action {
-    width: 100px;
-    height: 100px;
-    background-color: #E9ECF9;
-    box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 1px 1px 2px black, 0 0 25px #9B445A, 0 0 5px #9B445A;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    margin-top: 100px;
+  margin-top: 50px;
 }
 
-.action:hover{
-    animation: rotation 2s infinite linear;
-}
 
 @keyframes rotation {
     from {
@@ -32,6 +22,29 @@
   color: white;
   font-size: 30px;
   padding-top: 20px;
+//    width: 100px;
+//    height: 100px;
+//    background-color: #E9ECF9;
+//    box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+//    box-shadow: 1px 1px 2px black, 0 0 25px #FF003B, 0 0 5px #FF003B;
+//    border-top-right-radius: 20px;
+//    border-bottom-left-radius: 20px;
 
 }
 
+.disc{
+  height: 110px;
+  border-radius: 50%;
+  -webkit-animation: rotation 2s infinite linear;
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px black, 0 0 25px #FF003B, 0 0 5px #FF003B;
+}
+
+.information{
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(96,102,104,1));
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  padding-bottom :3px;
+  margin-bottom: 15px;
+
+}

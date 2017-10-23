@@ -3,7 +3,22 @@
     ACTIONS
   </h2>
 </div>
-<div class="profile-header-wrapper">
+<div class="container">
+  <div class="profile-header-container text-center">
+    <div class="information">
+      <div class="welcome">
+        Welcome
+        <% if current_user.first_name || nil %>
+        <%= current_user.first_name %>
+        <% end %>
+        !
+      </div>
+      <h5>Perform an action</h5>
+      <h5> and get into modern box records' network </h5>
+    </div>
+  </div>
+</div>
+<div class="container user-actions">
   <div class="profile-header-container text-center">
     <div class="tabs">
       <a class="tab active" data-target="#profile">
@@ -16,22 +31,11 @@
   </div>
 </div>
 <div class="container">
-  <div class="tab-content" id="profile">
-    <div class="information">
-      <div class="welcome">
-        Welcome
-        <% if current_user.first_name || nil %>
-        <%= current_user.first_name %>
-        <% end %>
-        !
-      </div>
-      <h4>Perform an action</h4>
-      <h4> and get into modern box records' network </h4>
-    </div>
+  <div class="tab-content top" id="profile">
     <div class="container">
       <div class="row">
         <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"></div><br>
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
           <% if current_user.artist || nil %>
           <%=link_to "Update artist", edit_artist_path %>
           <% else %>
@@ -39,26 +43,26 @@
           <% end %>
         </div>
         <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"></div><br>
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <%=link_to "Check artists ", artists_path %>
         </div>
         <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"></div><br>
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <%=link_to "Create release", new_release_path %>
         </div>
         <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"></div><br>
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <%=link_to "Check releases ", releases_path %>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"></div><br>
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <%=link_to "create performance", new_performance_path %>
         </div>
         <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"></div><br>
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <%=link_to "check performance", performances_path %>
         </div>
       </div>

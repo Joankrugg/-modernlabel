@@ -1,7 +1,9 @@
 .tabs {
-  background: $black;
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(96,102,104,1));
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   padding: 30px;
+  border-radius: 8px;
 }
 .tabs a {
   color: white;
@@ -21,7 +23,6 @@
   margin-bottom: 0;
 }
 .tab {
-  background: $black;
   color: white !important;
   flex: 1 1 auto;
   text-align: center;
@@ -29,10 +30,10 @@
 }
 
 .tab.active {
-  background: $black;
   color: #E9ECF9;
 }
 .tab-content {
   padding-top: 50px;
+  margin-top: 15px;
 
 }
