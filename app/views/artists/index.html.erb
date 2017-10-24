@@ -1,19 +1,46 @@
-<div class="container">
-  <h2 class="negative top">
-    PEOPLE
-  </h2>
-</div>
-
-<div class="container">
+<h5 class="negative top">
+  PEOPLE
+</h5>
+<div class="index">
   <div class="row">
-    <% @artists.each do |a|%>
-      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <div class="card">
-          <%= render "artist", artist: a %><br>
+    <div class="col-lg-2 left">
+      <div class="information hidden-xs hidden-sm hidden-md">
+        <div class="welcome">
+          Welcome!
+        </div>
+      <h5>Perform an action</h5>
+      <h5>and get into modern box records' network </h5>
+      </div>
+    </div>
+      <div class="col-lg-8 center">
+        <div class="information hidden-xs hidden-sm hidden-md">
+          <div class="welcome">
+            Welcome!
+          </div>
+        <h5>Perform an action</h5>
+        <h5>and get into modern box records' network </h5>
+        </div>
+        <div class="row">
+          <% @artists.each do |a|%>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+              <div class="main">
+                <div class="card">
+                  <%= render "artist", artist: a %><br>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
+      <div class="col-lg-2 right">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="advertisement">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
 

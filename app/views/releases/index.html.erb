@@ -1,21 +1,52 @@
-<div class="container">
-  <h2 class="negative top">
-    RELEASES
-  </h2>
-</div>
-<div class="container">
+<h5 class="negative top">
+  RELEASES
+</h5>
+<div class="index">
   <div class="row">
-    <% @releases.each do |release|%>
-      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <div class="card">
-          <div class="card-photo">
-            <%= link_to release, class: 'product-inherit' do %>
-              <%= cl_image_tag release.photo, :effect=>"grayscale", height: 300, width: 450, crop: :fill, class: "img-responsive style_image" %>
-            <% end %>
+    <div class="col-lg-2 left">
+      <div class="information hidden-xs hidden-sm hidden-md">
+        <div class="welcome">
+          Welcome!
+        </div>
+      <h5>Perform an action</h5>
+      <h5>and get into modern box records' network </h5>
+      </div>
+    </div>
+      <div class="col-lg-8 center">
+        <div class="information hidden-xs hidden-sm hidden-md">
+          <div class="welcome">
+            Welcome!
+          </div>
+        <h5>Perform an action</h5>
+        <h5>and get into modern box records' network </h5>
+        </div>
+        <div class="row">
+          <% @releases.each do |release|%>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card">
+                <div class="[ info-card ]">
+                  <%= link_to release do %>
+                    <%= cl_image_tag release.photo, :effect=>"grayscale", height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+                <% end %>
+                  <div class="info">
+                    <h1>-<%= release.title.capitalize%>-</h1>
+                    <h1>De <%= release.year_of_creation %></h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-2 right">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="advertisement">
+            </div>
           </div>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
 

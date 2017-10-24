@@ -1,11 +1,9 @@
-<div class="container">
-  <h2 class="negative top">
-    ACTIONS
-  </h2>
-</div>
+<h5 class="negative top">
+  ACTIONS
+</h5>
 <div class="container">
   <div class="profile-header-container text-center">
-    <div class="information">
+    <div class="information" style="background-image: url(<%= image_path 'background_4b.jpg'%>)"%>
       <div class="welcome">
         Welcome
         <% if current_user.first_name || nil %>
@@ -14,11 +12,11 @@
         !
       </div>
       <h5>Perform an action</h5>
-      <h5> and get into modern box records' network </h5>
+      <h5>and get into modern box records' network </h5>
     </div>
   </div>
 </div>
-<div class="container user-actions">
+<div class="container">
   <div class="profile-header-container text-center">
     <div class="tabs">
       <a class="tab active" data-target="#profile">
@@ -33,7 +31,7 @@
 <div class="container">
   <div class="tab-content top" id="profile">
     <div class="container">
-      <div class="row">
+      <div class="row" >
         <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
           <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
           <% if current_user.artist || nil %>

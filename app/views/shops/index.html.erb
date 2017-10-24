@@ -1,11 +1,18 @@
+<h5 class="negative top">
+  SHOP
+</h5>
 <div class="container">
-  <h2 class="negative top">
-    SHOP
-  </h2>
+  <div class="information">
+    <div class="welcome">
+      Welcome!
+    </div>
+    <h5>Perform an action</h5>
+    <h5>and get into modern box records' network </h5>
+  </div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-sm-12">
+    <div class="col-xs-6 col-sm-12 col-md-4 col-lg-3">
       <% @shops.each do |s|%>
         <%= render "shop", shop: s %>
       <% end %>

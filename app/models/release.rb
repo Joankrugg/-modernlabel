@@ -5,5 +5,5 @@ class Release < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   validates :description, presence: true
   validates :price, presence: true
-  validates :creation, presence: true
+  validates :year_of_creation, presence: true
 end
