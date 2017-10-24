@@ -1,1 +1,6 @@
 <%= render 'shared/performancecard' %>
+<div class="option">
+  <% if @performance.artist.user == current_user  %>
+    <%= link_to t(".update", default: "Update performance"), edit_performance_path, class: "call-to-action btn-medium btn" %>
+  <% end %>
+</div>

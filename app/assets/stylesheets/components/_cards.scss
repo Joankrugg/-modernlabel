@@ -122,3 +122,23 @@
   }
 }
 
+.info{
+  height: 40px;
+  background: linear-gradient(to right, #0E0E0E, #FF003B);
+  text-align: center;
+    h1 {
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 0 !important;
+      padding-top: 6px;
+  }
+}
+
+#perf{
+  height: 120px;
+}
+
+#perf:hover{
+  text-decoration: none;
+}

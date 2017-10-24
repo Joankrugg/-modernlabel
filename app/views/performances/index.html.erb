@@ -1,5 +1,5 @@
 <h5 class="negative top">
-  RELEASES
+  PERFORMANCES
 </h5>
 <div class="index">
   <div class="row">
@@ -21,18 +21,19 @@
         <h5>and get into modern box records' network </h5>
         </div>
         <div class="row">
-          <% @releases.each do |release|%>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-              <div class="card">
-                <div class="[ info-card ]">
-                  <%= link_to release do %>
-                    <%= cl_image_tag release.photo, :effect=>"grayscale", height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
-                <% end %>
-                  <div class="info">
-                    <h1>-<%= release.title.capitalize%>-</h1>
-                    <h1>De <%= release.year_of_creation %></h1>
+          <% @performances.each do |performance|%>
+            <div class="col-lg-2">
+              <div class="[ info-card ]">
+                <%= link_to performance do %>
+                  <div class="info" id="perf">
+                    <h1>-<%= performance.artist.name%>-</h1>
+                    <h1>-<%= performance.city.capitalize%>-</h1>
+                    <h1><%= performance.start_time.strftime('%d %B %Y') %></h1>
+                    <h1><%= performance.place_address %></h1>
+                    <h1><%= performance.price %></h1>
+                    <h1><%= performance.facebook_event %></h1>
                   </div>
-                </div>
+                <% end %>
               </div>
             </div>
           <% end %>
@@ -49,4 +50,3 @@
     </div>
   </div>
 </div>
-
