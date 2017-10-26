@@ -1,6 +1,10 @@
 <h5 class="negative top">
   PERFORMANCES
 </h5>
+<%= form_tag(performances_path, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search' %>
+<% end %>
 <div class="index">
   <div class="row">
     <div class="col-lg-2 left">

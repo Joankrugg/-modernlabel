@@ -2,7 +2,7 @@ class PerformancesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_performance, only: [:show, :edit, :update]
   def index
-    @performances = Performance.all
+    @performances = Performance.search(params[:search])
   end
 
   def new

@@ -6,4 +6,11 @@ class Release < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :year_of_creation, presence: true
+  def self.search(search)
+    if search
+      where("title ILIKE ?", "%#{search.downcase.capitalize}%")
+    else
+      all
+    end
+  end
 end

@@ -1,16 +1,42 @@
 <h5 class="negative top">
   RELEASES
 </h5>
+
+<%= form_tag(releases_path, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <div class="index">
   <div class="row">
     <div class="col-lg-2 left">
-      <div class="information hidden-xs hidden-sm hidden-md">
-        <div class="welcome">
-          Welcome!
+      <div class="col-lg-12">
+        <div class="[ info-card ]">
+          <div class="info" id="column">
+            <br>
+            <h1>Next performances!</h1>
+            <br>
+            <h1>Check these alerts</h1>
+            <h1>before checking the bands </h1>
+          </div>
         </div>
-      <h5>Perform an action</h5>
-      <h5>and get into modern box records' network </h5>
       </div>
+      <% @performances.each do |performance|%>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+          <div class="[ info-card ]">
+            <%= link_to performance do %>
+              <div class="info" id="perf">
+                <h1>-<%= performance.artist.name%>-</h1>
+                <h1>-<%= performance.city.capitalize%>-</h1>
+                <h1><%= performance.start_time.strftime('%d %B %Y') %></h1>
+                <h1><%= performance.place_address %></h1>
+                <h1><%= performance.price %></h1>
+                <h1><%= performance.facebook_event %></h1>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
       <div class="col-lg-8 center">
         <div class="information">
