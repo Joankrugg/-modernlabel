@@ -110,16 +110,19 @@
 }
 
 .info{
-  height: 40px;
-  background: linear-gradient(to right, #0E0E0E, #FF003B);
+  height: 120px;
+  background: linear-gradient(to right, #D1D1D1, #FFFFFF);
   text-align: center;
     h1 {
-      color: white;
+      color: #606668;
       font-size: 12px;
       text-transform: uppercase;
       margin: 0 !important;
       padding-top: 6px;
   }
+}
+.icons{
+  color: #606668;
 }
 
 #perf{
@@ -128,7 +131,7 @@
 }
 
 #column{
-  height: 180px;
+  height: 117px;
 }
 
 
