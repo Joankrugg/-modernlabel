@@ -1,11 +1,11 @@
-<h5 class="negative top">
-  PEOPLE
-</h5>
-
-<%= form_tag(artists_path, method: :get) do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search' %>
-<% end %>
+<div class="negative top">
+  <div class="artist_search form-group">
+  <%= form_tag(artists_path, method: :get) do %>
+    <%= text_field_tag :search, nil, placeholder: "Search artists ...", class: "form-control" %>
+    <%= submit_tag 'Search', style: "display: none;" %>
+  <% end %>
+  </div>
+</div>
 
 <div class="index">
   <div class="row">

@@ -6,11 +6,26 @@ class Release < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :year_of_creation, presence: true
-  def self.search(search)
-    if search
-      where("title ILIKE ?", "%#{search.downcase.capitalize}%")
-    else
-      all
-    end
+  include PgSearch
+  scope :sorted, ->{ order(title: :asc) }
+
+  pg_search_scope :search,
+                  against: [
+                    :title,
+                    :price,
+                    :year_of_creation
+                  ],
+                  using: {
+                    tsearch: {
+                      prefix: true,
+                      normalization: 2
+                    }
+                  }
+
+  def self.perform_search(keyword)
+    if keyword.present?
+    then Release.search(keyword)
+    else Release.all
+    end.sorted
   end
 end

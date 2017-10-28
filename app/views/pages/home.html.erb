@@ -10,12 +10,6 @@
       <%= link_to t(".actions", default: "Actions"), action_users_path, class: "call-to-action btn-medium btn" %>
         </div>
       </div>
-      <div class="seek">
-        <%= form_tag(artists_path, method: :get) do %>
-          <%= text_field_tag :search %>
-          <%= submit_tag 'Search' %>
-        <% end %>
-      </div>
       <br>
       <div class="banner-links">
         <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs"><i class="fa fa-facebook-square banner-links" aria-hidden="true"></i>

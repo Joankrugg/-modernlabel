@@ -10,11 +10,28 @@ class Artist < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   geocoded_by :city
   after_validation :geocode, if: :city_changed?
-  def self.search(search)
-    if search
-      where("name ILIKE ?", "%#{search.downcase.capitalize}%")
-    else
-      all
-    end
+  include PgSearch
+  scope :sorted, ->{ order(name: :asc) }
+
+  pg_search_scope :search,
+                  against: [
+                    :name,
+                    :city,
+                    :number_of_musicians,
+                    :year_of_creation
+                  ],
+                  using: {
+                    tsearch: {
+                      prefix: true,
+                      normalization: 2
+                    }
+                  }
+
+  def self.perform_search(keyword)
+    if keyword.present?
+    then Artist.search(keyword)
+    else Artist.all
+    end.sorted
   end
 end
+

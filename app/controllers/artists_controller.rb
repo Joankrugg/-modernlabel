@@ -2,7 +2,11 @@ class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
   def index
-    @artists = Artist.search(params[:search])
+    if params[:search].present?
+      @artists = Artist.perform_search(params[:search])
+    else
+      @artists = Artist.all
+    end
     @performances = Performance.all.sample(4)
   end
 
