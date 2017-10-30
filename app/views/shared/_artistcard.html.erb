@@ -75,9 +75,20 @@
           <% end %>
         </div>
       <% end %>
-      </div>
+    </div>
+    <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
+      <% if @artist.releases.present? %>
+        <% @artist.releases.each do |release| %>
+          <div class="col-lg-3">
+            <%= link_to release do %>
+              <%= cl_image_tag release.photo, height: 100, width: 120, crop: :fill, class: "thumbnail" %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
+
 
 

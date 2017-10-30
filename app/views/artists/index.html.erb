@@ -1,29 +1,30 @@
 <!--barre de recherche-->
-<div class="negative">
-  <div class="artist_search">
+<div class="negative top">
+  <div class="performance_search form-group">
     <%= form_tag(artists_path, method: :get) do %>
       <%= text_field_tag :search, nil, placeholder: "Search artists ...(use a keyword, a city or the number of musicians)", class: "form-control" %>
       <%= submit_tag 'Search', style: "display: none;" %>
     <% end %>
   </div>
 </div>
-<!--banner-->
-<div class="banner">
+<!--nav network-->
+<%= render 'shared/networknav' %>
+
 <!--section d'ensemble-->
-  <div class="container results">
-    <div class="row">
-      <% @artists.each do |a|%>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-          <div class="main">
-            <div class="card">
-              <%= render "artist", artist: a %><br>
-            </div>
+<div class="container">
+  <div class="row">
+    <% @artists.each do |a|%>
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        <div class="main">
+          <div class="card">
+            <%= render "artist", artist: a %><br>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
 
 
 

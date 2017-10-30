@@ -1,3 +1,4 @@
+<!--barre de recherche-->
 <div class="negative top">
   <div class="performance_search form-group">
   <%= form_tag(performances_path, method: :get) do %>
@@ -6,6 +7,9 @@
   <% end %>
   </div>
 </div>
+<!--nav network-->
+<%= render 'shared/networknav' %>
+
 <div class="container">
   <div class="row">
     <% @performances.each do |performance|%>
