@@ -1,7 +1,7 @@
 class Performance < ApplicationRecord
   belongs_to :artist, required: true
   include PgSearch
-  scope :sorted, ->{ order(name: :asc) }
+  scope :sorted, ->{ order(city: :asc) }
 
   pg_search_scope :search,
                   against: [
@@ -9,12 +9,9 @@ class Performance < ApplicationRecord
                     :city,
                     :start_time,
                   ],
-                  using: {
-                    tsearch: {
-                      prefix: true,
-                      normalization: 2
-                    }
-                  }
+                  associated_against: {
+                  artist: [ :name ]
+    }
 
   def self.perform_search(keyword)
     if keyword.present?

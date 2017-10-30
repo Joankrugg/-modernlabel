@@ -1,57 +1,32 @@
 <div class="negative top">
-  <div class="release_search form-group">
+  <div class="performance_search form-group">
   <%= form_tag(performances_path, method: :get) do %>
     <%= text_field_tag :search, nil, placeholder: "Search concerts ...", class: "form-control" %>
     <%= submit_tag 'Search', style: "display: none;" %>
   <% end %>
   </div>
 </div>
-<div class="index">
+<div class="container">
   <div class="row">
-    <div class="col-lg-2 left">
-      <div class="information hidden-xs hidden-sm hidden-md">
-        <div class="welcome">
-          Welcome!
-        </div>
-      <h5>Perform an action</h5>
-      <h5>and get into modern box records' network </h5>
-      </div>
-    </div>
-      <div class="col-lg-8 center">
-        <div class="information">
-          <div class="welcome">
-            Welcome!
-          </div>
-        <h5>Perform an action</h5>
-        <h5>and get into modern box records' network </h5>
-        </div>
-        <div class="row">
-          <% @performances.each do |performance|%>
-            <div class="col-lg-2">
-              <div class="[ info-card ]">
-                <%= link_to performance do %>
-                  <div class="info" id="perf">
-                    <h1>-<%= performance.artist.name%>-</h1>
-                    <h1>-<%= performance.city.capitalize%>-</h1>
-                    <h1><%= performance.start_time.strftime('%d %B %Y') %></h1>
-                    <h1><%= performance.place_address %></h1>
-                    <h1><%= performance.price %></h1>
-                    <h1><%= performance.facebook_event %></h1>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-lg-2 right">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="advertisement">
+    <% @performances.each do |performance|%>
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        <div class="main">
+          <div class="card">
+            <div class="[ info-card ]">
+              <%= link_to performance do %>
+                <div class="info">
+                  <h1>-<%= performance.artist.name%>-</h1>
+                  <h1>-<%= performance.city.capitalize%>-</h1>
+                  <h1><%= performance.start_time.strftime('%d %B %Y') %></h1>
+                  <h1><%= performance.place_address %></h1>
+                  <h1><%= performance.price %></h1>
+                  <h1><%= performance.facebook_event %></h1>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
