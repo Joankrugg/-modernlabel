@@ -9,6 +9,11 @@ class Artist < ApplicationRecord
   validates :year_of_creation, presence: true
   validates :number_of_musicians, presence: true
   validates :facebook_link, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
+  validates :youtube_channel, format: { with: /^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/ }
+  validates :insta_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?instagram.com\/?/ }
+  validates :twitter_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?twitter.com\/?/ }
+  validates :soundcloud_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?soundcloud.com\/?/ }
+
   mount_uploader :photo, PhotoUploader
   geocoded_by :city
   after_validation :geocode, if: :city_changed?

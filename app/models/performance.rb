@@ -1,5 +1,6 @@
 class Performance < ApplicationRecord
   belongs_to :artist, required: true
+  validates :facebook_event, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
   include PgSearch
   scope :sorted, ->{ order(city: :asc) }
 

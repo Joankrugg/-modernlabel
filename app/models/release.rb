@@ -8,6 +8,9 @@ class Release < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :year_of_creation, presence: true
+  validates :youtube_link, format: { with: /^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/ }
+  validates :bandcamp_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?bandcamp.com\/?/ }
+
   include PgSearch
   scope :sorted, ->{ order(title: :asc) }
 
