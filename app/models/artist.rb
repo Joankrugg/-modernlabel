@@ -8,7 +8,7 @@ class Artist < ApplicationRecord
   validates :city, presence: true
   validates :year_of_creation, presence: true
   validates :number_of_musicians, presence: true
-  validates :facebook_link, uniqueness: true, presence: true
+  validates :facebook_link, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
   mount_uploader :photo, PhotoUploader
   geocoded_by :city
   after_validation :geocode, if: :city_changed?
@@ -21,6 +21,9 @@ class Artist < ApplicationRecord
                     :city,
                     :number_of_musicians
                   ],
+                  associated_against: {
+                    genre: [ :name]
+                  },
                   using: {
                     tsearch: {
                       prefix: true,

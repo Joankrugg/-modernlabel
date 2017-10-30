@@ -17,6 +17,11 @@ class Release < ApplicationRecord
                     :price,
                     :year_of_creation
                   ],
+                  associated_against: {
+                  artist: [ :name ],
+                  genre: [ :name ],
+                  record: [ :name ]
+                  },
                   using: {
                     tsearch: {
                       prefix: true,
