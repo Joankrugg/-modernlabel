@@ -11,19 +11,18 @@
     }
 }
 
-.information{
+.advertisement{
+  background: radial-gradient(white, grey);
   text-align: center;
   justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  padding-bottom :3px;
+  margin-bottom: 15px;
+  color: #F4F4F4;
   h5{
     color: #606668;
   }
-}
-
-.welcome {
-  color: #606668;
-  font-size: 30px;
-  padding-top: 20px;
-  height: 40px;
 }
 
 .disc{
@@ -31,15 +30,9 @@
   border-radius: 50%;
   -webkit-animation: rotation 2s infinite linear;
   box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 2px black, 0 0 25px #FF003B, 0 0 5px #FF003B;
+  box-shadow: 1px 1px 2px black, 0 0 25px #AC00B0, 0 0 5px #AC00B0;
 }
 
-.information{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 8px;
-  padding-bottom :3px;
-  margin-bottom: 15px;
-  color: #F4F4F4;
-}
+
 
 

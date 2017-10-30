@@ -11,7 +11,7 @@
           <div class="[ info-card-details ] animate">
             <div class="[ info-card-header ]">
               <h3><%= @release.record.name %></h3>
-              <h3>Out on the <%= @release.year_of_creation %></h3>
+              <h3>Out since the <%= @release.year_of_creation %></h3>
               <h3><%= @release.price %>Euros</h3>
             </div>
             <%= cl_image_tag @release.photo, height: 200, crop: :fit , class: "style_image"%>
@@ -19,23 +19,22 @@
         </div>
       </div>              <!-- Description -->
     <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
-      <div class="[ info-card ]">
-        <% if @release.youtube_link.present? %>
-        <%= link_to @release.youtube_link do %>
-          <i class="fa fa-youtube-square [ social-icon facebook ] animate"></i>
-        <% end %>
-        <% end %>
-      </div>
+      <% if @release.youtube_link.present? %>
+        <div class="[ info-card ]">
+          <%= link_to @release.youtube_link do %>
+            <i class="fa fa-youtube-square [ social-icon facebook ] animate"></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
-      <div class="[ info-card ]">
-        <% if @release.bandcamp_link.present? %>
-        <%= link_to @release.bandcamp_link do %>
-          <i class="fa fa-bandcamp [ social-icon facebook ] animate"></i>
-        <% end %>
-        <% end %>
+      <% if @release.bandcamp_link.present? %>
+        <div class="[ info-card ]">
+          <%= link_to @release.bandcamp_link do %>
+            <i class="fa fa-bandcamp [ social-icon facebook ] animate"></i>
+          <% end %>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

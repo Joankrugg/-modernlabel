@@ -17,8 +17,7 @@ class Artist < ApplicationRecord
                   against: [
                     :name,
                     :city,
-                    :number_of_musicians,
-                    :year_of_creation
+                    :number_of_musicians
                   ],
                   using: {
                     tsearch: {

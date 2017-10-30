@@ -2,7 +2,11 @@ class ReleasesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_release, only: [:show, :edit, :update]
   def index
-    @releases = Release.search(params[:search])
+    if params[:search].present?
+      @releases = Release.perform_search(params[:search])
+    else
+      @releases = Release.all
+    end
     @performances = Performance.all.sample(4)
   end
 

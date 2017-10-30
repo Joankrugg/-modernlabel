@@ -40,28 +40,23 @@
           <%=link_to "Create artist", new_artist_path %>
           <% end %>
         </div>
-        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-            <%=link_to "Check artists ", artists_path %>
-        </div>
-        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-            <%=link_to "Create release", new_release_path %>
-        </div>
-        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-            <%=link_to "Check releases ", releases_path %>
-        </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-            <%=link_to "create performance", new_performance_path %>
-        </div>
-        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-            <%=link_to "check performance", performances_path %>
+      <div class="col-lg-12 picture">
+        <div class="container">
+          <div class="row" >
+            <div class="col-xs-offset-4 col-xs-8 col-sm-offset-2 col-sm-2 col-lg-offset-1 col-lg-2">
+              <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
+              <%=link_to "Create artist", new_artist_path %>
+            </div>
+            <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-2 col-lg-2">
+              <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
+                <%=link_to "Create release", new_release_path %>
+            </div>
+            <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-2 col-lg-2">
+              <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
+                <%=link_to "create performance", new_performance_path %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -14,31 +14,23 @@
 .logo img {
   height: 64px;
 }
-
-/* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
 /* center section */
 .web-browsing {
   margin-left: 30px;
-  margin-right: 20px;
+  margin-right: 70px;
   align-items: center;
   justify-content: space-between;
 }
 /* Right section */
 .links {
-  margin-left: 30px;
-  margin-right: 10px;
+  margin-right: 30px;
   align-items: center;
 }
 
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 
 .networks-item {
@@ -55,7 +47,7 @@
   font-size: 20px;
 }
 .navbar-wagon-link:hover {
-  color: #FF003B;
+  color: #AC00B0;
   text-decoration: none;
   transition: 1s;
 }

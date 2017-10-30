@@ -131,8 +131,20 @@
 }
 
 #column{
-  height: 117px;
+  height: 120px;
+  background: linear-gradient(to right, #1C2119, #849DCA);
 }
 
+.information{
+  height: 700px;
+  background: linear-gradient(to right, #1C2119, #849DCA);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-
+#flash{
+  color: white;
+}
+.results{
+  padding-top: 20px;
+}

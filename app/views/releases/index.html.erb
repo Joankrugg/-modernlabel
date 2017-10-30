@@ -7,70 +7,35 @@
   </div>
 </div>
 
-<div class="index">
+<!--section d'ensemble-->
+<div class="container">
   <div class="row">
-    <div class="col-lg-2 left">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="advertisement">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-8 center">
-      <div class="information">
-        <div class="welcome">
-          Welcome!
-        </div>
-      <h5>Perform an action</h5>
-      <h5>and get into modern box records' network </h5>
-      </div>
-      <div class="row">
-        <% @releases.each do |release|%>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-              <div class="[ info-card ]">
-                <%= link_to release do %>
-                  <%= cl_image_tag release.photo, :effect=>"grayscale", height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+    <% @releases.each do |release|%>
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        <div class="main">
+          <div class="card">
+            <div class="[ info-card ]">
+              <%= link_to release do %>
+                <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
               <% end %>
-                <div class="info">
-                  <h1>-<%= release.title.capitalize%>-</h1>
-                  <h1>De <%= release.year_of_creation %></h1>
+              <div class="info">
+                <h1>-<%= release.title.capitalize %>-</h1>
+                <h1>De <%= release.year_of_creation %></h1>
+                <h1><%= release.record.name %></h1>
+                <h1><%= release.price %> Euros</h1>
+                <div class="icons">
+                  <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs"><i class="fa fa-facebook-square icons" aria-hidden="true"></i>
+                  <a href="https://www.instagram.com/modernboxrecords/"><i class="fa fa-instagram icons" aria-hidden="true"></i>
+                  <a href="https://soundcloud.com/modern-box"><i class="fa fa-soundcloud icons" aria-hidden="true"></i>
+                  <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber"><i class="fa fa-youtube-square icons" aria-hidden="true"></i>
+                  <a href="https://twitter.com/Modern_box_rec"><i class="fa fa-twitter-square icons" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-    </div>
-
-    <div class="col-lg-2 right">
-      <div class="col-lg-12">
-        <div class="[ info-card ]">
-          <div class="info" id="column">
-            <br>
-            <h1>Check next</h1>
-            <h1>performances</h1>
-            <h1>Below!</h1>
-          </div>
-        </div>
-      <% @performances.each do |performance|%>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
-          <div class="[ info-card ]">
-            <%= link_to performance do %>
-              <div class="info" id="perf">
-                <h1>-<%= performance.artist.name%>-</h1>
-                <h1>-<%= performance.city.capitalize%>-</h1>
-                <h1><%= performance.start_time.strftime('%d %B %Y') %></h1>
-                <h1><%= performance.place_address %></h1>
-                <h1><%= performance.price %></h1>
-                <h1><%= performance.facebook_event %></h1>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
+
