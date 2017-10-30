@@ -2,6 +2,7 @@ class Artist < ApplicationRecord
   belongs_to :user, required: true
   belongs_to :genre
   has_many :performances
+  has_many :releases
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
   validates :city, presence: true

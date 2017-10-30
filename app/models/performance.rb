@@ -11,7 +11,13 @@ class Performance < ApplicationRecord
                   ],
                   associated_against: {
                   artist: [ :name ]
-    }
+                  },
+                  using: {
+                    tsearch: {
+                      prefix: true,
+                      normalization: 2
+                    }
+                  }
 
   def self.perform_search(keyword)
     if keyword.present?

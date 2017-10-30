@@ -7,10 +7,10 @@ class ReleasesController < ApplicationController
     else
       @releases = Release.all
     end
-    @performances = Performance.all.sample(4)
   end
 
   def new
+    @artist = current_user.artist
     @release = Release.new
   end
 
@@ -46,6 +46,6 @@ class ReleasesController < ApplicationController
   end
 
   def release_params
-    params.require(:release).permit(:title, :record_id, :photo, :photo_cache, :description, :price, :year_of_creation, :youtube_link, :bandcamp_link, :user_id, :genre_id)
+    params.require(:release).permit(:title, :record_id, :photo, :photo_cache, :description, :price, :year_of_creation, :youtube_link, :bandcamp_link, :user_id, :genre_id, :artist_id)
   end
 end
