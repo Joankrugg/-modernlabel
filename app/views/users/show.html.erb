@@ -1,21 +1,7 @@
 <h5 class="negative top">
-  ACTIONS
+  USERS ACTIONS
 </h5>
-<div class="container">
-  <div class="profile-header-container text-center">
-    <div class="information" style="background-image: url(<%= image_path 'background_4b.jpg'%>)"%>
-      <div class="welcome">
-        Welcome
-        <% if current_user.first_name || nil %>
-        <%= current_user.first_name %>
-        <% end %>
-        !
-      </div>
-      <h5>Perform an action</h5>
-      <h5>and get into modern box records' network </h5>
-    </div>
-  </div>
-</div>
+
 <div class="container">
   <div class="profile-header-container text-center">
     <div class="tabs">
@@ -29,34 +15,24 @@
   </div>
 </div>
 <div class="container">
-  <div class="tab-content top" id="profile">
+  <div class="tab-content" id="profile">
     <div class="container">
       <div class="row" >
-        <div class="col-md-offset-1 col-md-2 col-xs-offset-4">
+        <div class="col-xs-offset-4 col-xs-8 col-sm-offset-2 col-sm-2 col-lg-offset-1 col-lg-2">
           <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-          <% if current_user.artist || nil %>
-          <%=link_to "Update artist", edit_artist_path %>
-          <% else %>
-          <%=link_to "Create artist", new_artist_path %>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-lg-12 picture">
-        <div class="container">
-          <div class="row" >
-            <div class="col-xs-offset-4 col-xs-8 col-sm-offset-2 col-sm-2 col-lg-offset-1 col-lg-2">
-              <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-              <%=link_to "Create artist", new_artist_path %>
-            </div>
-            <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-2 col-lg-2">
-              <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-                <%=link_to "Create release", new_release_path %>
-            </div>
-            <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-2 col-lg-2">
-              <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-                <%=link_to "create performance", new_performance_path %>
-            </div>
+            <% if current_user.artist || nil %>
+            <%=link_to "Update artist", edit_artist_path %>
+            <% else %>
+            <%=link_to "Create artist", new_artist_path %>
+            <% end %>
           </div>
+        <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-1 col-lg-2">
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
+            <%=link_to "Create release", new_release_path %>
+        </div>
+        <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-1 col-lg-2">
+          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
+            <%=link_to "create performance", new_performance_path %>
         </div>
       </div>
     </div>

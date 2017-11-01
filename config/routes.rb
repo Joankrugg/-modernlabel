@@ -13,7 +13,11 @@ Rails.application.routes.draw do
       get 'signed', to: "artists#signed"
     end
   end
-  resources :releases
+  resources :releases do
+    collection do
+      get 'signed', to: "releases#signed"
+    end
+  end
   resources :performances
   resources :shops
   resources :actus

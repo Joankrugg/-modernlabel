@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030124142) do
+ActiveRecord::Schema.define(version: 20171101054214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20171030124142) do
     t.string   "photo"
     t.integer  "user_id"
     t.integer  "artist_id"
+    t.string   "name"
+    t.datetime "end_time"
     t.index ["artist_id"], name: "index_performances_on_artist_id", using: :btree
     t.index ["user_id"], name: "index_performances_on_user_id", using: :btree
   end
@@ -79,8 +81,8 @@ ActiveRecord::Schema.define(version: 20171030124142) do
 
   create_table "releases", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "record_id"
     t.string   "photo"
     t.text     "description"
@@ -91,6 +93,7 @@ ActiveRecord::Schema.define(version: 20171030124142) do
     t.datetime "year_of_creation"
     t.integer  "genre_id"
     t.integer  "artist_id"
+    t.boolean  "signed",           default: false
     t.index ["artist_id"], name: "index_releases_on_artist_id", using: :btree
     t.index ["genre_id"], name: "index_releases_on_genre_id", using: :btree
     t.index ["record_id"], name: "index_releases_on_record_id", using: :btree

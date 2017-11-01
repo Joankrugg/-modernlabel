@@ -9,6 +9,10 @@ class ReleasesController < ApplicationController
     end
   end
 
+  def signed
+    @releases = Release.where(signed: true)
+  end
+
   def new
     @artist = current_user.artist
     @release = Release.new

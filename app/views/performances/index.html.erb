@@ -21,7 +21,7 @@
                 <div class="info">
                   <h1>-<%= performance.artist.name%>-</h1>
                   <h1>-<%= performance.city.capitalize%>-</h1>
-                  <h1><%= performance.start_time.strftime('%d %B %Y') %></h1>
+                  <h1><%= performance.start_time.strftime('%d %m %y') %></h1>
                   <h1><%= performance.place_address %></h1>
                   <h1><%= performance.price %></h1>
                   <h1><%= performance.facebook_event %></h1>
@@ -33,4 +33,15 @@
       </div>
     <% end %>
   </div>
+</div>
+
+<div class="container calendar">
+  <%= month_calendar events: @performances do |date, performances| %>
+    <%= date.day %>
+      <% performances.each do |performance| %>
+        <div>
+          <%= performance.artist.name %>
+        </div>
+      <% end %>
+  <% end %>
 </div>

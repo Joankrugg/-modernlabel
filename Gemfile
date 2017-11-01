@@ -25,6 +25,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem 'omniauth-facebook'
 gem 'pg_search'
+gem "simple_calendar", "~> 2.0"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

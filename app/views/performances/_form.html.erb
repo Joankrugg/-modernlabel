@@ -10,11 +10,14 @@
       </div>
     <% end %>
     <%= f.association :artist, required: false %>
+    <%= f.input :name %>
     <%= f.input :city %>
     <%= f.input :place_address %>
     <%= f.input :price %>
-    <%= f.input :start_time %>
     <%= f.input :facebook_event %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+
     <%= f.submit %>
   <% end %>
 </div>
