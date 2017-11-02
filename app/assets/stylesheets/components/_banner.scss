@@ -1,0 +1,82 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+}
+
+#slide_1 {
+  margin-left: 50px;
+  padding-left: 30px;
+  text-align: left;
+  margin-top: 200px;
+  position: absolute;
+  left: -370px;
+  width: 320px;
+  height: 54px;
+  background: rgba(224, 72, 202, 0.3);
+  border-radius: 10px;
+  -webkit-animation: slide_1 2s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide_1 2s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide_1 {
+    100% { left: 0; }
+}
+
+@keyframes slide_1 {
+    100% { left: 0; }
+}
+
+#slide_2 {
+  padding-left: 30px;
+  text-align: left;
+  margin-top: 290px;
+  position: absolute;
+  left: -320px;
+  width: 320px;
+  height: 27px;
+  background: rgba(224, 72, 202, 0.3);
+  border-radius: 10px;
+  -webkit-animation: slide_2 3s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide_2 3s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide_2 {
+    100% { left: 0; }
+}
+
+@keyframes slide_2 {
+    100% { left: 0; }
+}
+
+#slide_3 {
+  margin-left: 90px;
+  padding-left: 30px;
+  text-align: left;
+  margin-top: 356px;
+  position: absolute;
+  left: -410px;
+  width: 320px;
+  height: 27px;
+  background: rgba(224, 72, 202, 0.3);
+  border-radius: 10px;
+  -webkit-animation: slide_3 2s forwards;
+  -webkit-animation-delay: 3s;
+  animation: slide_3 2s forwards;
+  animation-delay: 3s;
+}
+
+@-webkit-keyframes slide_3 {
+    100% { left: 0; }
+}
+
+@keyframes slide_3 {
+    100% { left: 0; }
+}

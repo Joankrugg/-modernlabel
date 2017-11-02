@@ -1,6 +1,10 @@
+body{
+  background: linear-gradient(#0E0E0E, #B1B4B5);
+}
+
 .top{
   color: #F4F4F4;
-  background: linear-gradient(to right, #0E0E0E, #B1B4B5);
+  background: linear-gradient(#B1B4B5, #0E0E0E);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -10,4 +14,8 @@
   text-align: center;
   font-size: 40px;
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(96,102,104), 0 0 5px rgb(96,102,104);
+}
+
+.small{
+  font-size: 34px;
 }

@@ -1,8 +1,12 @@
-<h5 class="negative top">
-  NEWS
-</h5>
-<!--nav network-->
-<%= render 'shared/networknav' %>
+<div class="negative top small">
+  MODERN BOX NEWS
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <!--nav network-->
+  <%= render 'shared/networknav' %>
+  <div class="highlight" id="slide_1"></div>
+  <div class="highlight" id="slide_2"></div>
+</div>
 <% @actus.each do |a|%>
   <%= render "actu", actu: a %>
 <% end %>
