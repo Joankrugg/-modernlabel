@@ -2,12 +2,22 @@
   MODERN BOX NEWS
 </div>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <div class="banner-content">
   <!--nav network-->
-  <%= render 'shared/networknav' %>
-  <div class="highlight" id="slide_1"></div>
-  <div class="highlight" id="slide_2"></div>
+    <%= render 'shared/networknav' %>
+    <div class="highlight" id="slide_1"></div>
+    <div class="highlight" id="slide_2">Check The Boxes!!!</div>
+    <% @actus.each do |actu|%>
+      <div class="view view-fourth col-xs-12 col-lg-6">
+        <div class="mask">
+          <h2>-<%= actu.title.capitalize %>-</h2>
+          <h2><%= actu.edition %></h2>
+          <%= link_to actu do %>
+            <p class="info">Read More</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-<% @actus.each do |a|%>
-  <%= render "actu", actu: a %>
-<% end %>
 

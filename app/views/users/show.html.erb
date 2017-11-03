@@ -1,24 +1,14 @@
-<h5 class="negative top">
+<div class="negative top small">
   USERS ACTIONS
-</h5>
+</div>
 
 <div class="container">
-  <div class="profile-header-container text-center">
-    <div class="tabs">
-      <a class="tab active" data-target="#profile">
-        <div class=" btn-medium btn ">Actions</div>
-      </a>
-      <a class="tab" data-target="#Search">
-        <div class=" btn-medium btn ">Search</div>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="tab-content" id="profile">
-    <div class="container">
-      <div class="row" >
-        <div class="col-xs-offset-4 col-xs-8 col-sm-offset-2 col-sm-2 col-lg-offset-1 col-lg-2">
+
+
+  <%= render 'shared/networknav' %>
+    <div class="container actions">
+      <div class="row">
+        <div class="mb">
           <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <% if current_user.artist || nil %>
             <%=link_to "Update artist", edit_artist_path %>
@@ -26,11 +16,18 @@
             <%=link_to "Create artist", new_artist_path %>
             <% end %>
           </div>
-        <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-1 col-lg-2">
+
+
+
+
+
+
+
+        <div class="mb">
           <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <%=link_to "Create release", new_release_path %>
         </div>
-        <div class="col-xs-offset-4 col-xs-8 col-sm-offset-1 col-sm-2 col-lg-offset-1 col-lg-2">
+        <div class="mb">
           <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
             <%=link_to "create performance", new_performance_path %>
         </div>

@@ -1,36 +1,24 @@
 <div class="negative top small">
   MODERN BOX RELEASES
 </div>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <div class="banner-content">
   <!--nav network-->
-  <%= render 'shared/networknav' %>
-  <div class="highlight" id="slide_1"></div>
-  <div class="highlight" id="slide_2"></div>
-</div>
-<div class="row">
-  <% @releases.each do |release|%>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <div class="card">
-        <div class="[ info-card ]">
+    <%= render 'shared/networknav' %>
+    <div class="highlight" id="slide_1"></div>
+    <div class="highlight" id="slide_2">Check The Boxes!!!</div>
+    <% @releases.each do |release|%>
+      <div class="view view-fourth col-xs-12 col-lg-6">
+        <div class="mask">
+          <h2>-<%= release.title.capitalize %>-</h2>
+          <h2><%= release.record.name %></h2>
+          <p><%= release.artist.name %> plays <%= release.genre.name %></p>
           <%= link_to release do %>
-            <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+            <p class="info">Read More</p>
           <% end %>
-          <div class="info">
-            <h1>-<%= release.title.capitalize %>-</h1>
-            <h1>-<%= release.artist.name %>-</h1>
-            <h1><%= release.record.name %></h1>
-            <h1>Year of creation: <%= release.year_of_creation %></h1>
-            <h1><%= release.genre.name %></h1>
-            <div class="icons">
-              <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs"><i class="fa fa-facebook-square icons" aria-hidden="true"></i>
-              <a href="https://www.instagram.com/modernboxrecords/"><i class="fa fa-instagram icons" aria-hidden="true"></i>
-              <a href="https://soundcloud.com/modern-box"><i class="fa fa-soundcloud icons" aria-hidden="true"></i>
-              <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber"><i class="fa fa-youtube-square icons" aria-hidden="true"></i>
-              <a href="https://twitter.com/Modern_box_rec"><i class="fa fa-twitter-square icons" aria-hidden="true"></i>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
