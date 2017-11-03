@@ -3,9 +3,9 @@ class ReleasesController < ApplicationController
   before_action :set_release, only: [:show, :edit, :update]
   def index
     if params[:search].present?
-      @releases = Release.perform_search(params[:search])
+      @releases = Release.perform_search(params[:search]).paginate(page: params[:page], per_page: 8)
     else
-      @releases = Release.all
+      @releases = Release.all.paginate(page: params[:page], per_page: 8)
     end
   end
 

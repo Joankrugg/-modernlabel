@@ -35,6 +35,10 @@
   </div>
 </div>
 
+<div class="paginate">
+  <%= will_paginate @artists %>
+</div>
+
 <div class="container calendar">
   <%= month_calendar events: @performances do |date, performances| %>
     <%= date.day %>

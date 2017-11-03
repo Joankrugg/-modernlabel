@@ -3,11 +3,10 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
   def index
     if params[:search].present?
-      @artists = Artist.perform_search(params[:search])
+      @artists = Artist.perform_search(params[:search]).paginate(page: params[:page], per_page: 8)
     else
-      @artists = Artist.all
+      @artists = Artist.all.paginate(:page => params[:page], :per_page => 8)
     end
-    @performances = Performance.all.sample(4)
   end
 
   def signed
