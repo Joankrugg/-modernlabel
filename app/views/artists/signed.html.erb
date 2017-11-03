@@ -3,20 +3,23 @@
 </div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <div class="banner-content">
   <!--nav network-->
-  <%= render 'shared/networknav' %>
-  <div class="highlight" id="slide_1">Check Modern Box Records<br>Just have a look below ;)
+    <%= render 'shared/networknav' %>
+    <div class="highlight" id="slide_1"></div>
+    <div class="highlight" id="slide_2">Check The Boxes!!!</div>
+    <% @artists.each do |artist|%>
+      <div class="view view-fourth col-xs-12 col-lg-6">
+        <div class="mask">
+        <h2><%= artist.name  %></h2>
+        <p><%= artist.number_of_musicians %> people playing <%= artist.genre.name %></p>
+          <%= link_to artist do %>
+            <p class="info">Read More</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="highlight" id="slide_2">Click on their pictures !!!</div>
-  <div class="highlight" id="slide_3">Know more about them.</div>
 </div>
 
-<div class="row">
-  <% @artists.each do |a|%>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <div class="card">
-        <%= render "artist", artist: a %><br>
-      </div>
-    </div>
-  <% end %>
-</div>
+
