@@ -82,6 +82,11 @@
     </div>
   </div>
 </div>
-
+<div class="option">
+  <% if @artist.user == current_user  %>
+    <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
+    <%= link_to t(".destroy", default: "delete artist"), method: :destroy, class: "call-to-action btn-medium btn" %>
+  <% end %>
+</div>
 
 

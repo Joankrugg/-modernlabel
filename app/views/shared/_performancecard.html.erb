@@ -26,3 +26,9 @@
     </div>
   </div>
 </div>
+<div class="option">
+  <% if @performance.user == current_user  %>
+    <%= link_to t(".update", default: "Update performance"), edit_performance_path, class: "call-to-action btn-medium btn" %>
+    <%= link_to t(".destroy", default: "delete performance"), method: :destroy, class: "call-to-action btn-medium btn" %>
+  <% end %>
+</div>

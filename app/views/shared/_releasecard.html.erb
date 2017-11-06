@@ -41,5 +41,6 @@
 <div class="option">
   <% if @release.user == current_user  %>
     <%= link_to t(".update", default: "Update release"), edit_release_path, class: "call-to-action btn-medium btn" %>
+    <%= link_to t(".destroy", default: "delete release"), method: :destroy, class: "call-to-action btn-medium btn" %>
   <% end %>
 </div>
