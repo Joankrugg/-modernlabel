@@ -6,9 +6,9 @@
         <div class="[ info-card-details ] animate">
           <div class="[ info-card-header ]">
             <h1><%= @artist.name.capitalize %></h1>
-            <h3>Ville :<%= @artist.city %></h3>
-            <h3>Nombre de musiciens: <%= @artist.number_of_musicians %> </h3>
-            <h3>Année de création: <%= @artist.year_of_creation %> </h3>
+            <h3><%= t(".city")%>: <%= @artist.city %></h3>
+            <h3><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %> </h3>
+            <h3><%= t(".year_of_creation") %> <%= @artist.year_of_creation %> </h3>
             <h3><%=@artist.contact %></h3>
           </div>
           <%= cl_image_tag @artist.photo, height: 200, crop: :fit , class: "style_image"%>

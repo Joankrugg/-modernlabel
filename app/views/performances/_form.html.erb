@@ -10,13 +10,13 @@
       </div>
     <% end %>
     <%= f.association :artist, required: false %>
-    <%= f.input :name %>
-    <%= f.input :city %>
-    <%= f.input :place_address %>
-    <%= f.input :price %>
-    <%= f.input :facebook_event %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+    <%= f.input :name, required: false, placeholder: 'we need one' %>
+    <%= f.input :city, required: false, placeholder: 'we need one' %>
+    <%= f.input :place_address, required: false, placeholder: 'we need one' %>
+    <%= f.input :price, required: false, placeholder: 'we need one'  %>
+    <%= f.input :facebook_event, required: false, placeholder: 'we need one' %>
+    <%= f.input :start_time, required: false, placeholder: 'we need one' %>
+    <%= f.input :end_time, required: false, placeholder: 'we need one' %>
 
     <%= f.submit %>
   <% end %>

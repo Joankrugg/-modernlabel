@@ -6,8 +6,8 @@
         <div class="[ info-card-details ] animate">
           <div class="[ info-card-header ]">
             <h1><%= @performance.artist.name.capitalize %></h1>
-            <h3>Ville :<%= @performance.city  %></h3>
-            <h3><%=@performance.place_address %> </h3>
+            <h3><%= t(".city") %> :<%= @performance.city  %></h3>
+            <h3><%= @performance.place_address %> </h3>
             <h3><%= @performance.price %> </h3>
             <h3><%= @performance.start_time.strftime('%d %m %y')%></h3>
           </div>
@@ -27,7 +27,7 @@
   </div>
 </div>
 <div class="option">
-  <% if @performance.user == current_user  %>
+  <% if @performance.artist.user == current_user  %>
     <%= link_to t(".update", default: "Update performance"), edit_performance_path, class: "call-to-action btn-medium btn" %>
     <%= link_to t(".destroy", default: "delete performance"), method: :destroy, class: "call-to-action btn-medium btn" %>
   <% end %>

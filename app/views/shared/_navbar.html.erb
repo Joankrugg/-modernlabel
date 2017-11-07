@@ -6,10 +6,10 @@
     <div class="content">
   <!-- Right Navigation -->
       <div class="web-browsing hidden-xs hidden-sm hidden-md">
-        <%= link_to "ARTISTS", signed_artists_path, {class: "navbar-item navbar-wagon-link negative"}%>
-        <%= link_to "RELEASES", signed_releases_path, class: "navbar-item navbar-wagon-link negative" %>
-        <%= link_to "NEWS", actus_path, class: "navbar-item navbar-wagon-link negative" %>
-        <%= link_to "SHOP", shops_path, class: "navbar-item navbar-wagon-link negative" %>
+        <%= link_to t(".nav_actu"), actus_path, class: "navbar-item navbar-wagon-link negative" %>
+        <%= link_to t(".nav_artist"), signed_artists_path, {class: "navbar-item navbar-wagon-link negative"}%>
+        <%= link_to t(".nav_release"), signed_releases_path, class: "navbar-item navbar-wagon-link negative" %>
+        <%= link_to t(".nav_shop"), shops_path, class: "navbar-item navbar-wagon-link negative" %>
       </div>
     </div>
     <div class="networks">
@@ -39,43 +39,38 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
           <%= link_to signed_artists_path do %>
-            <i class="fa fa-beer"></i>" <%= t(".index", default: "Label") %>
+            <i class="fa fa-diamond"></i> <%= t(".index_artist", default: "ARTISTS") %>
           <% end %>
         </li>
         <li>
-          <%= link_to releases_path do %>
-            <i class="fa fa-handshake-o"></i> <%= t(".index", default: "Releases") %>
+          <%= link_to signed_releases_path do %>
+            <i class="fa fa-dot-circle-o"></i> <%= t(".index_release", default: "RELEASES") %>
           <% end %>
         </li>
         <li>
           <%= link_to actus_path do %>
-            <i class="fa fa-newspaper-o"></i>  <%= t(".index", default: "News") %>
+            <i class="fa fa-newspaper-o"></i> <%= t(".index_news", default: "NEWS") %>
           <% end %>
         </li>
         <li>
           <%= link_to shops_path do %>
-            <i class="fa fa-shopping-bag"></i>  <%= t(".index", default: "Shop") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to artists_path do %>
-            <i class="fa fa-music"></i>" <%= t(".index", default: "People") %>
+            <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "SHOP") %>
           <% end %>
         </li>
     <% if user_signed_in? %>
         <li>
             <%= link_to current_user do %>
-              <i class="fa fa-user-circle"></i> <%= t(".index", default: "home") %>
+              <i class="fa fa-user-circle"></i> <%= t(".index_action", default: "ACTIONS") %>
             <% end %>
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".index", default: "Quit") %>
+            <i class="fa fa-sign-out"></i> <%= t(".index_out", default: "QUIT") %>
           <% end %>
         </li>
         <li>
           <%= link_to rails_admin_path do %>
-            <i class="fa fa-unlock-alt" ></i>" <%= t(".index", default: "Admin") %>
+            <i class="fa fa-unlock-alt" ></i> <%= t(".index_admin", default: "ADMIN") %>
           <% end %>
         </li>
 

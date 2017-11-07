@@ -7,7 +7,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.6'
+gem 'rails-i18n', '~> 5.0.0'
 gem 'redis'
+gem 'devise-i18n', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -21,6 +23,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'geocoder'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
+gem 'rails_admin-i18n'
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'omniauth-facebook'

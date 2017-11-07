@@ -10,8 +10,9 @@
           <%= cl_image_tag @release.photo, height: 500, crop: :fit %>
           <div class="[ info-card-details ] animate">
             <div class="[ info-card-header ]">
+              <h3><%= @release.artist.name %></h3>
               <h3><%= @release.record.name %></h3>
-              <h3>Out since the <%= @release.year_of_creation %></h3>
+              <h3><%= t(".out_from") %> <%= @release.year_of_creation %></h3>
               <h3><%= @release.price %>Euros</h3>
             </div>
             <%= cl_image_tag @release.photo, height: 200, crop: :fit , class: "style_image"%>

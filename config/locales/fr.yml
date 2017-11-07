@@ -1,0 +1,161 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+fr:
+  pages:
+    home:
+      sign_in: "Entrez!"
+  shared:
+    navbar:
+      index_artist: "ARTISTES"
+      index_release: "RECORDS"
+      index_news: "NEWS"
+      index_shop: "SHOP"
+      index_action: "ACTIONS"
+      index_out: "QUITTER"
+      index_admin: "ADMIN"
+      nav_artist: "ARTISTS"
+      nav_release: "RECORDS"
+      nav_actu: "NEWS"
+      nav_shop: "SHOP"
+    artistcard:
+      city: "Ville"
+      number_of_musicians: "Nombre de musiciens"
+      year_of_creation: "Année de création"
+    releasecard:
+      city: "Ville"
+      number_of_musicians: "Nombre de musiciens"
+      year_of_creation: "Année de création"
+      out_from: "Sortie le"
+    performancecard:
+      city: "Ville"
+  artists:
+    artist:
+      city: "Ville"
+      number_of_musicians: "Nombre de musiciens"
+      creation: "Année de création"
+
+  releases:
+    index:
+      record_format: "format"
+      price: "prix"
+
+
+  activerecord:
+    models:
+      actu: "News"
+    attributes:
+      actu:
+        title: "Titre"
+        content: "Contenu"
+        edition: "édition"
+        link: "lien"
+
+    models:
+      artist: "Artiste"
+    attributes:
+      artist:
+        name: "Nom"
+        description: "Description"
+        year_of_creation: "Date de création"
+        city: "Ville"
+        number_of_musicians: "Nombre de musiciens"
+        facebook_link: "Page FB (lien)"
+        insta_link: "Page Insta (lien)"
+        youtube_channel: "Page Youtube (lien)"
+        soundcloud_link: "Page Soundclound (lien)"
+        twitter_link: "Page Twitter (lien)"
+        bandcamp_link: "Page Bandcamp (lien)"
+
+    models:
+      performance: "Concert"
+    attributes:
+      performance:
+        start_time: "Début"
+        place_address: "Adresse du concert"
+        city: "Ville"
+        facebook_event: "Page FB de l'event (lien)"
+        end_time: "fin"
+
+    models:
+      release: "Record"
+    attributes:
+      release:
+        title: "Titre"
+        description: "Description"
+        price: "Prix"
+        year_of_creation: "Date de sortie"
+        youtube_link: "Page youtube (lien)"
+        bandcamp_link: "Page bandcamp (lien)"
+
+    models:
+      shop: "shop"
+    attributes:
+      shop:
+        product: "Nom"
+        description: "description"
+        price: "prix"
+
+    models:
+      record: "format"
+    attributes:
+      record:
+        name: "Nom"
+
+    models:
+      genre: "style"
+    attributes:
+      genre:
+        name: "Nom"
+
+  simple_form:
+    labels:
+      artist:
+        name: "Nom"
+        description: "Description"
+        year_of_creation: "Date de création"
+        city: "Ville"
+        number_of_musicians: "Nombre de musiciens"
+        facebook_link: "Page FB (lien)"
+        insta_link: "Page Insta (lien)"
+        youtube_channel: "Page Youtube (lien)"
+        soundcloud_link: "Page Soundclound (lien)"
+        twitter_link: "Page Twitter (lien)"
+        bandcamp_link: "Page Bandcamp (lien)"
+
+    labels:
+      performance:
+        start_time: "Début"
+        place_address: "Adresse du concert"
+        city: "Ville"
+        facebook_event: "Page FB de l'event (lien)"
+        end_time: "fin"
+        artist: "Artiste"
+
+    labels:
+      release:
+        title: "Titre"
+        description: "Description"
+        price: "Prix"
+        artist: "Artiste"
+        year_of_creation: "Date de sortie"
+        youtube_link: "Page youtube (lien)"
+        bandcamp_link: "Page bandcamp (lien)"
