@@ -52,11 +52,16 @@ fr:
       city: "Ville"
       number_of_musicians: "Nombre de musiciens"
       creation: "Année de création"
+    signed:
+      people_playing: "zicos qui font du"
+      read_more: "En Savoir Plus..."
 
   releases:
     index:
       record_format: "format"
       price: "prix"
+    signed:
+      plays: "se fait du"
 
 
   activerecord:

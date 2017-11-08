@@ -13,9 +13,9 @@
       <div class="view view-fourth col-xs-12 col-lg-6">
         <div class="mask">
         <h2><%= artist.name  %></h2>
-        <p><%= artist.number_of_musicians %> people playing <%= artist.genre.name %></p>
+        <p><%= artist.number_of_musicians %> <%= t(".people_playing") %> <%= artist.genre.name %></p>
           <%= link_to artist do %>
-            <p class="info">Read More</p>
+            <p class="info"> <%= t(".read_more") %></p>
           <% end %>
         </div>
       </div>

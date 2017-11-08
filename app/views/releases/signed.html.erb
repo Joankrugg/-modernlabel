@@ -13,7 +13,7 @@
         <div class="mask">
           <h2>-<%= release.title.capitalize %>-</h2>
           <h2><%= release.record.name %></h2>
-          <p><%= release.artist.name %> plays <%= release.genre.name %></p>
+          <p><%= release.artist.name %> <%= t(".plays") %> <%= release.genre.name %></p>
           <%= link_to release do %>
             <p class="info">Read More</p>
           <% end %>
