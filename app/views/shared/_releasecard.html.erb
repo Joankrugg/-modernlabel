@@ -3,7 +3,7 @@
     <%= @release.title.capitalize %>
   </div>
   <br>
-  <div class="container">
+  <div class="container in">
     <div class="row">
       <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
         <div class="[ info-card ]">
@@ -15,7 +15,7 @@
               <h3><%= t(".out_from") %> <%= @release.year_of_creation %></h3>
               <h3><%= @release.price %>Euros</h3>
             </div>
-            <%= cl_image_tag @release.photo, height: 200, crop: :fit , class: "style_image"%>
+            <%= cl_image_tag @release.photo, height: 200, crop: :fit , class: "style_image img-responsive"%>
             <div class="option">
               <% if @release.user == current_user  %>
                 <%= link_to t(".update", default: "Update release"), edit_release_path, class: "call-to-action btn-medium btn" %>

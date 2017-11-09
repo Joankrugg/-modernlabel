@@ -2,24 +2,37 @@
   USERS ACTIONS
 </div>
 
-<div class="container in">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <div class="banner-content">
     <div class="container actions">
       <div class="row">
         <div class="mb">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
+          <div class="action"></div><br>
             <% if current_user.artist || nil %>
-            <%=link_to "Update artist", edit_artist_path %>
+            <%=link_to edit_artist_path do %>
+              <%=image_tag "mb_logo_pink", class: "disc" %>
+              <h5 class="grey">Mettre à jour artiste</h5>
+            <% end %>
             <% else %>
-            <%=link_to "Create artist", new_artist_path %>
+            <%=link_to new_artist_path do %>
+              <%=image_tag "mb_logo_pink", class: "disc" %>
+              <h5 class="grey">Créer carte artiste</h5>
+            <% end %>
             <% end %>
           </div>
         <div class="mb">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-            <%=link_to "Create release", new_release_path %>
+          <div class="action"></div><br>
+          <%=link_to new_release_path do %>
+            <%=image_tag "mb_logo_pink", class: "disc" %>
+            <h5 class="grey">Créer un record</h5>
+          <% end %>
         </div>
         <div class="mb">
-          <div class="action"><%=image_tag "mb_logo_pink", class: "disc" %></div><br>
-            <%=link_to "create performance", new_performance_path %>
+          <div class="action"></div><br>
+            <%=link_to new_performance_path do %>
+            <%=image_tag "mb_logo_pink", class: "disc" %>
+            <h5 class="grey">Créer un concert</h5>
+          <% end %>
         </div>
       </div>
     </div>

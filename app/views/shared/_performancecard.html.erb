@@ -11,7 +11,7 @@
             <h3><%= @performance.price %> </h3>
             <h3><%= @performance.start_time.strftime('%d %m %y')%></h3>
           </div>
-          <%= cl_image_tag @performance.artist.photo, height: 200, crop: :fit , class: "style_image"%><br>
+          <%= cl_image_tag @performance.artist.photo, height: 200, crop: :fit , class: "style_image img-responsive"%><br>
           <div class="option">
             <% if @performance.artist.user == current_user  %>
               <%= link_to t(".update", default: "Update performance"), edit_performance_path, class: "call-to-action btn-medium btn" %>

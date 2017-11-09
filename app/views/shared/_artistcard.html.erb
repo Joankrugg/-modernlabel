@@ -11,7 +11,7 @@
             <h3><%= t(".year_of_creation") %> <%= @artist.year_of_creation %> </h3>
             <h3><%=@artist.contact %></h3>
           </div>
-          <%= cl_image_tag @artist.photo, height: 200, crop: :fit , class: "style_image"%>
+          <%= cl_image_tag @artist.photo, height: 200, crop: :fit , class: "style_image img-responsive"%>
           <div class="option">
             <% if @artist.user == current_user  %>
               <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
