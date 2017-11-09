@@ -2,7 +2,7 @@
 <div class="negative top">
   <div class="search search-fixed">
     <%= form_tag(artists_path, method: :get) do %>
-      <%= text_field_tag :search, nil, placeholder: "Search artists...", class: "form-control" %>
+      <%= text_field_tag :search, nil, placeholder: "Search artists", class: "form-control" %>
       <%= submit_tag 'Search', style: "display: none;" %>
     <% end %>
   </div>
@@ -23,7 +23,7 @@
         <% end %>
       </div>
     </div>
-    <div class="paginate">
+    <div class="apple_pagination apple_pagination-fixed">
       <%= will_paginate @artists %>
     </div>
   </div>

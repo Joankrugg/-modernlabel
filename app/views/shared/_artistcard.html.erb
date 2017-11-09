@@ -12,21 +12,23 @@
             <h3><%=@artist.contact %></h3>
           </div>
           <%= cl_image_tag @artist.photo, height: 200, crop: :fit , class: "style_image"%>
+          <div class="option">
+            <% if @artist.user == current_user  %>
+              <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
+              <%= link_to t(".destroy", default: "delete artist"), method: :destroy, class: "call-to-action btn-medium btn" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
     <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
       <% if @artist.facebook_link.present? %>
-        <div class="back" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
-          <div class="banner-content">
-            <div class="[ info-card ]">
-              <%= link_to @artist.facebook_link, target: :_blank do %>
-                <i class="fa fa-facebook-square [ social-icon facebook ] animate"></i>
-              <% end %>
-            </div>
+        <div class="[ info-card ]">
+          <%= link_to @artist.facebook_link, target: :_blank do %>
+            <i class="fa fa-facebook-square [ social-icon facebook ] animate"></i>
           <% end %>
         </div>
-      </div>
+      <% end %>
     </div>
     <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
       <% if @artist.insta_link.present? %>
@@ -86,11 +88,6 @@
     </div>
   </div>
 </div>
-<div class="option">
-  <% if @artist.user == current_user  %>
-    <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
-    <%= link_to t(".destroy", default: "delete artist"), method: :destroy, class: "call-to-action btn-medium btn" %>
-  <% end %>
-</div>
+
 
 

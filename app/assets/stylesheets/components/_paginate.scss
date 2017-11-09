@@ -1,3 +1,39 @@
-.paginate{
+.apple_pagination {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
   text-align: center;
+  cursor: default;
+  border-radius: 4px;
+}
+
+.apple_pagination .disabled {
+  color: #aaaaaa;
+}
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  line-height: 1;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
+}
+.apple_pagination a {
+  text-decoration: none;
+  color: black;
+}
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline;
+}
+
+.apple_pagination-fixed {
+  position: fixed;
+  left: 0px;
+  bottom: 42px;
+  z-index: 1;
+  width: 100vw;
 }

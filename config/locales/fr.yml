@@ -47,6 +47,7 @@ fr:
       out_from: "Sortie le"
     performancecard:
       city: "Ville"
+
   artists:
     artist:
       city: "Ville"
@@ -55,6 +56,11 @@ fr:
     signed:
       people_playing: "zicos qui font du"
       read_more: "En Savoir Plus..."
+
+  performances:
+    show:
+      update:
+        default: "mettre à jour"
 
   releases:
     index:
