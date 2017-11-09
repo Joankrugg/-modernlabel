@@ -1,31 +1,31 @@
 <!--barre de recherche-->
 <div class="negative top">
-  <div class="performance_search form-group">
+  <div class="search search-fixed">
     <%= form_tag(artists_path, method: :get) do %>
-      <%= text_field_tag :search, nil, placeholder: "Search artists ...(use a keyword, a city or the number of musicians)", class: "form-control" %>
+      <%= text_field_tag :search, nil, placeholder: "Search artists...", class: "form-control" %>
       <%= submit_tag 'Search', style: "display: none;" %>
     <% end %>
   </div>
 </div>
-
-<!--nav network-->
-<%= render 'shared/networknav' %>
-
-<!--section d'ensemble-->
-<div class="container">
-  <div class="row">
-    <% @artists.each do |a|%>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-        <div class="main">
-          <div class="card">
-            <%= render "artist", artist: a %><br>
+<div class="banner people" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <div class="banner-content">
+    <!--section d'ensemble-->
+    <div class="container items">
+      <div class="row">
+        <% @artists.each do |a|%>
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="main">
+              <div class="card">
+                <%= render "artist", artist: a %><br>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+    <div class="paginate">
+      <%= will_paginate @artists %>
+    </div>
   </div>
-</div>
-<div class="paginate">
-  <%= will_paginate @artists %>
 </div>
 

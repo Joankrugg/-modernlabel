@@ -1,42 +1,43 @@
 <!--barre de recherche-->
 <div class="negative top">
-  <div class="performance_search form-group">
+  <div class="search search-fixed">
   <%= form_tag(performances_path, method: :get) do %>
-    <%= text_field_tag :search, nil, placeholder: "Search concerts ...", class: "form-control" %>
+    <%= text_field_tag :search, nil, placeholder: "Search concerts...", class: "form-control" %>
     <%= submit_tag 'Search', style: "display: none;" %>
   <% end %>
   </div>
 </div>
-<!--nav network-->
-<%= render 'shared/networknav' %>
-
-<div class="container">
-  <div class="row">
-    <% @performances.each do |performance|%>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-        <div class="main">
-          <div class="card">
-            <div class="[ info-card ]">
-              <%= link_to performance do %>
-                <div class="info">
-                  <h1>-<%= performance.artist.name%>-</h1>
-                  <h1>-<%= performance.city.capitalize%>-</h1>
-                  <h1><%= performance.start_time.strftime('%d %m %y') %></h1>
-                  <h1><%= performance.place_address %></h1>
-                  <h1><%= performance.price %></h1>
-                  <h1><%= performance.facebook_event %></h1>
+<div class="banner people" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <div class="banner-content">
+    <div class="container items">
+      <div class="row">
+        <% @performances.each do |performance|%>
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="main">
+              <div class="card">
+                <div class="[ info-card ]">
+                  <%= link_to performance do %>
+                    <div class="info">
+                      <h1>-<%= performance.artist.name%>-</h1>
+                      <h1>-<%= performance.city.capitalize%>-</h1>
+                      <h1><%= performance.start_time.strftime('%d %m %y') %></h1>
+                      <h1><%= performance.place_address %></h1>
+                      <h1><%= performance.price %></h1>
+                      <h1><%= performance.facebook_event %></h1>
+                    </div>
+                  <% end %>
                 </div>
-              <% end %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
+    </div>
 
-<div class="paginate">
-  <%= will_paginate @performances %>
+    <div class="paginate">
+      <%= will_paginate @performances %>
+    </div>
+  </div>
 </div>
 
 <div class="container calendar">

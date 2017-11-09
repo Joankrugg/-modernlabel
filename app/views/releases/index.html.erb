@@ -1,45 +1,48 @@
 <div class="negative top">
-  <div class="release_search form-group">
+  <div class="search search-fixed">
   <%= form_tag(releases_path, method: :get) do %>
-    <%= text_field_tag :search, nil, placeholder: "Search releases ...", class: "form-control" %>
+    <%= text_field_tag :search, nil, placeholder: "Search releases...", class: "form-control" %>
     <%= submit_tag 'Search', style: "display: none;" %>
   <% end %>
   </div>
 </div>
-<%= render 'shared/networknav' %>
-<!--section d'ensemble-->
-<div class="container">
-  <div class="row">
-    <% @releases.each do |release|%>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-        <div class="main">
-          <div class="card">
-            <div class="[ info-card ]">
-              <%= link_to release do %>
-                <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
-              <% end %>
-              <div class="info" id="release">
-                <h1>-<%= release.title.capitalize %>-</h1>
-                <h1>(<%= release.artist.name %>)</h1>
-                <h1><%= release.genre.name %></h1>
-                <h1><%= t(".record_format") %>: <%= release.record.name %></h1>
-                <h1><%= t(".price") %>: <%= release.price %> Euros</h1>
-                <div class="icons">
-                  <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs" target = "_blank"><i class="fa fa-facebook-square icons" aria-hidden="true"></i>
-                  <a href="https://www.instagram.com/modernboxrecords/" target = "_blank"><i class="fa fa-instagram icons" aria-hidden="true"></i>
-                  <a href="https://soundcloud.com/modern-box" target = "_blank"><i class="fa fa-soundcloud icons" aria-hidden="true"></i>
-                  <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber" target = "_blank"><i class="fa fa-youtube-square icons" aria-hidden="true"></i>
-                  <a href="https://twitter.com/Modern_box_rec" target = "_blank"><i class="fa fa-twitter-square icons" aria-hidden="true"></i>
+<div class="banner people" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+  <div class="banner-content">
+    <!--section d'ensemble-->
+    <div class="container items">
+      <div class="row">
+        <% @releases.each do |release|%>
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="main">
+              <div class="card">
+                <div class="[ info-card ]">
+                  <%= link_to release do %>
+                    <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+                  <% end %>
+                  <div class="info" id="release">
+                    <h1>-<%= release.title.capitalize %>-</h1>
+                    <h1>(<%= release.artist.name %>)</h1>
+                    <h1><%= release.genre.name %></h1>
+                    <h1><%= t(".record_format") %>: <%= release.record.name %></h1>
+                    <h1><%= t(".price") %>: <%= release.price %> Euros</h1>
+                    <div class="icons">
+                      <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs" target = "_blank"><i class="fa fa-facebook-square icons" aria-hidden="true"></i>
+                      <a href="https://www.instagram.com/modernboxrecords/" target = "_blank"><i class="fa fa-instagram icons" aria-hidden="true"></i>
+                      <a href="https://soundcloud.com/modern-box" target = "_blank"><i class="fa fa-soundcloud icons" aria-hidden="true"></i>
+                      <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber" target = "_blank"><i class="fa fa-youtube-square icons" aria-hidden="true"></i>
+                      <a href="https://twitter.com/Modern_box_rec" target = "_blank"><i class="fa fa-twitter-square icons" aria-hidden="true"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+    <div class="paginate">
+      <%= will_paginate @releases %>
+    </div>
   </div>
-</div>
-<div class="paginate">
-  <%= will_paginate @releases %>
 </div>
 
