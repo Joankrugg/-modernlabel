@@ -10,12 +10,12 @@
           <div class="action"></div><br>
             <% if current_user.artist == nil %>
             <%=link_to edit_artist_path do %>
-              <%=image_tag "mb_logo_pink", class: "disc" %>
+              <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
               <h5 class="grey">Mettre à jour artiste</h5>
             <% end %>
             <% else %>
             <%=link_to new_artist_path do %>
-              <%=image_tag "mb_logo_pink", class: "disc" %>
+              <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
               <h5 class="grey">Créer carte artiste</h5>
             <% end %>
             <% end %>
@@ -23,14 +23,14 @@
         <div class="mb">
           <div class="action"></div><br>
           <%=link_to new_release_path do %>
-            <%=image_tag "mb_logo_pink", class: "disc" %>
+            <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
             <h5 class="grey">Créer un record</h5>
           <% end %>
         </div>
         <div class="mb">
           <div class="action"></div><br>
             <%=link_to new_performance_path do %>
-            <%=image_tag "mb_logo_pink", class: "disc" %>
+            <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
             <h5 class="grey">Créer un concert</h5>
           <% end %>
         </div>
