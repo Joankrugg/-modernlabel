@@ -59,9 +59,9 @@
         </li>
     <% if user_signed_in? %>
         <li>
-            <%= link_to current_user do %>
-              <i class="fa fa-user-circle"></i> <%= t(".index_action", default: "ACTIONS") %>
-            <% end %>
+          <%= link_to current_user do %>
+            <i class="fa fa-user-circle"></i> <%= t(".index_action", default: "ACTIONS") %>
+          <% end %>
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
