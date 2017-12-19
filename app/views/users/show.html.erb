@@ -1,5 +1,5 @@
 <div class="negative top small">
-  USERS ACTIONS
+  ACTIONS
 </div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
@@ -7,32 +7,36 @@
     <div class="container actions">
       <div class="row">
         <div class="mb">
-          <div class="action"></div><br>
+          <div class="action">
             <% if current_user.artist == nil %>
-            <%=link_to edit_artist_path do %>
-              <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-              <h5 class="grey">Mettre à jour artiste</h5>
-            <% end %>
-            <% else %>
-            <%=link_to new_artist_path do %>
-              <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-              <h5 class="grey">Créer carte artiste</h5>
-            <% end %>
+              <%=link_to new_artist_path do %>
+                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+                <h5 class="grey">Créer carte artiste</h5>
+              <% end %>
+              <% else %>
+
+              <%=link_to @user.artist do %>
+                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+                <h5 class="grey">modifier <%= @user.artist.name %></h5>
+              <% end %>
             <% end %>
           </div>
-        <div class="mb">
-          <div class="action"></div><br>
-          <%=link_to new_release_path do %>
-            <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-            <h5 class="grey">Créer un record</h5>
-          <% end %>
         </div>
         <div class="mb">
-          <div class="action"></div><br>
+          <div class="action">
+            <%=link_to new_release_path do %>
+              <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+              <h5 class="grey">Créer un record</h5>
+            <% end %>
+          </div>
+        </div>
+        <div class="mb">
+          <div class="action">
             <%=link_to new_performance_path do %>
-            <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-            <h5 class="grey">Créer un concert</h5>
-          <% end %>
+              <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+              <h5 class="grey">Créer un concert</h5>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
