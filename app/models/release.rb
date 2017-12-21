@@ -1,9 +1,8 @@
 class Release < ApplicationRecord
-  belongs_to :user, required: true
   validates :title, uniqueness: true, presence: true
   belongs_to :record, required: true
   belongs_to :genre, required: true
-  belongs_to :artist
+  belongs_to :artist, required: true
   mount_uploader :photo, PhotoUploader
   validates :description, presence: true
   validates :price, presence: true

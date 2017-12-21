@@ -15,9 +15,10 @@ class PerformancesController < ApplicationController
   end
 
   def create
-    @performance = Performance.new(performance_params)
+    @artist = current_user.artist
+    @performance = @artist.performances.new(performance_params)
     if @performance.save
-      redirect_to performance_path(@performance)
+      redirect_to performances_path
     else
       render :new
     end

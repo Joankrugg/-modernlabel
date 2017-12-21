@@ -1,6 +1,6 @@
 class ReleasesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :signed]
-  before_action :set_release, only: [:show, :edit, :update]
+  before_action :set_release, only: [:show, :edit, :update, :destroy]
   def index
     if params[:search].present?
       @releases = Release.perform_search(params[:search]).paginate(page: params[:page], per_page: 4)
@@ -19,7 +19,8 @@ class ReleasesController < ApplicationController
   end
 
   def create
-    @release = current_user.releases.new(release_params)
+    @artist = current_user.artist
+    @release = @artist.releases.new(release_params)
     if @release.save
       redirect_to release_path(@release)
     else
@@ -41,6 +42,11 @@ class ReleasesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @release.destroy
+    redirect_to releases_path
   end
 
   private

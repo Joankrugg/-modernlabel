@@ -17,9 +17,9 @@
             </div>
             <%= cl_image_tag @release.photo, height: 200, crop: :fit , class: "style_image img-responsive"%>
             <div class="option">
-              <% if @release.user == current_user  %>
+              <% if @release.artist == current_user.artist  %>
                 <%= link_to t(".update", default: "Update release"), edit_release_path, class: "call-to-action btn-medium btn" %>
-                <%= link_to t(".destroy", default: "delete release"), method: :destroy, class: "call-to-action btn-medium btn" %>
+                <%= link_to "Delete", release_path(@release), method: :delete, data: { confirm: "Are you sure?" } %>
               <% end %>
             </div>
           </div>

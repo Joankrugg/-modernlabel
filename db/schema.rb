@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101054214) do
+ActiveRecord::Schema.define(version: 20171221111901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 20171101054214) do
     t.integer  "price"
     t.string   "bandcamp_link"
     t.string   "youtube_link"
-    t.integer  "user_id"
     t.datetime "year_of_creation"
     t.integer  "genre_id"
     t.integer  "artist_id"
@@ -97,7 +96,6 @@ ActiveRecord::Schema.define(version: 20171101054214) do
     t.index ["artist_id"], name: "index_releases_on_artist_id", using: :btree
     t.index ["genre_id"], name: "index_releases_on_genre_id", using: :btree
     t.index ["record_id"], name: "index_releases_on_record_id", using: :btree
-    t.index ["user_id"], name: "index_releases_on_user_id", using: :btree
   end
 
   create_table "shops", force: :cascade do |t|
@@ -143,5 +141,4 @@ ActiveRecord::Schema.define(version: 20171101054214) do
   add_foreign_key "releases", "artists"
   add_foreign_key "releases", "genres"
   add_foreign_key "releases", "records"
-  add_foreign_key "releases", "users"
 end
