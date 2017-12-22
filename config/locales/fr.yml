@@ -22,7 +22,7 @@
 fr:
   pages:
     home:
-      sign_in: "Entrez!"
+      sign_in: "Inscription"
   shared:
     navbar:
       index_artist: "ARTISTES"
