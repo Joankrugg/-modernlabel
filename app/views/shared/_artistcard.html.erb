@@ -87,30 +87,32 @@
         <% end %>
       <% end %>
     </div>
-    <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
-      <div class="row">
-        <div class="[ col-xs-offset-4 col-sm-offset-5 col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4 ]">
-          <div class="mb">
-            <div class="action">
-              <%=link_to new_performance_path do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Créer un show</h5>
-              <% end %>
+    <% if @artist.user == current_user  %>
+      <div class="[ col-sm-12 col-md-offset- col-lg-6 ]">
+        <div class="row">
+          <div class="[ col-xs-offset-4 col-sm-offset-5 col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4 ]">
+            <div class="mb">
+              <div class="action">
+                <%=link_to new_performance_path do %>
+                  <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+                  <h5 class="grey">Créer un show</h5>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="[ col-xs-offset-4 col-sm-offset-5 col-sm-4 col-md-offset-2 col-lg-offset-1 col-lg-5 ]">
-          <div class="mb">
-            <div class="action">
-              <%=link_to new_release_path do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey" >Créer Record</h5>
-              <% end %>
+          <div class="[ col-xs-offset-4 col-sm-offset-5 col-sm-4 col-md-offset-2 col-lg-offset-1 col-lg-5 ]">
+            <div class="mb">
+              <div class="action">
+                <%=link_to new_release_path do %>
+                  <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+                  <h5 class="grey" >Créer Record</h5>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
