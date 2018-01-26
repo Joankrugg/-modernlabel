@@ -8,12 +8,6 @@
     <h1><%= release.record.name %></h1>
     <h1>Year of creation: <%= release.year_of_creation %></h1>
     <h1><%= release.genre.name %>%></h1>
-    <div class="icons">
-      <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs" target = "_blank"><i class="fa fa-facebook-square icons" aria-hidden="true"></i>
-      <a href="https://www.instagram.com/modernboxrecords/" target = "_blank"><i class="fa fa-instagram icons" aria-hidden="true"></i>
-      <a href="https://soundcloud.com/modern-box" target = "_blank"><i class="fa fa-soundcloud icons" aria-hidden="true"></i>
-      <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber" target = "_blank"><i class="fa fa-youtube-square icons" aria-hidden="true"></i>
-      <a href="https://twitter.com/Modern_box_rec" target = "_blank"><i class="fa fa-twitter-square icons" aria-hidden="true"></i>
-    </div>
+    <%= render 'shared/icons' %>
   </div>
 </div>

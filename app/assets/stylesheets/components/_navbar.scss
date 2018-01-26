@@ -2,13 +2,12 @@
 .navbar-wagon{
   transition: all 0.3s ease;
   display: flex;
-  height: 60px;
+  height: 100px;
   padding: 0px 0px;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #F4F4F4;
+  background: #FFFFFF;
 }
 
 /* Optional class to fix the navbar on top */
@@ -19,63 +18,28 @@
   z-index: 2;
   width: 100vw;
 }
-/* Logo */
-.logo img {
-  height: 60px;
-}
-/* center section */
-.web-browsing {
-  margin-right: 70px;
-  align-items: center;
-  justify-content: space-between;
-}
-/* Right section */
-.links {
-  margin-right: 30px;
-  align-items: center;
-}
 
-/* Basic navbar item */
 .navbar-item {
   cursor: pointer;
   padding: 0 30px;
 }
 
-.networks-item {
-  color: #333333;
-  cursor: pointer;
-  padding: 0 4px;
-  font-size: 36px;
-}
-
-
-/* Navbar link */
-.navbar-wagon-link {
-  color: #616668;
-  font-size: 20px;
-}
-.navbar-wagon-link:hover {
-  color: rgba(140, 12, 54, 0.8);
-  text-decoration: none;
-  transition: 1s;
-}
-
-/* Dropdown menu */
-.navbar-wagon-dropdown-menu {
-  margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+/* Left section */
+.dropdown-toggle {
+  padding-top: 10px;
+  font-size: 25px;
+  font-weight: lighter;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
-  font-weight: lighter !important;
-  color: #999999 !important;
+  font-weight: bold !important;
+  color: #FFFFFF !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
+  background: #ffffff !important;
   color: black !important;
 }
 .navbar-wagon-dropdown-menu:before {
@@ -83,14 +47,37 @@
   height: 10px;
   width: 10px;
   position: absolute;
-  right: 10px;
+  left: 10px;
   top: -6px;
-  background-color: white;
+  background-color: #FF001B;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+/* Dropdown menu */
+.navbar-wagon-dropdown-menu {
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+  background-color: #FF001B;
+}
+/* Logo */
+.logo img {
+  height: 100px;
+}
+.logo-name{
+  text-align: center;
+}
+/* Right section */
+
+.navbar-wagon-link {
+  color: #616668;
+  font-size: 34px;
+}
 
 #home{
   font-size: 34px;
+}
+.fa{
+  color: #616668;
 }
