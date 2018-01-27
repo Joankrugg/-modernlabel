@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
+    get 'pages/introduction'
     resources :users, only: [:show, :edit, :update] do
       collection do
         get 'action', to: "users#action"
