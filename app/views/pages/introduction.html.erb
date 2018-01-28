@@ -1,6 +1,6 @@
-<div class="wallpaper">
+<div class="introduction">
   <div class="container">
-    <h1 id="title">INTRODUCTION</h1>
+    <div class="page-title">INTRODUCTION</div>
     <div class="row">
       <div class="col-lg-12">
         <div class="col-lg-5 mep">
@@ -13,8 +13,8 @@
         </div>
         <div class="col-lg-offset-2 col-lg-5 mep">
           <h3>Un Network</h3>
-          <p>Chez Modern Box Records, nous proposons un plus ; développer le réseau des principaux acteurs de la scène rock.<br>
-          Inscrivez-vous en tant qu'artiste, association ou salle de spectacle et renseignez les liens vers vos pages ou sites <br>
+          <p>Nous proposons en parallèle de développer le réseau des acteurs de la scène rock.<br>
+          Inscrivez-vous en tant qu'artiste, asso ou salle de spectacle et renseignez les liens vers vos pages web <br>
           Bénéficiez tous d'une communauté Rock fiable, actualisée, active et grandissante.
           </p>
           <div class="col-lg-12">
@@ -24,10 +24,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12">
-        <div class="col-lg-offset-3 col-lg-6 mep">
+      <div class="col-lg-12 ">
+        <div class="col-lg-12 mep">
           <h3>Des Artistes</h3>
-          <p>Il s'agit que d'un projet naissant, mais une partie de la scène bordelaise<br>
+          <p>Il s'agit que d'un projet naissant, mais une partie de la scène bordelaise
           nous a déjà confiés de travailler sur leurs prochaines productions.<br>
           Toujours en recherche de nouvelles pépites, nous élargissons notre rayon d'activité en écumant les concerts de la région, à l'ancienne...
           </p>
@@ -41,9 +41,10 @@
             <%= link_to a do %>
               <%= cl_image_tag a.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
             <% end %>
-            <div class="info">
-              <p>-<%= a.name.upcase %>-</p>
-              <p>-<%= a.genre.name %>-</p>
+            <div class="info-intro">
+              <h1>-<%= a.name.upcase %>-</h1>
+              <h1>-<%= a.genre.name %>-</h1>
+              <h1>-<%= a.city %>-</h1>
               <%= render 'shared/icons' %>
             </div>
           </div>
@@ -52,7 +53,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <div class="col-lg-offset-3 col-lg-6 mep">
+        <div class="col-lg-12 mep">
           <h3>Des Releases</h3>
           <p>Là encore les projets sont naissants ; nous éditons en ce moment même notre 3ème <br>
           Nous sommes également sur un projet de compilation Modern Box Records.<br>
@@ -64,16 +65,17 @@
     <div class="row samples">
       <% @releases.each do |r|%>
         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-            <div class="info-card">
-              <%= link_to r do %>
-                <%= cl_image_tag r.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
-              <% end %>
-              <div class="[ info-card-header ]">
-                <p>-<%= r.artist.name.upcase %>-</p>
-                <p>-<%= r.genre.name %>-</p>
-                <%= render 'shared/icons' %>
-              </div>
+          <div class="info-card">
+            <%= link_to r do %>
+              <%= cl_image_tag r.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+            <% end %>
+            <div class="info-intro">
+              <h1>-<%= r.artist.name.upcase %>-</h1>
+              <h1>-<%= r.genre.name %>-</h1>
+              <h1>-<%= r.year_of_creation %>-</h1>
+              <%= render 'shared/icons' %>
             </div>
+          </div>
         </div>
       <% end %>
     </div>
