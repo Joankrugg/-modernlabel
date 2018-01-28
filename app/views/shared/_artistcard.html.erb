@@ -1,8 +1,8 @@
 <div class="container artistcard">
   <div class="row">
-    <div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
       <div class="info-card">
-        <%= cl_image_tag @artist.photo, height: 550, crop: :fit, class: "style_image img-responsive"%>
+        <%= cl_image_tag @artist.photo, height: 460, crop: :fit, class: "style_image img-responsive"%>
         <div class="[ info-card-details ] animate">
           <div class="[ info-card-header ]">
             <h1><%= @artist.name.capitalize %></h1>
@@ -23,42 +23,42 @@
     </div>
     <div class="container">
       <% if @artist.facebook_link.present? %>
-        <div class="col-sm-12 col-lg-offset-3 col-lg-6 social-card">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
           <%= link_to @artist.facebook_link, target: :_blank do %>
             <i class="fa fa-facebook-square social-logo"></i>
           <% end %>
         </div>
       <% end %>
       <% if @artist.insta_link.present? %>
-        <div class="col-sm-12 col-lg-offset-3 col-lg-6 social-card">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
           <%= link_to @artist.insta_link, target: :_blank do %>
             <i class="fa fa-instagram social-logo"></i>
           <% end %>
         </div>
       <% end %>
       <% if @artist.soundcloud_link.present? %>
-        <div class="col-sm-12 col-lg-offset-3 col-lg-6 social-card">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
           <%= link_to @artist.soundcloud_link, target: :_blank do %>
             <i class="fa fa-soundcloud social-logo"></i>
           <% end %>
         </div>
       <% end %>
       <% if @artist.twitter_link.present? %>
-        <div class="col-sm-12 col-lg-offset-3 col-lg-6 social-card">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
           <%= link_to @artist.twitter_link, target: :_blank do %>
             <i class="fa fa-twitter-square social-logo"></i>
           <% end %>
         </div>
       <% end %>
       <% if @artist.youtube_channel.present? %>
-        <div class="col-sm-12 col-lg-offset-3 col-lg-6 social-card">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
           <%= link_to @artist.youtube_channel, target: :_blank do %>
             <i class="fa fa-youtube-square social-logo"></i>
           <% end %>
         </div>
       <% end %>
       <% if @artist.bandcamp_link.present? %>
-        <div class="col-sm-12 col-lg-offset-3 col-lg-6 social-card">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
           <%= link_to @artist.bandcamp_link, target: :_blank do %>
             <i class="fa fa-bandcamp social-logo"></i>
           <% end %>
