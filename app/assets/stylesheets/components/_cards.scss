@@ -150,3 +150,20 @@
 .introduction{
   padding-top: 50px;
 }
+
+.social-card{
+  border: 1px solid rgb(215, 215, 215);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-logo{
+  font-size: 70px;
+  text-align: center;
+}
+.disco{
+  margin-top: 50px;
+}
