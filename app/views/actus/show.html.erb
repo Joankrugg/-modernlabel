@@ -4,14 +4,28 @@
 <% content_for(:description) do %>
   <%= @actu.content %>
 <% end %>
-
-<div class="card">
-  <div class="card-header">
-    <h2><%= @actu.title %></h2>
+<div class="container actu">
+  <div class="page-title">NEWS</div>
+  <div class="row">
+    <div class="col-lg-offset-1 col-lg-10">
+      <%= cl_image_tag @actu.photo, height: 500, width: 1100, crop: :fill , class: "img-responsive"%>
+    </div>
   </div>
-  <div class="card-description">
-    <p><%= @actu.content %></p>
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+      <div class="card-header">
+        <h3><%= @actu.title %></h3>
+        <h5><%= @actu.edition %></h5>
+      </div>
+      <div class="card-description">
+        <h5><%= @actu.description %></h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+      <p><%= @actu.content %></p>
+    </div>
   </div>
 </div>
-
 
