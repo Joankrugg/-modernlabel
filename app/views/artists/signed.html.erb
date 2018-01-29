@@ -3,20 +3,20 @@
 </div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
-  <div class="banner-content">
-    <div class="highlight" id="slide_1"></div>
-    <div class="highlight" id="slide_2">Check The Boxes</div>
+  <div class="container banner-content">
     <% @artists.each do |artist|%>
-      <div class="view col-xs-12 col-lg-6">
-        <div class="mask">
-        <h2><%= artist.name  %></h2>
-        <p><%= artist.number_of_musicians %> <%= t(".people_playing") %> <%= artist.genre.name %></p>
+      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <div class="id-card">
           <%= link_to artist do %>
-            <p class="info"> <%= t(".read_more") %></p>
+            <%= cl_image_tag artist.photo, height: 250, width: 250, crop: :fill, class: "id-pic img-responsive" %>
           <% end %>
+          <%= artist.name %>
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="apple_pagination apple_pagination-fixed">
+    <%= will_paginate @artists %>
   </div>
 </div>
 

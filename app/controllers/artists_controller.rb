@@ -10,7 +10,7 @@ class ArtistsController < ApplicationController
   end
 
   def signed
-    @artists = Artist.where(signed: true)
+    @artists = Artist.where(signed: true).paginate(:page => params[:page], :per_page => 4)
   end
 
   def new
