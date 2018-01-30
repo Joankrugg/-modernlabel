@@ -38,11 +38,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-6 col-sm-12">
+      <div class="col-lg-4 col-sm-12">
         <%= f.input :youtube_link, placeholder: "optional, but you'd better have one to give"%>
       </div>
-      <div class="col-lg-6 col-sm-12">
+      <div class="col-lg-4 col-sm-12">
         <%= f.input :bandcamp_link, placeholder: "optional, but you'd better have one to give" %>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+      <%= f.input :mp3, as: :attachinary %>
       </div>
     </div>
     <%= f.submit %>
