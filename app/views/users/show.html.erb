@@ -32,6 +32,18 @@
                 <h5 class="grey">Action sur <%= @user.artist.name %></h5>
               <% end %>
             <% end %>
+            <% if current_user.asso == nil %>
+              <%=link_to new_asso_path do %>
+                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+                <h5 class="grey">Créer carte asso</h5>
+              <% end %>
+              <% else %>
+
+              <%=link_to @user.asso do %>
+                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
+                <h5 class="grey">Action sur <%= @user.asso.name %></h5>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>

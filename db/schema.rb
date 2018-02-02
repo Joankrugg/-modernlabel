@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130213955) do
+ActiveRecord::Schema.define(version: 20180202095835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 20180130213955) do
     t.integer  "genre_id"
     t.index ["genre_id"], name: "index_artists_on_genre_id", using: :btree
     t.index ["user_id"], name: "index_artists_on_user_id", using: :btree
+  end
+
+  create_table "assos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "photo"
+    t.string   "facebook_page"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "genre_id"
+    t.index ["genre_id"], name: "index_assos_on_genre_id", using: :btree
+    t.index ["user_id"], name: "index_assos_on_user_id", using: :btree
   end
 
   create_table "attachinary_files", force: :cascade do |t|
@@ -153,6 +166,8 @@ ActiveRecord::Schema.define(version: 20180130213955) do
 
   add_foreign_key "artists", "genres"
   add_foreign_key "artists", "users"
+  add_foreign_key "assos", "genres"
+  add_foreign_key "assos", "users"
   add_foreign_key "performances", "artists"
   add_foreign_key "performances", "users"
   add_foreign_key "releases", "artists"
