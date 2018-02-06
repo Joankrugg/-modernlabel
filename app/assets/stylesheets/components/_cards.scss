@@ -159,6 +159,7 @@
   margin-bottom: 20px;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .social-logo{
@@ -177,4 +178,9 @@
 .releasecard{
   margin-top: 140px;
   margin-bottom: 70px;
+}
+
+.social-card-content{
+  text-align: center;
+  color: #FFFFFF;
 }

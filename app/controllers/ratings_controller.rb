@@ -7,7 +7,12 @@ class RatingsController < ApplicationController
   def create
     @rating = Rating.new(rating_params)
     @rating.artist = Artist.find(params[:artist_id])
-    @rating.save
+    if
+      @rating.save
+      redirect_to artists_path
+    else
+      render :new
+    end
   end
 
   private

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
       <div class="info-card">
-        <%= cl_image_tag @artist.photo, height: 460, width: 560, crop: :fill, class: "style_image img-responsive"%>
+        <%= cl_image_tag @artist.photo, height: 560, width: 560, crop: :fill, class: "style_image img-responsive"%>
         <div class="[ info-card-details ] animate">
           <div class="[ info-card-header ]">
             <h1><%= @artist.name.capitalize %></h1>
@@ -16,6 +16,18 @@
               <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
               <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
             <% end %>
+          </div>
+          <div class="stars">
+            <%= @artist.average_stars %>
+          </div>
+          <div class="crowd">
+            <%= @artist.average_crowd %>
+          </div>
+          <div class="beer">
+            <%= @artist.average_beer %>
+          </div>
+          <div class="crown">
+            <%= @artist.average_crown %>
           </div>
         </div>
       </div>
@@ -100,8 +112,14 @@
           </div>
         </div>
       </div>
-      <% else %>
-      <%= link_to 'add ratings to this band', new_artist_rating_path(@artist) %>
+    <% else %>
+      <div class="container">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
+          <div class="social-card-content">
+            <%= link_to 'add ratings to this band', new_artist_rating_path(@artist) %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
