@@ -100,6 +100,8 @@
           </div>
         </div>
       </div>
+      <% else %>
+      <%= link_to 'add ratings to this band', new_artist_rating_path(@artist) %>
     <% end %>
   </div>
 </div>

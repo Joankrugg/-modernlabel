@@ -1,0 +1,19 @@
+<%= simple_form_for [@artist, @rating], defaults: { label_html: { class: 'labels' } } do |f| %>
+  <div class="container group in">
+    <div class="row">
+      <div class="col-lg-3 col-sm-12">
+        <%= f.input :beer, required: false, collection: 1..5  %>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <%= f.input :crowd, required: false, collection: 1..5 %>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <%= f.input :crown, required: false, collection: 1..5 %>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <%= f.input :star, required: false, collection: 1..5 %>
+      </div>
+    </div>
+    <%= f.submit %>
+  </div>
+<% end %>

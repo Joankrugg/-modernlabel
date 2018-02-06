@@ -12,10 +12,11 @@ Rails.application.routes.draw do
       end
     end
     resources :artists do
-      collection do
-        get 'signed', to: "artists#signed"
+      resources :ratings, only: [ :new, :create ]
+        collection do
+          get 'signed', to: "artists#signed"
+        end
       end
-    end
     resources :releases do
       collection do
         get 'signed', to: "releases#signed"

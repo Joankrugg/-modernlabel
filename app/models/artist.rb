@@ -3,6 +3,7 @@ class Artist < ApplicationRecord
   belongs_to :genre
   has_many :performances, dependent: :destroy
   has_many :releases, dependent: :destroy
+  has_many :ratings, dependent: :destroy
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
   validates :city, presence: true
