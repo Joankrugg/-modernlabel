@@ -14,7 +14,7 @@ class Artist < ApplicationRecord
   validates :insta_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?instagram.com\/?/ }, allow_blank: true
   validates :twitter_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?twitter.com\/?/ }, allow_blank: true
   validates :soundcloud_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?soundcloud.com\/?/ }, allow_blank: true
-
+  has_attachment :mp3
   mount_uploader :photo, PhotoUploader
   geocoded_by :city
   after_validation :geocode, if: :city_changed?

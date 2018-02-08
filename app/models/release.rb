@@ -9,7 +9,6 @@ class Release < ApplicationRecord
   validates :year_of_creation, presence: true
   validates :youtube_link, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// }, allow_blank: true
   validates :bandcamp_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?bandcamp.com\/?/ }, allow_blank: true
-  has_attachment :mp3
 
   include PgSearch
   scope :sorted, ->{ order(title: :asc) }

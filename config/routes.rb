@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  mount Attachinary::Engine, at: "attachinary"
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  mount Attachinary::Engine, at: 'attachinary'
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
     get 'pages/introduction'
