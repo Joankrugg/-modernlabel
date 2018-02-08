@@ -1,43 +1,48 @@
-  <div class="container releasecard">
-    <div class="row">
-      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-        <div class="info-card">
-          <%= cl_image_tag @release.photo, height: 460, width: 560, crop: :fill, class: "style_image img-responsive"%>
-          <div class="[ info-card-details ] animate">
-            <div class="[ info-card-header ]">
-              <h3><%= @release.artist.name %></h3>
-              <h3><%= @release.record.name %></h3>
-              <h3><%= t(".out_from") %> <%= @release.year_of_creation %></h3>
-              <h3><%= @release.price %>Euros</h3>
-            </div>
-            <%= cl_image_tag @release.photo, height: 80, width: 160, crop: :fill , class: "style_image img-responsive"%>
-            <br>
-            <div class="option">
-              <% if @release.artist == current_user.artist  %>
-                <%= link_to t(".update", default: "Update release"), edit_release_path, class: "call-to-action btn-medium btn" %>
-                <%= link_to t(".Delete", default: "delete artist"), release_path(@release), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-              <% end %>
-            </div>
+<div class="container releasecard">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+      <div class="info-card">
+        <%= cl_image_tag @release.photo, height: 540, width: 560, crop: :fill, class: "style_image img-responsive"%>
+        <div class="[ info-card-details ] animate">
+          <div class="[ info-card-header ]">
+            <h3><%= @release.artist.name %></h3>
+            <h3><%= @release.record.name %></h3>
+            <h3><%= t(".out_from") %> <%= @release.year_of_creation %></h3>
+            <h3><%= @release.price %>Euros</h3>
+          </div>
+          <%= cl_image_tag @release.photo, height: 80, width: 160, crop: :fill , class: "style_image img-responsive"%>
+          <br>
+          <div class="option">
+            <% if @release.artist == current_user.artist  %>
+              <%= link_to t(".update", default: "Update this"), edit_release_path, class: "call-to-action btn-medium btn" %>
+              <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <% if @release.youtube_link.present? %>
-        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
-          <%= link_to @release.youtube_link do %>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card-content">
+      <div class="row">
+        <% if @release.youtube_link.present? %>
+          <h3 style="color: black"> PRESS LOGO TO LISTEN </h3>
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+          <%= link_to @release.youtube_link, target: :_blank do %>
             <i class="fa fa-youtube-square social-logo"></i>
           <% end %>
-        </div>
-      <% end %>
-      <% if @release.bandcamp_link.present? %>
-        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card">
-          <%= link_to @release.bandcamp_link do %>
-            <i class="fa fa-bandcamp social-logo"></i>
-          <% end %>
-        </div>
-      <% end %>
+        <% end %>
+        <% if @release.bandcamp_link? %>
+          <h3 style="color: black"> PRESS LOGO TO LISTEN </h3>
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+            <%= link_to @release.bandcamp_link do %>
+              <i class="fa fa-bandcamp social-logo"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
 
