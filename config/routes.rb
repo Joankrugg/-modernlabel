@@ -18,10 +18,11 @@ Rails.application.routes.draw do
         end
       end
     resources :releases do
-      collection do
-        get 'signed', to: "releases#signed"
+      resources :opinions, only: [ :new, :create ]
+        collection do
+          get 'signed', to: "releases#signed"
+        end
       end
-    end
     resources :performances
     resources :assos
     resources :shops

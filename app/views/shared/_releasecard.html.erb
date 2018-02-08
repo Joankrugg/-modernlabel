@@ -18,6 +18,15 @@
               <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
             <% end %>
           </div>
+          <div class="ratings">
+            <%= @release.average_hearts %>
+          </div>
+          <div class="ratings">
+            <%= @release.average_mics %>
+          </div>
+          <div class="ratings">
+            <%= @release.average_notes %>
+          </div>
         </div>
       </div>
     </div>
@@ -42,6 +51,15 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <% if @release.artist == current_user.artist  %>
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+        <div class="social-card-content">
+          <%= link_to 'add ratings to this release', new_release_opinion_path(@release) %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
