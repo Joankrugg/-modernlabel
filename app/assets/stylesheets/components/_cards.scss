@@ -116,8 +116,24 @@
       padding-top: 6px;
   }
 }
+.info:hover{
+  height: 120px;
+  background: linear-gradient(to right, #D1D1D1, #FFFFFF);
+  text-align: center;
+    h1 {
+      color: #262626;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 0 !important;
+      padding-top: 6px;
+  }
+}
 .icons{
   color: #606668;
+}
+
+.icons:hover{
+  color: rgb(0, 167, 255);
 }
 
 #perf{
