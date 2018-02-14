@@ -44,18 +44,6 @@
               <% end %>
             <% end %>
 
-            <% if current_user.place == nil %>
-              <%=link_to new_place_path do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Créer carte place</h5>
-              <% end %>
-              <% else %>
-
-              <%=link_to @user.place do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Action sur <%= @user.place.name %></h5>
-              <% end %>
-            <% end %>
           </div>
         </div>
       </div>
