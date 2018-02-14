@@ -1,0 +1,23 @@
+<div class="container model-card">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+      <div class="info-card">
+        <%= cl_image_tag @place.photo, height: 460, width: 560, crop: :fill, class: "style_image img-responsive"%>
+        <div class="[ info-card-details ] animate">
+          <div class="[ info-card-header ]">
+            <h1><%= @place.name.capitalize %></h1>
+            <h3><%= t(".city")%>: <%= @place.city %></h3>
+          </div>
+          <%= cl_image_tag @place.photo, height: 80, width: 160, crop: :fill , class: "style_image img-responsive"%>
+          <br>
+          <div class="option">
+            <% if @place.user == current_user  %>
+              <%= link_to t(".update", default: "Update place"), edit_place_path, class: "call-to-action btn-medium btn" %>
+              <%= link_to t(".Delete", default: "delete place"), place_path(@place), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

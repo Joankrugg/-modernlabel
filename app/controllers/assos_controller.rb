@@ -6,7 +6,7 @@ class AssosController < ApplicationController
     if params[:search].present?
       @assos = Asso.perform_search(params[:search]).paginate(page: params[:page], per_page: 4)
     else
-      @assos = Asso.all
+      @assos = Asso.all.paginate(:page => params[:page], :per_page => 4)
     end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208175653) do
+ActiveRecord::Schema.define(version: 20180214141631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,19 @@ ActiveRecord::Schema.define(version: 20180208175653) do
     t.index ["user_id"], name: "index_performances_on_user_id", using: :btree
   end
 
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "photo"
+    t.string   "facebook_page"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "genre_id"
+    t.index ["genre_id"], name: "index_places_on_genre_id", using: :btree
+    t.index ["user_id"], name: "index_places_on_user_id", using: :btree
+  end
+
   create_table "ratings", force: :cascade do |t|
     t.integer  "beer"
     t.integer  "crowd"
@@ -192,6 +205,8 @@ ActiveRecord::Schema.define(version: 20180208175653) do
   add_foreign_key "opinions", "releases"
   add_foreign_key "performances", "artists"
   add_foreign_key "performances", "users"
+  add_foreign_key "places", "genres"
+  add_foreign_key "places", "users"
   add_foreign_key "ratings", "artists"
   add_foreign_key "releases", "artists"
   add_foreign_key "releases", "genres"

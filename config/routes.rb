@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       end
     resources :performances
     resources :assos
+    resources :places
     resources :shops
     resources :actus
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

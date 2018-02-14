@@ -1,0 +1,10 @@
+<div class="info-card">
+  <%= link_to place do %>
+    <%= cl_image_tag place.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+  <% end %>
+  <div class="info">
+    <h1>-<%= place.name.capitalize %>-</h1>
+    <h1><%= t(".city") %>: <%= place.city %></h1>
+    <%= render 'shared/icons' %>
+  </div>
+</div>
