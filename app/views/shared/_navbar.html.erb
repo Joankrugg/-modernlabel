@@ -30,13 +30,13 @@
         </li>
         <% if user_signed_in? %>
           <li>
-            <%= link_to rails_admin_path do %>
-              <i class="fa fa-unlock-alt" ></i> <%= t(".index_admin", default: "ADMIN") %>
+            <%= link_to current_user do %>
+              <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i> <%= t(".index_out", default: "QUIT") %>
+            <%= link_to rails_admin_path do %>
+              <i class="fa fa-unlock-alt" ></i> <%= t(".index_admin", default: "ADMIN") %>
             <% end %>
           </li>
         <% end %>
@@ -45,17 +45,17 @@
   </div>
   <div class="logo">
     <%= link_to root_path do %>
-      <%= image_tag "logo_5.png" %>
+      <%= image_tag "logo_6.png" %>
     <% end %>
   </div>
   <div class="navbar-item navbar-wagon-link">
     <% unless user_signed_in? %>
-      <%= link_to new_user_session_path do %>
-        <i class="fa fa-user-circle"></i>
+      <%= link_to new_user_registration_path do %>
+        <i class="fa fa-play"></i>
       <% end %>
     <% else %>
-      <%= link_to current_user do %>
-        <i class="fa fa-user-circle"></i>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-pause"></i>
       <% end %>
     <% end %>
   </div>

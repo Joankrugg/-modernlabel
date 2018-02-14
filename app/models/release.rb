@@ -48,7 +48,7 @@ class Release < ApplicationRecord
   def average_mics
     mic_number = opinions.map{ |opinion| opinion.mic }.select{ |mic|!mic.nil? }
     opinion_number = mic_number.size > 0 ? mic_number.sum.fdiv(mic_number.size).round : 0
-    ('<i class="fa fa-microphone" aria-hidden="true"></i>' * opinion_number + '<i class="fa fa-microphone-o" aria-hidden="true"></i>' * (5 - opinion_number)).html_safe
+    ('<i class="fa fa-microphone" aria-hidden="true"></i>' * opinion_number + '<i class="fa fa-microphone-alt" aria-hidden="true"></i>' * (5 - opinion_number)).html_safe
   end
 
   def average_notes
