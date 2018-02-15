@@ -1,36 +1,39 @@
-<div class="container in">
+<div class="container model-card">
   <div class="row">
-    <div class="[col-md-offset-4 col-lg-6 ]">
-      <div class="[ info-card ]">
-        <%= cl_image_tag @performance.artist.photo, height: 500, crop: :fill, class: "style_image"%>
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <div class="info-card">
+        <%= cl_image_tag @performance.photo, height: 600, width: 760, crop: :fill, class: "style_image img-responsive"%>
         <div class="[ info-card-details ] animate">
           <div class="[ info-card-header ]">
-            <h1><%= @performance.artist.name.capitalize %></h1>
-            <h3><%= t(".city") %> :<%= @performance.city  %></h3>
-            <h3><%= @performance.place_address %> </h3>
-            <h3><%= @performance.price %> </h3>
-            <h3><%= @performance.start_time.strftime('%d %m %y')%></h3>
+            <h3><%= @performance.artist.name %></h3>
+            <h3><%= @performance.city %></h3>
+            <h3><%= @performance.start_time %></h3>
+            <h3><%= @performance.place_address %></h3>
+            <h3><%= @performance.price %>Euros</h3>
           </div>
-          <%= cl_image_tag @performance.artist.photo, height: 200, crop: :fit , class: "style_image img-responsive"%><br>
+          <%= cl_image_tag @performance.photo, height: 80, width: 160, crop: :fill , class: "style_image img-responsive"%>
+          <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card-content">
+              <div class="row">
+                <% if @performance.facebook_event.present? %>
+                  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                    <%= link_to @performance.facebook_event, target: :_blank do %>
+                      <i class="fa fa-facebook-square social-logo"></i>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
           <div class="option">
-            <% if @performance.artist.user == current_user  %>
-              <%= link_to t(".update", default: "Update performance"), edit_performance_path, class: "call-to-action btn-medium btn" %>
-              <%= link_to t(".destroy", default: "delete performance"), method: :destroy, class: "call-to-action btn-medium btn" %>
+            <% if @performance.artist == current_user.artist  %>
+              <%= link_to t(".update", default: "Update this"), edit_performance_path, class: "call-to-action btn-medium btn" %>
+              <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
             <% end %>
           </div>
         </div>
       </div>
     </div>
-    <div class="[col-md-offset-4 col-lg-6 ]">
-      <% if @performance.facebook_event.present? %>
-        <div class="[ info-card ]">
-          <%= link_to @performance.facebook_event, target: :_blank do %>
-            <i class="fa fa-facebook-square [ social-icon facebook ] animate"></i>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
   </div>
-
 </div>
 

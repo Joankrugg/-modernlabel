@@ -47,6 +47,6 @@ class PerformancesController < ApplicationController
   end
 
   def performance_params
-    params.require(:performance).permit(:start_time, :place_address, :city, :photo, :photo_cache, :artist_id, :facebook_event, :user_id, :name, :end_time)
+    params.require(:performance).permit(:start_time, :place_address, :city, :photo, :photo_cache, :artist_id, :facebook_event, :user_id, :name, :end_time, :price)
   end
 end
