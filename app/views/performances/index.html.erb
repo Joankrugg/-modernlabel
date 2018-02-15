@@ -1,4 +1,3 @@
-<!--barre de recherche-->
 <div class="negative top">
   <div class="search search-fixed">
   <%= form_tag(performances_path, method: :get) do %>
@@ -9,23 +8,25 @@
 </div>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--8nxi3HAK--/q_jpegmini/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
   <div class="banner-content">
+    <!--section d'ensemble-->
     <div class="container items">
       <div class="row">
         <% @performances.each do |performance|%>
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
             <div class="main">
               <div class="card">
-                <div class="[ info-card ]">
+                <div class="info-card">
                   <%= link_to performance do %>
-                    <div class="info">
-                      <h1>-<%= performance.artist.name%>-</h1>
-                      <h1>-<%= performance.city.capitalize%>-</h1>
-                      <h1><%= performance.start_time.strftime('%d %m %y') %></h1>
-                      <h1><%= performance.place_address %></h1>
-                      <h1><%= performance.price %></h1>
-                      <h1><%= performance.facebook_event %></h1>
-                    </div>
+                    <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
                   <% end %>
+                  <div class="info" id="release">
+                    <h1>-<%= performance.name.capitalize %>-</h1>
+                    <h1>-<%= performance.artist.name %>-</h1>
+                    <h1><%= performance.city %>%></h1>
+                    <h1><%= performance.start_time %></h1>
+                    <h1><%= performance.place_address %></h1>
+                    <%= render 'shared/icons' %>
+                  </div>
                 </div>
               </div>
             </div>
@@ -33,12 +34,13 @@
         <% end %>
       </div>
     </div>
-
     <div class="paginate">
       <%= will_paginate @performances %>
     </div>
   </div>
 </div>
+
+
 
 <div class="container calendar">
   <%= month_calendar events: @performances do |date, performances| %>

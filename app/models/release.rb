@@ -45,16 +45,4 @@ class Release < ApplicationRecord
     ('<i class="fa fa-heart" aria-hidden="true"></i>' * opinion_number + '<i class="fa fa-heart-o" aria-hidden="true"></i>' * (5 - opinion_number)).html_safe
   end
 
-  def average_mics
-    mic_number = opinions.map{ |opinion| opinion.mic }.select{ |mic|!mic.nil? }
-    opinion_number = mic_number.size > 0 ? mic_number.sum.fdiv(mic_number.size).round : 0
-    ('<i class="fa fa-microphone" aria-hidden="true"></i>' * opinion_number + '<i class="fa fa-microphone-alt" aria-hidden="true"></i>' * (5 - opinion_number)).html_safe
-  end
-
-  def average_notes
-    note_number = opinions.map{ |opinion| opinion.note }.select{ |note|!note.nil? }
-    opinion_number = note_number.size > 0 ? note_number.sum.fdiv(note_number.size).round : 0
-    ('<i class="fa fa-music" aria-hidden="true"></i>' * opinion_number + '<i class="fa fa-music-o" aria-hidden="true"></i>' * (5 - opinion_number)).html_safe
-  end
-
 end

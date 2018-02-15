@@ -2,16 +2,7 @@
   <div class="container group in">
     <div class="row">
       <div class="col-lg-3 col-sm-12">
-        <%= f.input :beer, required: false, collection: 1..5, as: :radio_buttons  %>
-      </div>
-      <div class="col-lg-3 col-sm-12">
-        <%= f.input :crowd, required: false, collection: 1..5, as: :radio_buttons %>
-      </div>
-      <div class="col-lg-3 col-sm-12">
-        <%= f.input :crown, required: false, collection: 1..5, as: :radio_buttons %>
-      </div>
-      <div class="col-lg-3 col-sm-12">
-        <%= f.input :star, required: false, collection: 1..5, as: :radio_buttons %>
+        <%= f.input :star, required: false, collection: 1..10, as: :radio_buttons %>
       </div>
     </div>
     <%= f.submit %>

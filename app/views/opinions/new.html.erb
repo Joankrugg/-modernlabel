@@ -2,13 +2,7 @@
   <div class="container group in">
     <div class="row">
       <div class="col-lg-4 col-sm-12">
-        <%= f.input :heart, required: false, collection: 1..5, as: :radio_buttons  %>
-      </div>
-      <div class="col-lg-4 col-sm-12">
-        <%= f.input :mic, required: false, collection: 1..5, as: :radio_buttons %>
-      </div>
-      <div class="col-lg-4 col-sm-12">
-        <%= f.input :note, required: false, collection: 1..5, as: :radio_buttons %>
+        <%= f.input :heart, required: false, collection: 1..10, as: :radio_buttons  %>
       </div>
     </div>
     <%= f.submit %>
