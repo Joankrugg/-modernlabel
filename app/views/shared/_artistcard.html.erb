@@ -21,7 +21,7 @@
             <%= @artist.average_stars %>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-card-content">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 social-card-content">
               <div class="row">
                 <% if @artist.facebook_link.present? %>
                   <%= link_to @artist.facebook_link, target: :_blank do %>
@@ -56,54 +56,38 @@
               </div>
             </div>
           </div>
-          <div class="option">
-            <% if @artist.user == current_user  %>
-              <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
-              <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-            <% end %>
-          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 disco">
-    <% if @artist.releases.present? %>
-      <% @artist.releases.each do |release| %>
-        <div class="col-xs-6 col-sm-6 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 artist-release-content">
+      <% if @artist.releases.present? %>
+        <% @artist.releases.each do |release| %>
           <%= link_to release do %>
-            <%= cl_image_tag release.photo, height: 160, width: 160, crop: :fill, class: "thumbnail" %>
+            <div class="info-card productions">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <%= cl_image_tag release.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <p style="color: black; text-align: left; font-weight: bold"><%= release.title.upcase %>-<%= release.year_of_creation %></p>
+                <p style="color: black; text-align: left"><%= release.description %></p>
+                <p style="color: black; text-align: left"><%= release.average_hearts %></p>
+              </div>
+            <% end %>
           <% end %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <% if @artist.user == current_user  %>
-    <div class="col-xs-offset-1 col-xs-11 col-sm-offset-3 col-sm-9 col-md-offset-3 col-md-9 col-lg-offset-3 col-lg-9">
-      <div class="row">
-        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-          <div class="mb">
-            <div class="action">
-              <%=link_to new_performance_path do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Créer un show</h5>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-offset-1 col-xs-5 col-sm-offset-3 col-sm-3 col-md-offset-3 col-md-3 col-lg-offset-3 col-lg-3">
-          <div class="mb">
-            <div class="action">
-              <%=link_to new_release_path do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey" >Créer Record</h5>
-              <% end %>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
-  <% else %>
+  </div>
+  <div class="option">
+    <% if @artist.user == current_user  %>
+      <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
+      <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+      <%= link_to t(".update", default: "Créer un show"), new_performance_path, class: "call-to-action btn-medium btn" %>
+      <%= link_to t(".update", default: "Créer Record"), new_release_path, class: "call-to-action btn-medium btn" %>
+      <% else %>
+    </div>
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
       <div class="social-card-content">
         <%= link_to 'add ratings to this band', new_artist_rating_path(@artist) %>

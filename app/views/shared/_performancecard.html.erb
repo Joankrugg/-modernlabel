@@ -25,13 +25,13 @@
               </div>
             </div>
           </div>
-          <div class="option">
-            <% if @performance.artist == current_user.artist  %>
-              <%= link_to t(".update", default: "Update this"), edit_performance_path, class: "call-to-action btn-medium btn" %>
-              <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-            <% end %>
-          </div>
         </div>
+      </div>
+      <div class="option">
+        <% if @performance.artist == current_user.artist  %>
+          <%= link_to t(".update", default: "Update this"), edit_performance_path, class: "call-to-action btn-medium btn" %>
+          <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+        <% end %>
       </div>
     </div>
   </div>

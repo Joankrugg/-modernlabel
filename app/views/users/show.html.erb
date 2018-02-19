@@ -21,34 +21,19 @@
         <div class="mb">
           <div class="action">
             <% if current_user.artist == nil %>
-              <%=link_to new_artist_path do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Créer carte artiste</h5>
-              <% end %>
-              <% else %>
-              <%=link_to @user.artist do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Action sur <%= @user.artist.name %></h5>
-              <% end %>
+              <%=link_to "Créer carte artiste", new_artist_path, class: "call-to-action btn-medium btn" %>
+            <% else %>
+              <%=link_to "Action sur #{@user.artist.name}", @user.artist, class: "call-to-action btn-medium btn" %>
             <% end %>
-
             <% if current_user.asso == nil %>
-              <%=link_to new_asso_path do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Créer carte asso</h5>
-              <% end %>
-              <% else %>
-              <%=link_to @user.asso do %>
-                <%=image_tag "mb_logo_pink.jpg", class: "disc" %>
-                <h5 class="grey">Action sur <%= @user.asso.name %></h5>
-              <% end %>
+              <%=link_to "Créer carte asso", new_asso_path, class: "call-to-action btn-medium btn" %>
+            <% else %>
+              <%=link_to "Action sur #{@user.asso.name}", @user.asso, class: "call-to-action btn-medium btn" %>
             <% end %>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
