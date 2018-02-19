@@ -1,4 +1,18 @@
 <div class="front">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--8nxi3HAK--/q_jpegmini/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+    <div class="banner-content">
+      <div class="slogan">
+        <h3>//A ROCK LABEL THAT CARE ABOUT THE SCENE\\</h3>
+        <h5><br>
+          Modern box records is a ROCK Label & a growing network <br> where you can create your own band, releases, shows or booking activity <br> sharing the links to your official pages <br> since you're involved in any kind of rock.
+        </h5>
+          <br>
+        </div>
+        <%= link_to 'sign in', new_user_session_path, class: "btn btn-medium" %>
+        <%= render'shared/links' %>
+      </div>
+    </div>
+  </div>
   <div class="page-title">BRAND NEW STUFF</div>
   <div class="container billboard">
     <% @actus.each do |actu|%>
