@@ -90,6 +90,18 @@
   background-color: rgb(215, 215, 215);
   border-radius: 40px;
 }
+
+audio::-internal-media-controls-download-button {
+  display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+  overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+  width: calc(100% + 30px); /* Adjust as needed */
+}
 .style_image{
   border-radius-top-left: 6px;
   border-radius-top-right: 6px;

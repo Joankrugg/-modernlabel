@@ -1,10 +1,17 @@
 .front{
   padding-top: 100px;
-  padding-bottom: 70px;
 }
 
-.billboard{
+.slogan{
   padding-top: 50px;
+}
+
+
+.wallpaper-links{
+  font-size: 40px;
+  text-align: center;
+  color: rgb(0, 167, 255);
+  padding-top: 20px;
 }
 
 .copyright{
@@ -12,30 +19,4 @@
   padding-bottom: 30px;
   text-align: center;
   color: #E4E4E4;
-}
-
-audio::-internal-media-controls-download-button {
-  display:none;
-}
-
-audio::-webkit-media-controls-enclosure {
-  overflow:hidden;
-}
-
-audio::-webkit-media-controls-panel {
-  width: calc(100% + 30px); /* Adjust as needed */
-}
-
-
-.advantages{
-  margin-bottom: 40px;
-  background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  h3, p{
-    text-align: center;
-    padding-top: 25px;
-  }
-}
-.arguments{
-  color:#00A3FF;
 }

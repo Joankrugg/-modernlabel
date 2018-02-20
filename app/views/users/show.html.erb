@@ -7,18 +7,6 @@
     <div class="container actions">
       <div class="row"><br>
         <div class="mb">
-          <h5>
-            Votre première action en tant qu'utilisateur. <br>
-            Créez votre projet au sein de notre base de données et augmentez votre visibilité auprès des organisateurs d'évènements "Rock", des groupes "Rock" et des salles "Rock".<br>
-            Beaucoup de fonctionnalitées sont encore en cours de développement, mais faut bien commencer quelque part...
-          </h5>
-          <br>
-          <h3>
-            |Modern box records|<br>
-            Tellement plus qu'un label!!!
-          </h3>
-        </div>
-        <div class="mb">
           <div class="action">
             <% if current_user.artist == nil %>
               <%=link_to "Créer carte artiste", new_artist_path, class: "call-to-action btn-medium btn" %>
