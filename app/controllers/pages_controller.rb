@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @actus = Actu.where(billboard: true)
   end
 
-  def introduction
+  def how_it_works
     @artists = Artist.all.sample(4)
     @releases = Release.all.sample(4)
   end
