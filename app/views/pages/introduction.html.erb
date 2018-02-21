@@ -1,52 +1,69 @@
 <div class="introduction">
   <div class="container">
     <div class="page-title">INTRODUCTION</div>
-    <div class="row advantages">
-      <div class="col-sm-8 col-md-8 col-lg-8">
-        <%= cl_image_tag ("pyi1tstskx7n5s41xnua.jpg"), effect: "grayscale", height: 500, width: 1000, crop: :fill, class: "img-responsive" %>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239326/pyi1tstskx7n5s41xnua.jpg');">
+        <%= link_to artists_path do %>
+          <i class="fab fa fa-users"></i>
+        <% end %>
       </div>
-      <div class="col-sm-4 col-md-4 col-lg-4">
-        <h3>Get into the network!</h3>
-        <p class="arguments">Create your band and releases.<br>
-        Add your official pages on your band profil.<br>
-        Create your city web crew and get discovered or booked for a next show.
+      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
+        <h3>GET INTO THE NETWORK!</h3>
+        <p class="arguments">Create your own band profil.<br>
+        And add your official pages on it.<br>
+        Create your crew and get booked for a next show.
         </p>
+        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
       </div>
     </div>
-    <div class="row advantages">
-      <div class="col-sm-4 col-md-4 col-lg-4">
-        <h3>A booking solution</h3>
-        <p class="arguments">Manage your booking activity!<br>
-        Discover new bands thanks to our search engine.<br>
-        Check their networks and communication tools to feed your own network.
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
+        <h3>LET US KNOW WHAT YOU DO</h3>
+        <p class="arguments">Let Modern Box Records know about you.<br>
+        Create your releases on your band profil.<br>
+        You don't have to upload anything... Just share your links
         </p>
+        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
       </div>
-      <div class="col-sm-8 col-md-8 col-lg-8">
-        <%= cl_image_tag ("rpe7681uupk1akkqtbvi.jpg"), effect: "grayscale", height: 500, width: 1000, crop: :fill, class: "img-responsive" %>
+      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239300/ehtawptlypoe4teryneg.jpg');">
+        <%= link_to releases_path do %>
+          <i class="fab fa fa-caret-square-o-right"></i>
+        <% end %>
       </div>
     </div>
-    <div class="row advantages">
-      <div class="col-sm-8 col-md-8 col-lg-8">
-        <%= cl_image_tag ("ehtawptlypoe4teryneg.jpg"), effect: "grayscale", height: 500, width: 1000, crop: :fill, class: "img-responsive" %>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845558/mbhujdjlzwroiboys1dy.jpg');">
+        <%= link_to assos_path do %>
+          <i class="fab fa fa-heartbeat"></i>
+        <% end %>
       </div>
-      <div class="col-sm-4 col-md-4 col-lg-4">
-        <h3>Make the scene alive!</h3>
-        <p class="arguments">Get easily in touch with your scene.<br>
-        Learn how to make a good communication thank to the network.<br>
-        Find your mates and create a show.
+      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
+        <h3>MAKE THE SCENE ALIVE!</h3>
+        <p class="arguments">Add concerts to your band profil.<br>
+        everything appears on our big calendar!
+        <br>
+        Get in touch with the scene and try to fill the blanks!
         </p>
+        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
       </div>
     </div>
-    <div class="row advantages">
-      <div class="col-sm-4 col-md-4 col-lg-4 ">
-        <h3>Avoid logistical problems!</h3>
-        <p class="arguments">Some band isn't available anymore?<br>
-        The place you planned a concert is unavailable or whatever?<br>
-        Find your solution at the very last minute on the network
+
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
+        <h3>A BOOKING SOLUTION</h3>
+        <p class="arguments">You're an association or a place<br>
+        The scene needs to know about you?<br>
+        Make a profil and and get efficient like never
         </p>
+        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
       </div>
-      <div class="col-sm-8 col-md-8 col-lg-8">
-        <%= cl_image_tag ("guitar_ow5t9i.jpg"), effect: "grayscale", height: 500, width: 1000, crop: :fill, class: "img-responsive" %>
+      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239252/r8xviqlxqhc34kcm0km6.png');">
+        <%= link_to assos_path do %>
+          <i class="fab fa fa-share-alt"></i>
+        <% end %>
+        <%= link_to places_path do %>
+          <i class="fab fa fa-beer"></i>
+        <% end %>
       </div>
     </div>
     <div class="row">
