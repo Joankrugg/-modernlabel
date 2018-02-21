@@ -1,7 +1,7 @@
 <div class="negative top">
   <div class="search search-fixed">
     <%= form_tag(assos_path, method: :get) do %>
-      <%= text_field_tag :search, nil, placeholder: "Search assos", class: "form-control" %>
+      <%= text_field_tag :search, nil, placeholder: "Search assos by name, city or genre", class: "form-control" %>
       <%= submit_tag 'Search', style: "display: none;" %>
     <% end %>
   </div>
