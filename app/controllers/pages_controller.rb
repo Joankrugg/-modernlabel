@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :introduction]
+  skip_before_action :authenticate_user!, only: [:home, :how_it_works]
 
   def home
     @actus = Actu.where(billboard: true)
