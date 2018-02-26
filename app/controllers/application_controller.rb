@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
+  def after_sign_in_path_for(resource)
+    pages_how_it_works_path
+  end
+
   private
 
   def set_locale
