@@ -80,20 +80,35 @@
       <% end %>
     </div>
   </div>
-  <div class="option">
-    <% if @artist.user == current_user  %>
-      <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
-      <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-      <%= link_to t(".update", default: "Créer un show"), new_performance_path, class: "call-to-action btn-medium btn" %>
-      <%= link_to t(".update", default: "Créer Record"), new_release_path, class: "call-to-action btn-medium btn" %>
-      <% else %>
-    </div>
-    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-      <div class="social-card-content">
-        <%= link_to 'add ratings to this band', new_artist_rating_path(@artist) %>
+  <div class="row">
+    <div class="option">
+      <% if @artist.user == current_user  %>
+        <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
+        <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+        <%= link_to t(".update", default: "Créer un show"), new_performance_path, class: "call-to-action btn-medium btn" %>
+        <%= link_to t(".update", default: "Créer Record"), new_release_path, class: "call-to-action btn-medium btn" %>
+        <% else %>
       </div>
     </div>
-  <% end %>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-3 col-lg-6">
+      <h2>
+        <%= pluralize @artist.ratings.size, "rating" %>
+      </h2>
+      <div id="ratings">
+        <% if @artist.ratings.blank? %>
+          Be the first to leave a rating for <%= @artist.name %>
+        <% else %>
+          <% @artist.ratings.each do |rating| %>
+            <%= render 'ratings/show', rating: rating %>
+          <% end %>
+        <% end %>
+      </div>
+      <%= render 'ratings/form', artist: @artist, rating: @rating %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 

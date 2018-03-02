@@ -1,23 +1,25 @@
 class RatingsController < ApplicationController
-  def new
-    @artist = Artist.find(params[:artist_id])
-    @rating = Rating.new
-  end
 
   def create
+    @artist = Artist.find(params[:artist_id])
     @rating = Rating.new(rating_params)
-    @rating.artist = Artist.find(params[:artist_id])
-    if
-      @rating.save
-      redirect_to artists_path
+    @rating.artist = @artist
+    if @rating.save
+      respond_to do |format|
+        format.html { redirect_to artist_path(@artist)}
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'artists/show'}
+        format.js
+      end
     end
   end
 
   private
 
   def rating_params
-    params.require(:rating).permit(:beer, :crowd, :star, :crown, :artist_id)
+    params.require(:rating).permit(:beer, :crowd, :star, :crown, :artist_id, :one_word)
   end
 end

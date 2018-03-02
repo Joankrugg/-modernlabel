@@ -1,0 +1,12 @@
+<% if @rating.errors.any? %>
+  $('#new_rating').html("<%= j render 'ratings/form', artist: @artist, rating: @rating %>");
+<% else %>
+  // Create a paragraph for the new review. But hide it.
+  var new_rating = $("<%= j render 'ratings/show', rating: @rating %>").hide();
+  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+  $('#ratings').append(new_rating);
+  // Show the new review with an animation!
+  new_rating.slideDown();
+  // Reset the form
+  $('#new_rating').html("<%= j render 'ratings/form', artist: @artist, rating: Rating.new %>");
+<% end %>

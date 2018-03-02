@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       end
     end
     resources :artists do
-      resources :ratings, only: [ :new, :create ]
+      resources :ratings, only: :create
         collection do
           get 'signed', to: "artists#signed"
         end

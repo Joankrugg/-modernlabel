@@ -27,7 +27,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-
+    @rating = Rating.new
   end
 
   def edit

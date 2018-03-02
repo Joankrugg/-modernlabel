@@ -1,0 +1,11 @@
+<%= simple_form_for [artist, rating], remote: true do |f| %>
+  <div class="col-lg-12 group in">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <%= f.input :star, required: false, collection: 1..5 %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <%= f.input :one_word, required: false, placeholder: 'Just one word'%>
+    </div>
+    <%= f.button :submit, class: "btn btn-medium" %>
+  </div>
+<% end %>
