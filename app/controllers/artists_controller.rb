@@ -20,6 +20,7 @@ class ArtistsController < ApplicationController
   def create
     @artist = current_user.build_artist(artist_params)
     if @artist.save
+      ArtistMailer.creation_confirmation(@artist).deliver_now
       redirect_to artist_path(@artist)
     else
       render :new
