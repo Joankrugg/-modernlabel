@@ -1,66 +1,67 @@
-<div class="navbar-wagon navbar-wagon-fixed">
-  <div class="navbar-item">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
-        <li>
-          <%= link_to actus_path do %>
-            <i class="fa fa-newspaper-o"></i> <%= t(".index_news", default: "NEWS") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to signed_artists_path do %>
-            <i class="fa fa-users"></i> <%= t(".index_artist", default: "ARTISTS") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to signed_releases_path do %>
-            <i class="fa fa-bar-chart"></i> <%= t(".index_release", default: "RELEASES") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to shops_path do %>
-            <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "STORE") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to pages_how_it_works_path do %>
-            <i class="fa fa-diamond"></i> <%= t(".index_introduction", default: "HOW IT WORKS") %>
-          <% end %>
-        </li>
-        <% unless user_signed_in? %>
+<div class="master">
+  <div class="navbar-wagon navbar-wagon-fixed">
+    <div class="navbar-item">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to new_user_session_path do %>
-              <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
-            <% end %>
-          </li>
-          <% else %>
-          <li>
-            <%= link_to current_user do %>
-              <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+            <%= link_to actus_path do %>
+              <i class="fa fa-newspaper-o"></i> <%= t(".index_news", default: "NEWS") %>
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-times-circle" ></i> <%= t(".index_user", default: "QUIT") %>
+            <%= link_to signed_artists_path do %>
+              <i class="fa fa-users"></i> <%= t(".index_artist", default: "ARTISTS") %>
             <% end %>
           </li>
-        <% end %>
-      </ul>
+          <li>
+            <%= link_to signed_releases_path do %>
+              <i class="fa fa-bar-chart"></i> <%= t(".index_release", default: "RELEASES") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to shops_path do %>
+              <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "STORE") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to pages_how_it_works_path do %>
+              <i class="fa fa-diamond"></i> <%= t(".index_introduction", default: "HOW IT WORKS") %>
+            <% end %>
+          </li>
+          <% unless user_signed_in? %>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+              <% end %>
+            </li>
+            <% else %>
+            <li>
+              <%= link_to current_user do %>
+                <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-times-circle" ></i> <%= t(".index_user", default: "QUIT") %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= cl_image_tag("logo_8_qggqxi.png") %>
+      <% end %>
+    </div>
+    <div class="navbar-item navbar-wagon-link">
+      <%= link_to rails_admin_path do %>
+        <i class="fa fa-play" id= "admin"></i>
+      <% end %>
     </div>
   </div>
-  <div class="logo">
-    <%= link_to root_path do %>
-      <%= cl_image_tag("logo_8_qggqxi.png") %>
-    <% end %>
-  </div>
-  <div class="navbar-item navbar-wagon-link">
-    <%= link_to rails_admin_path do %>
-      <i class="fa fa-play" id= "admin"></i>
-    <% end %>
-  </div>
 </div>
-
 
 
 

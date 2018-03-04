@@ -1,7 +1,7 @@
 <% if notice %>
   <div id="notice-wrapper" class="alert alert-info alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= notice %>
+    <div class="message"> <%= notice %></div>
   </div>
 <% end %>
 <% if alert %>
@@ -17,6 +17,16 @@
       $('#notice-wrapper').fadeOut("slow", function(){
         $('#notice-wrapper').remove();
       })
-    }, 4500 );
+    }, 3000 );
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('#alert-wrapper').fadeOut("slow", function(){
+        $('#alert-wrapper').remove();
+      })
+    }, 3000 );
   });
 </script>

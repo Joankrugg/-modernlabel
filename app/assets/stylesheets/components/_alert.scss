@@ -1,12 +1,20 @@
 .alert {
-  padding-top: 100px;
-  margin: 0;
+  z-index: 3;
+  height: 100px;
   text-align: center;
+  justify-content: center;
   color: white;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
 }
 .alert-info {
-  background: #606668;
+  background: $black;
 }
 .alert-warning {
   background: rgb (255, 0, 59);
+}
+.message{
+  padding-top: 20px;
 }

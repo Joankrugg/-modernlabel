@@ -12,8 +12,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/da2krghvd/image/upload/v1517215472/eeppxdf1ggjyau4q6f5e.jpg" />
   </head>
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_KEY']}" %>
