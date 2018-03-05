@@ -81,6 +81,12 @@
     </div>
   </div>
   <div class="row">
+    <% if @artist.youtube_channel? %>
+    <% yt = @artist.youtube_channel.delete!('https://www.youtube.com/watch?v=') %>
+      <iframe src='https://www.youtube.com/embed/<%= yt %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+    <% end %>
+  </div>
+  <div class="row">
     <div class="option">
       <% if @artist.user == current_user  %>
         <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
