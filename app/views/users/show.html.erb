@@ -1,27 +1,69 @@
 <div class="page-title top">
-  ACTIONS ON YOUR PROFIL
+  MAKE YOUR PROFIL
 </div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
   <div class="banner-content">
     <div class="container actions">
-      <div class="row"><br>
-        <div class="mb">
-          <div class="action">
-            <% if current_user.artist == nil %>
-              <%=link_to "Créer carte artiste", new_artist_path, class: "call-to-action btn-medium btn" %>
-            <% else %>
-              <%=link_to "Action sur #{@user.artist.name}", @user.artist, class: "call-to-action btn-medium btn" %>
-            <% end %>
-            <% if current_user.asso == nil %>
-              <%=link_to "Créer carte asso", new_asso_path, class: "call-to-action btn-medium btn" %>
-            <% else %>
-              <%=link_to "Action sur #{@user.asso.name}", @user.asso, class: "call-to-action btn-medium btn" %>
-            <% end %>
+      <div class="row">
+        <a class="tab col-lg-offset-1 col-lg-2 col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-2 col-xs-offset-1 col-xs-2 active" data-target="#bands">
+          <h5>Bands</h5>
+        </a>
+        <a class="tab col-lg-2 col-md-2 col-sm-2 col-xs-2" data-target="#releases">
+          <h5>Releases</h5>
+        </a>
+        <a class="tab col-lg-2 col-md-2 col-sm-2 col-xs-2" data-target="#concerts">
+          <h5>Concerts</h5>
+        </a>
+        <a class="tab col-lg-2 col-md-2 col-sm-2 col-xs-2" data-target="#assos">
+          <h5>Assos</h5>
+        </a>
+        <a class="tab col-lg-2 col-md-2 col-sm-2 col-xs-2" data-target="#places">
+          <h5>Places</h5>
+        </a>
+      </div>
+
+      <div class="row text-center">
+        <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 " id="bands">
+          <div class="mb">
+            <div class="action">
+              <% if current_user.artist == nil %>
+                <%=link_to "Créer carte artiste", new_artist_path, class: "call-to-action btn-medium btn" %>
+              <% else %>
+                <%=link_to "Action sur #{@user.artist.name}", @user.artist, class: "call-to-action btn-medium btn" %>
+              <% end %>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="releases">
+      </div>
+      <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="concerts">
+
+      </div>
+      <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="assos">
+        <div class="row"><br>
+          <div class="mb">
+            <div class="action">
+              <% if current_user.asso == nil %>
+                <%=link_to "Créer carte asso", new_asso_path, class: "call-to-action btn-medium btn" %>
+              <% else %>
+                <%=link_to "Action sur #{@user.asso.name}", @user.asso, class: "call-to-action btn-medium btn" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="places">
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
 
