@@ -56,10 +56,68 @@
   <div class="row">
     <div class="option">
       <% if @artist.user == current_user  %>
-        <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
-        <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-        <%= link_to t(".update", default: "Créer un show"), new_performance_path, class: "call-to-action btn-medium btn" %>
-        <%= link_to t(".update", default: "Créer Record"), new_release_path, class: "call-to-action btn-medium btn" %>
+        <div class="banner-content">
+          <div class="container actions">
+            <div class="row">
+              <a class="tab col-lg-offset-2 col-lg-2 col-md-offset-2 col-md-2 col-sm-offset-2 col-sm-2 col-xs-3 active" data-target="#bands">
+                <h5>Band</h5>
+              </a>
+              <a class="tab col-lg-2 col-md-2 col-sm-2 col-xs-3" data-target="#releases">
+                <h5>Releases</h5>
+              </a>
+              <a class="tab col-lg-2 col-md-2 col-sm-2 col-xs-3" data-target="#concerts">
+                <h5>Concerts</h5>
+              </a>
+              <a class="tab col-lg-2 col-md-2 col-sm-2 col-xs-3" data-target="#assos">
+                <h5>Vidéos</h5>
+              </a>
+            </div>
+
+            <div class="row text-center">
+              <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 " id="bands">
+                <div class="mb">
+                  <div class="action">
+                    <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
+                    <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="releases">
+              <div class="mb">
+                <div class="action">
+                  <% if @artist.releases.present? %>
+                    <% @artist.releases.each do |release| %>
+                      <%= link_to release do %>
+                        <button class="call-to-action btn-medium btn"><%="update #{release.title}"%></button>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                  <%= link_to t(".create", default: "Créer Record"), new_release_path, class: "call-to-action btn-medium btn" %>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="concerts">
+              <div class="mb">
+                <div class="action">
+                  <% if @artist.performances.present? %>
+                    <% @artist.performances.each do |performance| %>
+                      <%= link_to performance do %>
+                        <button class="call-to-action btn-medium btn"><%="update #{performance.name}"%></button>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                  <%= link_to t(".create", default: "Créer Record"), new_release_path, class: "call-to-action btn-medium btn" %>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="places">
+            </div>
+          </div>
+        </div>
+      </div>
+
         <% else %>
       </div>
     </div>
