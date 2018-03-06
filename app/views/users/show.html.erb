@@ -23,7 +23,7 @@
               <% if current_user.artist == nil %>
                 <%=link_to "create new artist", new_artist_path, class: "btn btn-medium" %>
               <% else %>
-                <%=link_to "modifier #{@user.artist.name}",edit_artist_path, class: "btn btn-medium" %>
+                <%=link_to "modifier #{@user.artist.name}", @user.artist, class: "btn btn-medium" %>
               <% end %>
             </div>
           </div>
@@ -35,7 +35,7 @@
               <% if current_user.asso == nil %>
                 <%=link_to "create new asso", new_asso_path, class: "btn btn-medium" %>
               <% else %>
-                <%=link_to "modifier #{@user.asso.name}",edit_asso_path, class: "btn btn-medium" %>
+                <%=link_to "modifier #{@user.asso.name}",@user.asso, class: "btn btn-medium" %>
               <% end %>
             </div>
           </div>
@@ -46,7 +46,7 @@
               <% if current_user.place == nil %>
                 <%=link_to "create new place", new_place_path, class: "btn btn-medium" %>
               <% else %>
-                <%=link_to "modifier #{@user.place.name}",edit_place_path, class: "btn btn-medium" %>
+                <%=link_to "modifier #{@user.place.name}",@user.place, class: "btn btn-medium" %>
               <% end %>
             </div>
           </div>
@@ -55,7 +55,6 @@
     </div>
   </div>
 </div>
-
 
 
 
