@@ -29,6 +29,8 @@ class ArtistsController < ApplicationController
 
   def show
     @rating = Rating.new
+    @release = Release.new
+    @performance = Performance.new
   end
 
   def edit

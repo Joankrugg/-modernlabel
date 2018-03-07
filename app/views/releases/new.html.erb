@@ -1,1 +1,50 @@
-<%= render 'form' %>
+<%= simple_form_for ([artist, release]), defaults: { label_html: { class: 'labels' } } do |f| %>
+  <% if @release.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @release.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container group in">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12">
+        <%= f.input :title, required: false, placeholder: 'we need one' %>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :year_of_creation, required: false, collection: 1990..2018  %>
+      </div>
+      <div class="col-lg-2 col-sm-12">
+        <%= f.association :record, required: false, placeholder: 'we need one'%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-sm-12">
+        <%= f.input :price, required: false, collection: 1..20 %>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <%= f.association :genre, required: false, placeholder: 'we need one' %>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <%= f.input :description, required: false, placeholder: 'we need these few words (max 140 characters)', input_html: { maxlength: 140 }%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :youtube_link, placeholder: "optional, but you'd better have one to give"%>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <%= f.input :bandcamp_link, placeholder: "optional, but you'd better have one to give" %>
+      </div>
+    </div>
+    <%= f.button :submit, class: "btn btn-medium" %>
+  </div>
+<% end %>

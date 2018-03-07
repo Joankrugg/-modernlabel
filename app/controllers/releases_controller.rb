@@ -21,8 +21,9 @@ class ReleasesController < ApplicationController
   def create
     @artist = current_user.artist
     @release = @artist.releases.new(release_params)
+    @release.artist = @artist
     if @release.save
-      redirect_to release_path(@release)
+      redirect_to artist_path(@artist)
     else
       render :new
     end

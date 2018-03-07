@@ -13,9 +13,11 @@ Rails.application.routes.draw do
     end
     resources :artists do
       resources :ratings, only: :create
-        collection do
-          get 'signed', to: "artists#signed"
-        end
+        resources :releases, only: [:create, :edit, :update]
+          resources :performances, only: [:create, :edit, :update]
+            collection do
+              get 'signed', to: "artists#signed"
+            end
       end
     resources :releases do
       resources :opinions, only: [ :new, :create ]

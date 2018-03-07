@@ -17,10 +17,11 @@ class PerformancesController < ApplicationController
   def create
     @artist = current_user.artist
     @performance = @artist.performances.new(performance_params)
+    @performance.artist = @artist
     if @performance.save
-      redirect_to performances_path
+      redirect_to artist_path(@artist)
     else
-      render :new
+      render 'artists/show'
     end
   end
 

@@ -54,6 +54,21 @@
     </div>
   </div>
   <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 artist-performance-content">
+      <% if @artist.performances.present? %>
+        <% @artist.performances.each do |performance| %>
+          <%= link_to performance do %>
+            <div class="info-card productions">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
     <div class="option">
       <% if @artist.user == current_user  %>
         <div class="banner-content">
@@ -78,42 +93,25 @@
                 <div class="mb">
                   <div class="action">
                     <p style="color: white;">Edit my band </p>
-                    <i class="fa fa-pencil" style="color: white;" data-toggle="collapse" data-target="#collapseProfile" aria-expanded="false" aria-controls="collapseProfile" ></i>
-                    <div class="change-profile">
-                      <div class="collapse" id="collapseProfile">
-                        <%= render 'form', band: @band %>
-                      </div>
-                    </div>
+                    <%= render 'form', band: @band %>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="releases">
+            <div class="tab-content hidden" id="releases">
               <div class="mb">
                 <div class="action">
-                  <% if @artist.releases.present? %>
-                    <% @artist.releases.each do |release| %>
-                      <%= link_to release do %>
-                        <button class="call-to-action btn-medium btn"><%="update #{release.title}"%></button>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-                  <%= link_to t(".create", default: "Créer Record"), new_release_path, class: "call-to-action btn-medium btn" %>
+                  <p style="color: white;"><%="Create a release"%></p>
+                  <%= render 'releases/form', release: @release %>
                 </div>
               </div>
             </div>
             <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="concerts">
               <div class="mb">
                 <div class="action">
-                  <% if @artist.performances.present? %>
-                    <% @artist.performances.each do |performance| %>
-                      <%= link_to performance do %>
-                        <button class="call-to-action btn-medium btn"><%="update #{performance.name}"%></button>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-                  <%= link_to t(".create", default: "Créer concert"), new_release_path, class: "call-to-action btn-medium btn" %>
+                  <p style="color: white;"><%="Create a release"%></p>
+                  <%= render 'performances/form', performance: @performance %>
                 </div>
               </div>
             </div>

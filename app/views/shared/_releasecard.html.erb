@@ -36,11 +36,15 @@
       </div>
     </div>
   </div>
-  <div class="option">
-    <% if @release.artist == current_user.artist  %>
-      <%= link_to t(".update", default: "Update this"), edit_release_path, class: "call-to-action btn-medium btn" %>
-      <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-    <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <div class="option">
+        <% if @release.artist == current_user.artist  %>
+          <%= link_to t(".update", default: "Update this"), edit_release_path, class: "call-to-action btn-medium btn" %>
+          <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
