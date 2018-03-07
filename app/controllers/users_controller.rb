@@ -7,9 +7,11 @@ before_action :set_user, only: [:show, :edit, :update]
   end
 
   def show
+
   end
 
   def edit
+
   end
 
   def update

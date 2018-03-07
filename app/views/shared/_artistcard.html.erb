@@ -74,11 +74,16 @@
             </div>
 
             <div class="row text-center">
-              <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 " id="bands">
+              <div class="tab-content" id="bands">
                 <div class="mb">
                   <div class="action">
-                    <%= link_to t(".update", default: "Update artist"), edit_artist_path, class: "call-to-action btn-medium btn" %>
-                    <%= link_to t(".Delete", default: "delete artist"), artist_path(@artist), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                    <p style="color: white;">Edit my band </p>
+                    <i class="fa fa-pencil" style="color: white;" data-toggle="collapse" data-target="#collapseProfile" aria-expanded="false" aria-controls="collapseProfile" ></i>
+                    <div class="change-profile">
+                      <div class="collapse" id="collapseProfile">
+                        <%= render 'form', band: @band %>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
