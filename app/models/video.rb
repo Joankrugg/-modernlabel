@@ -2,7 +2,8 @@ class Video < ApplicationRecord
   belongs_to :artist, required: true
   belongs_to :genre
   validates :title, presence: true
-  validates :youtube_link, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// } , allow_blank: true
+  validates :youtube_link, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// }
+  validates :genre, presence: true
   include PgSearch
   scope :sorted, ->{ order(title: :asc) }
 
