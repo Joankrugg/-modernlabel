@@ -1,0 +1,16 @@
+<div class="group">
+  <%= simple_form_for @video, defaults: { label_html: { class: 'labels' } } do |f| %>
+    <% if @video.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @video.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.input :title, required: false, placeholder: 'we need one' %>
+    <%= f.input :youtube_link, required: false, placeholder: 'we need one' %>
+    <%= f.button :submit, class: "btn btn-medium" %>
+  <% end %>
+</div>

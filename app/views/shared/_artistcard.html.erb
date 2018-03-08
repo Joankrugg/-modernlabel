@@ -48,8 +48,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
       <% if @artist.youtube_channel? %>
-      <% yt = @artist.youtube_channel.delete!('https://www.youtube.com/watch?v=') %>
-        <iframe src='https://www.youtube.com/embed/<%= yt %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+        <iframe src='https://www.youtube.com/embed/<%= @artist.youtube_channel[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
       <% end %>
     </div>
   </div>
@@ -64,6 +63,15 @@
               </div>
             </div>
           <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <% if @artist.videos.present? %>
+        <% @artist.videos.each do |video| %>
+          <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
         <% end %>
       <% end %>
     </div>
@@ -84,7 +92,7 @@
               <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#concerts">
                 <h5>Concerts</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#assos">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#videos">
                 <h5>Vidéos</h5>
               </a>
             </div>
@@ -99,7 +107,6 @@
                 </div>
               </div>
             </div>
-
             <div class="tab-content hidden" id="releases">
               <div class="mb">
                 <div class="action">
@@ -108,7 +115,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="concerts">
+            <div class="tab-content hidden" id="concerts">
               <div class="mb">
                 <div class="action">
                   <p style="color: white;"><%="Create a release"%></p>
@@ -116,7 +123,13 @@
                 </div>
               </div>
             </div>
-            <div class="tab-content col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 hidden" id="places">
+            <div class="tab-content hidden" id="videos">
+              <div class="mb">
+                <div class="action">
+                  <p style="color: white;"><%="Create a video"%></p>
+                  <%= render 'videos/form', video: @video %>
+                </div>
+              </div>
             </div>
           </div>
         </div>

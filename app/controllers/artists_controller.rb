@@ -31,6 +31,7 @@ class ArtistsController < ApplicationController
     @rating = Rating.new
     @release = Release.new
     @performance = Performance.new
+    @video = Video.new
   end
 
   def edit

@@ -1,0 +1,36 @@
+<div class="negative top">
+  <div class="search search-fixed">
+  <%= form_tag(videos_path, method: :get) do %>
+    <%= text_field_tag :search, nil, placeholder: "Search videos by band name, or title", class: "form-control" %>
+    <%= submit_tag 'Search', style: "display: none;" %>
+  <% end %>
+  </div>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url(https://res.cloudinary.com/da2krghvd/image/upload/s--FcDaVp61--/q_jpegmini/v1510239252/r8xviqlxqhc34kcm0km6.png);">
+  <div class="banner-content">
+    <!--section d'ensemble-->
+    <div class="container items">
+      <div class="row">
+        <% @videos.each do |video|%>
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="main">
+              <div class="card">
+                <div class="info-card">
+                  <%= link_to video do %>
+                    <% screen = video.youtube_link.delete!('https://www.youtube.com/watch?v=')%>
+                    <iframe src='https://www.youtube.com/embed/<%= screen %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+                  <% end %>
+                  <div class="info">
+                    <h1>-<%= video.title  %>-</h1>
+                    <h1>-<%= video.artist.name %>-</h1>
+                    <%= render 'shared/icons' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

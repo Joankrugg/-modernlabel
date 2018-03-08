@@ -1,0 +1,20 @@
+<div class="container model-card">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <div class="info-card">
+        <iframe src='https://www.youtube.com/embed/<%= @video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+        <div class="info">
+          <h1>-<%= @video.title  %>-</h1>
+          <h1>-<%= @video.artist.name %>-</h1>
+          <%= render 'shared/icons' %>
+        </div>
+      </div>
+      <div class="option">
+        <% if @video.artist == current_user.artist  %>
+          <%= link_to t(".update", default: "Update this"), edit_video_path, class: "call-to-action btn-medium btn" %>
+          <%= link_to t(".Delete", default: "delete this"), video_path(@video), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
