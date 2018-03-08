@@ -11,6 +11,7 @@
     <% end %>
     <%= f.input :title, required: false, placeholder: 'we need one' %>
     <%= f.input :youtube_link, required: false, placeholder: 'we need one' %>
+    <%= f.association :genre %>
     <%= f.button :submit, class: "btn btn-medium" %>
   <% end %>
 </div>
