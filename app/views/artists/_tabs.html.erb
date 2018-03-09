@@ -23,9 +23,12 @@
             <div class="tab-content" id="bands">
               <div class="mb">
                 <div class="action">
-                  <br>
-                  <p style="color: $black;"><%="Edit my band"%></p>
-                  <%= render 'form', band: @band %>
+                  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                    <br>
+                    <br>
+                    <p style="color: $black;"><%="Edit my band"%></p>
+                    <%= render 'form', band: @band %>
+                  </div>
                 </div>
               </div>
             </div>
@@ -33,24 +36,30 @@
           <div class="tab-content hidden" id="prods">
             <div class="mb">
               <div class="action">
-                <p style="color: $black;"><%="Create a release"%></p>
-                <%= render 'releases/form', release: @release %>
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Create a release"%></p>
+                  <%= render 'releases/form', release: @release %>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-content hidden" id="shows">
             <div class="mb">
               <div class="action">
-                <p style="color: $black;"><%="Create a concert"%></p>
-                <%= render 'performances/form', performance: @performance %>
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Create a concert"%></p>
+                  <%= render 'performances/form', performance: @performance %>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-content hidden" id="videos">
             <div class="mb">
               <div class="action">
-                <p style="color: $black;"><%="Create a video"%></p>
-                <%= render 'videos/form', video: @video %>
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Create a video"%></p>
+                  <%= render 'videos/form', video: @video %>
+                </div>
               </div>
             </div>
           </div>
