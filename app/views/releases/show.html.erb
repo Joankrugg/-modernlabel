@@ -1,12 +1,75 @@
 <% content_for(:title_tag) do %>
   -<%= @release.title %>- on Modern Box Records
 <% end %>
-<div class="negative top">
-  <div class="search search-fixed">
-  <%= form_tag(releases_path, method: :get) do %>
-    <%= text_field_tag :search, nil, placeholder: "Search records by title, band name or genre", class: "form-control" %>
-    <%= submit_tag 'Search', style: "display: none;" %>
-  <% end %>
+
+<%= render 'shared/release_search'%>
+<div class="container card-model">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <div class="info-card">
+        <%= cl_image_tag @release.photo, height: 600, width: 760, crop: :fill, class: "style_image img-responsive"%>
+          <div class="[ info-card-details ] animate">
+            <h3><%= @release.record.name %></h3">
+            <h5><%= @release.artist.name %></h5>
+            <h5><%= t(".out_from") %> <%= @release.year_of_creation %></h5>
+            <h5><%= @release.price %>Euros</h5>
+            <div class="ratings">
+              <%= @release.average_hearts %>
+            </div>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-network-nav">
+              <% if @release.youtube_link.present? %>
+                <%= link_to @release.youtube_link, target: :_blank do %>
+                  <i class="fa fa-youtube-square social-logo"></i>
+                <% end %>
+              <% end %>
+              <% if @release.bandcamp_link? %>
+                <%= link_to @release.bandcamp_link do %>
+                  <i class="fa fa-bandcamp social-logo"></i>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <div class="option">
+       <div class="banner-content">
+          <div class="container actions">
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                <div class="option">
+                  <% if @release.artist == current_user.artist  %>
+                    <%= render 'releases/form', release: @release %>
+                    <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <div class="social-card-content">
+        <%= link_to "Back to the #{@release.artist.name}", artist_path(@release.artist) %>
+      </div>
+    </div>
+  </div>
+
+  <% if @release.artist != current_user.artist  %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+        <div class="social-card-content">
+          <%= link_to 'add ratings to this release', new_release_opinion_path(@release) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-<%= render 'shared/releasecard'  %>
+
+
+
