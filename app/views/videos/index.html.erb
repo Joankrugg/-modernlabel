@@ -16,16 +16,15 @@
             <div class="main">
               <div class="card">
                 <div class="info-card">
+                  <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
                   <%= link_to video do %>
-                    <% screen = video.youtube_link.delete!('https://www.youtube.com/watch?v=')%>
-                    <iframe src='https://www.youtube.com/embed/<%= screen %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
-                  <% end %>
                   <div class="info">
                     <h1>-<%= video.title  %>-</h1>
                     <h1>-<%= video.artist.name %>-</h1>
                     <h1>-<%= video.genre.name %>-</h1>
                     <%= render 'shared/icons' %>
                   </div>
+                  <% end %>
                 </div>
               </div>
             </div>

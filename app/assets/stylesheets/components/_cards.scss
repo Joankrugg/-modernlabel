@@ -1,10 +1,8 @@
-.animate {
-  -webkit-transition: all 0.6s ease-in-out;
-  -moz-transition: all 0.6s ease-in-out;
-  -o-transition: all 0.6s ease-in-out;
-  -ms-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+.card-model{
+  margin-top: 140px;
+  margin-bottom: 70px;
 }
+
 .info-card {
   width: 100%;
   border: 1px solid rgb(215, 215, 215);
@@ -22,7 +20,9 @@
   bottom: -100%;
   left: 0;
   padding: 0 15px;
-  background: rgb(255, 255, 255);
+  background: linear-gradient(to right, #D1D1D1, #FFFFFF);
+  border: 1px solid rgb(215, 215, 215);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
 }
 .info-card .info-card-details::-webkit-scrollbar {
@@ -102,11 +102,39 @@ audio::-webkit-media-controls-enclosure {
 audio::-webkit-media-controls-panel {
   width: calc(100% + 30px); /* Adjust as needed */
 }
+
 .style_image{
   border-radius-top-left: 6px;
   border-radius-top-right: 6px;
   margin: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.artist-items{
+  align: center;
+  padding-bottom: 20px;
+}
+
+.productions{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: linear-gradient(to right, #D1D1D1, #FFFFFF);
+  border: 1px solid rgb(215, 215, 215);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.social-networks-nav{
+  transition: all 0.3s ease;
+  display: flex;
+  height: 100px;
+  padding: 0px 0px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.social-logo{
+  text-align: center;
+  font-size: 50px;
 }
 
 .option{
@@ -178,50 +206,14 @@ audio::-webkit-media-controls-panel {
   padding-top: 50px;
 }
 
-.social-card{
-  border: 1px solid rgb(215, 215, 215);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.social-logo{
-  font-size: 26px;
-  text-align: center;
-}
 .disco{
   margin-top: 50px;
-}
-
-.model-card{
-  margin-top: 140px;
-  margin-bottom: 70px;
-}
-
-.social-card-content{
-  text-align: center;
-  color: #FFFFFF;
-  padding-bottom: 20px;
-}
-
-.artist-release-content{
-  align: center;
-  color: #FFFFFF;
-  padding-bottom: 20px;
-}
-
-.productions{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: white;
 }
 
 .text{
   color: white;
 }
+
+
 
 

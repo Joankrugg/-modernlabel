@@ -1,0 +1,76 @@
+  <div class="row">
+    <div class="option">
+      <% if @artist.user == current_user  %>
+        <div class="banner-content">
+          <div class="container actions">
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#bands">
+                <h5>Band</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#prods">
+                <h5>Prods</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#shows">
+                <h5>Shows</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#videos">
+                <h5>Vidéos</h5>
+              </a>
+            </div>
+
+            <div class="row text-center">
+              <div class="tab-content" id="bands">
+                <div class="mb">
+                  <div class="action">
+                    <br>
+                    <p style="color: $black;"><%="Edit my band"%></p>
+                    <%= render 'form', band: @band %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content hidden" id="prods">
+              <div class="mb">
+                <div class="action">
+                  <p style="color: $black;"><%="Create a release"%></p>
+                  <%= render 'releases/form', release: @release %>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content hidden" id="shows">
+              <div class="mb">
+                <div class="action">
+                  <p style="color: $black;"><%="Create a concert"%></p>
+                  <%= render 'performances/form', performance: @performance %>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content hidden" id="videos">
+              <div class="mb">
+                <div class="action">
+                  <p style="color: $black;"><%="Create a video"%></p>
+                  <%= render 'videos/form', video: @video %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+    </div>
+  </div>
+  <div class="row" id="ratings">
+    <a class="tab col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12" data-target="#rating-form">
+      <% if @artist.ratings.blank? %>
+        <p class="ajax-action">Be the first to leave a rating for <%= @artist.name %></p>
+      <% else %>
+        <p class="ajax-action">press to leave a rating for <%= @artist.name %></p>
+      <% end %>
+      <% end %>
+      <%= render 'ratings/form', artist: @artist, rating: @rating %>
+    </a>
+    </div>
+    <% @artist.ratings.each do |rating| %>
+      <%= render 'ratings/show', rating: rating %>
+    <% end %>
+  </div>
