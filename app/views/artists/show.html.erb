@@ -28,8 +28,25 @@
       </div>
     </div>
     <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="info-card productions" id="header">
+        <%= cl_image_tag @artist.photo, height: 80, width: 100, crop: :fill, class: "img-responsive bio"%>
+        <h3><%= @artist.name %></h3>
+      </div>
       <div class="info-card productions">
-        <p>il faudra ajouter la bio ici</p>
+        <% if @artist.mp3? %>
+          <% mp3 = @artist.mp3.path %>
+          <audio controls>
+            <source src=<%= cl_video_path(mp3) %> type="audio/mpeg">
+          </audio>
+        <% end %>
+      </div>
+      <div class="info-card productions" id= "bio">
+        <h4>Biographie:</h4>
+        <% if @artist.description.present? %>
+          <p><%= @artist.description %></p>
+        <% else %>
+          <p>il faudra ajouter la bio ici</p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -78,8 +95,8 @@
             <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-          <%= link_to video do %>
+        <%= link_to video do %>
+          <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
             <div class= "lead">
               <div class="productions">
                 <h1>-<%= video.title  %>-</h1>
@@ -87,8 +104,8 @@
                 <%= render 'shared/icons' %>
               </div>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
