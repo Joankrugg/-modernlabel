@@ -97,20 +97,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 artist-items">
-      <% if @artist.performances.present? %>
-        <% @artist.performances.each do |performance| %>
-          <%= link_to performance do %>
-            <div class="info-card productions">
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'tabs' %>
 </div>
 
 
