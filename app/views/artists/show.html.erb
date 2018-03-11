@@ -56,11 +56,6 @@
                 </div>
                 <div class="col-lg-4">
                   <p style="color: black; text-align: left"><%= release.average_hearts %></p>
-                  <% if release.bandcamp_link.present? %>
-                    <%= link_to release.bancamp_link, target: :_blank do %>
-                      <i class="fa fa-bandcamp"></i>
-                    <% end %>
-                  <% end %>
                   <% if release.youtube_link.present? %>
                     <%= link_to release.youtube_link, target: :_blank do %>
                       <i class="fa fa-youtube"></i>
@@ -75,7 +70,43 @@
     <% end %>
   </div>
 
+  <div class="row">
+    <% if @artist.videos.present? %>
+      <% @artist.videos.each do |video| %>
+        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 artist-items">
+          <div class="video">
+            <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+          <div class= "lead">
+            <div class="productions">
+              <h1>-<%= video.title  %>-</h1>
+              <h1>-<%= @artist.name  %>-</h1>
+              <%= render 'shared/icons' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 artist-items">
+      <% if @artist.performances.present? %>
+        <% @artist.performances.each do |performance| %>
+          <%= link_to performance do %>
+            <div class="info-card productions">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <%= render 'tabs' %>
 </div>
 
 
