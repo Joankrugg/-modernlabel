@@ -28,25 +28,25 @@
       </div>
     </div>
     <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-12">
-      <div class="info-card productions hidden-sm hidden-md" id="header">
+      <div class="info-card productions hidden-xs hidden-sm hidden-md" id="header">
         <%= cl_image_tag @artist.photo, height: 80, width: 100, crop: :fill, class: "img-responsive"%>
       </div>
       <div class="info-card productions" id= "bio">
-        <h4>Biographie:</h4>
+        <h4>Biography:</h4>
         <% if @artist.description.present? %>
           <p><%= @artist.description %></p>
         <% else %>
           <p>il faudra ajouter la bio ici</p>
         <% end %>
       </div>
-      <div class="info-card productions hidden-sm">
-        <% if @artist.mp3? %>
+      <% if @artist.mp3? %>
+        <div class="info-card productions hidden-sm">
           <% mp3 = @artist.mp3.path %>
           <audio controls>
             <source src=<%= cl_video_path(mp3) %> type="audio/mpeg">
           </audio>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 

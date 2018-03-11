@@ -5,30 +5,28 @@
         <% if @artist.user == current_user  %>
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-            <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#bands">
-              <h5>Band</h5>
-            </a>
-            <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#prods">
-              <h5>Prods</h5>
-            </a>
-            <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#shows">
-              <h5>Shows</h5>
-            </a>
-            <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#videos">
-              <h5>Vidéos</h5>
-            </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#bands">
+                <h5>Band</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#prods">
+                <h5>Prods</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#shows">
+                <h5>Shows</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#videos">
+                <h5>Vidéos</h5>
+              </a>
+            </div>
           </div>
 
-          <div class="row text-center">
-            <div class="tab-content" id="bands">
-              <div class="mb">
-                <div class="action">
-                  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                    <br>
-                    <br>
-                    <p style="color: $black;"><%="Edit my band"%></p>
-                    <%= render 'form', band: @band %>
-                  </div>
+
+          <div class="tab-content" id="bands">
+            <div class="mb">
+              <div class="action">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Edit my band"%></p>
+                  <%= render 'form', band: @band %>
                 </div>
               </div>
             </div>
