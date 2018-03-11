@@ -1,6 +1,6 @@
 class PerformancesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_performance, only: [:show, :edit, :update]
+  before_action :set_performance, only: [:show, :edit, :update, :destroy]
   def index
     if params[:search].present?
       @performances = Performance.perform_search(params[:search]).paginate(page: params[:page], per_page: 4)
@@ -39,6 +39,10 @@ class PerformancesController < ApplicationController
     else
       render :edit
     end
+  end
+  def destroy
+    @performance.destroy
+    redirect_to performances_path
   end
 
   private
