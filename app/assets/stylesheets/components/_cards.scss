@@ -136,15 +136,13 @@ audio::-webkit-media-controls-panel {
   text-align: center;
 }
 #header{
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 #bio{
-  height: 282px;
-}
-
-.bio{
-  margin-left: 78px;
+  height: 348px;
 }
 
 .info{
