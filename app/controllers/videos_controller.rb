@@ -19,9 +19,18 @@ class VideosController < ApplicationController
   end
 
   def create
-    @artist = current_user.artist
-    @video = @artist.videos.new(video_params)
-    @video.artist = @artist
+    if
+      @asso = current_user.asso
+      @video = @asso.videos.new(video_params)
+      @video.asso = @asso
+
+    else
+      @artist = current_user.artist
+      @video = @artist.videos.new(video_params)
+      @video.artist = @artist
+
+    end
+
     if @video.save
       redirect_to video_path(@video)
     else
@@ -57,6 +66,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :youtube_link, :artist_id, :genre_id)
+    params.require(:video).permit(:title, :youtube_link, :artist_id, :genre_id, :asso_id)
   end
 end

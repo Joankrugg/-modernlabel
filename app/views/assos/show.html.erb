@@ -1,13 +1,29 @@
 <% content_for(:title_tag) do %>
   -<%= @asso.name %>-
 <% end %>
-<div class="negative top">
-  <div class="search search-fixed">
-    <%= form_tag(assos_path, method: :get) do %>
-      <%= text_field_tag :search, nil, placeholder: "Search assos by name, city or genre", class: "form-control" %>
-      <%= submit_tag 'Search', style: "display: none;" %>
-    <% end %>
+<%= render'shared/asso_search' %>
+<div class="container card-model">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-1 col-sm-7 col-md-offset-1 col-md-7 col-lg-offset-1 col-lg-7">
+      <h1 class= "hidden-lg hidden-md hidden-sm page-title title-top">-<%= @asso.name %>-</h1>
+      <div class="info-card">
+        <%= cl_image_tag @asso.photo, height: 600, width: 700, crop: :fill, class: "img-responsive"%>
+        <div class="info-card-details">
+          <h3>-<%= @asso.name.upcase %>-</h3>
+          <h5><%= t(".city")%>: <%= @asso.city %></h5>
+          <h5> <%= @asso.genre.name %> </h5>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <div class="info-card productions hidden-xs hidden-sm hidden-md" id="header">
+        <%= cl_image_tag @asso.photo, height: 80, width: 100, crop: :fill, class: "img-responsive"%>
+      </div>
+      <div class="info-card productions" id= "bio">
+        <h4>Biography:</h4>
+        <p>il faudra ajouter la bio ici</p>
+      </div>
+    </div>
   </div>
+  <%= render 'tabs' %>
 </div>
-<%= render 'shared/assocard'  %>
-

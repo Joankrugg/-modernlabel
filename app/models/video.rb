@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
-  belongs_to :artist, required: true
+  belongs_to :artist
+  belongs_to :asso
   belongs_to :genre
   validates :title, presence: true
   validates :youtube_link, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// }
