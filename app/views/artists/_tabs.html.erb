@@ -3,11 +3,6 @@
     <div class="banner-content">
       <div class="container actions">
         <% if @artist.user == current_user  %>
-        <p>Edit my profile </p>
-        <i class="fa fa-pencil" data-toggle="collapse" data-target="#collapseForms" aria-expanded="false" href="#collapseForms" aria-controls="collapseForms" ></i>
-
-
-        <div class="collapse" id="collapseForms">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
               <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#bands">
@@ -66,7 +61,6 @@
               </div>
             </div>
           </div>
-        </div>
         <% else %>
         <div class="row" id="ratings">
           <% if @artist.ratings.blank? %>
