@@ -8,6 +8,7 @@
 <div class="container card-model">
   <div class="row">
     <div class="col-xs-12 col-sm-offset-1 col-sm-7 col-md-offset-1 col-md-7 col-lg-offset-1 col-lg-7">
+      <h1 class= "hidden-lg hidden-md hidden-sm page-title title-top">-<%= @artist.name %>-</h1>
       <div class="info-card">
         <%= cl_image_tag @artist.photo, height: 600, width: 700, crop: :fill, class: "img-responsive"%>
         <div class="info-card-details">

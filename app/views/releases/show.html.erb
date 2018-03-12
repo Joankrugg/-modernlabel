@@ -6,13 +6,15 @@
 <div class="container card-model">
   <div class="row">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <h1 class= "hidden-lg hidden-md hidden-sm page-title title-top">-<%=@release.title.upcase %>-</h1>
       <div class="info-card">
         <%= cl_image_tag @release.photo, height: 600, width: 760, crop: :fill, class: "style_image img-responsive"%>
-          <div class="[ info-card-details ] animate">
-            <h3><%= @release.record.name %></h3">
-            <h5><%= @release.artist.name %></h5>
+          <div class="info-card-details">
+            <h3>Artist: <%= @release.artist.name %></h3>
             <h5><%= t(".out_from") %> <%= @release.year_of_creation %></h5>
-            <h5><%= @release.price %>Euros</h5>
+            <h5>FORMAT: <%= @release.record.name %>
+            <h5>GENRE: <%= @release.genre.name %></h5>
+            <h5>PRICE: <%= @release.price %>Euros</h5>
             <div class="ratings">
               <%= @release.average_hearts %>
             </div>
@@ -41,23 +43,23 @@
     </div>
   </div>
   <div class="row">
-    <div class="option">
-       <div class="banner-content">
-          <div class="container actions">
-            <div class="row">
-              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                <div class="option">
-                  <% if @release.artist == current_user.artist  %>
+    <% if @release.artist == current_user.artist  %>
+      <div class="option">
+         <div class="banner-content">
+            <div class="mb">
+              <div class="action">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Edit #{@release.title}"%></p>
                     <%= render 'releases/form', release: @release %>
-                    <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-                  <% end %>
+                    <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <% if @release.artist != current_user.artist  %>
