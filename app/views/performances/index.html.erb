@@ -12,11 +12,10 @@
                   <%= link_to performance do %>
                     <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
                   <% end %>
-                  <div class="info" id="release">
-                    <h1>-<%= performance.name.capitalize %>-</h1>
+                  <div class="info" id="performance">
                     <h1>-<%= performance.artist.name %>-</h1>
                     <h1><%= performance.city %></h1>
-                    <h1><%= performance.start_time %></h1>
+                    <h1><%= performance.start_time.strftime("%m/%d/%Y at %H:%M") %></h1>
                     <h1><%= performance.place_address %></h1>
                     <%= render 'shared/icons' %>
                   </div>

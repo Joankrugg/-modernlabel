@@ -1,28 +1,55 @@
+<% content_for(:title_tag) do %>
+  -<%= @video.title %>- on Modern Box Records
+<% end %>
+<%= render 'shared/video_search'%>
 <div class="container card-model">
   <div class="row">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+      <h1 class= "hidden-lg hidden-md hidden-sm page-title title-top">-<%=@video.title.upcase %>-</h1>
       <div class="info-card">
         <iframe src='https://www.youtube.com/embed/<%= @video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
         <div class="info">
           <h1>-<%= @video.title  %>-</h1>
           <h1>-<%= @video.artist.name %>-</h1>
           <h1>-<%= @video.genre.name %>-</h1>
-          <h1>-modernboxrecords-</h1>
           <%= render 'shared/icons' %>
+          <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+              <div class="social-card-content">
+                <%= link_to "Back #{@video.artist.name}", artist_path(@video.artist) %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <% if @video.artist == current_user.artist  %>
+      <div class="option">
+         <div class="banner-content">
+            <div class="mb">
+              <div class="action">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Edit #{@video.title}"%></p>
+                    <%= render 'videos/form', video: @video %>
+                    <%= link_to t(".Delete", default: "delete this"), video_path(@video), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
       <div class="option">
         <% if @video.artist == current_user.artist  %>
           <%= link_to t(".update", default: "Update this"), edit_video_path, class: "call-to-action btn-medium btn" %>
           <%= link_to t(".Delete", default: "delete this"), video_path(@video), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
         <% end %>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-          <div class="social-card-content">
-            <%= link_to "Back to the #{@video.artist.name}", artist_path(@video.artist) %>
-          </div>
-        </div>
       </div>
     </div>
   </div>
