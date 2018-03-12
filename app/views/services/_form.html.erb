@@ -1,0 +1,19 @@
+<%= simple_form_for @service, defaults: { label_html: { class: 'labels' } } do |f| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 ">
+    <%= f.input :name, required: false, placeholder: 'we need one' %>
+    <%= f.input :description, required: false, placeholder: 'we need one' %>
+    <%= f.input :adhesion_fee, required: false, placeholder: 'we need one'  %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit, class: "btn btn-medium" %>
+  </div>
+<% end %>

@@ -25,5 +25,30 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <% if @asso.services.present? %>
+      <% @asso.services.each do |service| %>
+        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 asso-items">
+          <div class= "lead">
+            <div class="productions">
+              <%= cl_image_tag service.photo, height: 180, width: 400, crop: :fill, class: "img-responsive"%>
+            </div>
+          </div>
+        </div>
+        <%= link_to service do %>
+          <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <div class= "lead">
+              <div class="productions">
+                <h1>-<%= service.name  %>-</h1>
+                <h1>-<%= service.adhesion_fee  %>-</h1>
+                <h1>-<%= service.description  %>-</h1>
+                <%= render 'shared/icons' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
   <%= render 'tabs' %>
 </div>

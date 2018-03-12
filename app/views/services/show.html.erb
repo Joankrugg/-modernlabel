@@ -1,0 +1,47 @@
+<% content_for(:title_tag) do %>
+  -<%= @service.name %>- on Modern Box Records
+<% end %>
+<div class="container card-model">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+      <h1 class= "hidden-lg hidden-md hidden-sm page-title title-top">-<%=@service.asso.name.upcase %>-</h1>
+      <div class="info-card">
+        <%= cl_image_tag @service.photo, height: 600, width: 700, crop: :fill, class: "style_image img-responsive"%>
+          <div class="info-card-details">
+            <h3>ASSO: <%= @service.asso.name %></h3>
+            <h5>DESCRIPTION: <%= @service.description %></h5>
+            <h5>PRICE: <%= @service.adhesion_fee %>Euros</h5>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                <div class="social-card-content">
+                  <%= link_to "Back to #{@service.asso.name}", asso_path(@service.asso) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% if @service.asso == current_user.asso  %>
+      <div class="option">
+         <div class="banner-content">
+            <div class="mb">
+              <div class="action">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Edit #{@service.name}"%></p>
+                    <%= render 'services/form', service: @service %>
+                    <%= link_to t(".Delete", default: "delete this"), service_path(@service), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

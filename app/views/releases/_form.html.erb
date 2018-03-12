@@ -11,7 +11,7 @@
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 ">
     <%= f.input :title, required: false, placeholder: 'we need one' %>
     <%= f.input :year_of_creation, required: false, collection: 1990..2018  %>
-    <%= f.association :record, required: false, placeholder: 'we need one'%>
+    <%= f.association :record, required: false %>
     <%= f.input :price, required: false, collection: 1..20 %>
     <%= f.association :genre, required: false, placeholder: 'we need one' %>
     <%= f.input :photo %>
