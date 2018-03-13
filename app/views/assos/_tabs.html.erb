@@ -1,8 +1,8 @@
 <div class="row">
   <div class="option">
     <div class="banner-content">
-      <div class="container actions">
-        <% if @asso.user == current_user  %>
+      <% if @asso.user == current_user  %>
+        <div class="container actions">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
               <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#asso">
@@ -19,6 +19,8 @@
               </a>
             </div>
           </div>
+
+
           <div class="tab-content" id="asso">
             <div class="mb">
               <div class="action">
@@ -59,8 +61,8 @@
               </div>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,8 +1,8 @@
 <div class="row">
   <div class="option">
     <div class="banner-content">
-      <div class="container actions">
-        <% if @artist.user == current_user  %>
+      <% if @artist.user == current_user  %>
+        <div class="container actions">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
               <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#bands">
@@ -61,17 +61,26 @@
               </div>
             </div>
           </div>
-        <% else %>
-        <div class="row" id="ratings">
-          <% if @artist.ratings.blank? %>
-            <p class="tab-fake" style="text-align: center;">Be the first to leave a rating for <%= @artist.name %>
-            </p>
-          <% else %>
-            <p class="tab-fake" style="text-align: center;">press to leave a rating for <%= @artist.name %>
-            </p>
-          <% end %>
         </div>
-        <%= render 'ratings/form', artist: @artist, rating: @rating %>
+      <% else %>
+        <div class="container actions">
+          <div class="row" id="ratings">
+            <% if @artist.ratings.blank? %>
+              <p class="tab-fake" style="text-align: center;">Be the first to leave a rating for <%= @artist.name %>
+              </p>
+            <% else %>
+              <p class="tab-fake" style="text-align: center;">press to leave a rating for <%= @artist.name %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+        <div class="mb">
+          <div class="action">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+              <%= render 'ratings/form', artist: @artist, rating: @rating %>
+            </div>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

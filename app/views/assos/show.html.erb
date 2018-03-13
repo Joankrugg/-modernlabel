@@ -28,7 +28,7 @@
   <div class="row">
     <% if @asso.services.present? %>
       <% @asso.services.each do |service| %>
-        <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 artist-items">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 asso-items">
           <%= link_to service do %>
             <div class="info-card productions">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -42,11 +42,33 @@
                 <div class="col-lg-8">
                   <p style="color: black; text-align: left"><%= service.description %>-</p>
                 </div>
-                </div>
               </div>
             </div>
           <% end %>
         </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% if @asso.videos.present? %>
+      <% @asso.videos.each do |video| %>
+        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 asso-items">
+          <div class="video">
+            <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+          </div>
+        </div>
+        <%= link_to video do %>
+          <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <div class= "lead">
+              <div class="productions">
+                <h1>-<%= video.title  %>-</h1>
+                <h1>-<%= @asso.name  %>-</h1>
+                <%= render 'shared/icons' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
