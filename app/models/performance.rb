@@ -1,5 +1,6 @@
 class Performance < ApplicationRecord
   belongs_to :artist, required: true
+  belongs_to :type, required: true
   mount_uploader :photo, PhotoUploader
   include PgSearch
   scope :sorted, ->{ order(city: :asc) }

@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+# This file should contain all the #Record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -10,7 +10,7 @@ Record.create({ name: 'maxi' })
 Record.create({ name: 'Ep' })
 Record.create({ name: 'Lp' })
 Record.create({ name: 'Album' })
-puts "      💥"
+  puts "      💥"
 
 Genre.create({ name: 'Alternative' })
 Genre.create({ name: 'British' })
@@ -37,4 +37,11 @@ Genre.create({ name: 'Rock n roll' })
 Genre.create({ name: 'Sreamo' })
 Genre.create({ name: 'Stoner' })
 Genre.create({ name: 'Surf rock' })
-puts "      💥"
+  puts "      💥"
+
+Type.create({ name: 'Concert' })
+Type.create({ name: 'Festival' })
+Type.create({ name: 'Party' })
+Type.create({ name: 'Opening' })
+Type.create({ name: 'Happening' })
+  puts "      💥"

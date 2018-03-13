@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312232735) do
+ActiveRecord::Schema.define(version: 20180313194114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,7 +109,9 @@ ActiveRecord::Schema.define(version: 20180312232735) do
     t.integer  "artist_id"
     t.string   "name"
     t.datetime "end_time"
+    t.integer  "type_id"
     t.index ["artist_id"], name: "index_performances_on_artist_id", using: :btree
+    t.index ["type_id"], name: "index_performances_on_type_id", using: :btree
     t.index ["user_id"], name: "index_performances_on_user_id", using: :btree
   end
 
@@ -183,6 +185,12 @@ ActiveRecord::Schema.define(version: 20180312232735) do
     t.string   "photo"
   end
 
+  create_table "types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -229,6 +237,7 @@ ActiveRecord::Schema.define(version: 20180312232735) do
   add_foreign_key "assos", "users"
   add_foreign_key "opinions", "releases"
   add_foreign_key "performances", "artists"
+  add_foreign_key "performances", "types"
   add_foreign_key "performances", "users"
   add_foreign_key "places", "genres"
   add_foreign_key "places", "users"
