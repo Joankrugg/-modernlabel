@@ -72,5 +72,38 @@
       <% end %>
     <% end %>
   </div>
+  <div class="row">
+    <% if @asso.performances.present? %>
+      <% @asso.performances.each do |performance| %>
+        <%= link_to performance do %>
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 asso-items">
+            <div class="info-card productions">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="col-lg-4">
+                  <p style="color: black; text-align: left; font-weight: bold">TITLE: -<%= performance.name %>-</p>
+                  <p style="color: black; text-align: left">CITY: -<%= performance.city %>-</p>
+                  <p style="color: black; text-align: left">ADDRESS: -<%= performance.place_address %>-</p>
+                </div>
+                <div class="col-lg-4">
+                  <p style="color: black; text-align: left">DATE: -<%= performance.start_time %>-</p>
+                  <p style="color: black; text-align: left">PRICE: -<%= performance.price %>Euros-</p>
+                </div>
+                <div class="col-lg-4">
+                  <% if performance.facebook_event? %>
+                    <%= link_to performance.facebook_event, target: :_blank do %>
+                      <i class="fa fa-facebook"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
   <%= render 'tabs' %>
 </div>

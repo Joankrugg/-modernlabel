@@ -13,7 +13,11 @@
                     <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
                   <% end %>
                   <div class="info" id="performance">
-                    <h1>-<%= performance.artist.name %>-</h1>
+                    <% if performance.artist.present? %>
+                      <h1><%= performance.artist.name %></h1>
+                    <% else %>
+                      <h1><%= performance.asso.name %></h1>
+                    <% end %>
                     <h1><%= performance.city %></h1>
                     <h1><%= performance.start_time.strftime("%m/%d/%Y at %H:%M") %></h1>
                     <h1><%= performance.place_address %></h1>
@@ -39,7 +43,11 @@
     <%= date.day %>
       <% performances.each do |performance| %>
         <div>
-          <%= performance.artist.name %>
+          <% if performance.artist.present? %>
+            <%= performance.artist.name %>
+          <% else %>
+            <%= performance.asso.name %>
+          <% end %>
         </div>
       <% end %>
   <% end %>

@@ -15,13 +15,20 @@ class PerformancesController < ApplicationController
   end
 
   def create
-    @artist = current_user.artist
-    @performance = @artist.performances.new(performance_params)
-    @performance.artist = @artist
-    if @performance.save
-      redirect_to artist_path(@artist)
+    if
+      @asso = current_user.asso
+      @performance = @asso.performances.new(performance_params)
+      @performance.asso = @asso
     else
-      render 'artists/show'
+      @artist = current_user.artist
+      @performance = @artist.performances.new(performance_params)
+      @performance.artist = @artist
+    end
+
+    if @performance.save
+      redirect_to performance_path(@performance)
+    else
+      render :new
     end
   end
 
@@ -52,6 +59,6 @@ class PerformancesController < ApplicationController
   end
 
   def performance_params
-    params.require(:performance).permit(:start_time, :place_address, :city, :photo, :photo_cache, :artist_id, :facebook_event, :user_id, :name, :end_time, :price, :type_id)
+    params.require(:performance).permit(:start_time, :place_address, :city, :photo, :photo_cache, :artist_id, :facebook_event, :user_id, :name, :end_time, :price, :type_id, :asso_id)
   end
 end

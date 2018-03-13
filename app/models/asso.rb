@@ -3,6 +3,7 @@ class Asso < ApplicationRecord
   belongs_to :genre
   mount_uploader :photo, PhotoUploader
   has_many :videos, dependent: :destroy
+  has_many :performances, dependent: :destroy
   has_many :services, dependent: :destroy
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true

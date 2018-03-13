@@ -1,5 +1,11 @@
-<% content_for(:title_tag) do %>
-  -<%= @performance.artist.name %>- on Modern Box Records
+<% if @performance.artist.present? %>
+  <% content_for(:title_tag) do %>
+    -<%= @performance.artist.name %>- on Modern Box Records
+  <% end %>
+<% else %>
+  <% content_for(:title_tag) do %>
+    -<%= @performance.asso.name %>- on Modern Box Records
+  <% end %>
 <% end %>
 <%= render 'shared/performance_search' %>
 <div class="container card-model">
@@ -9,7 +15,11 @@
       <div class="info-card">
         <%= cl_image_tag @performance.photo, height: 600, width: 760, crop: :fill, class: "style_image img-responsive"%>
         <div class="info-card-details">
-          <h3><%= @performance.artist.name %></h3>
+          <% if @performance.artist.present? %>
+            <h3><%= @performance.artist.name %></h3>
+          <% else %>
+            <h3><%= @performance.asso.name %></h3>
+          <% end %>
           <h5><%= @performance.city %></h5>
           <h5><%= @performance.start_time.strftime("%m/%d/%Y at %H:%M") %></h5>
           <h5><%= @performance.place_address %></h5>
@@ -31,31 +41,57 @@
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
               <div class="social-card-content">
-                <%= link_to "Back #{@performance.artist.name}", artist_path(@performance.artist) %>
+                <% if @performance.artist.present? %>
+                  <%= link_to "Back #{@performance.artist.name}", artist_path(@performance.artist) %>
+                <% else %>
+                  <%= link_to "Back #{@performance.asso.name}", asso_path(@performance.asso) %>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <% if @performance.artist == current_user.artist  %>
-          <div class="option">
-             <div class="banner-content">
-                <div class="mb">
-                  <div class="action">
-                    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                      <p style="color: $black;"><%="Edit #{@performance.name}"%></p>
-                        <%= render 'performances/form', performance: @performance %>
-                        <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+      <% if @performance.artist.present? %>
+        <div class="row">
+          <% if @performance.artist == current_user.artist  %>
+            <div class="option">
+               <div class="banner-content">
+                  <div class="mb">
+                    <div class="action">
+                      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                        <p style="color: $black;"><%="Edit #{@performance.name}"%></p>
+                          <%= render 'performances/form', performance: @performance %>
+                          <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="row">
+          <% if @performance.asso == current_user.asso  %>
+            <div class="option">
+               <div class="banner-content">
+                  <div class="mb">
+                    <div class="action">
+                      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                        <p style="color: $black;"><%="Edit #{@performance.name}"%></p>
+                          <%= render 'performances/form', performance: @performance %>
+                          <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

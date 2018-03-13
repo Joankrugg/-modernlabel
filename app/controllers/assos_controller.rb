@@ -26,6 +26,7 @@ class AssosController < ApplicationController
   def show
     @video = Video.new
     @service = Service.new
+    @performance = Performance.new
   end
 
   def edit

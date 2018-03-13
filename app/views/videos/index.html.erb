@@ -20,7 +20,11 @@
                   <%= link_to video do %>
                   <div class="info">
                     <h1>-<%= video.title  %>-</h1>
-                    <h1>-<%= video.artist.name %>-</h1>
+                    <% if video.artist.present? %>
+                      <h1><%= video.artist.name %></h1>
+                    <% else %>
+                      <h1><%= video.asso.name %></h1>
+                    <% end %>
                     <h1>-<%= video.genre.name %>-</h1>
                     <%= render 'shared/icons' %>
                   </div>
@@ -31,6 +35,9 @@
           </div>
         <% end %>
       </div>
+    </div>
+    <div class="paginate">
+      <%= will_paginate @videos %>
     </div>
   </div>
 </div>
