@@ -1,5 +1,4 @@
 class ServicesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -10,13 +9,15 @@ class ServicesController < ApplicationController
   def create
     @asso = current_user.asso
     @service = @asso.services.new(service_params)
-    if @service.save
+    @service.asso = @asso
+
+    if
+      @service.save
       redirect_to asso_path(@asso)
     else
-      render 'assos/show'
+      render :new
     end
   end
-
   def show
 
   end
@@ -35,7 +36,7 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-    redirect_to services_path
+    redirect_to assos_path
   end
 
   private

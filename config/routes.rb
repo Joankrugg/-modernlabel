@@ -24,7 +24,9 @@ Rails.application.routes.draw do
         end
       end
     resources :performances
-    resources :assos
+    resources :assos do
+      resources :services, only: [:create, :edit, :update, :destroy]
+    end
     resources :places
     resources :shops
     resources :actus
