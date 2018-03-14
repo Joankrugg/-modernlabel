@@ -25,11 +25,6 @@
       </div>
     </div>
   </div>
-  <div class="option">
-    <% if @place.user == current_user  %>
-      <%= link_to t(".update", default: "Update place"), edit_place_path, class: "call-to-action btn-medium btn" %>
-      <%= link_to t(".Delete", default: "delete place"), place_path(@place), class: "call-to-action btn-medium btn", method: :delete, data: { confirm: "Are you sure?" } %><br>
-    <% end %>
-  </div>
+  <%= render'tabs' %>
 </div>
 

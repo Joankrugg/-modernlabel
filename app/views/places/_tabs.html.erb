@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="option">
+    <div class="banner-content">
+      <% if @place.user == current_user  %>
+        <div class="container actions">
+          <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#place">
+                <h5>Place</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#news">
+                <h5>News</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#events">
+                <h5>Events</h5>
+              </a>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#videos-place">
+                <h5>Videos</h5>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="tab-content" id="place">
+            <div class="mb">
+              <div class="action">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <p style="color: $black;"><%="Edit my place"%></p>
+                  <%= render 'form', place: @place %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
