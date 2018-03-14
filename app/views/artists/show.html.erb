@@ -92,7 +92,7 @@
       <% @artist.videos.each do |video| %>
         <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 artist-items">
           <div class="video">
-            <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+            <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..120] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
         <%= link_to video do %>

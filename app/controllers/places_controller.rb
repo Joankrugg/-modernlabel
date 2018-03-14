@@ -24,6 +24,7 @@ class PlacesController < ApplicationController
 
   def show
     @performance = Performance.new
+    @video = Video.new
   end
 
   def edit

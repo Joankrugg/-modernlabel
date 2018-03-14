@@ -19,20 +19,33 @@ class VideosController < ApplicationController
   end
 
   def create
-    if
-      @asso = current_user.asso
-      @video = @asso.videos.new(video_params)
-      @video.asso = @asso
-
-    else
       @artist = current_user.artist
       @video = @artist.videos.new(video_params)
       @video.artist = @artist
-
-    end
-
     if @video.save
-      redirect_to video_path(@video)
+      redirect_to artist_path(@artist)
+    else
+      render :new
+    end
+  end
+
+  def create_as_an_asso
+      @asso = current_user.asso
+      @video = @asso.videos.new(video_params)
+      @video.asso = @asso
+    if @video.save
+      redirect_to asso_path(@asso)
+    else
+      render :new
+    end
+  end
+
+  def create_as_a_place
+      @place = current_user.place
+      @video = @place.videos.new(video_params)
+      @video.place = @place
+    if @video.save
+      redirect_to place_path(@place)
     else
       render :new
     end

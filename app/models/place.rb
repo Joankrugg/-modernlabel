@@ -2,6 +2,7 @@ class Place < ApplicationRecord
   belongs_to :user, required: true
   belongs_to :genre
   has_many :performances
+  has_many :videos
   mount_uploader :photo, PhotoUploader
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true

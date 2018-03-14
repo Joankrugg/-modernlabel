@@ -25,6 +25,61 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <% if @place.performances.present? %>
+      <% @place.performances.each do |performance| %>
+        <%= link_to performance do %>
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 place-items">
+            <div class="info-card productions">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="col-lg-4">
+                  <p style="color: black; text-align: left; font-weight: bold">TITLE: -<%= performance.name %>-</p>
+                  <p style="color: black; text-align: left">CITY: -<%= performance.city %>-</p>
+                  <p style="color: black; text-align: left">ADDRESS: -<%= performance.place_address %>-</p>
+                </div>
+                <div class="col-lg-4">
+                  <p style="color: black; text-align: left">DATE: -<%= performance.start_time %>-</p>
+                  <p style="color: black; text-align: left">PRICE: -<%= performance.price %>Euros-</p>
+                </div>
+                <div class="col-lg-4">
+                  <% if performance.facebook_event? %>
+                    <%= link_to performance.facebook_event, target: :_blank do %>
+                      <i class="fa fa-facebook"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="row">
+    <% if @place.videos.present? %>
+      <% @place.videos.each do |video| %>
+        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 place-items">
+          <div class="video">
+            <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+          </div>
+        </div>
+        <%= link_to video do %>
+          <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+            <div class= "lead">
+              <div class="productions">
+                <h1>-<%= video.title  %>-</h1>
+                <h1>-<%= @place.name  %>-</h1>
+                <%= render 'shared/icons' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
   <%= render'tabs' %>
 </div>
 

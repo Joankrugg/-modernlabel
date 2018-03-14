@@ -1,4 +1,4 @@
-<%= simple_form_for @video, defaults: { label_html: { class: 'labels' } } do |f| %>
+<%= simple_form_for @video, url: as_a_place_videos_path, :method => :post, defaults: { label_html: { class: 'labels' } } do |f| %>
   <% if @video.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -15,3 +15,4 @@
     <%= f.button :submit, class: "btn btn-medium" %>
   </div>
 <% end %>
+

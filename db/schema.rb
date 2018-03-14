@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314092523) do
+ActiveRecord::Schema.define(version: 20180314140402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -230,9 +230,11 @@ ActiveRecord::Schema.define(version: 20180314092523) do
     t.integer  "artist_id"
     t.integer  "genre_id"
     t.integer  "asso_id"
+    t.integer  "place_id"
     t.index ["artist_id"], name: "index_videos_on_artist_id", using: :btree
     t.index ["asso_id"], name: "index_videos_on_asso_id", using: :btree
     t.index ["genre_id"], name: "index_videos_on_genre_id", using: :btree
+    t.index ["place_id"], name: "index_videos_on_place_id", using: :btree
   end
 
   add_foreign_key "artists", "genres"
@@ -255,4 +257,5 @@ ActiveRecord::Schema.define(version: 20180314092523) do
   add_foreign_key "videos", "artists"
   add_foreign_key "videos", "assos"
   add_foreign_key "videos", "genres"
+  add_foreign_key "videos", "places"
 end

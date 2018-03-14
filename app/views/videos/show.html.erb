@@ -12,8 +12,12 @@
           <h1>-<%= @video.title  %>-</h1>
           <% if @video.artist.present? %>
             <h1>-<%= @video.artist.name %>-</h1>
-          <% else %>
+          <% end %>
+          <% if @video.asso.present? %>
             <h1>-<%= @video.asso.name %>-</h1>
+          <% end %>
+          <% if @video.place.present? %>
+            <h1>-<%= @video.place.name %>-</h1>
           <% end %>
           <h1>-<%= @video.genre.name %>-</h1>
           <%= render 'shared/icons' %>
@@ -22,8 +26,12 @@
               <div class="social-card-content">
                 <% if @video.artist.present? %>
                   <%= link_to "Back #{@video.artist.name}", artist_path(@video.artist) %>
-                <% else %>
+                <% end %>
+                <% if @video.asso.present? %>
                   <%= link_to "Back #{@video.asso.name}", asso_path(@video.asso) %>
+                <% end %>
+                <% if @video.place.present? %>
+                  <%= link_to "Back #{@video.place.name}", place_path(@video.place) %>
                 <% end %>
               </div>
             </div>
@@ -56,6 +64,27 @@
   <% if @video.asso.present? %>
     <div class="row">
       <% if @video.asso == current_user.asso  %>
+        <div class="option">
+           <div class="banner-content">
+              <div class="mb">
+                <div class="action">
+                  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                    <p style="color: $black;"><%="Edit #{@video.title}"%></p>
+                      <%= render 'videos/form', video: @video %>
+                      <%= link_to t(".Delete", default: "delete this"), video_path(@video), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+    <% if @video.place.present? %>
+    <div class="row">
+      <% if @video.place == current_user.place  %>
         <div class="option">
            <div class="banner-content">
               <div class="mb">
