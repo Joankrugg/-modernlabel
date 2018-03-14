@@ -1,0 +1,8 @@
+<div class="negative top">
+  <div class="search search-fixed">
+    <%= form_tag(places_path, method: :get) do %>
+      <%= text_field_tag :search, nil, placeholder: "Search places by name, city or genre", class: "form-control" %>
+      <%= submit_tag 'Search', style: "display: none;" %>
+    <% end %>
+  </div>
+</div>
