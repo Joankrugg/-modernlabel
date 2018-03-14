@@ -23,6 +23,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @performance = Performance.new
   end
 
   def edit

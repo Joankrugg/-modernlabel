@@ -19,6 +19,10 @@ class PerformancesController < ApplicationController
       @asso = current_user.asso
       @performance = @asso.performances.new(performance_params)
       @performance.asso = @asso
+    elsif
+      @place = current_user.place
+      @performance = @place.performances.new(performance_params)
+      @performance.place = @place
     else
       @artist = current_user.artist
       @performance = @artist.performances.new(performance_params)
