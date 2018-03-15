@@ -2,13 +2,15 @@
   <% content_for(:title_tag) do %>
     -<%= @performance.artist.name %>- on Modern Box Records
   <% end %>
-<% elsif %>
+<% end %>
+<% if @performance.asso.present? %>
   <% content_for(:title_tag) do %>
     -<%= @performance.asso.name %>- on Modern Box Records
   <% end %>
-<% else %>
+<% end %>
+<% if @performance.place.present? %>
   <% content_for(:title_tag) do %>
-    -<%= @performance.place %>- on Modern Box Records
+    -<%= @performance.place.name %>- on Modern Box Records
   <% end %>
 <% end %>
 <%= render 'shared/performance_search' %>
@@ -21,10 +23,12 @@
         <div class="info-card-details">
           <% if @performance.artist.present? %>
             <h3><%= @performance.artist.name %></h3>
-          <% elsif %>
+          <% end %>
+          <% if @performance.asso.present? %>
             <h3><%= @performance.asso.name %></h3>
-          <% else %>
-            <h3><%= @performance.place %></h3>
+          <% end %>
+          <% if @performance.place.present? %>
+            <h3><%= @performance.place.name %></h3>
           <% end %>
           <h5><%= @performance.city %></h5>
           <h5><%= @performance.start_time.strftime("%m/%d/%Y at %H:%M") %></h5>
@@ -49,9 +53,11 @@
               <div class="social-card-content">
                 <% if @performance.artist.present? %>
                   <%= link_to "Back #{@performance.artist.name}", artist_path(@performance.artist) %>
-                <% elsif %>
+                <% end %>
+                <% if @performance.asso.present? %>
                   <%= link_to "Back #{@performance.asso.name}", asso_path(@performance.asso) %>
-                <% else %>
+                <% end %>
+                <% if @performance.place.present? %>
                   <%= link_to "Back #{@performance.place.name}", place_path(@performance.place) %>
                 <% end %>
               </div>
@@ -59,64 +65,25 @@
           </div>
         </div>
       </div>
-      <% if @performance.artist.present? %>
-        <div class="row">
-          <% if @performance.artist == current_user.artist  %>
-            <div class="option">
-               <div class="banner-content">
-                  <div class="mb">
-                    <div class="action">
-                      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                        <p style="color: $black;"><%="Edit #{@performance.name}"%></p>
-                          <%= render 'performances/form', performance: @performance %>
-                          <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="row">
-          <% if @performance.asso == current_user.asso  %>
-            <div class="option">
-               <div class="banner-content">
-                  <div class="mb">
-                    <div class="action">
-                      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                        <p style="color: $black;"><%="Edit #{@performance.name}"%></p>
-                          <%= render 'performances/form', performance: @performance %>
-                          <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-          <% if @performance.place == current_user.place  %>
-            <div class="option">
-               <div class="banner-content">
-                  <div class="mb">
-                    <div class="action">
-                      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                        <p style="color: $black;"><%="Edit #{@performance.name}"%></p>
-                          <%= render 'performances/form', performance: @performance %>
-                          <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
     </div>
   </div>
+  <div class="row">
+    <% if @performance.artist == current_user.artist or @performance.asso == current_user.asso or @performance.place == current_user.place %>
+      <div class="option">
+        <div class="banner-content">
+          <div class="mb">
+            <div class="action">
+              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                <p style="color: $black;"><%="Edit #{@performance.name}"%></p>
+                  <%= render 'performances/form', performance: @performance %>
+                  <%= link_to t(".Delete", default: "delete this"), performance_path(@performance), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+

@@ -15,18 +15,28 @@ class PerformancesController < ApplicationController
   end
 
   def create
-    if
-      @asso = current_user.asso
-      @performance = @asso.performances.new(performance_params)
-      @performance.asso = @asso
-    elsif
-      @place = current_user.place
-      @performance = @place.performances.new(performance_params)
-      @performance.place = @place
+    @artist = current_user.artist
+    @performance = @artist.performances.new(performance_params)
+    @performance.artist = @artist
+
+    if @performance.save
+      redirect_to artist_path(@artist)
     else
-      @artist = current_user.artist
-      @performance = @artist.performances.new(performance_params)
-      @performance.artist = @artist
+      render :new
+    end
+  end
+
+  def create_as_an_asso
+    if current_user.asso != nil
+    @asso = current_user.asso
+    @performance = @asso.performances.new(performance_params)
+    @performance.asso = @asso
+    end
+
+    if current_user.place != nil
+    @place = current_user.place
+    @performance = @place.performances.new(performance_params)
+    @performance.place = @place
     end
 
     if @performance.save
@@ -63,6 +73,6 @@ class PerformancesController < ApplicationController
   end
 
   def performance_params
-    params.require(:performance).permit(:start_time, :place_address, :city, :photo, :photo_cache, :artist_id, :facebook_event, :user_id, :name, :end_time, :price, :type_id, :asso_id)
+    params.require(:performance).permit(:start_time, :place_address, :city, :photo, :photo_cache, :artist_id, :facebook_event, :user_id, :name, :end_time, :price, :type_id)
   end
 end

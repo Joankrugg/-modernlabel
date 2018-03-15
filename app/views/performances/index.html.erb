@@ -15,8 +15,12 @@
                   <div class="info" id="performance">
                     <% if performance.artist.present? %>
                       <h1><%= performance.artist.name %></h1>
-                    <% else %>
+                    <% end %>
+                    <% if performance.asso.present? %>
                       <h1><%= performance.asso.name %></h1>
+                    <% end %>
+                    <% if performance.place.present? %>
+                      <h1><%= performance.place.name %></h1>
                     <% end %>
                     <h1><%= performance.city %></h1>
                     <h1><%= performance.start_time.strftime("%m/%d/%Y at %H:%M") %></h1>
@@ -45,8 +49,12 @@
         <div>
           <% if performance.artist.present? %>
             <%= performance.artist.name %>
-          <% else %>
+          <% end %>
+          <% if performance.asso.present? %>
             <%= performance.asso.name %>
+          <% end %>
+          <% if performance.place.present? %>
+            <%= performance.place.name %>
           <% end %>
         </div>
       <% end %>

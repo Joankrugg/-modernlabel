@@ -1,0 +1,24 @@
+<%= simple_form_for @performance, url: as_an_asso_performance_path, :method => :post, defaults: { label_html: { class: 'labels' } } do |f| %>
+  <% if @performance.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @performance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 ">
+    <%= f.input :name, required: false, placeholder: 'we need one' %>
+    <%= f.input :city, required: false, placeholder: 'we need one' %>
+    <%= f.input :photo, required: false, placeholder: 'we need one' %>
+    <%= f.input :place_address, required: false, placeholder: 'we need one' %>
+    <%= f.input :start_time, required: false, placeholder: 'we need one' %>
+    <%= f.input :end_time, required: false, placeholder: 'we need one' %>
+    <%= f.input :price, required: false, placeholder: 'we need one'  %>
+    <%= f.input :facebook_event, required: false, placeholder: 'we need one' %>
+    <%= f.association :type, required: false, placeholder: 'we need one' %>
+    <%= f.button :submit, class: "btn btn-medium" %>
+  </div>
+
+<% end %>

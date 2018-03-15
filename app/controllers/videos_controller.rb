@@ -30,22 +30,20 @@ class VideosController < ApplicationController
   end
 
   def create_as_an_asso
+    if current_user.asso != nil
       @asso = current_user.asso
       @video = @asso.videos.new(video_params)
       @video.asso = @asso
-    if @video.save
-      redirect_to asso_path(@asso)
-    else
-      render :new
     end
-  end
 
-  def create_as_a_place
+    if current_user.place != nil
       @place = current_user.place
       @video = @place.videos.new(video_params)
       @video.place = @place
+    end
+
     if @video.save
-      redirect_to place_path(@place)
+      redirect_to video_path(@video)
     else
       render :new
     end
@@ -79,6 +77,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :youtube_link, :artist_id, :genre_id, :asso_id)
+    params.require(:video).permit(:title, :youtube_link, :artist_id, :genre_id)
   end
 end

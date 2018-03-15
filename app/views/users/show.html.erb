@@ -15,24 +15,33 @@
             <% end %>
           </div>
         </div>
-        <div class="mb">
-          <div class="action">
-            <% if current_user.asso == nil %>
+        <% if current_user.asso == nil && current_user.place == nil %>
+          <div class="mb">
+            <div class="action">
               <%=link_to "create new asso", new_asso_path, class: "btn btn-medium" %>
-            <% else %>
-              <%=link_to "modifier #{@user.asso.name}",@user.asso, class: "btn btn-medium" %>
-            <% end %>
+            </div>
           </div>
-        </div>
-        <div class="mb">
-          <div class="action">
-            <% if current_user.place == nil %>
+          <p>or</p>
+          <div class="mb">
+            <div class="action">
               <%=link_to "create new place", new_place_path, class: "btn btn-medium" %>
-            <% else %>
-              <%=link_to "modifier #{@user.place.name}",@user.place, class: "btn btn-medium" %>
-            <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
+        <% if current_user.asso != nil %>
+          <div class="mb">
+            <div class="action">
+              <%=link_to "modifier #{@user.asso.name}",@user.asso, class: "btn btn-medium" %>
+            </div>
+          </div>
+        <% end %>
+        <% if current_user.place != nil %>
+          <div class="mb">
+            <div class="action">
+              <%=link_to "modifier #{@user.place.name}",@user.place, class: "btn btn-medium" %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

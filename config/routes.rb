@@ -23,13 +23,19 @@ Rails.application.routes.draw do
           get 'signed', to: "releases#signed"
         end
       end
-    resources :performances, :assos, :places, :shops, :actus, :services
+
+    resources :performances do
+      member do
+        post   "performances", to: "performances#create_as_an_asso", as: 'as_an_asso'
+      end
+    end
+
     resources :videos do
-      collection do
-        post   "videos", to: "videos#create_as_a_place", as: 'as_a_place'
+      member do
         post   "videos", to: "videos#create_as_an_asso", as: 'as_an_asso'
       end
     end
+    resources :assos, :places, :shops, :actus, :services
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
 end
