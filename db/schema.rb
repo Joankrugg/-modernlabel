@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314140402) do
+ActiveRecord::Schema.define(version: 20180316180724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,17 @@ ActiveRecord::Schema.define(version: 20180314140402) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hardwares", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "photo"
+    t.integer  "number"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "place_id"
+    t.index ["place_id"], name: "index_hardwares_on_place_id", using: :btree
   end
 
   create_table "opinions", force: :cascade do |t|
@@ -241,6 +252,7 @@ ActiveRecord::Schema.define(version: 20180314140402) do
   add_foreign_key "artists", "users"
   add_foreign_key "assos", "genres"
   add_foreign_key "assos", "users"
+  add_foreign_key "hardwares", "places"
   add_foreign_key "opinions", "releases"
   add_foreign_key "performances", "artists"
   add_foreign_key "performances", "assos"

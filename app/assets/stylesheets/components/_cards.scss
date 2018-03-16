@@ -76,31 +76,14 @@
   border-radius: 40px;
 }
 
-audio::-internal-media-controls-download-button {
-  display:none;
-}
-
-audio::-webkit-media-controls-enclosure {
-  overflow:hidden;
-}
-
-audio::-webkit-media-controls-panel {
-  width: calc(100% + 30px); /* Adjust as needed */
-}
-
-.style_image{
+.photo-card{
   border-radius-top-left: 6px;
   border-radius-top-right: 6px;
   margin: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.artist-items{
-  align: center;
-  padding-bottom: 20px;
-}
-
-.asso-items{
+.model-items{
   align: center;
   padding-bottom: 20px;
 }
@@ -130,6 +113,7 @@ audio::-webkit-media-controls-panel {
   justify-content: space-between;
   position: relative;
 }
+
 .social-logo{
   text-align: center;
   font-size: 50px;
@@ -140,6 +124,7 @@ audio::-webkit-media-controls-panel {
   justify-content: center;
   text-align: center;
 }
+
 #header{
   display: flex;
   justify-content: center;

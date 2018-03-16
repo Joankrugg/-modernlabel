@@ -25,11 +25,35 @@
       </div>
     </div>
   </div>
+    <div class="row">
+    <% if @place.hardwares.present? %>
+      <% @place.hardwares.each do |hardware| %>
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
+          <%= link_to hardware do %>
+            <div class="info-card productions">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <%= cl_image_tag hardware.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="col-lg-4">
+                  <p style="color: black; text-align: left; font-weight: bold">NAME: -<%= hardware.name %>-</p>
+                  <p style="color: black; text-align: left">NUMBER: -<%= hardware.number %>-</p>
+                </div>
+                <div class="col-lg-8">
+                  <p style="color: black; text-align: left">DESCRIPTION<%= hardware.description %>-</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
   <div class="row">
     <% if @place.performances.present? %>
       <% @place.performances.each do |performance| %>
         <%= link_to performance do %>
-          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 place-items">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 model-items">
             <div class="info-card productions">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
@@ -61,7 +85,7 @@
   <div class="row">
     <% if @place.videos.present? %>
       <% @place.videos.each do |video| %>
-        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 place-items">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 model-items">
           <div class="video">
             <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
           </div>

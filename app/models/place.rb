@@ -3,6 +3,7 @@ class Place < ApplicationRecord
   belongs_to :genre
   has_many :performances
   has_many :videos
+  has_many :hardwares
   mount_uploader :photo, PhotoUploader
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true

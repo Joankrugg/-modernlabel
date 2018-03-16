@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       end
     end
     resources :assos, :places, :shops, :actus, :services
-    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    resources :hardwares, except: :index
+        # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
 end

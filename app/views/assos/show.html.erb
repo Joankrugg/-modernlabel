@@ -28,7 +28,7 @@
   <div class="row">
     <% if @asso.services.present? %>
       <% @asso.services.each do |service| %>
-        <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 asso-items">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
           <%= link_to service do %>
             <div class="info-card productions">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -53,7 +53,7 @@
   <div class="row">
     <% if @asso.videos.present? %>
       <% @asso.videos.each do |video| %>
-        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 asso-items">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 model-items">
           <div class="video">
             <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
           </div>
@@ -76,7 +76,7 @@
     <% if @asso.performances.present? %>
       <% @asso.performances.each do |performance| %>
         <%= link_to performance do %>
-          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 asso-items">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 model-items">
             <div class="info-card productions">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
