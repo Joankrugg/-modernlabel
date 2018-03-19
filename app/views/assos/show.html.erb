@@ -11,7 +11,7 @@
         <div class="info-card-details">
           <h3>-<%= @asso.name.upcase %>-</h3>
           <h5><%= t(".city")%>: <%= @asso.city %></h5>
-          <h5> <%= @asso.genre.name %> </h5>
+          <h5><%= @asso.genre.name %></h5>
           <h5>Creation in <%= @asso.year_of_creation %> </h5>
         </div>
       </div>
@@ -22,7 +22,11 @@
       </div>
       <div class="info-card productions" id= "bio">
         <h4>Biography:</h4>
-        <p>il faudra ajouter la bio ici</p>
+        <% if @asso.description.present? %>
+          <p><%= @asso.description %></p>
+        <% else %>
+          <p>Association's description would be cool to know</p>
+        <% end %>
       </div>
     </div>
   </div>
