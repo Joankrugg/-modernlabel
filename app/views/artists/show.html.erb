@@ -2,7 +2,7 @@
   -<%= @artist.name %>-
 <% end %>
 <% content_for(:description) do %>
-  <%= @artist.description %>
+  <%= @artist.bio %>
 <% end %>
 <%= render 'shared/artist_search' %>
 <div class="container card-model">
@@ -34,8 +34,8 @@
       </div>
       <div class="info-card productions" id= "bio">
         <h4>Biography:</h4>
-        <% if @artist.description.present? %>
-          <p><%= @artist.description %></p>
+        <% if @artist.bio.present? %>
+          <p><%= @artist.bio %></p>
         <% else %>
           <p>il faudra ajouter la bio ici</p>
         <% end %>
