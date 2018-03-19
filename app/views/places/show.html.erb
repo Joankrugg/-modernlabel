@@ -20,8 +20,12 @@
         <%= cl_image_tag @place.photo, height: 80, width: 100, crop: :fill, class: "img-responsive"%>
       </div>
       <div class="info-card productions" id= "bio">
-        <h4>Biography:</h4>
-        <p>il faudra ajouter la bio ici</p>
+        <h4>ADDRESS:</h4>
+        <% if @place.address.present? %>
+          <p><%= @place.address %></p>
+        <% else %>
+          <p>Add the address of your place </p>
+        <% end %>
       </div>
     </div>
   </div>

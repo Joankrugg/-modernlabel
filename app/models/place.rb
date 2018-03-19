@@ -7,6 +7,7 @@ class Place < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true
+  validates :address, presence: true
   validates :facebook_page, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
 
   include PgSearch
