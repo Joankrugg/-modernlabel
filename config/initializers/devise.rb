@@ -12,6 +12,14 @@ Devise.setup do |config|
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
     secure_image_url: true
+    client_options: {
+                    site: 'https://graph.facebook.com/v2.11',
+                    authorize_url: "https://www.facebook.com/v2.11/dialog/oauth",
+                    client_id: ENV ["APP_ID"],
+                    redirect_uri: ENV ["REDIRECT_URI"],
+                    state: ENV ["STATE_PARAM"]
+                }
+
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
