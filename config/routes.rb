@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  constraints AuthRedirect do
+    devise_scope :contact do
+        get '/auth/facebook/callback' => 'omniauth_callbacks#facebook'
+        post '/auth/facebook/callback' => 'omniauth_callbacks#facebook'
+    end
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
