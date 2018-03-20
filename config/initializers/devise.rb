@@ -14,10 +14,7 @@ Devise.setup do |config|
     secure_image_url: true,
     client_options: {
                     site: 'https://graph.facebook.com/v2.11',
-                    authorize_url: "https://www.facebook.com/v2.11/dialog/oauth",
-                    :client_id ENV ["APP_ID"],
-                    :redirect_uri ENV ["REDIRECT_URI"],
-                    :state ENV ["STATE_PARAM"]
+                    authorize_url: "https://www.facebook.com/v2.11/dialog/oauth"
                 }
 
 
