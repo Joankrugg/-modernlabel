@@ -13,6 +13,7 @@
     <%= f.input :city, required: false, placeholder: 'we need one'%>
     <%= f.input :year_of_creation, required: false, placeholder: 'we need one'%>
     <%= f.input :description, required: false, placeholder: 'we need one' %>
+    <%= f.association :activity, required: false, placeholder: 'we need one' %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.association :genre %>

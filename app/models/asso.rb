@@ -1,6 +1,7 @@
 class Asso < ApplicationRecord
   belongs_to :user, required: true
   belongs_to :genre
+  belongs_to :activity
   mount_uploader :photo, PhotoUploader
   has_many :videos, dependent: :destroy
   has_many :performances, dependent: :destroy

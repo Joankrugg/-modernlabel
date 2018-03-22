@@ -54,6 +54,6 @@ class AssosController < ApplicationController
   end
 
   def asso_params
-    params.require(:asso).permit(:name, :city, :photo, :photo_cache, :description, :facebook_page, :user_id, :genre_id, :year_of_creation)
+    params.require(:asso).permit(:name, :city, :photo, :photo_cache, :description, :activity_id, :facebook_page, :user_id, :genre_id, :year_of_creation)
   end
 end

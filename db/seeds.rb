@@ -10,7 +10,7 @@ Record.create({ name: 'maxi' })
 Record.create({ name: 'Ep' })
 Record.create({ name: 'Lp' })
 Record.create({ name: 'Album' })
-  puts "      💥"
+#  puts "      💥"
 
 Genre.create({ name: 'Alternative' })
 Genre.create({ name: 'British' })
@@ -44,4 +44,14 @@ Type.create({ name: 'Festival' })
 Type.create({ name: 'Party' })
 Type.create({ name: 'Opening' })
 Type.create({ name: 'Happening' })
+  puts "      💥"
+
+
+Activity.create({ name: 'Rehearsal' })
+Activity.create({ name: 'Music Store' })
+Activity.create({ name: 'Recordings' })
+Activity.create({ name: 'Music video making' })
+Activity.create({ name: 'Communication' })
+Activity.create({ name: 'Label' })
+
   puts "      💥"

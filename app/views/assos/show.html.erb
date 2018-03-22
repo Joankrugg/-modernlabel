@@ -27,6 +27,11 @@
         <% else %>
           <p>Association's description would be cool to know</p>
         <% end %>
+        <% if @asso.activity.present? %>
+          <p><%= @asso.activity.name %></p>
+        <% else %>
+          <p>Association's description would be cool to know</p>
+        <% end %>
       </div>
     </div>
   </div>
