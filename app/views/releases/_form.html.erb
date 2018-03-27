@@ -10,15 +10,15 @@
   <% end %>
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 ">
     <%= f.input :title, required: false, placeholder: 'we need one' %>
-    <%= f.input :year_of_creation, required: false, collection: 1990..2018  %>
     <%= f.association :record, required: false %>
-    <%= f.input :price, required: false, collection: 1..20 %>
     <%= f.association :genre, required: false, placeholder: 'we need one' %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :price, required: false, collection: 1..20 %>
+    <%= f.input :year_of_creation, required: false, collection: 1990..2018  %>
     <%= f.input :description, required: false, placeholder: 'we need these few words (max 140 characters)', input_html: { maxlength: 140 }%>
     <%= f.input :youtube_link, placeholder: "optional, but you'd better have one to give"%>
     <%= f.input :bandcamp_link, placeholder: "optional, but you'd better have one to give" %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.button :submit, class: "btn btn-medium" %>
   </div>
 <% end %>
