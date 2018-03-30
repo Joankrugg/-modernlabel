@@ -12,6 +12,9 @@
           <h3>-<%= @place.name.upcase %>-</h3>
           <h5><%= t(".city")%>: <%= @place.city %></h5>
           <h5> <%= @place.genre.name %> </h5>
+          <% if @place.user == current_user %>
+            <%= link_to t(".Delete", default: "delete this"), place_path(@place), class: "call-to-action btn-medium btn ", method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
         </div>
       </div>
     </div>

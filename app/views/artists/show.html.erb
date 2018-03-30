@@ -25,6 +25,9 @@
             </audio>
           <% end %>
           <%= render 'shared/social-networks' %>
+          <% if @artist.user == current_user %>
+            <%= link_to t(".Delete", default: "delete this"), artist_path(@artist), class: "call-to-action btn-medium btn ", method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
         </div>
       </div>
     </div>
