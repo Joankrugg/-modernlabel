@@ -42,6 +42,9 @@
             </div>
           </div>
         <% end %>
+        <% if @user == current_user %>
+          <%= link_to t(".Delete", default: "delete my account"), user_path(@user), class: "call-to-action btn-medium btn ", method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
       </div>
     </div>
   </div>
