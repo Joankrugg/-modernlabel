@@ -29,5 +29,14 @@ class User < ApplicationRecord
 
     return user
   end
+
+    after_create :welcome
+
+  private
+
+    def welcome
+      UserMailer.welcome(self).deliver_now
+    end
+
   # [...]
 end
