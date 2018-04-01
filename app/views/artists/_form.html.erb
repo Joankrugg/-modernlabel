@@ -13,6 +13,7 @@
     <%= f.input :city, required: false, placeholder: 'we need one'%>
     <%= f.input :number_of_musicians, required: false, collection: 1..12 %>
     <%= f.association :genre, required: false, placeholder: 'we need one'%>
+    <%= f.input :bookable, as: :boolean %>
     <%= f.input :contact, placeholder: 'band@gmail.com' %>
     <%= f.input :bio, required: false, placeholder: 'we need these few words (max 140 characters)', input_html: { maxlength: 140 }%>
     <%= f.input :year_of_creation, required: false, collection: 1990..2017 %>

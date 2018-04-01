@@ -173,7 +173,12 @@
 .icons{
   color: #606668;
 }
-
+.activ_true{
+  background: linear-gradient(to right, $black, #FFFFFF);
+}
+.activ_true:hover{
+  background: linear-gradient(to right, $black, #FFFFFF);
+}
 .icons:hover{
   color: rgb(0, 167, 255);
 }

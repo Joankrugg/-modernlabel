@@ -2,7 +2,7 @@
   <%= link_to artist do %>
     <%= cl_image_tag artist.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
   <% end %>
-  <div class="info">
+  <div class="info activ_true">
     <h1>-<%= artist.name.capitalize %>-</h1>
     <h1>-<%= artist.genre.name %>-</h1>
     <h1><%= t(".city") %>: <%= artist.city %></h1>

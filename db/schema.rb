@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329134505) do
+ActiveRecord::Schema.define(version: 20180401163500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180329134505) do
     t.string   "bandcamp_link"
     t.integer  "genre_id"
     t.string   "bio"
+    t.boolean  "bookable",            default: false
     t.index ["genre_id"], name: "index_artists_on_genre_id", using: :btree
     t.index ["user_id"], name: "index_artists_on_user_id", using: :btree
   end
