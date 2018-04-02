@@ -1,13 +1,29 @@
-<div class="info-card">
-  <%= link_to artist do %>
-    <%= cl_image_tag artist.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
-  <% end %>
-  <div class="info activ_true">
-    <h1>-<%= artist.name.capitalize %>-</h1>
-    <h1>-<%= artist.genre.name %>-</h1>
-    <h1><%= t(".city") %>: <%= artist.city %></h1>
-    <h1><%= t(".creation") %>: <%= artist.year_of_creation %></h1>
-    <h1><%= t(".number_of_musicians") %>: <%= artist.number_of_musicians %></h1>
-    <%= render 'shared/icons' %>
+<% if artist.bookable == true %>
+  <div class="info-card">
+    <%= link_to artist do %>
+      <%= cl_image_tag artist.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
+    <% end %>
+    <div class="info">
+      <h1>-<%= artist.name.capitalize %>-</h1>
+      <h1>-<%= artist.genre.name %>-</h1>
+      <h1><%= t(".city") %>: <%= artist.city %></h1>
+      <h1><%= t(".creation") %>: <%= artist.year_of_creation %></h1>
+      <h1><%= t(".number_of_musicians") %>: <%= artist.number_of_musicians %></h1>
+      <%= render 'shared/icons' %>
+    </div>
   </div>
-</div>
+  <% else %>
+  <div class="info-card">
+    <%= link_to artist do %>
+      <%= cl_image_tag artist.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
+    <% end %>
+    <div class="info activ_false">
+      <h1>-<%= artist.name.capitalize %>-</h1>
+      <h1>-<%= artist.genre.name %>-</h1>
+      <h1><%= t(".city") %>: <%= artist.city %></h1>
+      <h1><%= t(".creation") %>: <%= artist.year_of_creation %></h1>
+      <h1><%= t(".number_of_musicians") %>: <%= artist.number_of_musicians %></h1>
+      <%= render 'shared/icons_2' %>
+    </div>
+  </div>
+<% end %>

@@ -153,7 +153,7 @@
   background: linear-gradient(to right, #D1D1D1, #FFFFFF);
   text-align: center;
     h1 {
-      color: #262626;
+      color: $black;
       font-size: 12px;
       text-transform: uppercase;
       margin: 0 !important;
@@ -173,11 +173,22 @@
 .icons{
   color: #606668;
 }
-.activ_true{
+.icons_2{
+  color: #606668;
+}
+
+.activ_false{
   background: linear-gradient(to right, $black, #FFFFFF);
 }
-.activ_true:hover{
+.activ_false:hover{
   background: linear-gradient(to right, $black, #FFFFFF);
+    h1 {
+    color: #606668;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0 !important;
+    padding-top: 6px;
+  }
 }
 .icons:hover{
   color: rgb(0, 167, 255);

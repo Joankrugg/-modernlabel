@@ -6,7 +6,7 @@ class Artist < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :videos, dependent: :destroy
   validates :name, uniqueness: true, presence: true
-  validates :bio, presence: true
+  validates :photo, presence: true
   validates :city, presence: true
   validates :year_of_creation, presence: true
   validates :number_of_musicians, presence: true
@@ -26,7 +26,8 @@ class Artist < ApplicationRecord
                   against: [
                     :name,
                     :city,
-                    :number_of_musicians
+                    :number_of_musicians,
+                    :bookable
                   ],
                   associated_against: {
                     genre: [ :name]
