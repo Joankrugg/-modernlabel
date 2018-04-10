@@ -4,6 +4,24 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
+          <% unless user_signed_in? %>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+              <% end %>
+            </li>
+            <% else %>
+            <li>
+              <%= link_to current_user do %>
+                <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+              <% end %>
+            </li>
+          <% end %>
+          <li>
+            <%= link_to pages_how_it_works_path do %>
+              <i class="fa fa-diamond"></i> <%= t(".index_introduction", default: "HOW IT WORKS") %>
+            <% end %>
+          </li>
           <li>
             <%= link_to actus_path do %>
               <i class="fa fa-newspaper-o"></i> <%= t(".index_news", default: "NEWS") %>
@@ -24,26 +42,10 @@
               <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "STORE") %>
             <% end %>
           </li>
-          <li>
-            <%= link_to pages_how_it_works_path do %>
-              <i class="fa fa-diamond"></i> <%= t(".index_introduction", default: "HOW IT WORKS") %>
-            <% end %>
-          </li>
-          <% unless user_signed_in? %>
-            <li>
-              <%= link_to new_user_session_path do %>
-                <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
-              <% end %>
-            </li>
-            <% else %>
-            <li>
-              <%= link_to current_user do %>
-                <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
-              <% end %>
-            </li>
+          <% if user_signed_in? %>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-times-circle" ></i> <%= t(".index_user", default: "QUIT") %>
+                <i class="fa fa-times-circle" ></i> <%= t(".index_out", default: "QUIT") %>
               <% end %>
             </li>
           <% end %>

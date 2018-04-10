@@ -22,28 +22,54 @@
 fr:
   pages:
     home:
-      sign_in: "Inscription"
+      sign_up: "Inscription"
+      sign_in: "Connexion"
+      learn_more: "En Savoir Plus"
+      slogan: "UN LABEL ROCK IMPLIQUÉ DANS LA SCENE LOCALE"
+      introduction: "Modern Box Records est un Label ROCK et une communauté"
+      action: "dans laquelle vous renseignez vos projets, prods, concerts et autres"
+      method: "partagez les liens vers vos pages officielles et"
+      go: "faîtes vivre la scène locale et plus!"
+    how_it_works:
+      title: "MODERN BOX RECORDS"
+      function_1: "AUTHENTIQUE LABEL ROCK"
+      step_1: "Production & réalisation artistique"
+      step_2: "Communication & promotion autour des artistes"
+      facility: "Pour cela envoyez directement vos démos à modernboxrecords@gmail.com"
+      step_3: "Réponse sous 30 jours"
+      function_2: "PROFITEZ D'UN RÉSEAU GRANDISSANT"
+      step_22: "Créez votre profil d'artiste, d'initiative ou de salle de concert"
+      facility_2: "Organisez vos évènements et résolvez vos éventuels problèmes plus facilement"
+      step_32: "(le profil initiative regroupe les types d'activités associatives et professionelles)"
+      function_3: "COMMUNIQUEZ VOS ACTIVITÉS AUPRES DES ACTEURS DYNAMIQUES"
+      step_13: "Partagez vos vidéos promotionnelles"
+      step_23: "Partagez vos productions personnelles tant que vous en avez les droits "
+      facility_3: "Editez vos prochaines dates de concert et définissez vous comme actifs"
+      function_3: "UN RÉSEAU ACTIF TOUJOURS Á JOUR"
+      step_13: "Si 3 mois se passent sans connexion, vous passez inactif"
+      step_23: "Vous recevez dans l'instant, un mail vous invitant à repasser en actif"
+      facility_3: "Trouvez enfin des contacts utiles grâce au moteur de recherche"
+      function_4: "ELARGISSEZ VOS CONNAISSANCES ROCK"
+      step_14: "Trouvez de nouveaux groupes à faire jouer"
+      step_24: "Dynamisez un public rock et une région entière"
+      facility_4: "Créez des crews et dynamisez vos activités gratuitement"
   shared:
     navbar:
       index_artist: "ARTISTES"
       index_release: "RECORDS"
       index_news: "NEWS"
       index_shop: "SHOP"
-      index_action: "ACTIONS"
+      index_introduction: "COMMENT CA MARCHE"
       index_out: "QUITTER"
-      index_admin: "ADMIN"
-      nav_artist: "ARTISTS"
-      nav_release: "RECORDS"
-      nav_actu: "NEWS"
-      nav_shop: "SHOP"
+      index_user: "MON COMPTE"
     artistcard:
       city: "Ville"
-      number_of_musicians: "Nombre de musiciens"
-      year_of_creation: "Année de création"
+      number_of_musicians: "Musiciens"
+      year_of_creation: "Création en"
     releasecard:
       city: "Ville"
-      number_of_musicians: "Nombre de musiciens"
-      year_of_creation: "Année de création"
+      number_of_musicians: "Musiciens"
+      year_of_creation: "Création en"
       out_from: "Sortie le"
     performancecard:
       city: "Ville"
@@ -51,11 +77,16 @@ fr:
   artists:
     artist:
       city: "Ville"
-      number_of_musicians: "Nombre de musiciens"
-      creation: "Année de création"
+      number_of_musicians: "Musiciens"
+      creation: "Création en"
     signed:
       people_playing: "zicos qui font du"
       read_more: "En Savoir Plus..."
+  releases:
+    release:
+      type: "Format"
+      genre: "Genre"
+      creation: "Création en"
 
   performances:
     show:

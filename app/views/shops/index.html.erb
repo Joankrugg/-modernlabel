@@ -1,18 +1,18 @@
 <div class="page-title top">
   MODERN BOX SHOP
 </div>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--8nxi3HAK--/q_jpegmini/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+<div class="banner">
   <div class="banner-content">
-    <div class="highlight" id="slide_1"></div>
-    <div class="highlight" id="slide_2">Check The Boxes!!!</div>
     <% @shops.each do |shop|%>
-      <div class="view view-fourth col-xs-12 col-lg-6">
-        <div class="mask">
-          <h2>-<%= shop.product.capitalize %>-</h2>
-          <h2><%= shop.price %></h2>
+      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <div class="id-card">
           <%= link_to shop do %>
-            <p class="info">Read More</p>
+            <%= cl_image_tag shop.photo, height: 250, width: 250, crop: :fill, class: "img-responsive id-pic" %>
           <% end %>
+          <div class="details">
+            <h2>-<%= shop.product.capitalize %>-</h2>
+            <h2><%= shop.price %></h2>
+          </div>
         </div>
       </div>
     <% end %>

@@ -1,69 +1,55 @@
-<div class="introduction">
-  <div class="container">
-    <div class="page-title">How It Works</div>
+<div class="page-title top"><%= t(".title", default: "How It Works")%></div>
+<div class="banner">
+  <div class="container banner-content">
     <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239326/pyi1tstskx7n5s41xnua.jpg');">
-        <%= link_to artists_path do %>
-          <i class="fab fa fa-users"></i>
-        <% end %>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
-        <h3>GET INTO THE NETWORK!</h3>
-        <p class="arguments">Create your own band profil.<br>
-        And add your official pages on it.<br>
-        Create your crew and get booked for a next show.
-        </p>
-        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
-        <h3>LET US KNOW WHAT YOU DO</h3>
-        <p class="arguments">Let Modern Box Records know about you.<br>
-        Create your releases on your band profil.<br>
-        You don't have to upload anything... Just share your links
-        </p>
-        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239300/ehtawptlypoe4teryneg.jpg');">
-        <%= link_to releases_path do %>
-          <i class="fab fa fa-caret-square-o-right"></i>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845558/mbhujdjlzwroiboys1dy.jpg');">
-        <%= link_to assos_path do %>
-          <i class="fab fa fa-heartbeat"></i>
-        <% end %>
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
-        <h3>MAKE THE SCENE ALIVE!</h3>
-        <p class="arguments">Add concerts to your band profil.<br>
-        everything appears on our big calendar!
-        <br>
-        Get in touch with the scene and try to fill the blanks!
-        </p>
-        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
-      </div>
-    </div>
+      <div class="col-sm-9 col-md-9 col-lg-9">
+        <div class="col-sm-11 col-md-12 col-lg-12 intro-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845558/mbhujdjlzwroiboys1dy.jpg');">
+          <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
+          <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%><br>
+          <%= t(".step_2", default: "Communication and event making.")%><br>
+          <%= t(".facility", default: "Send your demos to modernboxrecords@gmail.com.")%><br>
+          <%= t(".step_3", default: "An answer under one month.")%>
+          </p>
+            <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
+        </div>
 
-    <div class="row">
-      <div class="col-sm-6 col-md-6 col-lg-4 advantages">
-        <h3>A BOOKING SOLUTION</h3>
-        <p class="arguments">You're an association or a place<br>
-        The scene needs to know about you?<br>
-        Make a profil and and get efficient like never
-        </p>
-        <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
+        <div class="col-sm-11 col-md-12 col-lg-12 intro-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510177517/guitar_ow5t9i.jpg');">
+          <h3><%= t(".function_2", default:"BE PART OF THE GROWING NETWORK")%></h3>
+          <p class="arguments"><%= t(".step_22", default: "Create a band, asso or place profil.")%><br>
+          <%= t(".facility_2", default: "Take your next events or problems easy thanks to the network")%><br>
+          <%= t(".step_32", default: "Assos profils stand for multipurpose")%>
+          </p>
+          <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
+        </div>
+        <div class="col-sm-11 col-md-12 col-lg-12 intro-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845668/p17wdpgwegxf8gxgbrvf.jpg');">
+          <h3><%= t(".function_3", default:"MAKE THE SCENE ALIVE!")%></h3>
+          <p class="arguments"><%= t(".step_13", default: "Add concerts to your band profil.")%><br>
+          <%= t(".step_23", default: "everything appears on our big calendar!")%>
+          <br>
+          <%= t(".facility_3", default: "Get in touch with the scene and try to fill the blanks!")%>
+          </p>
+          <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
+        </div>
+
+        <div class="col-sm-11 col-md-12 col-lg-12 intro-card last-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239252/r8xviqlxqhc34kcm0km6.png');">
+          <h3><%= t(".function_4", default:"A BOOKING SOLUTION")%></h3>
+          <p class="arguments">You're an association or a place<br>
+          <%= t(".step_14", default: "The scene needs to know about you?")%><br>
+          <%= t(".facility_4", default: "Make a profil and and get efficient like never")%>
+          </p>
+          <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
+        </div>
       </div>
-      <div class="col-sm-6 col-md-6 col-lg-8 intro-card advantages" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239252/r8xviqlxqhc34kcm0km6.png');">
-        <%= link_to assos_path do %>
-          <i class="fab fa fa-share-alt"></i>
-        <% end %>
-        <%= link_to places_path do %>
-          <i class="fab fa fa-beer"></i>
-        <% end %>
+      <div class="col-sm-3 col-md-3 col-lg-3 cu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1510239300/ehtawptlypoe4teryneg.jpg');">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <h3>MAKE THE SCENE ALIVE!</h3>
+          <p class="arguments">Add concerts to your band profil.<br>
+          everything appears on our big calendar!
+          <br>
+          Get in touch with the scene and try to fill the blanks!
+          </p>
+          <%= link_to 'sign in MBR', new_user_session_path, class: "btn btn-medium" %>
+        </div>
       </div>
     </div>
   </div>

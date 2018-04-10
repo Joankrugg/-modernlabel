@@ -2,7 +2,7 @@
   MODERN BOX ARTISTS
 </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/da2krghvd/image/upload/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+<div class="banner">
   <div class="container banner-content">
     <% @artists.each do |artist|%>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
@@ -10,7 +10,7 @@
           <%= link_to artist do %>
             <%= cl_image_tag artist.photo, height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
           <% end %>
-          <%= artist.name %>
+          <div class="details"><%= artist.name %></div>
         </div>
       </div>
     <% end %>

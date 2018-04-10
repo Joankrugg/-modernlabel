@@ -25,6 +25,8 @@ en:
       sign_in: "Get in!"
       tagline: "Save your time & order your lunch with Yvon"
       call_to_action: "Message Yvon"
+    how_it_works:
+      function_1: "CLASSIC ROCK LABEL"
   shared:
     navbar:
       index_artist: "ARTISTS"
