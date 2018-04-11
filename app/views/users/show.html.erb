@@ -8,55 +8,69 @@
   <div class="container banner-content">
     <% if current_user.asso == nil && current_user.place == nil %>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-        <div class="id-card">
-          <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
-          <%= link_to t(".asso", default: "create new asso"), new_asso_path %>
-        </div>
+        <%= link_to new_asso_path do %>
+          <div class="id-card">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
+            <%= t(".asso", default: "create new asso") %>
+          </div>
+        <% end %>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-        <div class="id-card">
-          <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
-          <%= link_to t(".place", default: "create new place"), new_place_path %>
-        </div>
+        <%= link_to new_place_path do %>
+          <div class="id-card">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
+            <%= t(".place", default: "create new place") %>
+          </div>
+        <% end %>
       </div>
     <% end %>
     <% if current_user.asso != nil %>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-        <div class="id-card">
-          <%= cl_image_tag @user.asso.photo, height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
-          <%= link_to "Modifier #{@user.asso.name}",@user.asso, class: "btn btn-medium" %>
-        </div>
+        <%= link_to @user.asso do %>
+          <div class="id-card">
+            <%= cl_image_tag @user.asso.photo, height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
+            <%="#{@user.asso.name}" %>
+          </div>
+        <% end %>
       </div>
     <% end %>
     <% if current_user.place != nil %>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-        <div class="id-card">
-          <%= cl_image_tag @user.place.photo, height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
-          <%= link_to "Modifier #{@user.place.name}",@user.place, class: "btn btn-medium" %>
-        </div>
+        <%= link_to @user.place do %>
+          <div class="id-card">
+            <%= cl_image_tag @user.place.photo, height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
+            <%="#{@user.place.name}" %>
+          </div>
+        <% end %>
       </div>
     <% end %>
     <% if current_user.artist == nil %>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-        <div class="id-card">
-          <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
-          <%= link_to t(".artist", default: "create new artist"), new_artist_path %>
-        </div>
+        <%= link_to new_artist_path do %>
+          <div class="id-card">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
+            <%= t(".artist", default: "create new artist") %>
+          </div>
+        <% end %>
       </div>
     <% else %>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-        <div class="id-card">
-          <%= cl_image_tag @user.artist.photo, height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
-          <%= link_to "modifier #{@user.artist.name}", @user.artist, class: "btn btn-medium" %>
+        <%= link_to @user.artist do %>
+          <div class="id-card">
+            <%= cl_image_tag @user.artist.photo, height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
+            <%= "#{@user.artist.name}" %>
+          <% end %>
         </div>
       </div>
     <% end %>
     <% if @user == current_user %>
       <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-        <div class="id-card">
-          <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
-          <%= link_to t(".delete", default: "delete my account"), user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %>
-        </div>
+        <%= link_to user_path(@user), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <div class="id-card">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 230, width: 250, crop: :fill, class: "id-pic img-responsive" %>
+            <%= t(".delete", default: "delete my account")  %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
