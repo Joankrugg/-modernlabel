@@ -23,7 +23,7 @@
         <%= cl_image_tag @place.photo, height: 80, width: 100, crop: :fill, class: "img-responsive"%>
       </div>
       <div class="info-card productions" id= "bio">
-        <h4>ADDRESS:</h4>
+        <h4>INFOS:</h4>
         <% if @place.address.present? %>
           <p><%= @place.address %></p>
         <% else %>

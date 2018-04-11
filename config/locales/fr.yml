@@ -84,6 +84,7 @@ fr:
       number_of_musicians: "Musiciens"
       biography: "Biographie"
       title: "TITRE"
+      Delete: "Tout effacer"
       EDITION: "FORMAT"
       PRICE: "PRIX"
       GENRE: "STYLE"
@@ -102,6 +103,7 @@ fr:
       city: "Ville"
       creation: "Création en"
       genre: "Tendance"
+      Delete: "Tout effacer"
       number_of_musicians: "Musiciens"
       biography: "Biographie"
       title: "TITRE"
@@ -123,6 +125,7 @@ fr:
       city: "Ville"
       creation: "Création en"
       genre: "Tendance"
+      Delete: "Tout effacer"
       NUMBER: "NOMBRE"
       PRICE: "PRIX"
       NAME: "MATÉRIEL"
@@ -147,8 +150,7 @@ fr:
     index:
       record_format: "format"
       price: "prix"
-    signed:
-      plays: "se fait du"
+
   users:
     show:
       place: "créer salle"
