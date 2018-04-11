@@ -15,7 +15,7 @@
     <div class="col-lg-offset-2 col-lg-8">
       <div class="card-header">
         <h3><%= @actu.title.upcase %></h3>
-        <h5><%= @actu.edition %></h5>
+        <h5><%= @actu.edition.strftime("%d/%m/%Y") %></h5>
       </div>
       <hr>
       <div class="card-description">
