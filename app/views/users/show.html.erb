@@ -7,30 +7,14 @@
     <div class="container actions">
       <div class="row">
         <div class="col-lg-12">
-          <% if current_user.artist == nil %>
-            <div class="col-sm-6 col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845558/mbhujdjlzwroiboys1dy.jpg');">
-              <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
-              <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
-              </p>
-              <%=link_to "create new artist", new_artist_path, class: "btn btn-medium" %>
-            </div>
-          <% else %>
-            <div class="col-sm-6 col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845558/mbhujdjlzwroiboys1dy.jpg');">
-              <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
-              <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
-              </p>
-              <%=link_to "modifier #{@user.artist.name}", @user.artist, class: "btn btn-medium" %>
-            </div>
-          <% end %>
-
           <% if current_user.asso == nil && current_user.place == nil %>
-            <div class="col-sm-6  col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--ep6sSoFL--/q_jpegmini:1/v1510177518/musique_mio8lx.jpg');">
+            <div class="col-sm-6  col-md-offset-1 col-md-4 col-lg-offset-1 col-lg-4 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--ep6sSoFL--/q_jpegmini:1/v1510177518/musique_mio8lx.jpg');">
               <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
               <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
               </p>
               <%=link_to "create new asso", new_asso_path, class: "btn btn-medium" %>
             </div>
-            <div class="col-sm-6  col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--phCiK5mB--/q_jpegmini:1/v1508845668/p17wdpgwegxf8gxgbrvf.jpg');">
+            <div class="col-sm-6  col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--phCiK5mB--/q_jpegmini:1/v1508845668/p17wdpgwegxf8gxgbrvf.jpg');">
               <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
               <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
               </p>
@@ -39,7 +23,7 @@
           <% end %>
 
           <% if current_user.asso != nil %>
-            <div class="col-sm-6  col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--ep6sSoFL--/q_jpegmini:1/v1510177518/musique_mio8lx.jpg');">
+            <div class="col-sm-6  col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--ep6sSoFL--/q_jpegmini:1/v1510177518/musique_mio8lx.jpg');">
               <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
               <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
               </p>
@@ -47,15 +31,30 @@
             </div>
           <% end %>
           <% if current_user.place != nil %>
-            <div class="col-sm-6 col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--phCiK5mB--/q_jpegmini:1/v1508845668/p17wdpgwegxf8gxgbrvf.jpg');">
+            <div class="col-sm-6 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--phCiK5mB--/q_jpegmini:1/v1508845668/p17wdpgwegxf8gxgbrvf.jpg');">
               <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
               <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
               </p>
               <%=link_to "modifier #{@user.place.name}",@user.place, class: "btn btn-medium" %>
             </div>
           <% end %>
+          <% if current_user.artist == nil %>
+            <div class="col-sm-6 col-md-offset-1 col-md-4 col-lg-offset-1 col-lg-4 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845558/mbhujdjlzwroiboys1dy.jpg');">
+              <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
+              <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
+              </p>
+              <%=link_to "create new artist", new_artist_path, class: "btn btn-medium" %>
+            </div>
+          <% else %>
+            <div class="col-sm-6 col-md-offset-1 col-md-4 col-lg-offset-1 col-lg-4 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/v1508845558/mbhujdjlzwroiboys1dy.jpg');">
+              <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
+              <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
+              </p>
+              <%=link_to "modifier #{@user.artist.name}", @user.artist, class: "btn btn-medium" %>
+            </div>
+          <% end %>
           <% if @user == current_user %>
-            <div class="col-sm-6 col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--nx4Ynb0l--/q_jpegmini:1/v1510239300/ehtawptlypoe4teryneg.jpg');">
+            <div class="col-sm-6 col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4 action-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--nx4Ynb0l--/q_jpegmini:1/v1510239300/ehtawptlypoe4teryneg.jpg');">
               <h3><%= t(".function_1", default: "A CLASSICAL ROCK LABEL")%></h3>
               <p class="arguments"><%= t(".step_1", default: "Production and promotion of releases.")%>
               </p>
