@@ -5,8 +5,8 @@
   <div class="info">
     <h1>-<%= asso.name.capitalize %>-</h1>
     <h1><%= t(".city") %>: <%= asso.city %></h1>
-    <h1>Loves: <%= asso.genre.name %></h1>
-    <h1>Creation in: <%= asso.year_of_creation %></h1>
+    <h1><%= t(".loves") %>: <%= asso.genre.name %></h1>
+    <h1><%= t(".creation in")%>: <%= asso.year_of_creation %></h1>
     <%= render 'shared/icons' %>
   </div>
 </div>

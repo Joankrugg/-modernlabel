@@ -36,7 +36,7 @@
         <%= cl_image_tag @artist.photo, height: 80, width: 100, crop: :fill, class: "img-responsive"%>
       </div>
       <div class="info-card productions" id= "bio">
-        <h4>Biography:</h4>
+        <h4><%=t(".biography")%>:</h4>
         <% if @artist.bio.present? %>
           <p><%= @artist.bio %></p>
         <% else %>
@@ -56,6 +56,10 @@
 
   <div class="row">
     <% if @artist.releases.present? %>
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
+        <h2>//PRODS\\</h2>
+        <hr>
+      </div>
       <% @artist.releases.each do |release| %>
         <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
           <%= link_to release do %>
@@ -65,17 +69,16 @@
               </div>
               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                 <div class="col-lg-4">
-                  <p style="color: black; text-align: left; font-weight: bold">TITLE: -<%= release.title.upcase %>-</p>
-                  <p style="color: black; text-align: left"><%= release.description %>-</p>
+                  <p style="color: black; text-align: left; font-weight: bold"><%=t(".title") %>: -<%= release.title.upcase %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".EDITION") %>: -<%= release.record.name %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".PRICE") %>: -<%= release.price %>Euros-</p>
                 </div>
                 <div class="col-lg-4">
-                  <p style="color: black; text-align: left">EDITION: -<%= release.record.name %>-</p>
-                  <p style="color: black; text-align: left">PRICE: -<%= release.price %>Euros-</p>
-                  <p style="color: black; text-align: left">GENRE: -<%= release.genre.name %>-</p>
-                  <p style="color: black; text-align: left">RECORD: -<%= release.year_of_creation %>-</p>
-                </div>
-                <div class="col-lg-4">
+                  <p style="color: black; text-align: left"><%= t(".GENRE") %>: -<%= release.genre.name %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".RECORD") %>: -<%= release.year_of_creation %>-</p>
                   <p style="color: black; text-align: left"><%= release.average_hearts %></p>
+                </div>
+                <div class="col-lg-4">
                   <% if release.youtube_link.present? %>
                     <%= link_to release.youtube_link, target: :_blank do %>
                       <i class="fa fa-youtube"></i>
@@ -92,6 +95,10 @@
 
   <div class="row">
     <% if @artist.videos.present? %>
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
+        <h2>//VIDEOS\\</h2>
+        <hr>
+      </div>
       <% @artist.videos.each do |video| %>
         <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 model-items">
           <div class="video">
@@ -115,6 +122,10 @@
 
   <div class="row">
     <% if @artist.performances.present? %>
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
+        <h2>//CONCERTS\\</h2>
+        <hr>
+      </div>
       <% @artist.performances.each do |performance| %>
         <%= link_to performance do %>
           <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 model-items">
@@ -124,9 +135,9 @@
               </div>
               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                 <div class="col-lg-4">
-                  <p style="color: black; text-align: left; font-weight: bold">TITLE: -<%= performance.name %>-</p>
-                  <p style="color: black; text-align: left">CITY: -<%= performance.city %>-</p>
-                  <p style="color: black; text-align: left">ADDRESS: -<%= performance.place_address %>-</p>
+                  <p style="color: black; text-align: left; font-weight: bold"><%=t(".title") %>: -<%= performance.name %>-</p>
+                  <p style="color: black; text-align: left"><%=t(".CITY") %> -<%= performance.city %>-</p>
+                  <p style="color: black; text-align: left"><%=t(".ADDRESS") %>: -<%= performance.place_address %>-</p>
                 </div>
                 <div class="col-lg-4">
                   <p style="color: black; text-align: left">DATE: -<%= performance.start_time %>-</p>

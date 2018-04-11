@@ -79,9 +79,29 @@ fr:
       city: "Ville"
       number_of_musicians: "Musiciens"
       creation: "Création en"
+    show:
+      city: "Ville"
+      number_of_musicians: "Musiciens"
+      biography: "Biographie"
+      title: "TITRE"
+      EDITION: "FORMAT"
+      PRICE: "PRIX"
+      GENRE: "STYLE"
+      RECORD: "CRÉATION"
+      CITY: "VILLE"
+      ADDRESS: "ADRESSE"
     signed:
       people_playing: "zicos qui font du"
       read_more: "En Savoir Plus..."
+  assos:
+    asso:
+      city: "ville"
+      loves: "plutôt"
+      creation in: "Création en"
+  places:
+    place:
+      city: "ville"
+      loves: "plutôt"
   releases:
     release:
       type: "Format"
