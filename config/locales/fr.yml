@@ -149,7 +149,12 @@ fr:
       price: "prix"
     signed:
       plays: "se fait du"
-
+  users:
+    show:
+      place: "créer salle"
+      artist: "créer artiste"
+      asso: "créer structure"
+      delete: "détruire le compte"
 
   activerecord:
     models:
