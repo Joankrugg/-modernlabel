@@ -24,7 +24,7 @@
         <%= cl_image_tag @asso.photo, height: 80, width: 100, crop: :fill, class: "img-responsive"%>
       </div>
       <div class="info-card productions" id= "bio">
-        <h4>Biography:</h4>
+        <h4><%=t(".biography") %></h4>
         <% if @asso.description.present? %>
           <p><%= @asso.description %></p>
         <% else %>
@@ -33,7 +33,7 @@
         <% if @asso.activity.present? %>
           <p><%= @asso.activity.name %></p>
         <% else %>
-          <p>Association's description would be cool to know</p>
+          <p>Your Activity would be cool to know</p>
         <% end %>
       </div>
     </div>
@@ -49,11 +49,11 @@
               </div>
               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                 <div class="col-lg-4">
-                  <p style="color: black; text-align: left; font-weight: bold">NAME: -<%= service.name %>-</p>
-                  <p style="color: black; text-align: left">PRICE: -<%= service.adhesion_fee %>Euros-</p>
+                  <p style="color: black; text-align: left; font-weight: bold"><%= t(".NAME") %>: -<%= service.name %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".PRICE") %>: -<%= service.adhesion_fee %>Euros-</p>
                 </div>
                 <div class="col-lg-8">
-                  <p style="color: black; text-align: left"><%= service.description %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".DESCRIPTION") %>: -<%= service.description %>-</p>
                 </div>
               </div>
             </div>
@@ -92,17 +92,17 @@
           <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 model-items">
             <div class="info-card productions">
               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <%= cl_image_tag performance.photo, height: 100, width: 100, crop: :fill, class: "img-rounded img-responsive" %>
+                <%= cl_image_tag performance.photo, height: 110, width: 110, crop: :fill, class: "img-rounded img-responsive" %>
               </div>
               <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                 <div class="col-lg-4">
-                  <p style="color: black; text-align: left; font-weight: bold">TITLE: -<%= performance.name %>-</p>
-                  <p style="color: black; text-align: left">CITY: -<%= performance.city %>-</p>
-                  <p style="color: black; text-align: left">ADDRESS: -<%= performance.place_address %>-</p>
+                  <p style="color: black; text-align: left; font-weight: bold"><%= t(".title") %>: -<%= performance.name %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".CITY") %>: -<%= performance.city %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".PRICE") %>: -<%= performance.price %>Euros-</p>
                 </div>
                 <div class="col-lg-4">
-                  <p style="color: black; text-align: left">DATE: -<%= performance.start_time %>-</p>
-                  <p style="color: black; text-align: left">PRICE: -<%= performance.price %>Euros-</p>
+                  <p style="color: black; text-align: left"><%= t(".DATE") %>: -<%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %>-</p>
+                  <p style="color: black; text-align: left"><%= t(".ADDRESS") %>: -<%= performance.place_address %>-</p>
                 </div>
                 <div class="col-lg-4">
                   <% if performance.facebook_event? %>

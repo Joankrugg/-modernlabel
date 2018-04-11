@@ -98,6 +98,20 @@ fr:
       city: "ville"
       loves: "plutôt"
       creation in: "Création en"
+    show:
+      city: "Ville"
+      number_of_musicians: "Musiciens"
+      biography: "Biographie"
+      title: "TITRE"
+      EDITION: "FORMAT"
+      PRICE: "PRIX"
+      NAME: "SERVICE"
+      DATE: "DATE"
+      DESCRIPTION: "DESCRIPTION"
+      GENRE: "STYLE"
+      RECORD: "CRÉATION"
+      CITY: "VILLE"
+      ADDRESS: "ADRESSE"
   places:
     place:
       city: "ville"
