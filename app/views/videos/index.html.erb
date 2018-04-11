@@ -1,9 +1,6 @@
 <div class="negative top">
   <div class="search search-fixed">
-  <%= form_tag(videos_path, method: :get) do %>
-    <%= text_field_tag :search, nil, placeholder: "Search videos by band name, or title", class: "form-control" %>
-    <%= submit_tag 'Search', style: "display: none;" %>
-  <% end %>
+    <%= render 'shared/video_search' %>
   </div>
 </div>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url(https://res.cloudinary.com/da2krghvd/image/upload/s--FcDaVp61--/q_jpegmini/v1510239252/r8xviqlxqhc34kcm0km6.png);">

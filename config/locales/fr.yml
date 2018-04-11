@@ -100,6 +100,8 @@ fr:
       creation in: "Création en"
     show:
       city: "Ville"
+      creation: "Création en"
+      genre: "Tendance"
       number_of_musicians: "Musiciens"
       biography: "Biographie"
       title: "TITRE"
@@ -116,6 +118,20 @@ fr:
     place:
       city: "ville"
       loves: "plutôt"
+      creation in: "Création en"
+    show:
+      city: "Ville"
+      creation: "Création en"
+      genre: "Tendance"
+      NUMBER: "NOMBRE"
+      PRICE: "PRIX"
+      NAME: "MATÉRIEL"
+      DATE: "DATE"
+      DESCRIPTION: "DESCRIPTION"
+      GENRE: "STYLE"
+      TITLE: "TITRE"
+      CITY: "VILLE"
+      ADDRESS: "ADRESSE"
   releases:
     release:
       type: "Format"
