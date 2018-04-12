@@ -9,9 +9,8 @@ class Performance < ApplicationRecord
 
   pg_search_scope :search,
                   against: [
-                    :place_address,
                     :city,
-                    :start_time,
+                    :price
                   ],
                   associated_against: {
                   artist: [ :name ]

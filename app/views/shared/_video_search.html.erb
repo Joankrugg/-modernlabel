@@ -1,7 +1,7 @@
 <div class="negative top">
   <div class="search search-fixed">
   <%= form_tag(videos_path, method: :get) do %>
-    <%= text_field_tag :search, nil, placeholder: "Nom de groupe?, Genre?", class: "form-control" %>
+    <%= text_field_tag :search, nil, placeholder: "Trouvez vidéos par titre, artiste, style musical", class: "form-control" %>
     <%= submit_tag 'Search', style: "display: none;" %>
   <% end %>
   </div>

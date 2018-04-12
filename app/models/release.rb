@@ -16,9 +16,7 @@ class Release < ApplicationRecord
 
   pg_search_scope :search,
                   against: [
-                    :title,
-                    :price,
-                    :year_of_creation
+                    :title
                   ],
                   associated_against: {
                   artist: [ :name ],
