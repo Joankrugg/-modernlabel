@@ -42,7 +42,7 @@ class AssosController < ApplicationController
   end
 
   def destroy
-    asso.destroy
+    @asso.destroy
     redirect_to assos_path
   end
 
