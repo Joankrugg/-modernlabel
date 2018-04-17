@@ -1,12 +1,13 @@
 class Release < ApplicationRecord
-  validates :title, uniqueness: true, presence: true
-  belongs_to :record, required: true
-  belongs_to :genre, required: true
+  belongs_to :record
+  belongs_to :genre
   belongs_to :artist, required: true
   has_many :opinions, dependent: :destroy
   mount_uploader :photo, PhotoUploader
-  validates :description, presence: true
+  validates :title, presence: true
   validates :photo, presence: true
+  validates :genre, presence: true
+  validates :record, presence: true
   validates :price, presence: true
   validates :year_of_creation, presence: true
   validates :youtube_link, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// }, allow_blank: true
