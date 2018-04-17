@@ -6,6 +6,7 @@ class Release < ApplicationRecord
   has_many :opinions, dependent: :destroy
   mount_uploader :photo, PhotoUploader
   validates :description, presence: true
+  validates :photo, presence: true
   validates :price, presence: true
   validates :year_of_creation, presence: true
   validates :youtube_link, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// }, allow_blank: true

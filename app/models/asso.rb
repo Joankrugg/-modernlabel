@@ -7,6 +7,7 @@ class Asso < ApplicationRecord
   has_many :performances, dependent: :destroy
   has_many :services, dependent: :destroy
   validates :name, uniqueness: true, presence: true
+  validates :photo, presence: true
   validates :city, presence: true
   validates :year_of_creation, presence: true
   validates :facebook_page, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }

@@ -4,6 +4,7 @@ class Performance < ApplicationRecord
   belongs_to :asso
   belongs_to :place
   mount_uploader :photo, PhotoUploader
+  validates :photo, presence: true
   include PgSearch
   scope :sorted, ->{ order(city: :asc) }
 
