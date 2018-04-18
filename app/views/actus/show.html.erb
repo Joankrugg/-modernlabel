@@ -5,35 +5,39 @@
   <%= @actu.content %>
 <% end %>
 <div class="page-title top">NEWS</div>
-<div class="container banner-content">
-  <div class="row">
-    <div class="col-lg-offset-1 col-lg-10">
-      <%= cl_image_tag @actu.photo, height: 500, width: 1100, crop: :fill , class: "img-responsive"%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-offset-2 col-lg-8">
-      <div class="card-header">
-        <h3><%= @actu.title.upcase %></h3>
-        <h5><%= @actu.edition.strftime("%d/%m/%Y") %></h5>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <%= cl_image_tag @actu.photo, height: 500, width: 1100, crop: :fill , class: "img-responsive"%>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8">
+        <div class="card-header">
+          <h3><%= @actu.title.upcase %></h3>
+          <h5><%= @actu.edition.strftime("%d/%m/%Y") %></h5>
+        </div>
+        <hr>
+        <div class="card-description">
+          <h5><%= @actu.description %></h5>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8">
       <hr>
-      <div class="card-description">
-        <h5><%= @actu.description %></h5>
+        <p><%= @actu.content %></p>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-offset-2 col-lg-8">
-    <hr>
-      <p><%= @actu.content %></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-offset-2 col-lg-8 last-item">
-    <hr>
-      <div class="card-description">
-        <%= link_to "#{@actu.link}", "#{@actu.link}" , target: "_blank" %>
+  <div class="banner">
+    <div class="banner-content">
+      <div class="fb-share-button" data-href="http://modernboxrecords.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmodernboxrecords.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+      <div class="last-item">
+      <hr>
+        <div class="card-description">
+          <%= link_to "#{@actu.link}", "#{@actu.link}" , target: "_blank" %>
+        </div>
       </div>
     </div>
   </div>
