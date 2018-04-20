@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   mount Attachinary::Engine, at: 'attachinary'
+  mount Facebook::Messenger::Server, at: 'bot'
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
     get 'pages/how_it_works'

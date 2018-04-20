@@ -32,6 +32,7 @@ gem 'omniauth-facebook'
 gem 'pg_search'
 gem "simple_calendar", "~> 2.0"
 gem 'will_paginate', '~> 3.1.0'
+gem 'facebook-messenger', github: 'hyperoslo/facebook-messenger'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
