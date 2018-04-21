@@ -13,13 +13,7 @@ Devise.setup do |config|
     image_size: 'square',  # 50x50, guaranteed ratio
     secure_image_url: true,
     callback_url: "http://modernboxrecords.com/users/auth/facebook/callback?close"
-    client_options: {
-      site: "https://graph.facebook.com/v2.3",
-      authorize_url: "https://www.facebook.com/v2.3/dialog/oauth"
-    },
-    token_params: {
-        parse: :json
-    }
+
 
 
   # ==> Mailer Configuration
