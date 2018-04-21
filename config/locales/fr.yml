@@ -30,8 +30,8 @@ fr:
       action: "dans laquelle vous renseignez vos projets, prods, concerts et autres"
       method: "partagez les liens vers vos pages officielles et"
       go: "faîtes vivre la scène locale et plus!"
-    how_it_works:
-      title: "MODERN BOX RECORDS"
+    concept:
+      title: "MODERN BOX CONCEPT"
       function_1: "AUTHENTIQUE LABEL ROCK"
       step_1: "Production & réalisation artistique"
       step_2: "Communication & promotion autour des artistes"
@@ -59,7 +59,7 @@ fr:
       index_release: "RECORDS"
       index_news: "NEWS"
       index_shop: "SHOP"
-      index_introduction: "COMMENT CA MARCHE"
+      index_introduction: "CONCEPT"
       index_out: "QUITTER"
       index_user: "MON COMPTE"
     artistcard:
