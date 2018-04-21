@@ -12,7 +12,8 @@ Devise.setup do |config|
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
     secure_image_url: true,
-    callback_url: "http://localhost:3000/users/auth/facebook/callback"
+    client_options: {ssl: {:ca_file => 'philippechambon/code/joankrugg/ssl/www_modernboxrecords_com/www_modernboxrecords_com.crt'}}
+    callback_url: "http://modernboxrecords.com/users/auth/facebook/callback"
 
 
 
