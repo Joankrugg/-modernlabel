@@ -24,7 +24,7 @@ module Modernlabel
       generate.helper false
     end
     config.action_view.embed_authenticity_token_in_remote_forms = true
-    config.assets.initialize_on_precompile = false
+
     config.i18n.default_locale = :fr
     config.assets.precompile << "audios/*"
     # Settings in config/environments/* take precedence over those specified here.
