@@ -11,7 +11,7 @@ Devise.setup do |config|
     scope: 'email',
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
-    secure_image_url: true,
+    secure_image_url: true
 
 
 
