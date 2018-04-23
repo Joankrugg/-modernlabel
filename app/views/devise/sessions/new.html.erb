@@ -17,8 +17,13 @@
       <h5 class="form-inputs last-item" style="color: $black;">Problème provisoire dans la connexion avec facebook.</h5>
 
       <div class="box">
-        <%= render "devise/shared/links" %>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+        <div id="status">
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
