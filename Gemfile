@@ -28,7 +28,7 @@ gem 'geocoder'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem "coffee-rails"
 gem "gmaps4rails"
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '~> 2.0.1'
 gem 'pg_search'
 gem "simple_calendar", "~> 2.0"
 gem 'will_paginate', '~> 3.1.0'
