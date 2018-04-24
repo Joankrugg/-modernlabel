@@ -334,7 +334,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.0.5)
-  omniauth-facebook (~> 4.0.0)
+  omniauth-facebook
   pg
   pg_search
   pry-byebug
