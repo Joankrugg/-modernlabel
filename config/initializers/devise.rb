@@ -11,7 +11,11 @@ Devise.setup do |config|
     scope: 'email',
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
-    secure_image_url: true
+    secure_image_url: true,
+    client_options: {
+      site: 'https://graph.facebook.com/v2.10',  # this is the example API version
+      authorize_url: "https://www.facebook.com/v2.10/dialog/oauth"
+    }
 
 
 
