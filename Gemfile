@@ -26,17 +26,11 @@ gem 'jquery-fileupload-rails'
 gem 'carrierwave', '~> 0.11.2'
 gem 'geocoder'
 gem 'remotipart', github: 'mshibuya/remotipart'
-gem "coffee-rails"
-gem "gmaps4rails"
 gem 'omniauth-facebook'
 gem 'pg_search'
 gem "simple_calendar", "~> 2.0"
 gem 'will_paginate', '~> 3.1.0'
 
-
-source 'https://rails-assets.org' do
-  gem "rails-assets-underscore"
-end
 
 
 group :development, :test do

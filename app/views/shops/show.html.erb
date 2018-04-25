@@ -2,19 +2,43 @@
   -<%= @shop.product %>- on Modern Box Records
 <% end %>
 <% content_for(:description) do %>
-  -<%= @shop.description %>- on Modern Box Records
+  <%= @shop.description %>
 <% end %>
-
-
-<div class="card">
-  <div class="card-header">
-    <h2><%= @shop.product %></h2>
+<div class="page-title top">SHOP</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10">
+        <%= cl_image_tag @shop.photo, height: 1100, width: 1100, crop: :fill , class: "img-responsive"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8">
+        <div class="card-header">
+          <h3><%= @shop.product.upcase %></h3>
+        </div>
+        <hr>
+        <div class="card-description">
+          <h5><%= @shop.description %></h5>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8">
+      <hr>
+      <% if @shop.price.present? %>
+        <p><%= @shop.price %>Euros H.T</p>
+      <% else %>
+        <p> Nous consulter via mail modernboxrecords@gmail.com
+      <% end %>
+      </div>
+    </div>
   </div>
-  <div class="card-description">
-    <p><%= @shop.price %></p>
-  </div>
-  <div class="card-description">
-    <p><%= @shop.description %></p>
+  <div class="banner">
+    <div class="banner-content">
+      <div class="fb-share-button" data-href="http://modernboxrecords.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmodernboxrecords.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+      <div class="last-item">
+      <hr>
+      </div>
+    </div>
   </div>
 </div>
-
