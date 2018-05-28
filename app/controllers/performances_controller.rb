@@ -3,9 +3,9 @@ class PerformancesController < ApplicationController
   before_action :set_performance, only: [:show, :edit, :update, :destroy]
   def index
     if params[:search].present?
-      @performances = Performance.perform_search(params[:search]).paginate(page: params[:page], per_page: 4)
+      @performances = Performance.perform_search(params[:search])
     else
-      @performances = Performance.all.paginate(page: params[:page], per_page: 4)
+      @performances = Performance.all
     end
   end
 

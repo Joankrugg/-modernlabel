@@ -1,41 +1,44 @@
 <%= render 'shared/performance_search' %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url(https://res.cloudinary.com/da2krghvd/image/upload/s--FcDaVp61--/q_jpegmini/v1510239252/r8xviqlxqhc34kcm0km6.png);">
+<div class="banner">
   <div class="banner-content">
     <!--section d'ensemble-->
     <div class="container items">
       <div class="row">
-        <% @performances.each do |performance|%>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="main">
-              <div class="card">
-                <div class="info-card">
-                  <%= link_to performance do %>
-                    <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
-                  <% end %>
-                  <div class="info" id="performance">
-                    <% if performance.artist.present? %>
-                      <h1><%= performance.artist.name %></h1>
+        <% if @performances.present? %>
+          <% @performances.each do |performance|%>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+              <div class="main">
+                <div class="card">
+                  <div class="info-card">
+                    <%= link_to performance do %>
+                      <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
                     <% end %>
-                    <% if performance.asso.present? %>
-                      <h1><%= performance.asso.name %></h1>
-                    <% end %>
-                    <% if performance.place.present? %>
-                      <h1><%= performance.place.name %></h1>
-                    <% end %>
-                    <h1><%= performance.city %></h1>
-                    <h1><%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %></h1>
-                    <h1><%= performance.place_address %></h1>
-                    <%= render 'shared/icons' %>
+                    <div class="info" id="performance">
+                      <% if performance.artist.present? %>
+                        <h1><%= performance.artist.name %></h1>
+                      <% end %>
+                      <% if performance.asso.present? %>
+                        <h1><%= performance.asso.name %></h1>
+                      <% end %>
+                      <% if performance.place.present? %>
+                        <h1><%= performance.place.name %></h1>
+                      <% end %>
+                      <h1><%= performance.city %></h1>
+                      <h1><%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %></h1>
+                      <h1><%= performance.place_address %></h1>
+                      <%= render 'shared/icons' %>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          <% end %>
+        <% else %>
+          <div class="no-result" style="color: black">
+            sorry! but no result were found!
           </div>
         <% end %>
       </div>
-    </div>
-    <div class="apple_pagination apple_pagination-fixed">
-      <%= will_paginate @performances %>
     </div>
   </div>
 </div>

@@ -3,9 +3,9 @@ class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   def index
     if params[:search].present?
-      @videos = Video.perform_search(params[:search]).paginate(page: params[:page], per_page: 4)
+      @videos = Video.perform_search(params[:search])
     else
-      @videos = Video.all.paginate(page: params[:page], per_page: 4)
+      @videos = Video.all
     end
   end
 
