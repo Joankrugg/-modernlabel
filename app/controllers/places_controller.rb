@@ -3,9 +3,9 @@ class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   def index
     if params[:search].present?
-      @places = Place.perform_search(params[:search]).paginate(page: params[:page], per_page: 4)
+      @places = Place.perform_search(params[:search])
     else
-      @places = Place.all.paginate(:page => params[:page], :per_page => 4)
+      @places = Place.all
     end
   end
 

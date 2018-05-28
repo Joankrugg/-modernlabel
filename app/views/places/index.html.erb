@@ -1,22 +1,25 @@
 <%= render 'shared/place_search' %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--8nxi3HAK--/q_jpegmini/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+<div class="banner">
   <div class="banner-content">
     <!--section d'ensemble-->
     <div class="container items">
       <div class="row">
-        <% @places.each do |a|%>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="main">
-              <div class="card">
-                <%= render "place", place: a %><br>
+        <% if @places.present? %>
+          <% @places.each do |a|%>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+              <div class="main">
+                <div class="card">
+                  <%= render "place", place: a %><br>
+                </div>
               </div>
             </div>
+          <% end %>
+        <% else %>
+          <div class="no-result" style="color: black">
+            sorry! but no result were found!
           </div>
         <% end %>
       </div>
-    </div>
-    <div class="apple_pagination apple_pagination-fixed">
-      <%= will_paginate @places %>
     </div>
   </div>
 </div>
