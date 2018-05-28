@@ -1,34 +1,37 @@
 <%= render 'shared/release_search'%>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--8nxi3HAK--/q_jpegmini/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+<div class="banner">
   <div class="banner-content">
     <!--section d'ensemble-->
     <div class="container items">
       <div class="row">
-        <% @releases.each do |release|%>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="main">
-              <div class="card">
-                <div class="info-card">
-                  <%= link_to release do %>
-                    <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
-                  <% end %>
-                  <div class="info" id="release">
-                    <h1>-<%= release.title.capitalize %>-</h1>
-                    <h1><%= release.artist.name %></h1>
-                    <h1><%= release.genre.name %></h1>
-                    <h1><%= t(".record_format") %>: <%= release.record.name %></h1>
-                    <h1><%= t(".price") %>: <%= release.price %> Euros</h1>
-                    <%= render 'shared/icons' %>
+        <% if @releases.present? %>
+          <% @releases.each do |release|%>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+              <div class="main">
+                <div class="card">
+                  <div class="info-card">
+                    <%= link_to release do %>
+                      <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+                    <% end %>
+                    <div class="info" id="release">
+                      <h1>-<%= release.title.capitalize %>-</h1>
+                      <h1><%= release.artist.name %></h1>
+                      <h1><%= release.genre.name %></h1>
+                      <h1><%= t(".record_format") %>: <%= release.record.name %></h1>
+                      <h1><%= t(".price") %>: <%= release.price %> Euros</h1>
+                      <%= render 'shared/icons' %>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
+        <% else %>
+        <div class="no-result" style="color: black">
+          sorry! but no result were found!
+        </div>
         <% end %>
       </div>
-    </div>
-    <div class="apple_pagination apple_pagination-fixed">
-      <%= will_paginate @releases %>
     </div>
   </div>
 </div>
