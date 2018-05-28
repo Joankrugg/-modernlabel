@@ -6,32 +6,34 @@
       <div class="row">
         <% if @performances.present? %>
           <% @performances.each do |performance|%>
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-              <div class="main">
-                <div class="card">
-                  <div class="info-card">
-                    <%= link_to performance do %>
-                      <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
-                    <% end %>
-                    <div class="info" id="performance">
-                      <% if performance.artist.present? %>
-                        <h1><%= performance.artist.name %></h1>
+            <% unless performance.start_time.to_date.past? %>
+              <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="main">
+                  <div class="card">
+                    <div class="info-card">
+                      <%= link_to performance do %>
+                        <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
                       <% end %>
-                      <% if performance.asso.present? %>
-                        <h1><%= performance.asso.name %></h1>
-                      <% end %>
-                      <% if performance.place.present? %>
-                        <h1><%= performance.place.name %></h1>
-                      <% end %>
-                      <h1><%= performance.city %></h1>
-                      <h1><%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %></h1>
-                      <h1><%= performance.place_address %></h1>
-                      <%= render 'shared/icons' %>
+                      <div class="info" id="performance">
+                        <% if performance.artist.present? %>
+                          <h1><%= performance.artist.name %></h1>
+                        <% end %>
+                        <% if performance.asso.present? %>
+                          <h1><%= performance.asso.name %></h1>
+                        <% end %>
+                        <% if performance.place.present? %>
+                          <h1><%= performance.place.name %></h1>
+                        <% end %>
+                        <h1><%= performance.city %></h1>
+                        <h1><%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %></h1>
+                        <h1><%= performance.place_address %></h1>
+                        <%= render 'shared/icons' %>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         <% else %>
           <div class="no-result" style="color: black">
