@@ -1,24 +1,27 @@
 <%= render'shared/asso_search' %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/da2krghvd/image/upload/s--8nxi3HAK--/q_jpegmini/v1505755372/corey-blaz-5003_sp9w4e.jpg');">
+<div class="banner">
   <div class="banner-content">
-    <div class="advice">Pour lancer une recherche en fonction de l'activité, les mots clés sont les suivants:<br>
+    <div class="advice" style="color: black">Pour lancer une recherche en fonction de l'activité, les mots clés sont les suivants:<br>
     rehearsal, music store, recordings, music video making, web communication, label, radio et multipurpose</div>
     <!--section d'ensemble-->
     <div class="container items">
       <div class="row">
-        <% @assos.each do |a|%>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="main">
-              <div class="card">
-                <%= render "asso", asso: a %><br>
+        <% if @assos.present? %>
+          <% @assos.each do |a|%>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+              <div class="main">
+                <div class="card">
+                  <%= render "asso", asso: a %><br>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
+        <% else %>
+        <div class="no-result" style="color: black">
+          sorry! but no result were found!
+        </div>
         <% end %>
       </div>
-    </div>
-    <div class="apple_pagination apple_pagination-fixed ">
-      <%= will_paginate @assos %>
     </div>
   </div>
 </div>
