@@ -8,17 +8,18 @@
               <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-toggle="modal" data-target="#bands">
                 <h5>Band</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#prods">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#prods">
                 <h5>Prods</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#shows">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#shows">
                 <h5>Shows</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#videos">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#videos">
                 <h5>Vidéos</h5>
               </a>
             </div>
           </div>
+
           <div class="modal fade" id="bands" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -33,32 +34,43 @@
             </div>
           </div>
 
-          <div class="tab-content hidden" id="prods">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="Create a release"%></p>
-                  <%= render 'releases/form_artist', release: @release %>
+          <div class="modal fade" id="prods" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE RELEASE</h5>
+                  <div class="modal-body">
+                    <%= render 'releases/form_artist', release: @release %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-content hidden" id="shows">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="Create a concert"%></p>
-                  <%= render 'performances/form_artist', performance: @performance %>
+
+          <div class="modal fade" id="shows" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE PERFORMANCE</h5>
+                  <div class="modal-body">
+                    <%= render 'performances/form_artist', performance: @performance %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-content hidden" id="videos">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="Create a video"%></p>
-                  <%= render 'videos/form_artist', video: @video %>
+
+          <div class="modal fade" id="videos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE VIDEOS</h5>
+                  <div class="modal-body">
+                    <%= render 'videos/form_artist', video: @video %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
