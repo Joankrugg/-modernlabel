@@ -5,7 +5,7 @@
         <div class="container actions">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#bands">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-toggle="modal" data-target="#bands">
                 <h5>Band</h5>
               </a>
               <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#prods">
@@ -19,18 +19,20 @@
               </a>
             </div>
           </div>
-
-
-          <div class="tab-content" id="bands">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="Edit my band"%></p>
-                  <%= render 'form', band: @band %>
+          <div class="modal fade" id="bands" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">EDIT BAND</h5>
+                  <div class="modal-body">
+                    <%= render 'form', artist: @artist %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="tab-content hidden" id="prods">
             <div class="mb">
               <div class="action">
