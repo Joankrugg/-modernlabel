@@ -5,60 +5,77 @@
         <div class="container actions">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-target="#place">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-toggle="modal" data-target="#place">
                 <h5>Salle</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#hardwares">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#hardwares">
                 <h5>Matos</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#events">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#events-place">
                 <h5>Concerts</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-target="#videos-place">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#videos-place">
                 <h5>Videos</h5>
               </a>
             </div>
           </div>
-          <div class="tab-content" id="place">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="Edit my place"%></p>
-                  <%= render 'form', place: @place %>
+
+          <div class="modal fade" id="place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">EDIT PLACE</h5>
+                  <div class="modal-body">
+                    <%= render 'form', place: @place %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-content hidden" id="hardwares">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="create a hardware"%></p>
-                  <%= render 'hardwares/form', hardware: @hardware %>
+
+          <div class="modal fade" id="hardwares" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE HARDWARE</h5>
+                  <div class="modal-body">
+                    <%= render 'hardwares/form', hardware: @hardware %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-content hidden" id="events">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="Create a concert"%></p>
-                  <%= render 'performances/form_place', performance: @performance %>
+
+          <div class="modal fade" id="events-place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE PERFORMANCE</h5>
+                  <div class="modal-body">
+                    <%= render 'performances/form_place', performance: @performance %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-content hidden" id="videos-place">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                  <p style="color: $black;"><%="Create a video"%></p>
-                  <%= render 'videos/form_place', video: @video %>
+
+          <div class="modal fade" id="videos-place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE VIDEOS</h5>
+                  <div class="modal-body">
+                    <%= render 'videos/form_place', video: @video %>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       <% end %>
     </div>
