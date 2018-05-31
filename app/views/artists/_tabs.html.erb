@@ -1,84 +1,88 @@
-<div class="row">
+<% if @artist.user == current_user  %><div class="row">
   <div class="option">
     <div class="banner-content">
-      <% if @artist.user == current_user  %>
-        <div class="container actions">
-          <div class="row">
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6 active" data-toggle="modal" data-target="#bands">
-                <p><%= t(".band") %></p>
-              </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#prods">
-                <p><%= t(".prod") %></p>
-              </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#shows">
-                <p><%= t(".show") %></p>
-              </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos">
-                <p><%= t(".video") %></p>
-              </a>
-            </div>
+      <div class="container actions">
+        <div class="row">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
+            <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6 active" data-toggle="modal" data-target="#bands">
+              <%= t(".band") %>
+            </p>
+            <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#prods">
+              <%= t(".prod") %>
+            </p>
+            <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#shows">
+              <%= t(".show") %>
+            </p>
+            <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos">
+              <%= t(".video") %>
+            </p>
           </div>
+        </div>
 
-          <div class="modal fade" id="bands" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_artist") %></h5>
-                  <div class="modal-body">
-                    <%= render 'form', artist: @artist %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="prods" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_release") %></h5>
-                  <div class="modal-body">
-                    <%= render 'releases/form_artist', release: @release %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="shows" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></h5>
-                  <div class="modal-body">
-                    <%= render 'performances/form_artist', performance: @performance %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="videos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></h5>
-                  <div class="modal-body">
-                    <%= render 'videos/form_artist', video: @video %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
+        <div class="modal fade" id="bands" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_artist") %></h5>
+                <div class="modal-body">
+                  <%= render 'form', artist: @artist %>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      <% else %>
-        <div class="container actions">
-          <div class="row" id="ratings">
+
+        <div class="modal fade" id="prods" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_release") %></h5>
+                <div class="modal-body">
+                  <%= render 'releases/form_artist', release: @release %>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="shows" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></h5>
+                <div class="modal-body">
+                  <%= render 'performances/form_artist', performance: @performance %>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="videos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></h5>
+                <div class="modal-body">
+                  <%= render 'videos/form_artist', video: @video %>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="option">
+    <div class="banner-content">
+      <div class="container actions">
+        <div class="row">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-8 tabs">
             <% if @artist.ratings.blank? %>
               <p class="tab-fake" style="text-align: center;">Be the first to leave a rating for <%= @artist.name %>
               </p>
@@ -88,14 +92,14 @@
             <% end %>
           </div>
         </div>
-        <div class="mb">
-          <div class="action">
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-              <%= render 'ratings/form', artist: @artist, rating: @rating %>
-            </div>
+      <div class="mb">
+        <div class="action">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+            <%= render 'ratings/form', artist: @artist, rating: @rating %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
