@@ -5,18 +5,18 @@
         <div class="container actions">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-toggle="modal" data-target="#asso">
-                <h5>Asso</h5>
-              </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#services">
-                <h5>Services</h5>
-              </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#events">
-                <h5>Events</h5>
-              </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#videos-asso">
-                <h5>Videos</h5>
-              </a>
+              <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6 active" data-toggle="modal" data-target="#asso">
+                Structure
+              </p>
+              <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#services">
+                Service
+              </p>
+              <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#events">
+                Evènement
+              </p>
+              <p class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos-asso">
+                Video
+              </p>
             </div>
           </div>
 
@@ -24,10 +24,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">EDIT ASSO</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%=t(".edit_asso") %></h5>
                   <div class="modal-body">
                     <%= render 'form', asso: @asso %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%=t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -38,10 +38,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE RELEASE</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%=t(".create_service") %></h5>
                   <div class="modal-body">
                     <%= render 'services/form', service: @service %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%=t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -52,10 +52,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE PERFORMANCE</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%=t(".create_performance") %></h5>
                   <div class="modal-body">
                     <%= render 'performances/form_asso', performance: @performance %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%=t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -66,10 +66,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE VIDEOS</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%=t(".create_video") %></h5>
                   <div class="modal-body">
                     <%= render 'videos/form_asso', video: @video %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%=t(".close") %></button>
                   </div>
                 </div>
               </div>

@@ -5,16 +5,16 @@
         <div class="container actions">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-toggle="modal" data-target="#place">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6 active" data-toggle="modal" data-target="#place">
                 <h5>Salle</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#hardwares">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#hardwares">
                 <h5>Matos</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#events-place">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#events-place">
                 <h5>Concerts</h5>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#videos-place">
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos-place">
                 <h5>Videos</h5>
               </a>
             </div>
@@ -24,10 +24,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">EDIT PLACE</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_place") %></h5>
                   <div class="modal-body">
                     <%= render 'form', place: @place %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -38,10 +38,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE HARDWARE</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_hardware") %></h5>
                   <div class="modal-body">
                     <%= render 'hardwares/form', hardware: @hardware %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -52,10 +52,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE PERFORMANCE</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></h5>
                   <div class="modal-body">
                     <%= render 'performances/form_place', performance: @performance %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -66,10 +66,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE VIDEOS</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></h5>
                   <div class="modal-body">
                     <%= render 'videos/form_place', video: @video %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>

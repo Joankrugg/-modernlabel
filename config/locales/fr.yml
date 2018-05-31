@@ -83,12 +83,16 @@ fr:
       create_release: "CREER UNE PROD"
       create_performance: "CREER CONCERT"
       create_video: "CREER VIDEO"
+      rating: "QUALITE"
       edit_artist: "MODIFIER ARTISTE"
       close: "FERMER"
       band: "ARTISTE"
       prod: "PROD"
       show: "CONCERT"
       video: "VIDEO"
+      Be_the_first: "Soyez le premier à donner des étoiles à "
+      Press_to_rate: "Appuyez pour laisser des étoiles à "
+
     show:
       city: "Ville"
       number_of_musicians: "Musiciens"
@@ -110,6 +114,11 @@ fr:
       city: "ville"
       loves: "plutôt"
       creation in: "Création en"
+    tabs:
+      edit_asso: "MODIFIER STRUCTURE"
+      create_performance: "CREER CONCERT"
+      create_video: "CREER VIDEO"
+      create_service: "CREER TYPE DE SERVICE"
     show:
       city: "Ville"
       creation: "Création en"
@@ -132,6 +141,11 @@ fr:
       city: "ville"
       loves: "plutôt"
       creation in: "Création en"
+    tabs:
+      edit_place: "MODIFIER SALLE"
+      create_performance: "CREER CONCERT"
+      create_video: "CREER VIDEO"
+      create_hardware: "CREER MATOS DISPONIBLE"
     show:
       city: "Ville"
       creation: "Création en"
@@ -261,6 +275,26 @@ fr:
         placeholder_1: "Obligatoire"
         placeholder_2: "Optionnel"
 
+      place:
+        name: "Nom"
+        city: "Ville"
+        genre: "Style"
+        facebook_page: "Page Facebook"
+        address: "Adresse"
+
+      service:
+        name: "Nom"
+        adhesion_fee: "Prix"
+
+      asso:
+        name: "Nom"
+        city: "Ville"
+        genre: "Style"
+        facebook_page: "Page Facebook"
+        activity: "Type de structure"
+        phone_number: "Numéro de téléphone"
+        year_of_creation: "Date de création"
+
       performance:
         name: "Nom"
         start_time: "Début"
@@ -284,8 +318,13 @@ fr:
         placeholder_1: "Obligatoire"
         placeholder_2: "Optionnel"
 
-
       video:
         title: "Titre"
         youtube_link: "Lien Youtube"
         genre: "Style"
+
+      rating:
+        star: "Etoiles"
+        one_word: "Un mot"
+        placeholder_3: "en un mot ?"
+

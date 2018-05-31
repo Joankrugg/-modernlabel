@@ -9,14 +9,14 @@
     </div>
   <% end %>
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
-    <%= f.input :name, required: false, placeholder: 'we need one' %>
-    <%= f.input :city, required: false, placeholder: 'we need one' %>
-    <%= f.input :start_time, required: false, placeholder: 'we need one' %>
-    <%= f.input :place_address, required: false, placeholder: 'we need one' %>
-    <%= f.input :price, required: false, placeholder: 'we need one'  %>
-    <%= f.input :facebook_event, required: false, placeholder: 'we need one' %>
-    <%= f.association :type, required: false, placeholder: 'we need one' %>
-    <%= f.input :photo, required: false, placeholder: 'we need one' %>
+    <%= f.input :name, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
+    <%= f.input :city, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
+    <%= f.input :start_time, required: false %>
+    <%= f.input :place_address, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
+    <%= f.input :price, required: false %>
+    <%= f.input :facebook_event, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
+    <%= f.association :type, required: false %>
+    <%= f.input :photo, required: false %>
     <%= f.button :submit, class: "btn btn-medium" %>
   </div>
 

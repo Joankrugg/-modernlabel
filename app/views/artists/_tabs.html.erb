@@ -82,20 +82,27 @@
     <div class="banner-content">
       <div class="container actions">
         <div class="row">
-          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-8 tabs">
-            <% if @artist.ratings.blank? %>
-              <p class="tab-fake" style="text-align: center;">Be the first to leave a rating for <%= @artist.name %>
+          <% if @artist.ratings.blank? %>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-8 tabs">
+              <p class="tab" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Be_the_first") %><%= @artist.name %>
               </p>
             <% else %>
-              <p class="tab-fake" style="text-align: center;">press to leave a rating for <%= @artist.name %>
+              <p class="tab" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Press_to_rate") %><%= @artist.name %>
               </p>
             <% end %>
           </div>
         </div>
-      <div class="mb">
-        <div class="action">
-          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-            <%= render 'ratings/form', artist: @artist, rating: @rating %>
+        <div class="modal fade" id="rate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".rating") %></h5>
+                <div class="modal-body">
+                  <%= render 'ratings/form', artist: @artist, rating: @rating %>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
