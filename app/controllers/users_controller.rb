@@ -7,6 +7,8 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @places = Place.all
+    @assos = Asso.all
 
   end
 

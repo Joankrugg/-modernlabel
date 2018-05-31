@@ -5,17 +5,17 @@
         <div class="container actions">
           <div class="row">
             <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3 active" data-toggle="modal" data-target="#bands">
-                <h5>Band</h5>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6 active" data-toggle="modal" data-target="#bands">
+                <p><%= t(".band") %></p>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#prods">
-                <h5>Prods</h5>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#prods">
+                <p><%= t(".prod") %></p>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#shows">
-                <h5>Shows</h5>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#shows">
+                <p><%= t(".show") %></p>
               </a>
-              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#videos">
-                <h5>Vidéos</h5>
+              <a class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos">
+                <p><%= t(".video") %></p>
               </a>
             </div>
           </div>
@@ -24,10 +24,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">EDIT BAND</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_artist") %></h5>
                   <div class="modal-body">
                     <%= render 'form', artist: @artist %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -38,10 +38,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE RELEASE</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_release") %></h5>
                   <div class="modal-body">
                     <%= render 'releases/form_artist', release: @release %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -52,10 +52,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE PERFORMANCE</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></h5>
                   <div class="modal-body">
                     <%= render 'performances/form_artist', performance: @performance %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>
@@ -66,10 +66,10 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">CREATE VIDEOS</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></h5>
                   <div class="modal-body">
                     <%= render 'videos/form_artist', video: @video %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>

@@ -4,6 +4,7 @@ class Place < ApplicationRecord
   has_many :performances
   has_many :videos
   has_many :hardwares
+
   mount_uploader :photo, PhotoUploader
   validates :name, uniqueness: true, presence: true
   validates :photo, presence: true

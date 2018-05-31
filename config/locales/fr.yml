@@ -79,6 +79,16 @@ fr:
       city: "Ville"
       number_of_musicians: "Musiciens"
       creation: "Création en"
+    tabs:
+      create_release: "CREER UNE PROD"
+      create_performance: "CREER CONCERT"
+      create_video: "CREER VIDEO"
+      edit_artist: "MODIFIER ARTISTE"
+      close: "FERMER"
+      band: "ARTISTE"
+      prod: "PROD"
+      show: "CONCERT"
+      video: "VIDEO"
     show:
       city: "Ville"
       number_of_musicians: "Musiciens"
@@ -91,6 +101,7 @@ fr:
       RECORD: "CRÉATION"
       CITY: "VILLE"
       ADDRESS: "ADRESSE"
+
     signed:
       people_playing: "zicos qui font du"
       read_more: "En Savoir Plus..."
@@ -157,6 +168,8 @@ fr:
       artist: "créer artiste"
       asso: "créer structure"
       delete: "détruire le compte"
+
+
 
   activerecord:
     models:
@@ -230,31 +243,49 @@ fr:
       artist:
         name: "Nom"
         description: "Description"
-        year_of_creation: "Date de création"
+        year_of_creation: "Année de création"
         city: "Ville"
+        genre: "Style"
+        bookable: "Disponible pour booking"
         number_of_musicians: "Nombre de musiciens"
-        facebook_link: "Page FB (lien)"
-        insta_link: "Page Insta (lien)"
-        youtube_channel: "Page Youtube (lien)"
-        soundcloud_link: "Page Soundclound (lien)"
-        twitter_link: "Page Twitter (lien)"
-        bandcamp_link: "Page Bandcamp (lien)"
+        facebook_link: "Page Facebook"
+        insta_link: "Page Instagram"
+        youtube_channel: "Page Youtube"
+        bandcamp_link: "Page Bandcamp"
+        soundcloud_link: "Page Soundcloud"
+        twitter_link: "Page Twitter"
+        bio: "Biographie"
+        contact: "Contact"
+        photo: "Photo"
+        mp3: "Mp3"
+        placeholder_1: "Obligatoire"
+        placeholder_2: "Optionnel"
 
-    labels:
       performance:
+        name: "Nom"
         start_time: "Début"
         place_address: "Adresse du concert"
         city: "Ville"
-        facebook_event: "Page FB de l'event (lien)"
+        price: "Prix"
+        facebook_event: "Page Facebook de l'évènement"
         end_time: "fin"
         artist: "Artiste"
+        placeholder_1: "Obligatoire"
+        placeholder_2: "Optionnel"
 
-    labels:
       release:
         title: "Titre"
         description: "Description"
         price: "Prix"
         artist: "Artiste"
         year_of_creation: "Date de sortie"
-        youtube_link: "Page youtube (lien)"
-        bandcamp_link: "Page bandcamp (lien)"
+        youtube_link: "Page Youtube"
+        bandcamp_link: "Page Bandcamp"
+        placeholder_1: "Obligatoire"
+        placeholder_2: "Optionnel"
+
+
+      video:
+        title: "Titre"
+        youtube_link: "Lien Youtube"
+        genre: "Style"
