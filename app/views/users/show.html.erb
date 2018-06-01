@@ -82,7 +82,7 @@
         <div class="row">
           <% if @places.present? && current_user.artist.present? || current_user.asso.present? %>
             <% @places.each do |a|%>
-              <% if a.genre.name == current_user.artist.genre.name %>
+              <% if a.genre.name == current_user.artist.genre.name || a.city == current_user.artist.city %>
                 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                   <div class="main">
                     <div class="card">
@@ -103,7 +103,7 @@
         <div class="row">
           <% if @assos.present? && current_user.artist.present? %>
             <% @assos.each do |a|%>
-              <% if a.genre.name == current_user.artist.genre.name %>
+              <% if a.genre.name == current_user.artist.genre.name || a.city == current_user.artist.city %>
                 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                   <div class="main">
                     <div class="card">
