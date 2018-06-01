@@ -301,6 +301,7 @@ fr:
         activity: "Type de structure"
         phone_number: "Numéro de téléphone"
         year_of_creation: "Date de création"
+        number_of_musicians_max: "Maximum de musiciens par groupe"
 
       performance:
         name: "Nom"

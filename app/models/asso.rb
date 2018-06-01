@@ -9,6 +9,7 @@ class Asso < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
   validates :photo, presence: true
+  validates :number_of_musicians_max, presence: true
   validates :city, presence: true
   validates :genre, presence: true
   validates :year_of_creation, presence: true

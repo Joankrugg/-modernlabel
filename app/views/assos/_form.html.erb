@@ -14,6 +14,7 @@
     <%= f.input :year_of_creation, required: false, placeholder: 'we need one'%>
     <%= f.association :activity, required: false, placeholder: 'we need one' %>
     <%= f.input :phone_number, required: false %>
+    <%= f.input :number_of_musicians_max, required: false, collection: 1..9 %>
     <%= f.input :description, required: false, placeholder: 'we need one' %>
     <%= f.input :photo, required: false %>
     <%= f.input :photo_cache, as: :hidden %>
