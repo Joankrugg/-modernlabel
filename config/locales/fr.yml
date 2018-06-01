@@ -119,6 +119,7 @@ fr:
       create_performance: "CREER CONCERT"
       create_video: "CREER VIDEO"
       create_service: "CREER TYPE DE SERVICE"
+      close: "FERMER"
     show:
       city: "Ville"
       creation: "Création en"
@@ -150,6 +151,7 @@ fr:
       hardware: "MATOS"
       video: "VIDEO"
       performance: "CONCERT"
+      close: "FERMER"
     show:
       city: "Ville"
       creation: "Création en"
