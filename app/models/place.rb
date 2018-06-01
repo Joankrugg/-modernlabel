@@ -10,6 +10,7 @@ class Place < ApplicationRecord
   validates :photo, presence: true
   validates :city, presence: true
   validates :address, presence: true
+  validates :number_of_musicians_max, presence: true
   validates :genre, presence: true
   validates :facebook_page, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
 

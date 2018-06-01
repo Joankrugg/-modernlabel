@@ -155,7 +155,7 @@ fr:
     show:
       city: "Ville"
       creation: "Création en"
-      genre: "Tendance"
+      genre: "Style"
       Delete: "Tout effacer"
       NUMBER: "NOMBRE"
       PRICE: "PRIX"
@@ -287,6 +287,7 @@ fr:
         genre: "Style"
         facebook_page: "Page Facebook"
         address: "Adresse"
+        number_of_musicians_max: "Maximum de musiciens par groupe"
 
       service:
         name: "Nom"
