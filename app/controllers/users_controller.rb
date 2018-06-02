@@ -9,7 +9,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   def show
     @places = Place.all
     @assos = Asso.all
-
+    @artists = Artist.all
   end
 
   def edit
