@@ -147,11 +147,11 @@
         </div>
 
         <div class="container">
-          <h5 style= "color: black">Good band matches with assos</h5>
+          <h5 style= "color: black">Good matches with assos elsewhere </h5>
           <div class="row">
             <% if @assos.present? %>
               <% @assos.each do |a|%>
-                <% if (a.genre.name == current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.number_of_musicians_max < current_user.artist.number_of_musicians) || (a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians) || (a.genre.name != current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians) %>
+                <% if (a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians) %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
@@ -169,11 +169,11 @@
           </div>
         </div>
         <div class="container">
-          <h5 style= "color: black">Good band matches with places</h5>
+          <h5 style= "color: black">Good matches with places elsewhere</h5>
           <div class="row">
             <% if @places.present? %>
               <% @places.each do |a|%>
-                <% if (a.genre.name == current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.number_of_musicians_max < current_user.artist.number_of_musicians) || (a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians) || (a.genre.name != current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians) %>
+                <% if a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
@@ -191,11 +191,11 @@
           </div>
         </div>
         <div class="container">
-          <h5 style= "color: black">Good band matches with artists</h5>
+          <h5 style= "color: black">Good matches with artists elsewhere</h5>
           <div class="row">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
-                <% if (a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.name != current_user.artist.name) || (a.genre.name != current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.name != current_user.artist.name ) %>
+                <% if (a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.name != current_user.artist.name) %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
@@ -212,7 +212,12 @@
             <% end %>
           </div>
         </div>
+      <% else %>
+        <div class="creation" style="color: black">
+          create an artist profil if you are one and get instant matches
+        </div>
       <% end %>
+
       <% if current_user.place.present? %>
         <div class="container">
           <h5 style= "color: black">Perfect place matches with assos</h5>
@@ -261,11 +266,11 @@
         </div>
 
         <div class="container">
-          <h5 style= "color: black">Good place matches with assos</h5>
+          <h5 style= "color: black">Good matches with assos elsewhere</h5>
           <div class="row">
             <% if @assos.present? %>
               <% @assos.each do |a|%>
-                <% if (a.genre.name == current_user.place.genre.name && a.city.downcase == current_user.place.city.downcase && a.number_of_musicians_max > current_user.place.number_of_musicians_max) || (a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians_max <= current_user.place.number_of_musicians_max) || (a.genre.name != current_user.place.genre.name && a.city.downcase == current_user.place.city.downcase && a.number_of_musicians_max <= current_user.place.number_of_musicians_max) %>
+                <% if (a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians_max <= current_user.place.number_of_musicians_max) %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
@@ -284,11 +289,11 @@
         </div>
 
         <div class="container">
-          <h5 style= "color: black">Good place matches with artists</h5>
+          <h5 style= "color: black">Good matches with artists elsewhere</h5>
           <div class="row">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
-                <% if (a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians <=current_user.place.number_of_musicians_max) || (a.genre.name != current_user.place.genre.name && a.city.downcase == current_user.place.city.downcase && a.number_of_musicians <= current_user.place.number_of_musicians_max) %>
+                <% if a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians <=current_user.place.number_of_musicians_max %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
@@ -304,6 +309,10 @@
               </div>
             <% end %>
           </div>
+        </div>
+      <% else %>
+        <div class="creation" style="color: black">
+          create a place profil if you are one and get instant matches
         </div>
       <% end %>
 
@@ -355,11 +364,11 @@
         </div>
 
         <div class="container">
-          <h5 style= "color: black">Good structure matches with places</h5>
+          <h5 style= "color: black">Good matches with places elsewhere</h5>
           <div class="row">
             <% if @places.present? %>
               <% @places.each do |a|%>
-                <% if (a.genre.name == current_user.asso.genre.name && a.city.downcase == current_user.asso.city.downcase && a.number_of_musicians_max > current_user.asso.number_of_musicians_max) || (a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max) || (a.genre.name != current_user.asso.genre.name && a.city.downcase == current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max) %>
+                <% if a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
@@ -378,11 +387,11 @@
         </div>
 
         <div class="container">
-          <h5 style= "color: black">Good structure matches with artists</h5>
+          <h5 style= "color: black">Good matches with artists elsewhere</h5>
           <div class="row">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
-                <% if (a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians <=current_user.asso.number_of_musicians_max) || (a.genre.name != current_user.asso.genre.name && a.city.downcase == current_user.asso.city.downcase && a.number_of_musicians <= current_user.asso.number_of_musicians_max) %>
+                <% if a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians <=current_user.asso.number_of_musicians_max %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
@@ -398,6 +407,10 @@
               </div>
             <% end %>
           </div>
+        </div>
+      <% else %>
+        <div class="creation" style="color: black">
+          create a structure profil if you own one and get instant matches
         </div>
       <% end %>
       <div class="copyright">
