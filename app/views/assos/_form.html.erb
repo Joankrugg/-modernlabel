@@ -10,17 +10,17 @@
   <% end %>
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
     <%= f.input :name, required: false, placeholder: 'we need one' %>
-    <%= f.input :city, required: false, placeholder: 'we need one'%>
-    <%= f.input :year_of_creation, required: false, collection: 2000..2018 %>
-    <%= f.association :activity, required: false, placeholder: 'we need one' %>
-    <%= f.association :county, required: false %>
-    <%= f.association :activity_class, required: false %>
-    <%= f.input :phone_number, required: false %>
-    <%= f.input :number_of_musicians_max, required: false, collection: 1..9 %>
-    <%= f.input :description, required: false, placeholder: 'we need one' %>
     <%= f.input :photo, required: false %>
     <%= f.input :photo_cache, as: :hidden %>
+    <%= f.association :activity, required: false, placeholder: 'we need one' %>
+    <%= f.input :city, required: false, placeholder: 'we need one'%>
+    <%= f.association :county, required: false %>
+    <%= f.input :phone_number, required: false %>
+    <%= f.association :activity_class, required: false %>
+    <%= f.input :number_of_musicians_max, required: false, collection: 1..9 %>
     <%= f.association :genre, required: false %>
+    <%= f.input :description, required: false, placeholder: 'we need one' %>
+    <%= f.input :year_of_creation, required: false, collection: 2000..2018 %>
     <%= f.input :facebook_page, required: false, placeholder: 'we need one' %>
     <%= f.button :submit, class: "btn btn-medium last-item" %>
   </div>
