@@ -17,6 +17,7 @@
     <%= f.input :address, required: false, placeholder: 'we need one' %>
     <%= f.association :genre, required: false %>
     <%= f.association :county, required: false %>
+    <%= f.association :activity_class, required: false %>
     <%= f.input :number_of_musicians_max, required: false, collection: 1..9 %>
     <%= f.input :facebook_page, required: false, placeholder: 'we need one' %>
     <%= f.button :submit, class: "btn btn-medium last-item" %>

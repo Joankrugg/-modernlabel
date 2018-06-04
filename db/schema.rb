@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604150912) do
+ActiveRecord::Schema.define(version: 20180604173715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "activity_classes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -165,6 +171,8 @@ ActiveRecord::Schema.define(version: 20180604150912) do
     t.string   "address"
     t.integer  "number_of_musicians_max", default: 4
     t.integer  "county_id"
+    t.integer  "activity_class_id"
+    t.index ["activity_class_id"], name: "index_places_on_activity_class_id", using: :btree
     t.index ["county_id"], name: "index_places_on_county_id", using: :btree
     t.index ["genre_id"], name: "index_places_on_genre_id", using: :btree
     t.index ["user_id"], name: "index_places_on_user_id", using: :btree
@@ -289,6 +297,7 @@ ActiveRecord::Schema.define(version: 20180604150912) do
   add_foreign_key "performances", "places"
   add_foreign_key "performances", "types"
   add_foreign_key "performances", "users"
+  add_foreign_key "places", "activity_classes"
   add_foreign_key "places", "counties"
   add_foreign_key "places", "genres"
   add_foreign_key "places", "users"

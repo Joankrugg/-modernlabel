@@ -5,6 +5,7 @@ class Place < ApplicationRecord
   has_many :videos
   has_many :hardwares
   belongs_to :county
+  belongs_to :activity_class
 
   mount_uploader :photo, PhotoUploader
   validates :name, uniqueness: true, presence: true

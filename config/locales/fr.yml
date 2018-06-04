@@ -286,6 +286,7 @@ fr:
         name: "Nom"
         city: "Ville"
         genre: "Style"
+        activity_class: "Classe d'activité"
         county: "Département"
         facebook_page: "Page Facebook"
         address: "Adresse"
