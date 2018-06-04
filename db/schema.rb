@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604111104) do
+ActiveRecord::Schema.define(version: 20180604122932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,6 +162,8 @@ ActiveRecord::Schema.define(version: 20180604111104) do
     t.integer  "genre_id"
     t.string   "address"
     t.integer  "number_of_musicians_max", default: 4
+    t.integer  "county_id"
+    t.index ["county_id"], name: "index_places_on_county_id", using: :btree
     t.index ["genre_id"], name: "index_places_on_genre_id", using: :btree
     t.index ["user_id"], name: "index_places_on_user_id", using: :btree
   end
@@ -284,6 +286,7 @@ ActiveRecord::Schema.define(version: 20180604111104) do
   add_foreign_key "performances", "places"
   add_foreign_key "performances", "types"
   add_foreign_key "performances", "users"
+  add_foreign_key "places", "counties"
   add_foreign_key "places", "genres"
   add_foreign_key "places", "users"
   add_foreign_key "ratings", "artists"

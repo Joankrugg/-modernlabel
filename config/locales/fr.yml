@@ -286,6 +286,7 @@ fr:
         name: "Nom"
         city: "Ville"
         genre: "Style"
+        county: "Département"
         facebook_page: "Page Facebook"
         address: "Adresse"
         number_of_musicians_max: "Maximum de musiciens par groupe"
