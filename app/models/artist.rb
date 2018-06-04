@@ -6,7 +6,7 @@ class Artist < ApplicationRecord
   has_many :releases, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :videos, dependent: :destroy
-
+  validates :county, presence: true
   validates :photo, presence: true
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true
