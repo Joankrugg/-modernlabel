@@ -299,10 +299,11 @@ fr:
         name: "Nom"
         city: "Ville"
         genre: "Style"
+        county: "Département"
         facebook_page: "Page Facebook"
         activity: "Type de structure"
         phone_number: "Numéro de téléphone"
-        year_of_creation: "Date de création"
+        year_of_creation: "Année de création"
         number_of_musicians_max: "Maximum de musiciens par groupe"
 
       performance:
