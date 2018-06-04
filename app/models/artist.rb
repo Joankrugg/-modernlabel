@@ -1,6 +1,7 @@
 class Artist < ApplicationRecord
   belongs_to :user, required: true
   belongs_to :genre
+  belongs_to :county
   has_many :performances, dependent: :destroy
   has_many :releases, dependent: :destroy
   has_many :ratings, dependent: :destroy

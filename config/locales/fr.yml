@@ -266,6 +266,7 @@ fr:
         year_of_creation: "Année de création"
         city: "Ville"
         genre: "Style"
+        county: "Département"
         bookable: "Disponible pour booking"
         number_of_musicians: "Nombre de musiciens"
         facebook_link: "Page Facebook"
