@@ -10,6 +10,7 @@ class Place < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   validates :name, uniqueness: true, presence: true
   validates :photo, presence: true
+  validates :activity_class, presence: true
   validates :city, presence: true
   validates :address, presence: true
   validates :number_of_musicians_max, presence: true

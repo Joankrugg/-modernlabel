@@ -3,11 +3,13 @@ class Asso < ApplicationRecord
   belongs_to :genre
   belongs_to :activity
   belongs_to :county
+  belongs_to :activity_class
   mount_uploader :photo, PhotoUploader
   has_many :videos, dependent: :destroy
   has_many :performances, dependent: :destroy
   has_many :services, dependent: :destroy
 
+  validates :activity_class, presence: true
   validates :name, uniqueness: true, presence: true
   validates :photo, presence: true
   validates :number_of_musicians_max, presence: true

@@ -301,6 +301,7 @@ fr:
         city: "Ville"
         genre: "Style"
         county: "Département"
+        activity_class: "Classe d'activité"
         facebook_page: "Page Facebook"
         activity: "Type de structure"
         phone_number: "Numéro de téléphone"

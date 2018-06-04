@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604173715) do
+ActiveRecord::Schema.define(version: 20180604190108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20180604173715) do
     t.string   "phone_number"
     t.integer  "number_of_musicians_max", default: 9
     t.integer  "county_id"
+    t.integer  "activity_class_id"
+    t.index ["activity_class_id"], name: "index_assos_on_activity_class_id", using: :btree
     t.index ["activity_id"], name: "index_assos_on_activity_id", using: :btree
     t.index ["county_id"], name: "index_assos_on_county_id", using: :btree
     t.index ["genre_id"], name: "index_assos_on_genre_id", using: :btree
@@ -287,6 +289,7 @@ ActiveRecord::Schema.define(version: 20180604173715) do
   add_foreign_key "artists", "genres"
   add_foreign_key "artists", "users"
   add_foreign_key "assos", "activities"
+  add_foreign_key "assos", "activity_classes"
   add_foreign_key "assos", "counties"
   add_foreign_key "assos", "genres"
   add_foreign_key "assos", "users"

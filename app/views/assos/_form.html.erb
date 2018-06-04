@@ -14,6 +14,7 @@
     <%= f.input :year_of_creation, required: false, collection: 2000..2018 %>
     <%= f.association :activity, required: false, placeholder: 'we need one' %>
     <%= f.association :county, required: false %>
+    <%= f.association :activity_class, required: false %>
     <%= f.input :phone_number, required: false %>
     <%= f.input :number_of_musicians_max, required: false, collection: 1..9 %>
     <%= f.input :description, required: false, placeholder: 'we need one' %>
