@@ -20,6 +20,180 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  activerecord:
+
+    models:
+      actu: "Actualité"
+      activity: "Catégorie"
+      activity_class: "Classe d'activité"
+      artist: "Artiste"
+      asso: "Structure"
+      county: Département
+      hardware: "Matos"
+      place: "Salle"
+      performance: "Concert"
+      rating: "Evaluation"
+      record: "Edition"
+      release: "Prod"
+      shop: "shop"
+      genre: "style"
+
+    attributes:
+      actu:
+        title: "Titre"
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        content: "Contenu"
+        edition: "Edition"
+        link: "Lien"
+        description: "Description"
+
+      activity:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+
+      activity_class:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+
+      artist:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        year_of_creation: "Année de création"
+        city: "Ville"
+        number_of_musicians: "Nombre de musiciens"
+        facebook_link: "Page Facebook"
+        insta_link: "Page Instagram"
+        youtube_channel: "Page Youtube"
+        soundcloud_link: "Page Soundclound"
+        twitter_link: "Page Twitter"
+        bandcamp_link: "Page Bandcamp"
+        signed: "signé"
+        bookable: "Disponible pour booking"
+        bio: "Biographie"
+        genre: "Style"
+        user: "Utilisateur"
+        county: "Département"
+        performance: "Concert"
+        release: "Prod"
+        rating: "Evaluation"
+
+      asso:
+        name: "Nom"
+        city: "Ville"
+        facebook_page: "Page Facebook"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        user: "Utilisateur"
+        genre: "Style"
+        year_of_creation: "Année de création"
+        description: "Description"
+        activity: "Catégorie"
+        phone_number: "Téléphone"
+        number_of_musicians_max: "Nombre maximum de musiciens"
+        county: "Département"
+        activity_class: "Classe d'activité"
+
+      county:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+
+      genre:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+
+      hardware:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        description: "Description"
+        number: "Nombre"
+        place: "Salle"
+
+      performances:
+        start_time: "Début"
+        created_at: "créé le"
+        updated_at: "Mis à jour le"
+        city: "Ville"
+        price: "Prix"
+        place_address: "Adresse"
+        facebook_event: "Page Facebook de l'évènement"
+        user: "Utilisateur"
+        artist: "Artiste"
+        name: "Nom"
+        end_time: "Fin"
+        type: "Type d'évènement"
+        asso: "Structure"
+        place: "Salle"
+
+      place:
+        name: "Nom"
+        city: "Ville"
+        facebook_page: "Page Facebook"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        user: "Utilisateur"
+        genre: "Style"
+        address: "Adresse"
+        number_of_musicians_max: "Nombre maximum de musiciens"
+        county: "Département"
+        activity_class: "Classe d'activité"
+
+      record:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+
+      release:
+        title: "Titre"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        record: "Edition"
+        description: "Description"
+        price: "Prix"
+        bandcamp_link: "Lien Bandcamp"
+        youtube_link: "Lien Youtube"
+        genre: "Style"
+        artist: "Artiste"
+        signed: "Signé"
+        year_of_creation: "Année de création"
+
+      service:
+        title: "Titre"
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        adhesion_fee: "Prix d'adhésion"
+        description: "Description"
+        asso: "Structure"
+
+      shop:
+        price: "Prix"
+        product: "Nom du produit"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        description: "Description"
+
+      type:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+
+      video:
+        title: "Titre"
+        created_at: "Créé le"
+        updated_at: "Mis à jour le"
+        asso: "Structure"
+        artist: "Artiste"
+        place: "Salle"
+        genre: "Style"
+
   pages:
     home:
       sign_up: "Inscription"
@@ -190,73 +364,6 @@ fr:
       delete: "détruire le compte"
 
 
-
-  activerecord:
-    models:
-      actu: "News"
-    attributes:
-      actu:
-        title: "Titre"
-        content: "Contenu"
-        edition: "édition"
-        link: "lien"
-
-    models:
-      artist: "Artiste"
-    attributes:
-      artist:
-        name: "Nom"
-        description: "Description"
-        year_of_creation: "Date de création"
-        city: "Ville"
-        number_of_musicians: "Nombre de musiciens"
-        facebook_link: "Page FB (lien)"
-        insta_link: "Page Insta (lien)"
-        youtube_channel: "Page Youtube (lien)"
-        soundcloud_link: "Page Soundclound (lien)"
-        twitter_link: "Page Twitter (lien)"
-        bandcamp_link: "Page Bandcamp (lien)"
-
-    models:
-      performance: "Concert"
-    attributes:
-      performance:
-        start_time: "Début"
-        place_address: "Adresse du concert"
-        city: "Ville"
-        facebook_event: "Page FB de l'event (lien)"
-        end_time: "fin"
-
-    models:
-      release: "Record"
-    attributes:
-      release:
-        title: "Titre"
-        description: "Description"
-        price: "Prix"
-        year_of_creation: "Date de sortie"
-        youtube_link: "Page youtube (lien)"
-        bandcamp_link: "Page bandcamp (lien)"
-
-    models:
-      shop: "shop"
-    attributes:
-      shop:
-        product: "Nom"
-        description: "description"
-        price: "prix"
-
-    models:
-      record: "format"
-    attributes:
-      record:
-        name: "Nom"
-
-    models:
-      genre: "style"
-    attributes:
-      genre:
-        name: "Nom"
 
   simple_form:
     labels:
