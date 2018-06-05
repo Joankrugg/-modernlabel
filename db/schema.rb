@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605142851) do
+ActiveRecord::Schema.define(version: 20180605145326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(version: 20180605142851) do
     t.integer  "number_of_musicians_max", default: 4
     t.integer  "county_id"
     t.integer  "activity_class_id"
+    t.string   "phone_number"
     t.index ["activity_class_id"], name: "index_places_on_activity_class_id", using: :btree
     t.index ["county_id"], name: "index_places_on_county_id", using: :btree
     t.index ["genre_id"], name: "index_places_on_genre_id", using: :btree

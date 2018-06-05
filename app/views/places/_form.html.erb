@@ -16,6 +16,7 @@
     <%= f.input :city, required: false, placeholder: 'we need one'%>
     <%= f.association :county, required: false %>
     <%= f.input :address, required: false, placeholder: 'we need one' %>
+    <%= f.input :phone_number, required: false, placeholder: 'we need one' %>
     <%= f.association :genre, required: false %>
     <%= f.input :number_of_musicians_max, required: false, collection: 1..9 %>
     <%= f.association :activity_class, required: false %>
