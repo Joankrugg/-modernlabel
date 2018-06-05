@@ -24,8 +24,8 @@ fr:
 
     models:
       actu: "Actualité"
-      activity: "Catégorie"
-      activity_class: "Classe d'activité"
+      activity: "Activité"
+      activity_class: "Fréquence évènementielle"
       artist: "Artiste"
       asso: "Structure"
       county: Département
@@ -393,7 +393,7 @@ fr:
         name: "Nom"
         city: "Ville"
         genre: "Style"
-        activity_class: "Classe d'activité"
+        activity_class: "Fréquence évènementielle"
         county: "Département"
         facebook_page: "Page Facebook"
         address: "Adresse"
@@ -408,9 +408,9 @@ fr:
         city: "Ville"
         genre: "Style"
         county: "Département"
-        activity_class: "Classe d'activité"
+        activity_class: "Fréquence évènementielle"
         facebook_page: "Page Facebook"
-        activity: "Type de structure"
+        activity: "Activité"
         phone_number: "Numéro de téléphone"
         year_of_creation: "Année de création"
         number_of_musicians_max: "Maximum de musiciens par groupe"
