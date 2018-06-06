@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605145326) do
+ActiveRecord::Schema.define(version: 20180606130808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -239,6 +239,16 @@ ActiveRecord::Schema.define(version: 20180605145326) do
     t.string   "photo"
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.string   "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_topics_on_user_id", using: :btree
+  end
+
   create_table "types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -311,6 +321,7 @@ ActiveRecord::Schema.define(version: 20180605145326) do
   add_foreign_key "releases", "genres"
   add_foreign_key "releases", "records"
   add_foreign_key "services", "assos"
+  add_foreign_key "topics", "users"
   add_foreign_key "videos", "artists"
   add_foreign_key "videos", "assos"
   add_foreign_key "videos", "genres"

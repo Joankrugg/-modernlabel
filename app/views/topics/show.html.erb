@@ -1,0 +1,29 @@
+<div class="page-title top">FORUM</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8">
+        <div class="card-header">
+          <h3><%= @topic.title.upcase %></h3>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8">
+      <hr>
+        <p><%= @topic.content %></p>
+      </div>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="banner-content">
+      <div class="fb-share-button" data-href="http://modernboxrecords.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmodernboxrecords.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+      <div class="last-item">
+      <hr>
+        <div class="card-description">
+          <%= link_to "#{@topic.link}", "#{@topic.link}" , target: "_blank" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

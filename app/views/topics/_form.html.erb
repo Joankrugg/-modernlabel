@@ -1,0 +1,17 @@
+<%= simple_form_for @topic, defaults: { label_html: { class: 'labels' } } do |f| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @topic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
+    <%= f.input :title, required: false, placeholder: 'we need one' %>
+    <%= f.input :content, required: false %>
+    <%= f.input :link, required: false, placeholder: 'we need one' %>
+    <%= f.button :submit, class: "btn btn-medium last-item" %>
+  </div>
+<% end %>

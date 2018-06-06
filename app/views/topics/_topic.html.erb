@@ -1,0 +1,10 @@
+<div class="info-card">
+  <%= link_to topic do %>
+    <div class="info">
+      <h1>-<%= topic.title.capitalize %>-</h1>
+      <h1><%= topic.content %></h1>
+      <h1><%= topic.link %></h1>
+      <%= render 'shared/icons' %>
+    </div>
+  <% end %>
+</div>

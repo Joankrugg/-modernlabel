@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -36,7 +35,7 @@ Rails.application.routes.draw do
         post   "videos", to: "videos#create_as_an_asso", as: 'as_an_asso'
       end
     end
-    resources :assos, :places, :shops, :actus, :services
+    resources :assos, :places, :shops, :actus, :services, :topics
     resources :hardwares, except: :index
         # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
