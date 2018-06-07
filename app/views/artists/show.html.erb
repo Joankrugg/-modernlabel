@@ -37,7 +37,10 @@
       <div class="info-card productions" id= "bio">
         <h3>-<%= @artist.name.upcase %>-</h3>
         <h5><%= t(".city")%>: <%= @artist.city %></h5>
-        <h5><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %> </h5>
+        <h5><%= t(".county")%>: <%= @artist.county.name %></h5>
+        <h5><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %>
+        <h5><%= t(".genre")%>: <%= @artist.genre.name %></h5>
+        </h5>
         <div class="ratings">
           <%= @artist.average_stars %>
         </div>

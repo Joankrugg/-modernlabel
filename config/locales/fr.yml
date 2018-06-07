@@ -271,6 +271,8 @@ fr:
       Press_to_rate: "Appuyez pour laisser des étoiles à "
 
     show:
+      genre: "Style"
+      county: "Dépt"
       city: "Ville"
       number_of_musicians: "Musiciens"
       biography: "Biographie"
