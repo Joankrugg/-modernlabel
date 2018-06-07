@@ -1,0 +1,8 @@
+<div class="negative top">
+  <div class="search search-fixed">
+    <%= form_tag(topics_path, method: :get) do %>
+      <%= text_field_tag :search, nil, placeholder: "Recherche Sujet", class: "form-control" %>
+      <%= submit_tag 'Search', style: "display: none;" %>
+    <% end %>
+  </div>
+</div>

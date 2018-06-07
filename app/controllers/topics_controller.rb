@@ -1,7 +1,12 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit , :update, :destroy ]
   def index
-    @topics = Topic.all
+    if params[:search].present?
+      @topics = Topic.perform_search(params[:search])
+
+    else
+      @topics = Topic.all
+    end
   end
 
   def new
@@ -21,6 +26,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
   end
 
   def edit

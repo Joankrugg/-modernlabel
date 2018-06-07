@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+      <div class="card-header">
+        <h5><%= comment.created_at.strftime("%d/%m/%Y") %></h5>
+      </div>
+      <div class="card-description">
+        <h5 class="signature"><%= comment.user.email %></h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+      <p><%= comment.content %></p>
+      <div class="card-description">
+        <%= link_to "#{comment.link}", "#{comment.link}" , target: "_blank" %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>

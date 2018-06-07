@@ -9,11 +9,13 @@ class Asso < ApplicationRecord
   has_many :performances, dependent: :destroy
   has_many :services, dependent: :destroy
 
-  validates :activity_class, presence: true
   validates :name, uniqueness: true, presence: true
+  validates :city, presence: true
+  validates :county, presence: true
+  validates :address, presence: true
+  validates :activity_class, presence: true
   validates :photo, presence: true
   validates :number_of_musicians_max, presence: true
-  validates :city, presence: true
   validates :genre, presence: true
   validates :year_of_creation, presence: true
   validates :facebook_page, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }

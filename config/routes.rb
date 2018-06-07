@@ -35,7 +35,12 @@ Rails.application.routes.draw do
         post   "videos", to: "videos#create_as_an_asso", as: 'as_an_asso'
       end
     end
-    resources :assos, :places, :shops, :actus, :services, :topics
+
+    resources :topics do
+      resources :comments, only: :create
+    end
+
+    resources :assos, :places, :shops, :actus, :services
     resources :hardwares, except: :index
         # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end

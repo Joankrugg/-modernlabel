@@ -1,4 +1,4 @@
-<% if @artist.user == current_user  %><div class="row">
+<% if @artist.user == current_user %>
   <div class="option">
     <div class="banner-content">
       <div class="container actions">
@@ -81,13 +81,14 @@
   <div class="option">
     <div class="banner-content">
       <div class="container actions">
+        <br>
         <div class="row">
           <% if @artist.ratings.blank? %>
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-8 tabs">
-              <p class="tab" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Be_the_first") %><%= @artist.name %>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 tabs">
+              <p class="tab col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Be_the_first") %><%= @artist.name %>
               </p>
             <% else %>
-              <p class="tab" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Press_to_rate") %><%= @artist.name %>
+              <p class="tab col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Press_to_rate") %><%= @artist.name %>
               </p>
             <% end %>
           </div>

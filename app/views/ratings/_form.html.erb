@@ -1,5 +1,5 @@
-<%= simple_form_for [artist, rating], defaults: { label_html: { class: 'labels' } }, remote: true do |f| %>
-  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 ">
+<%= simple_form_for [artist, rating], defaults: { label_html: { class: 'labels' } } do |f| %>
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
     <%= f.input :star, required: false, collection: 1..5 %>
     <%= f.input :one_word, required: false, placeholder: t(".placeholder_3", default: "En un mot?") %>
     <%= f.button :submit, class: "btn btn-medium" %>

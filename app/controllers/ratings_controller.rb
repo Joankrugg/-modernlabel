@@ -5,15 +5,9 @@ class RatingsController < ApplicationController
     @rating = Rating.new(rating_params)
     @rating.artist = @artist
     if @rating.save
-      respond_to do |format|
-        format.html { redirect_to artist_path(@artist)}
-        format.js
-      end
+      redirect_to artist_path(@artist)
     else
-      respond_to do |format|
-        format.html { render 'artists/show'}
-        format.js
-      end
+      render 'artists/show'
     end
   end
 

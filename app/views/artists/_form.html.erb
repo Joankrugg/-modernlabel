@@ -15,7 +15,7 @@
     <%= f.association :genre, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
     <%= f.input :number_of_musicians, required: false, collection: 1..12 %>
     <%= f.input :bookable, as: :boolean %>
-    <%= f.input :contact, placeholder: 'band@gmail.com' %>
+    <%= f.input :contact, placeholder: 'band@gmail.com ou 06 .. .. .. ..' %>
     <%= f.input :bio, required: false, placeholder: t(".placeholder_1", default: "Obligatoire"), input_html: { maxlength: 140 }%>
     <%= f.input :year_of_creation, required: false, collection: 1990..2017 %>
     <%= f.input :facebook_link, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>

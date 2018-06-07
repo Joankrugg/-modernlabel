@@ -13,12 +13,13 @@
       <div class="info-card">
         <%= cl_image_tag @artist.photo, height: 600, width: 700, crop: :fill, class: "img-responsive"%>
         <div class="info-card-details">
-          <h3>-<%= @artist.name.upcase %>-</h3>
-          <h5><%= t(".city")%>: <%= @artist.city %></h5>
-          <h5><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %> </h5>
-          <div class="ratings">
-            <%= @artist.average_stars %>
-          </div>
+          <h3><%=t(".biography")%>:</h3>
+          <% if @artist.bio.present? %>
+            <p><%= @artist.bio %></p>
+          <% else %>
+            <p>il faudra ajouter la bio ici</p>
+          <% end %>
+
           <% if @artist.mp3? %>
             <% mp3 = @artist.mp3.path %>
             <audio controls>
@@ -26,9 +27,6 @@
             </audio>
           <% end %>
           <%= render 'shared/social-networks' %>
-          <% if @artist.user == current_user %>
-            <%= link_to t(".Delete", default: "delete this"), artist_path(@artist), class: "call-to-action btn-medium btn ", method: :delete, data: { confirm: "Are you sure?" } %>
-          <% end %>
         </div>
       </div>
     </div>
@@ -37,11 +35,14 @@
         <%= cl_image_tag @artist.photo, height: 80, width: 100, crop: :fill, class: "img-responsive"%>
       </div>
       <div class="info-card productions" id= "bio">
-        <h4><%=t(".biography")%>:</h4>
-        <% if @artist.bio.present? %>
-          <p><%= @artist.bio %></p>
-        <% else %>
-          <p>il faudra ajouter la bio ici</p>
+        <h3>-<%= @artist.name.upcase %>-</h3>
+        <h5><%= t(".city")%>: <%= @artist.city %></h5>
+        <h5><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %> </h5>
+        <div class="ratings">
+          <%= @artist.average_stars %>
+        </div>
+        <% if @artist.user == current_user %>
+          <%= link_to t(".Delete", default: "delete this"), artist_path(@artist), class: "call-to-action btn-medium btn ", method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
       </div>
       <div class="info-card productions hidden-sm">

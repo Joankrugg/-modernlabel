@@ -6,13 +6,14 @@ class Artist < ApplicationRecord
   has_many :releases, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :videos, dependent: :destroy
-  validates :county, presence: true
-  validates :photo, presence: true
+
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true
+  validates :county, presence: true
   validates :genre, presence: true
-  validates :year_of_creation, presence: true
   validates :number_of_musicians, presence: true
+  validates :photo, presence: true
+  validates :year_of_creation, presence: true
   validates :facebook_link, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
 
   validates :youtube_channel, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// } , allow_blank: true
