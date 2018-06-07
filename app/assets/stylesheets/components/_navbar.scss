@@ -37,8 +37,8 @@
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: $black !important;
-  color: #35aafb !important;
+  background: #F4F4F4 !important;
+  color: $blue !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -69,7 +69,7 @@
 /* Right section */
 
 .navbar-wagon-link {
-  color: #616668;
+  color: $blue;
   font-size: 34px;
 }
 

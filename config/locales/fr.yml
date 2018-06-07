@@ -273,6 +273,7 @@ fr:
     show:
       genre: "Style"
       county: "Dépt"
+      creation_date: "Créé en "
       city: "Ville"
       number_of_musicians: "Musiciens"
       biography: "Biographie"

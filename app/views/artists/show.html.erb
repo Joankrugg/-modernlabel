@@ -5,7 +5,6 @@
   <%= @artist.bio %>
 <% end %>
 <%= render 'shared/artist_search' %>
-
 <div class="container card-model">
   <div class="row">
     <div class="col-xs-12 col-sm-offset-1 col-sm-7 col-md-offset-1 col-md-7 col-lg-offset-1 col-lg-7">
@@ -38,9 +37,9 @@
         <h3>-<%= @artist.name.upcase %>-</h3>
         <h5><%= t(".city")%>: <%= @artist.city %></h5>
         <h5><%= t(".county")%>: <%= @artist.county.name %></h5>
-        <h5><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %>
+        <h5><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %> </h5>
         <h5><%= t(".genre")%>: <%= @artist.genre.name %></h5>
-        </h5>
+        <h5><%= t(".creation_date")%>: <%= @artist.year_of_creation %></h5>
         <div class="ratings">
           <%= @artist.average_stars %>
         </div>
@@ -56,7 +55,7 @@
           </audio>
         </div>
       <% else %>
-        <%= image_tag 'logo_9.png', height: 20, width: 110, crop: :fit, class: "img-responsive" %>
+        <%= image_tag 'logo_mbr.png', height: 20, width: 110, crop: :fit, class: "img-responsive" %>
       <% end %>
     </div>
   </div>
@@ -67,7 +66,7 @@
     <div class="col-lg-12">
       <% if @artist.releases.present? %>
         <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
-          <h2>//PRODS\\</h2>
+          <h2>PRODS</h2>
           <hr>
         </div>
         <% @artist.releases.each do |release| %>
@@ -79,13 +78,13 @@
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                   <div class="col-lg-4">
-                    <p style="color: black; text-align: left; font-weight: bold"><%=t(".title") %>: -<%= release.title.upcase %>-</p>
-                    <p style="color: black; text-align: left"><%= t(".EDITION") %>: -<%= release.record.name %>-</p>
-                    <p style="color: black; text-align: left"><%= t(".PRICE") %>: -<%= release.price %>Euros-</p>
+                    <p style="color: black; text-align: left"><%=t(".title") %>: <%= release.title.upcase %></p>
+                    <p style="color: black; text-align: left"><%= t(".EDITION") %>: <%= release.record.name %></p>
+                    <p style="color: black; text-align: left"><%= t(".PRICE") %>: <%= release.price %>Euros</p>
                   </div>
                   <div class="col-lg-4">
-                    <p style="color: black; text-align: left"><%= t(".GENRE") %>: -<%= release.genre.name %>-</p>
-                    <p style="color: black; text-align: left"><%= t(".RECORD") %>: -<%= release.year_of_creation %>-</p>
+                    <p style="color: black; text-align: left"><%= t(".GENRE") %>: <%= release.genre.name %></p>
+                    <p style="color: black; text-align: left"><%= t(".RECORD") %>: <%= release.year_of_creation %></p>
                     <p style="color: black; text-align: left"><%= release.average_hearts %></p>
                   </div>
                   <div class="col-lg-4">
@@ -108,7 +107,7 @@
     <div class="col-lg-12">
       <% if @artist.videos.present? %>
         <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
-          <h2>//VIDEOS\\</h2>
+          <h2>VIDEOS</h2>
           <hr>
         </div>
         <% @artist.videos.each do |video| %>
@@ -121,8 +120,8 @@
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
               <div class= "lead">
                 <div class="productions">
-                  <h1>-<%= video.title  %>-</h1>
-                  <h1>-<%= @artist.name  %>-</h1>
+                  <h1><%= video.title.upcase  %></h1>
+                  <h1><%= @artist.name  %></h1>
                   <%= render 'shared/icons' %>
                 </div>
               </div>
@@ -137,7 +136,7 @@
     <div class="col-lg-12">
       <% if @artist.performances.present? %>
         <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 model-items">
-          <h2>//CONCERTS\\</h2>
+          <h2>CONCERTS</h2>
           <hr>
         </div>
         <% @artist.performances.each do |performance| %>
@@ -149,14 +148,14 @@
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                   <div class="col-lg-4">
-                    <p style="color: black; text-align: left; font-weight: bold"><%=t(".title") %>: -<%= performance.name %>-</p>
-                    <p style="color: black; text-align: left"><%=t(".CITY") %>: -<%= performance.city %>-</p>
-                    <p style="color: black; text-align: left"><%=t(".PRICE")%>: -<%= performance.price %>Euros-</p>
+                    <p style="color: black; text-align: left"><%=t(".title") %>: <%= performance.name.upcase %></p>
+                    <p style="color: black; text-align: left"><%=t(".CITY") %>: <%= performance.city %></p>
+                    <p style="color: black; text-align: left"><%=t(".PRICE")%>: <%= performance.price %>Euros</p>
 
                   </div>
                   <div class="col-lg-4">
-                    <p style="color: black; text-align: left">DATE: -<%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %>-</p>
-                    <p style="color: black; text-align: left"><%=t(".ADDRESS") %>: -<%= performance.place_address %>-</p>
+                    <p style="color: black; text-align: left">DATE: <%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %></p>
+                    <p style="color: black; text-align: left"><%=t(".ADDRESS") %>: <%= performance.place_address %></p>
                   </div>
                   <div class="col-lg-4">
                     <% if performance.facebook_event? %>

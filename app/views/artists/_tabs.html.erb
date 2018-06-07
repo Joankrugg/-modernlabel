@@ -84,11 +84,13 @@
         <br>
         <div class="row">
           <% if @artist.ratings.blank? %>
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 tabs">
-              <p class="tab col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Be_the_first") %><%= @artist.name %>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-8 col-lg-offset-3 col-lg-6 tabs">
+              <p class="tab col-lg-12" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Be_the_first") %><%= @artist.name %>
               </p>
+            </div>
             <% else %>
-              <p class="tab col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Press_to_rate") %><%= @artist.name %>
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-8 col-lg-offset-3 col-lg-6 tabs">
+              <p class="tab col-lg-12" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Press_to_rate") %><%= @artist.name %>
               </p>
             <% end %>
           </div>
