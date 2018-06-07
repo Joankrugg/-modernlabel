@@ -1,3 +1,9 @@
+<% content_for(:title_tag) do %>
+  -<%= @topic.title %>- on Modern Box Records
+<% end %>
+<% content_for(:description) do %>
+  <%= @topic.content %>
+<% end %>
 <%= render 'shared/topic_search' %>
 <div class="page-title top">FORUM</div>
 <div class="container">
