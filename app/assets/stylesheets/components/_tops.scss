@@ -17,8 +17,8 @@ body{
   font-weight: lighter;
   color: $black;
   text-align: center;
-  padding-top: 130px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .page-title-search{
@@ -30,3 +30,9 @@ body{
   padding-bottom: 30px;
 }
 
+.white{
+  padding-top: 120px;
+  background-color: white;
+  border: 1px solid gray;
+  z-index: 1;
+}
