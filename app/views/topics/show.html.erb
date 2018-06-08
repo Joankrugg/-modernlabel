@@ -13,9 +13,7 @@
       <div class='product-body'>
         <h4><%= @topic.title.upcase %></h4>
         <p style="color: black; text-align: left">posted on the <%= @topic.created_at.strftime("%d/%m/%Y") %></p>
-        <div class="row">
-          <p><%= @topic.content %></p>
-        </div>
+        <p><%= @topic.content %></p>
         <% if @topic.link.present? %>
           <p><%= @topic.link %></p>
         <% end %>

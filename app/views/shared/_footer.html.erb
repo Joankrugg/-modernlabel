@@ -1,31 +1,50 @@
 <div class="container ">
   <div class="container footer footer-fixed">
     <%= link_to artists_path do %>
-      <i class="fa fa-users network-nav"></i>
-    <% end %>
-    <%= link_to assos_path do %>
-      <i class="fa fa-share-alt network-nav"></i>
+      <div class="icons-app">
+        <i class="fa fa-users network-nav"></i>
+        <p class="footer-text">Bands </p>
+      </div>
     <% end %>
     <%= link_to places_path do %>
-      <i class="fa fa-beer network-nav"></i>
+      <div class="icons-app">
+        <i class="fa fa-search-plus network-nav"></i>
+        <p class="footer-text">Salles</p>
+      </div>
     <% end %>
-    <%= link_to releases_path do %>
-      <i class="fa fa-caret-square-o-right network-nav"></i>
+    <%= link_to assos_path do %>
+      <div class="icons-app">
+        <i class="fa fa-medkit network-nav"></i>
+        <p class="footer-text">Assos</p>
+      </div>
     <% end %>
     <%= link_to performances_path do %>
-      <i class="fa fa-heartbeat network-nav"></i>
+      <div class="icons-app">
+        <i class="fa fa-calendar network-nav"></i>
+        <p class="footer-text">Shows</p>
+      </div>
     <% end %>
-    <%= link_to videos_path do %>
-      <i class="fa fa-youtube network-nav"></i>
+    <%= link_to topics_path do %>
+      <div class="icons-app">
+        <i class="fa fa-comments network-nav"></i>
+        <p class="footer-text">Salons</p>
+      </div>
     <% end %>
-  </div>
-  <div class="container footer-legends footer-fixed-legends">
-    <p class="footer-text">Artistes </p>
-    <p class="footer-text">Structures </p>
-    <p class="footer-text">Salles</p>
-    <p class="footer-text">Prods</p>
-    <p class="footer-text">Concerts</p>
-    <p class="footer-text">Videos</p>
+    <% unless user_signed_in? %>
+      <%= link_to new_user_session_path do %>
+        <div class="icons-app">
+          <i class="fa fa-user-circle network-nav" ></i>
+          <p class="footer-text">Compte</p>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to current_user do %>
+        <div class="icons-app">
+          <i class="fa fa-user-circle network-nav" ></i>
+          <p class="footer-text">Compte</p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 

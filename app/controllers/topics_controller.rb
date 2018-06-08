@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index ]
   before_action :set_topic, only: [:show, :edit , :update, :destroy ]
   def index
     if params[:search].present?

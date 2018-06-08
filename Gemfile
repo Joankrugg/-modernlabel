@@ -13,7 +13,7 @@ gem 'devise-i18n', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.0.13'
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
