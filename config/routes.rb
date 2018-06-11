@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Notifications::Engine => "/notifications"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update, :destroy] do
       collection do
         get 'action', to: "users#action"
+        resources :topics do
+          resources :comments, only: :create
+        end
       end
     end
     resources :artists do
@@ -36,9 +40,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :topics do
-      resources :comments, only: :create
-    end
+
 
     resources :assos, :places, :shops, :actus, :services
     resources :hardwares, except: :index

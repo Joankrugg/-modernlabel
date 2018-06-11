@@ -30,6 +30,7 @@ gem 'omniauth-facebook'
 gem 'pg_search'
 gem "simple_calendar", "~> 2.0"
 gem 'will_paginate', '~> 3.1.0'
+gem 'notifications'
 
 
 

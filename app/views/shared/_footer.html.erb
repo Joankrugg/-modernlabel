@@ -1,44 +1,44 @@
 <div class="container ">
   <div class="container footer footer-fixed">
-    <%= link_to artists_path do %>
+    <%= link_to main_app.artists_path do %>
       <div class="icons-app">
         <i class="fa fa-users network-nav"></i>
         <p class="footer-text">Bands </p>
       </div>
     <% end %>
-    <%= link_to places_path do %>
+    <%= link_to main_app.places_path do %>
       <div class="icons-app">
         <i class="fa fa-search-plus network-nav"></i>
         <p class="footer-text">Salles</p>
       </div>
     <% end %>
-    <%= link_to assos_path do %>
+    <%= link_to main_app.assos_path do %>
       <div class="icons-app">
         <i class="fa fa-medkit network-nav"></i>
         <p class="footer-text">Assos</p>
       </div>
     <% end %>
-    <%= link_to performances_path do %>
+    <%= link_to main_app.performances_path do %>
       <div class="icons-app">
         <i class="fa fa-calendar network-nav"></i>
         <p class="footer-text">Shows</p>
       </div>
     <% end %>
-    <%= link_to topics_path do %>
+    <%= link_to main_app.topics_path do %>
       <div class="icons-app">
         <i class="fa fa-comments network-nav"></i>
         <p class="footer-text">Salons</p>
       </div>
     <% end %>
     <% unless user_signed_in? %>
-      <%= link_to new_user_session_path do %>
+      <%= link_to main_app.new_user_session_path do %>
         <div class="icons-app">
           <i class="fa fa-user-circle network-nav" ></i>
           <p class="footer-text">Compte</p>
         </div>
       <% end %>
     <% else %>
-      <%= link_to current_user do %>
+      <%= link_to main_app.action_users_path do %>
         <div class="icons-app">
           <i class="fa fa-user-circle network-nav" ></i>
           <p class="footer-text">Compte</p>

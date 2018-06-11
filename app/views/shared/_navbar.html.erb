@@ -6,60 +6,60 @@
         <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
           <% unless user_signed_in? %>
             <li>
-              <%= link_to new_user_session_path do %>
+              <%= link_to main_app.new_user_session_path do %>
                 <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
               <% end %>
             </li>
             <% else %>
             <li>
-              <%= link_to current_user do %>
+              <%= link_to main_app.action_users_path do %>
                 <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
               <% end %>
             </li>
           <% end %>
           <li>
-            <%= link_to performances_path do %>
+            <%= link_to main_app.performances_path do %>
               <i class="fa fa-calendar"></i> <%= t(".index_event", default: "EVENEMENTS") %>
             <% end %>
           </li>
           <li>
-            <%= link_to releases_path do %>
+            <%= link_to main_app.releases_path do %>
               <i class="fa fa-headphones"></i> <%= t(".index_release", default: "PRODS") %>
             <% end %>
           </li>
           <li>
-            <%= link_to videos_path do %>
+            <%= link_to main_app.videos_path do %>
               <i class="fa fa-youtube-play"></i> <%= t(".index_video", default: "VIDEOS") %>
             <% end %>
           </li>
           <li>
-            <%= link_to pages_concept_path do %>
+            <%= link_to main_app.pages_concept_path do %>
               <i class="fa fa-diamond"></i> <%= t(".index_label", default: "MODERN BOX") %>
             <% end %>
           </li>
           <li>
-            <%= link_to actus_path do %>
+            <%= link_to main_app.actus_path do %>
               <i class="fa fa-newspaper-o"></i> <%= t(".index_news", default: "NEWS") %>
             <% end %>
           </li>
           <li>
-            <%= link_to signed_artists_path do %>
+            <%= link_to main_app.signed_artists_path do %>
               <i class="fa fa-users"></i> <%= t(".index_artist", default: "ARTISTS") %>
             <% end %>
           </li>
           <li>
-            <%= link_to signed_releases_path do %>
+            <%= link_to main_app.signed_releases_path do %>
               <i class="fa fa-headphones"></i> <%= t(".index_release", default: "PRODS") %>
             <% end %>
           </li>
           <li>
-            <%= link_to shops_path do %>
+            <%= link_to main_app.shops_path do %>
               <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "STORE") %>
             <% end %>
           </li>
           <% if user_signed_in? %>
             <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= link_to main_app.destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-times-circle" ></i> <%= t(".index_out", default: "QUIT") %>
               <% end %>
             </li>
@@ -68,12 +68,12 @@
       </div>
     </div>
     <div class="logo">
-      <%= link_to root_path do %>
+      <%= link_to main_app.root_path do %>
         <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
       <% end %>
     </div>
     <div class="navbar-item navbar-wagon-link">
-      <%= link_to rails_admin_path do %>
+      <%= link_to main_app.rails_admin_path do %>
         <i class="fa fa-lock" id= "admin"></i>
       <% end %>
     </div>

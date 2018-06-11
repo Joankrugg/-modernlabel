@@ -85,6 +85,8 @@
     </div>
     <br>
     <hr>
+      <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path %>
+    <hr>
     <div class="matches">
       <h3 style= "color: black">My matches</h3>
       <% if current_user.artist.present? %>
