@@ -355,6 +355,12 @@ fr:
       genre: "Genre"
       creation: "Création en"
 
+  topics:
+    show:
+      posted: "posté le "
+      edit_topic: "modifier le sujet"
+      delete_topic: "effacer ce sujet"
+      add_a_comment: "Répondre à "
   performances:
     show:
       update:
@@ -458,4 +464,12 @@ fr:
         star: "Etoiles"
         one_word: "Un mot"
         placeholder_3: "en un mot ?"
+
+      topic:
+        title: "Titre"
+        content: "contenu"
+        link: "lien"
+
+
+      comment:
 
