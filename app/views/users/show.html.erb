@@ -85,13 +85,13 @@
     </div>
     <br>
     <hr>
-      <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path %>
+      <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path, class: "btn btn-medium"%>
     <hr>
     <div class="matches">
       <h3 style= "color: black">My matches</h3>
       <% if current_user.artist.present? %>
         <div class="container">
-          <h5 style= "color: black">Perfect band matches with assos</h5>
+          <h5 style= "color: black">Perfect match avec des assos</h5>
           <br>
           <div class="row">
             <% if @assos.present? %>
@@ -111,7 +111,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Perfect band matches with places</h5>
+          <h5 style= "color: black">Perfect match avec des salles</h5>
           <br>
           <div class="row">
             <% if @places.present? %>
@@ -131,7 +131,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Perfect band matches with artists</h5>
+          <h5 style= "color: black">Perfect match avec d'autres artistes</h5>
           <br>
           <div class="row">
             <% if @artists.present? %>
@@ -151,7 +151,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Good matches with assos elsewhere </h5>
+          <h5 style= "color: black">Match possible avec d'autres structures'</h5>
           <br>
           <div class="row">
             <% if @assos.present? %>
@@ -171,7 +171,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Good matches with places elsewhere</h5>
+          <h5 style= "color: black">Matches possible avec d'autres salles</h5>
           <br>
           <div class="row">
             <% if @places.present? %>
@@ -191,7 +191,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Good matches with artists elsewhere</h5>
+          <h5 style= "color: black">Match possible avec d'autres artistes</h5>
           <br>
           <div class="row">
             <% if @artists.present? %>
@@ -213,7 +213,7 @@
       <hr>
       <% if current_user.place.present? %>
         <div class="container">
-          <h5 style= "color: black">Perfect place matches with assos</h5>
+          <h5 style= "color: black">Match possible avec d'autres structures</h5>
           <br>
           <div class="row">
             <% if @assos.present? %>
@@ -234,7 +234,7 @@
         <hr>
         <% if @artists.present? %>
           <div class="container">
-            <h5 style= "color: black">Perfect place matches with artists</h5>
+            <h5 style= "color: black">Match possible avec d'autres artistes</h5>
             <br>
             <div class="row">
               <% @artists.each do |a|%>
@@ -253,7 +253,7 @@
         <% end %>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Good matches with assos elsewhere</h5>
+          <h5 style= "color: black">Match possible avec d'autres structures</h5>
           <br>
           <div class="row">
             <% if @assos.present? %>
@@ -273,7 +273,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Good matches with artists elsewhere</h5>
+          <h5 style= "color: black">Match possible avec d'autres artistes</h5>
           <br>
           <div class="row">
             <% if @artists.present? %>
@@ -295,7 +295,7 @@
       <hr>
       <% if current_user.asso.present? %>
         <div class="container">
-          <h5 style= "color: black">Perfect structure matches with places</h5>
+          <h5 style= "color: black">Perfect match avec des salles</h5>
           <br>
           <div class="row">
             <% if @places.present? %>
@@ -315,7 +315,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Perfect structure matches with artists</h5>
+          <h5 style= "color: black">Perfect match avec des artistes</h5>
           <br>
           <div class="row">
             <% if @artist.present? %>
@@ -335,7 +335,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Good matches with places elsewhere</h5>
+          <h5 style= "color: black">Match possible avec d'autres structures</h5>
           <br>
           <div class="row">
             <% if @places.present? %>
@@ -355,7 +355,7 @@
         </div>
         <hr>
         <div class="container">
-          <h5 style= "color: black">Good matches with artists elsewhere</h5>
+          <h5 style= "color: black">Match possible avec d'autres artistes</h5>
           <div class="row">
             <% if @artists.present? %>
               <% @artists.each do |a|%>

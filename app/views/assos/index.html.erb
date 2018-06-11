@@ -2,10 +2,10 @@
 <div class="page-title-search top">
   MUSIC MATCH STRUCTURES
 </div>
+<h5 style="text-align:center; color: $black">Pour lancer une recherche en fonction de l'activité, les mots clés sont les suivants:<br>Studio de répétition, Magasin de musique, Studio d'enregistrement,<br> Production audiovisuelle, Label, Communication, Polyvalent, Radio et Location de backline</h5>
+<hr>
 <div class="banner">
   <div class="banner-content">
-    <div class="advice" style="color: black">Pour lancer une recherche en fonction de l'activité, les mots clés sont les suivants:<br>
-    rehearsal, music store, recordings, music video making, web communication, label, radio et multipurpose</div>
     <!--section d'ensemble-->
     <div class="container items">
       <div class="row">
@@ -20,9 +20,7 @@
             </div>
           <% end %>
         <% else %>
-        <div class="no-result" style="color: black">
-          sorry! but no result were found!
-        </div>
+          <%= render 'shared/no_result' %>
         <% end %>
       </div>
     </div>

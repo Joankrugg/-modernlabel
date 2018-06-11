@@ -253,6 +253,15 @@ fr:
       out_from: "Sortie le"
     performancecard:
       city: "Ville"
+    no_result:
+      sorry: "Malheureusement, pas de résultat pour cette recherche :("
+
+  notifications:
+    notifications:
+      index:
+        notifications.clean_all: "Effacer les notifications"
+        notifications.all_notifications: "Vos notifications"
+
 
   artists:
     artist:
@@ -292,6 +301,10 @@ fr:
     signed:
       people_playing: "zicos qui font du"
       read_more: "En Savoir Plus..."
+
+    index:
+      sorry: "pas de résultat pour cette recherche pour l'instant"
+
   assos:
     asso:
       city: "ville"
