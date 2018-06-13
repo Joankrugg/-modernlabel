@@ -261,6 +261,7 @@ fr:
       index:
         notifications.clean_all: "Effacer les notifications"
         notifications.all_notifications: "Vos notifications"
+        notifications.no_records': "Pas de Notification"
 
 
   artists:
@@ -374,6 +375,7 @@ fr:
       edit_topic: "modifier le sujet"
       delete_topic: "effacer ce sujet"
       add_a_comment: "Répondre à "
+
   performances:
     show:
       update:
@@ -389,9 +391,13 @@ fr:
       place: "créer salle"
       artist: "créer artiste"
       asso: "créer structure"
-      delete: "détruire le compte"
-
-
+      delete: "Détruire le compte"
+    modals:
+      close: "FERMER"
+      new_asso: "STRUCTURE"
+      new_place: "SALLE"
+      new_artist: "ARTISTE"
+      new_topic: "SUJET"
 
   simple_form:
     labels:

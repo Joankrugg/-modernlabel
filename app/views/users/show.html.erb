@@ -8,20 +8,17 @@
       <div class="col-lg-12">
         <% if current_user.asso == nil && current_user.place == nil %>
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to new_asso_path do %>
-              <div class="id-card">
-                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%= t(".asso", default: "create new asso") %>
-              </div>
-            <% end %>
+            <div class="id-card" data-toggle="modal" data-target="#new_asso">
+              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <p style="color: #4360B5;">Créer asso</p>
+            </div>
+
           </div>
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to new_place_path do %>
-              <div class="id-card">
-                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%= t(".place", default: "create new place") %>
-              </div>
-            <% end %>
+            <div class="id-card" data-toggle="modal" data-target="#new_place">
+              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <p style="color: #4360B5;">Créer salle</p>
+            </div>
           </div>
         <% end %>
         <% if current_user.asso != nil %>
@@ -29,7 +26,7 @@
             <%= link_to @user.asso do %>
               <div class="id-card">
                 <%= cl_image_tag @user.asso.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%="#{@user.asso.name}" %>
+                <%="#{@user.asso.name.capitalize}" %>
               </div>
             <% end %>
           </div>
@@ -39,30 +36,34 @@
             <%= link_to @user.place do %>
               <div class="id-card">
                 <%= cl_image_tag @user.place.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%="#{@user.place.name}" %>
+                <%="#{@user.place.name.capitalize}" %>
               </div>
             <% end %>
           </div>
         <% end %>
         <% if current_user.artist == nil %>
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to new_artist_path do %>
-              <div class="id-card">
-                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%= t(".artist", default: "create new artist") %>
-              </div>
-            <% end %>
+            <div class="id-card" data-toggle="modal" data-target="#new_artist">
+              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <p style="color: #4360B5;">Nouvel artiste</p>
+            </div>
           </div>
         <% else %>
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
             <%= link_to @user.artist do %>
               <div class="id-card">
                 <%= cl_image_tag @user.artist.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%= "#{@user.artist.name}" %>
+                <%= "#{@user.artist.name.capitalize}" %>
               <% end %>
             </div>
           </div>
         <% end %>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+          <div class="id-card" data-toggle="modal" data-target="#new_topic">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+            <p style="color: #4360B5;">Nouveau sujet</p>
+          </div>
+        </div>
         <% if @user == current_user %>
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
             <%= link_to user_path(@user), method: :delete, data: { confirm: "Are you sure?" } do %>
@@ -73,17 +74,11 @@
             <% end %>
           </div>
         <% end %>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-          <%= link_to new_topic_path do %>
-            <div class="id-card">
-              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-              <p>topics</p>
-            </div>
-          <% end %>
-        </div>
       </div>
     </div>
     <br>
+    <hr>
+      <%= render 'modals'  %>
     <hr>
       <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path, class: "btn btn-medium"%>
     <hr>

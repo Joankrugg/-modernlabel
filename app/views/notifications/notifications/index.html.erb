@@ -7,7 +7,7 @@
   </div>
   <div class="list">
     <% if @notifications.blank? %>
-      <div class="no-records"><%= t('notifications.no_records') %></div>
+      <div class="no-records">Pas de Notification</div>
     <% else %>
       <% @notification_groups.each do |group, notifications| %>
         <div class="notification-group">

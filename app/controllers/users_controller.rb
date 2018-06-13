@@ -10,6 +10,10 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @places = Place.all
     @assos = Asso.all
     @artists = Artist.all
+    @place = Place.new
+    @asso = Asso.new
+    @artist = Artist.new
+    @topic = Topic.new
   end
 
   def edit
