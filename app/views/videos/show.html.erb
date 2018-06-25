@@ -12,11 +12,9 @@
           <h1>-<%= @video.title  %>-</h1>
           <% if @video.artist.present? %>
             <h1>-<%= @video.artist.name %>-</h1>
-          <% end %>
-          <% if @video.asso.present? %>
+          <% elsif @video.asso.present? %>
             <h1>-<%= @video.asso.name %>-</h1>
-          <% end %>
-          <% if @video.place.present? %>
+          <% else%>
             <h1>-<%= @video.place.name %>-</h1>
           <% end %>
           <h1>-<%= @video.genre.name %>-</h1>
@@ -26,11 +24,9 @@
               <div class="social-card-content">
                 <% if @video.artist.present? %>
                   <%= link_to "Back to #{@video.artist.name}", artist_path(@video.artist) %>
-                <% end %>
-                <% if @video.asso.present? %>
+                <% elsif @video.asso.present? %>
                   <%= link_to "Back to #{@video.asso.name}", asso_path(@video.asso) %>
-                <% end %>
-                <% if @video.place.present? %>
+                <% else%>
                   <%= link_to "Back to #{@video.place.name}", place_path(@video.place) %>
                 <% end %>
               </div>

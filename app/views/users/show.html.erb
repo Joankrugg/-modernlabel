@@ -206,6 +206,7 @@
         </div>
       <% end %>
       <hr>
+
       <% if current_user.place.present? %>
         <div class="container">
           <h5 style= "color: black">Match possible avec d'autres structures</h5>
@@ -288,6 +289,10 @@
         </div>
       <% end %>
       <hr>
+
+
+
+
       <% if current_user.asso.present? %>
         <div class="container">
           <h5 style= "color: black">Perfect match avec des salles</h5>
@@ -333,13 +338,13 @@
           <h5 style= "color: black">Match possible avec d'autres structures</h5>
           <br>
           <div class="row">
-            <% if @places.present? %>
-              <% @places.each do |a|%>
+            <% if @assos.present? %>
+              <% @assos.each do |a|%>
                 <% if a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max %>
                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
                     <div class="main">
                       <div class="card">
-                        <%= render "places/place", place: a %><br>
+                        <%= render "assos/asso", asso: a %><br>
                       </div>
                     </div>
                   </div>
