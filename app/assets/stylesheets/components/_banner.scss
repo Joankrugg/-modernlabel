@@ -8,13 +8,19 @@
 }
 
 .banner {
+  padding-top: 50px;
   color: white;
   text-align: center;
-  height: 100vh;
-  background-size: cover !important;
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
-  margin-top: 19px;
 }
+
+hr{
+  margin-top: 10px;
+  height: 2px;
+  background-color: $green;
+  border: none; /*on supprime le style par défaut*/
+}
+
 

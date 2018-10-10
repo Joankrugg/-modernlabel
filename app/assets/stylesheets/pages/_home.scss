@@ -2,30 +2,9 @@
   padding-top: 80px;
 }
 
-.slogan{
-  padding-top: 130px;
-}
-.hook{
-  color: white;
-}
-
 .hook:hover{
   color: white;
   text-decoration: none;
-}
-
-.wallpaper-links{
-  font-size: 40px;
-  text-align: center;
-  color: $blue;
-  padding-top: 20px;
-}
-
-.wallpaper-links:hover{
-  font-size: 40px;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  padding-top: 20px;
 }
 
 .copyright{
@@ -34,3 +13,55 @@
   text-align: center;
   color: white;
 }
+
+.section-title-left{
+  color: $green;
+}
+
+.section-title-right{
+  color: white;
+  background-color: $green;
+  font-size: 24px;
+  opacity: 0.7;
+  padding-left: 10px;
+}
+
+.last-news-card:hover{
+  background-color: $light-gray;
+  border-radius: 10px;
+}
+
+.last-news-title{
+  color: $black;
+  font-weight: bolder;
+}
+
+.last-news-edition{
+  color: #8B8B8B;
+  font-size: 14px;
+}
+
+.last-news-content{
+  color: $black;
+  font-size: 16px;
+}
+
+.last-news-segment{
+  margin-top: 10px;
+  height: 1px;
+  background-color: $black;
+  border: none; /*on supprime le style par défaut*/
+}
+
+.videos-samples{
+  padding-bottom: 20px;
+}
+
+.releases-samples{
+  padding-bottom: 20px;
+}
+
+.artists-samples{
+  padding-bottom: 20px;
+}
+

@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911|Open+Sans+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin|Roboto+Condensed");
 
 // Define fonts for body and headers
-$body-font: "Goudy Bookletter 1911", "serif";
-$headers-font: "Goudy Bookletter 1911", "serif";
+$body-font: 'Roboto Condensed', sans-serif;
+$headers-font: 'Libre Franklin', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

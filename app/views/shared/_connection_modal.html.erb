@@ -1,0 +1,18 @@
+<div class="modal fade" id="connect" tabindex="4" role="dialog" aria-labelledby="Connection" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="connection">Connection</h5>
+        <div class="modal-body">
+          <div class="connection">
+            <%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "btn btn-medium" %>
+            <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "btn btn-medium" %>
+          </div>
+          <div class="connection">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

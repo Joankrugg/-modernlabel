@@ -23,7 +23,7 @@
 }
 
 .network-nav:hover{
-  color: $blue;
+  color: $green;
   text-decoration: none;
 }
 
@@ -38,6 +38,7 @@
   background: #FFFFFF;
 }
 
+
 .footer-fixed-legends {
   position: fixed;
   left: 0px;
@@ -50,3 +51,8 @@
   font-size: 12px;
   color: $black;
 }
+
+a:hover{
+  text-decoration: $green;
+}
+
