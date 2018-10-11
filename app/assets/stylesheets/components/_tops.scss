@@ -1,35 +1,27 @@
 body{
   background-color: white;
 }
-
-.top{
-  color: #F4F4F4;
-  background: #F4F4F4;
-}
-
 .top-title{
   color: #F4F4F4;
 }
 
 .page-title{
-  font-size: 40px;
+  font-size: 30px;
   font-weight: lighter;
   color: $black;
-  text-align: center;
   padding-bottom: 5px;
 }
 
 .page-title-search{
-  font-size: 40px;
+  text-align: center;
+  font-size: 30px;
   font-weight: lighter;
   color: $black;
-  text-align: center;
-  padding-top: 100px;
   padding-bottom: 5px;
 }
 
 .white{
-  padding-top: 120px;
+  padding-top: 60px;
   background-color: white;
   border: 1px solid gray;
   z-index: 1;

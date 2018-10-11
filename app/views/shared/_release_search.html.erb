@@ -1,8 +1,6 @@
-<div class="negative top">
-  <div class="search search-fixed">
+<div class="search-fixed">
   <%= form_tag(releases_path, method: :get) do %>
-    <%= text_field_tag :search, nil, placeholder: "Music Match par style musical, nom d'artistes, type de record ou les 3", class: "form-control" %>
+    <%= text_field_tag :search, nil, class: "form-control", placeholder: raw("&#xF002;"), style: "font-family: 'FontAwesome';" %>
     <%= submit_tag 'Search', style: "display: none;" %>
   <% end %>
-  </div>
 </div>

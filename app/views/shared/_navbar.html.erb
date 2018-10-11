@@ -8,14 +8,14 @@
           <% end %>
         </div>
       </div>
-      <div class="navbar-item col-md-9 col-lg-8 hidden-xs hidden-sm">
+      <div class="navbar-item col-md-9 col-lg-9 hidden-xs hidden-sm">
         <div class="group-label-nav">
           <%= link_to 'NEWS', main_app.actus_path, class: "label-nav" %>
           <%= link_to 'ARTISTS', main_app.signed_artists_path, class: "label-nav" %>
           <%= link_to 'RELEASES', main_app.signed_releases_path, class: "label-nav" %>
-          <%= link_to 'SHOP', main_app.shops_path, class: "label-nav" %>
           <%= link_to 'VIDEOS', main_app.videos_path, class: "label-nav" %>
           <%= link_to 'CONCERTS', main_app.performances_path, class: "label-nav" %>
+          <%= link_to 'SHOP', main_app.shops_path, class: "label-nav" %>
           <i class="fa fa-users label-nav"  data-toggle="modal" data-target="#connect"></i>
         </div>
       </div>
@@ -24,39 +24,6 @@
         <div class="dropdown">
           <i class="fa fa-bars dropdown-toggle hidden-lg hidden-md col-xs-2 col-sm-2" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <% unless user_signed_in? %>
-              <li>
-                <%= link_to main_app.new_user_session_path do %>
-                  <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
-                <% end %>
-              </li>
-              <% else %>
-              <li>
-                <%= link_to main_app.action_users_path do %>
-                  <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
-                <% end %>
-              </li>
-            <% end %>
-            <li>
-              <%= link_to main_app.performances_path do %>
-                <i class="fa fa-calendar"></i> <%= t(".index_event", default: "EVENEMENTS") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to main_app.releases_path do %>
-                <i class="fa fa-headphones"></i> <%= t(".index_release", default: "PRODS") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to main_app.videos_path do %>
-                <i class="fa fa-youtube-play"></i> <%= t(".index_video", default: "VIDEOS") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to main_app.pages_concept_path do %>
-                <i class="fa fa-diamond"></i> <%= t(".index_label", default: "MODERN BOX") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to main_app.actus_path do %>
                 <i class="fa fa-newspaper-o"></i> <%= t(".index_news", default: "NEWS") %>
@@ -73,10 +40,39 @@
               <% end %>
             </li>
             <li>
+              <%= link_to main_app.videos_path do %>
+                <i class="fa fa-youtube-play"></i> <%= t(".index_video", default: "VIDEOS") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to main_app.performances_path do %>
+                <i class="fa fa-calendar"></i> <%= t(".index_event", default: "EVENEMENTS") %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to main_app.shops_path do %>
                 <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "STORE") %>
               <% end %>
             </li>
+            <% unless user_signed_in? %>
+              <li>
+                <%= link_to main_app.new_user_session_path do %>
+                  <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+                <% end %>
+              </li>
+              <% else %>
+              <li>
+                <%= link_to main_app.action_users_path do %>
+                  <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+                <% end %>
+              </li>
+            <% end %>
+            <li>
+              <%= link_to main_app.pages_concept_path do %>
+                <i class="fa fa-diamond"></i> <%= t(".index_label", default: "MODERN BOX") %>
+              <% end %>
+            </li>
+
             <% if user_signed_in? %>
               <li>
                 <%= link_to main_app.destroy_user_session_path, method: :delete do %>
@@ -88,7 +84,7 @@
         </div>
       </div>
 
-      <div class="navbar-item navbar-links col-md-3 col-lg-3">
+      <div class="navbar-item navbar-links col-md-3 col-lg-2">
         <div class="hidden-xs hidden-sm">
           <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs" target = "_blank"><i class="fa fa-facebook-square on-nav" aria-hidden="true"></i>
           <a href="https://www.instagram.com/modernboxrecords/" target = "_blank"><i class="fa fa-instagram on-nav" aria-hidden="true"></i>
