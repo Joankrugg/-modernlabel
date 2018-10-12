@@ -34,28 +34,35 @@
       </h4>
       <% if @actus.present? %>
         <% @actus.each do |actu| %>
-          <div class="last-news-card">
-            <div class="last-news-picture">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                    <%= image_tag actu.photo, height: 120, width: 120, crop: :fit, class: "img-responsive" %>
-                  </div>
-                  <div class="col-lg-9">
-                    <div class="last-news-title">
-                      <%= actu.title.upcase %>
+          <%= link_to actu do %>
+            <div class="last-news-card">
+              <div class="last-news-picture">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                      <%= image_tag actu.photo, height: 120, width: 120, crop: :fit, class: "img-responsive" %>
                     </div>
-                    <div class="last-news-edition">
-                      <%= actu.edition %>
-                    </div>
-                    <hr>
-                    <div class="last-news-content">
-                      <%= actu.description %>
+                    <div class="col-lg-9">
+                      <div class="last-news-title">
+                        <%= actu.title.upcase %>
+                      </div>
+                      <div class="last-news-edition">
+                        <%= actu.edition %>
+                      </div>
+                      <hr>
+                      <div class="last-news-description">
+                        <%= actu.description %>
+                      </div>
+                      <div class="news-content-link">
+                        <div class="news-link">
+                          partager
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           </div>
           <hr class="last-news-segment">
         <% end %>
