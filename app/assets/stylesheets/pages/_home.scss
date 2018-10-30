@@ -23,6 +23,15 @@ hr{
   border: none; /*on supprime le style par défaut*/
 }
 
+.separation{
+  margin-top: 10px;
+  margin-left: 0px;
+  height: 2px;
+  background-color: $green;
+  width: 35%;
+  border: none;
+}
+
 .front{
   padding-top: 80px;
 }

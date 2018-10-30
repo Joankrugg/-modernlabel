@@ -49,13 +49,14 @@
                       <div class="last-news-edition">
                         <%= actu.edition %>
                       </div>
-                      <hr>
+                      <hr class="separation">
                       <div class="last-news-description">
                         <%= actu.description %>
                       </div>
                       <div class="news-content-link">
-                        <div class="news-link">
-                          <a href="https://www.facebook.com/sharer/sharer.php" alt="share on fb">partager</a>
+                        <div class="fb-share-button"
+                          data-href="https://www.modernboxrecords.com/actu/<%= actu.id %>.html"
+                          data-layout="button_count">
                         </div>
                       </div>
                     </div>
