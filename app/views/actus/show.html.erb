@@ -38,7 +38,7 @@
       <hr>
         <div class="card-description">
           <%= link_to "#{@actu.link}", "#{@actu.link}" , target: "_blank" %>
-          <%= social_share_button_tag(@actu.title, :allow_sites => %w(twitter facebook tumblr pinterest email linkedin)) %>
+          <%= social_share_button_tag(@actu.title, :allow_sites => %w(twitter facebook tumblr pinterest email linkedin), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/actus/#{@actu.id}", :image => "#{@actu.photo}", desc: "#{@actu.description}", via: "Modernboxrecords")%>
         </div>
       </div>
     </div>
