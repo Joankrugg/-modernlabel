@@ -354,7 +354,7 @@ DEPENDENCIES
   sass-rails
   simple_calendar (~> 2.0)
   simple_form
-  social-share-button
+  social-share-button (= 1.1.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
