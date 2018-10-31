@@ -11,23 +11,14 @@
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/da2krghvd/image/upload/c_scale,w_57/v1521043530/mabb4ajnq2nkimp4ilei.jpg">
     <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/da2krghvd/image/upload/v1517215472/eeppxdf1ggjyau4q6f5e.jpg" />
   </head>
-  <body>
 
+  <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/connection_modal' %>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag "application" %>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2&appId=235161093894610&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
     <%= cloudinary_js_config %>
     <%= yield(:after_js) %>
   </body>

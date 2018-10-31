@@ -339,6 +339,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   notifications
+  omniauth
   omniauth-facebook
   pg
   pg_search

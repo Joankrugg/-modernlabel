@@ -6,8 +6,10 @@
             <h5 class="modal-title" id="connection">Déconnection</h5>
             <div class="modal-body">
               <div class="connection">
-              <%= link_to t(".sign_out", default: "SIGN OUT"), main_app.destroy_user_session_path, class: "btn btn-medium" %>
-            </div>
+                <%= link_to main_app.destroy_user_session_path, method: :delete do %>
+                  <h4 class="btn btn-medium"><%= t(".sign_out", default: "SIGN OUT") %></h4>
+                <% end %>
+              </div>
             </div>
           </div>
         <% else %>
@@ -21,11 +23,11 @@
             </div>
           </div>
         <% end %>
-          <div class="connection">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-          </div>
+        <div class="connection">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+

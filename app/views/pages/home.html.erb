@@ -75,6 +75,18 @@
     <div class="col-lg-4 connection">
       <%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "btn btn-medium" %>
       <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "btn btn-medium" %>
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
+        </div>
+        <fb:login-button
+          scope="public_profile,email"
+          onlogin="checkLoginState();">
+        </fb:login-button>
+        <script type="text/javascript">
+          function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }</script>
     </div>
     <div class="col-lg-4">
       <h4 class="section-title-right">
