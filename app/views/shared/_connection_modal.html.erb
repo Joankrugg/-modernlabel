@@ -2,11 +2,22 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="connection">Connection</h5>
-        <div class="modal-body">
-          <div class="connection">
-            <%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "btn btn-medium" %>
-            <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "btn btn-medium" %>
+        <% if user_signed_in? %>
+          <%= link_to main_app.destroy_user_session_path, method: :delete do %>
+            <p class="btn btn-medium"><% t(".sign_out", default: "SIGN OUT") %></p>
+            <% end %>
+            <h5 class="modal-title" id="connection">Déconnection</h5>
+            <div class="modal-body">
+              <div class="connection">
+              </div>
+            </div>
+          <% else %>
+            <h5 class="modal-title" id="connection">Connection</h5>
+            <div class="modal-body">
+              <div class="connection">
+              <%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "btn btn-medium" %>
+              <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "btn btn-medium" %>
+            <% end %>
           </div>
           <div class="connection">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

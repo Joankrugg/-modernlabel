@@ -377,7 +377,8 @@
           </div>
         </div>
       <% end %>
-      <div class="copyright">
+      <%= link_to t(".sign_out", default: "SIGN OUT"), main_app.destroy_user_session_path(@user), class: "btn btn-medium" %>
+      <div class="copyright last-item">
         © Modern Box Records, All Rights Reserved.
       </div>
     </div>
