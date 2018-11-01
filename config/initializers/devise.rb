@@ -9,6 +9,7 @@
 Devise.setup do |config|
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
     callback_url: "https://modernboxrecords/users/auth/facebook/callback",
+    token_params: { parse: :json },
     client_options: { site: "https://graph.facebook.com/v2.1", authorize_url: "https://www.facebook.com/v2.1/dialog/oauth" },
     scope: 'email',
     info_fields: 'email, first_name, last_name',
