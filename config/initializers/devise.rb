@@ -8,7 +8,7 @@
   # config.secret_key = '36753e4826ccb5df0332adc36e4352b4e6bfb0bbd987058d35002a56bf9e43c366057e2badf32fd6916b3082f0f44e0b021dcbb9dc941bc8335765bedba1e777'
 Devise.setup do |config|
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-    callback_url: "https://modernboxrecords/users/auth/facebook/callback",
+    callback_url: "https://modernboxrecords.com/users/auth/facebook/callback",
     scope: 'email',
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
@@ -91,7 +91,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:https_auth]
+  config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
