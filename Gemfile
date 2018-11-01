@@ -27,7 +27,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'geocoder'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '5.0.0'
 gem 'pg_search'
 gem "simple_calendar", "~> 2.0"
 gem 'will_paginate', '~> 3.1.0'
