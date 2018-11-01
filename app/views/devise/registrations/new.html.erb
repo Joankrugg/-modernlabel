@@ -1,13 +1,14 @@
 <div class="container">
   <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 in">
     <div class="registration-content">
-      <div class="title-top" style= "text-align: center; font-size: 30px;"><%= t(".sign_up") %></div>
+      <h3 class="log">CREATION DE COMPTE</h3>
+      <h5 class="log-step">1ère Etape</h5>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true %>
-          <%= f.input :password_confirmation, required: true %>
+        <div class="log-inputs">
+          <%= f.input :email, required: true, label: false, autofocus: true, placeholder: "Email" %>
+          <%= f.input :password, required: true, label: false, placeholder: "Mot de passe" %>
+          <%= f.input :password_confirmation, required: true, label: false, placeholder: "Confirmation du mot de passe"%>
         </div>
         <div class="form-actions box press">
           <%= f.button :submit, t(".sign_up") %>
