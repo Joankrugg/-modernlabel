@@ -13,8 +13,13 @@ Devise.setup do |config|
   auth_type: 'https',
   info_fields: 'email, first_name, last_name',
   client_options: { site: "https://graph.facebook.com/v3.0", authorize_url: "https://www.facebook.com/v3.0/dialog/oauth" },
-  callback_url: 'https://modernboxrecords.com/users/auth/facebook/callback'
-
+  callback_url: 'https://modernboxrecords.com/users/auth/facebook/callback',
+      client_options: {
+      site: "https://graph.facebook.com/v2.3",
+      authorize_url: "https://www.facebook.com/v2.3/dialog/oauth"
+    },
+    token_params: {
+        parse: :json}
 
 
 
