@@ -12,13 +12,7 @@ Devise.setup do |config|
   info_fields: 'email, first_name, last_name',
   image_size: 'square',
   secure_image_url: true,
-  callback_url: 'https://modernboxrecords.com/users/auth/facebook/callback',
-      client_options: {
-      site: "https://graph.facebook.com/v2.3",
-      authorize_url: "https://www.facebook.com/v2.3/dialog/oauth"
-    },
-    token_params: {
-        parse: :json}
+  callback_url: 'https://modernboxrecords.com/users/auth/facebook/callback'
 
 
 
