@@ -8,7 +8,8 @@
   # config.secret_key = '36753e4826ccb5df0332adc36e4352b4e6bfb0bbd987058d35002a56bf9e43c366057e2badf32fd6916b3082f0f44e0b021dcbb9dc941bc8335765bedba1e777'
 Devise.setup do |config|
   config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-    callback_url: "https://modernboxrecords.com/users/auth/facebook/callback",
+    auth_type: 'https'
+    client_options: { site: "https://graph.facebook.com/v2.1", authorize_url: "https://www.facebook.com/v2.1/dialog/oauth" }
     scope: 'email',
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
