@@ -5,6 +5,9 @@
           <div class="modal-header">
             <h5 class="modal-title" id="connection">Déconnection</h5>
             <div class="modal-body">
+              <div class="notifications-number">
+                <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path %>
+              </div>
               <div class="connection">
                 <%= link_to main_app.destroy_user_session_path, method: :delete do %>
                   <h4 class="btn btn-medium"><%= t(".sign_out", default: "SIGN OUT") %></h4>
