@@ -1,22 +1,23 @@
-<div class="container">
-  <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 in">
-    <div class="registration-content">
-      <h3 class="log">CONNECTION</h3>
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="log-inputs">
-          <%= f.input :email, required: false, label: false, autofocus: true, placeholder: "Email" %>
-          <%= f.input :password, required: false, label: false, placeholder: "Mot de passe" %>
-        </div>
-        <div class="log-option">
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        </div>
-        <div class="form-actions box press">
-          <%= f.button :submit, t(".sign_in") %>
-        </div>
-      <% end %>
-      <div class="box press"><%= render'devise/shared/links' %></div>
+<div class="login-background">
+  <div class="container">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 in">
+      <div class="registration-content">
+        <h3 class="log">CONNECTION</h3>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="log-inputs">
+            <%= f.input :email, required: false, label: false, autofocus: true, placeholder: "Email" %>
+            <%= f.input :password, required: false, label: false, placeholder: "Mot de passe" %>
+          </div>
+          <div class="log-option">
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+          <div class="form-actions box press">
+            <%= f.button :submit, t(".sign_in") %>
+          </div>
+        <% end %>
+        <div class="box press"><%= render'devise/shared/links' %></div>
+      </div>
     </div>
   </div>
 </div>
-
 

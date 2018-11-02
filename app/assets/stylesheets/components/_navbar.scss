@@ -36,7 +36,7 @@
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: #F4F4F4 !important;
-  color: $green !important;
+  color: $blue !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -71,7 +71,7 @@
 .label-nav{
   margin-left: 20px;
   font-size: 18px;
-  color: $green
+  color: $black
 }
 
 .label-nav:hover{
@@ -79,7 +79,7 @@
   padding-top: 19px;
   padding-bottom: 18px;
   text-decoration: none;
-  color: white;
+  color: $blue;
   transition: 0.4s;
 }
 /* Right section */
@@ -97,6 +97,6 @@
   margin-left: 10px;
 }
 .on-nav:hover{
-  color: $green;
+  color: $blue;
 }
 

@@ -1,8 +1,86 @@
 <div class="white"></div>
-<div class="container search">
-  <div class="page-title-search">
-    MUSIC MATCH
+<div class="container">
+  <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 in">
+    <div class="registration-content">
+      <h3 class="log">MON COMPTE</h3>
+      <% if current_user.asso == nil && current_user.place == nil && current_user.artist == nil && current_user == @user %>
+        <h5 class="log-step">2ème Etape</h5>
+        <h5 class="log-step">Choisir une action</h5>
+      <% else %>
+        <h5 class="log-step">Tableau de bord</h5>
+      <% end %>
+
+      <% if current_user.asso == nil && current_user.place == nil %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="id-card" data-toggle="modal" data-target="#new_asso">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+            <p style="color: #4360B5;">Créer asso</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="id-card" data-toggle="modal" data-target="#new_place">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+            <p style="color: #4360B5;">Créer salle</p>
+          </div>
+        </div>
+      <% end %>
+
+      <% if current_user.asso != nil %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <%= link_to @user.asso do %>
+            <div class="id-card">
+              <%= cl_image_tag @user.asso.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <%="#{@user.asso.name.capitalize}" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <% if current_user.place != nil %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <%= link_to @user.place do %>
+            <div class="id-card">
+              <%= cl_image_tag @user.place.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <%="#{@user.place.name.capitalize}" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <% if current_user.artist == nil %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="id-card" data-toggle="modal" data-target="#new_artist">
+            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+            <p style="color: #4360B5;">Nouvel artiste</p>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <%= link_to @user.artist do %>
+            <div class="id-card">
+              <%= cl_image_tag @user.artist.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <%= "#{@user.artist.name.capitalize}" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="id-card" data-toggle="modal" data-target="#new_topic">
+          <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+          <p style="color: #4360B5;">Nouveau sujet</p>
+        </div>
+      </div>
+      <% if @user == current_user %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <%= link_to user_path(@user), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <div class="id-card">
+              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <%= t(".delete", default: "delete my account")  %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <%= render 'modals'  %>
 </div>
 <h5 class="advice"> Si vous avez une structure disposant d'une salle de concerts et autres...<br>préférez le compte "structure" qui est plus complet et plus versatile<br>Si vous n'avez que la salle ouvrez un compte "salle"</h5>
 
@@ -10,80 +88,7 @@
   <div class="container banner-content">
     <div class="row">
       <div class="col-lg-12">
-        <% if current_user.asso == nil && current_user.place == nil %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="id-card" data-toggle="modal" data-target="#new_asso">
-              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-              <p style="color: #4360B5;">Créer asso</p>
-            </div>
 
-          </div>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="id-card" data-toggle="modal" data-target="#new_place">
-              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-              <p style="color: #4360B5;">Créer salle</p>
-            </div>
-          </div>
-        <% end %>
-        <% if current_user.asso != nil %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to @user.asso do %>
-              <div class="id-card">
-                <%= cl_image_tag @user.asso.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%="#{@user.asso.name.capitalize}" %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-        <% if current_user.place != nil %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to @user.place do %>
-              <div class="id-card">
-                <%= cl_image_tag @user.place.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%="#{@user.place.name.capitalize}" %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-        <% if current_user.artist == nil %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="id-card" data-toggle="modal" data-target="#new_artist">
-              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-              <p style="color: #4360B5;">Nouvel artiste</p>
-            </div>
-          </div>
-        <% else %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to @user.artist do %>
-              <div class="id-card">
-                <%= cl_image_tag @user.artist.photo, height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%= "#{@user.artist.name.capitalize}" %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-          <div class="id-card" data-toggle="modal" data-target="#new_topic">
-            <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-            <p style="color: #4360B5;">Nouveau sujet</p>
-          </div>
-        </div>
-        <% if @user == current_user %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <%= link_to user_path(@user), method: :delete, data: { confirm: "Are you sure?" } do %>
-              <div class="id-card">
-                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 250, width: 400, crop: :fill, class: "id-pic img-responsive" %>
-                <%= t(".delete", default: "delete my account")  %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <br>
-    <hr>
-      <%= render 'modals'  %>
-    <hr>
       <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path, class: "btn btn-medium"%>
     <hr>
     <div class="matches">
@@ -384,6 +389,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 
