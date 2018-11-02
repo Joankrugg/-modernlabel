@@ -235,6 +235,22 @@
   color: grey;
 }
 
+.id-card{
+  text-align: center;
+}
 
+.gate{
+  color: $blue;
+}
 
+.gate:hover{
+  color: #0076DE;
+}
 
+.out {
+  color: $black;
+ }
+
+.out:hover {
+  color: red;
+ }
