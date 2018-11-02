@@ -49,15 +49,16 @@ hr{
 }
 
 .section-title-left{
-  color: $green;
+  color: $blue;
 }
 
 .section-title-right{
   color: white;
-  background-color: $green;
+  border-radius: 4px;
+  background-color: $black;
   font-size: 24px;
-  opacity: 0.7;
-  padding-left: 10px;
+  padding: 4px 8px;
+
 }
 
 .last-news-card:hover{
@@ -81,13 +82,13 @@ hr{
 }
 
 .news-content-link{
-  color: $green;
+  color: $blue;
   opacity: 0.8;
   font-size: 14px;
 }
 
 .news-content-link:hover{
-  color: $green;
+  color: $blue;
   font-size: 14px;
   cursor: pointer
 }
