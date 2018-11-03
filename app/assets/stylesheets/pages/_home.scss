@@ -54,15 +54,16 @@ hr{
 
 .section-title-right{
   color: white;
-  border-radius: 4px;
-  background-color: $black;
+  background-image: linear-gradient(-270deg, $black, white);
   font-size: 24px;
   padding: 4px 8px;
+  font-weight: lighter;
+  border-radius: 4px;
 
 }
 
 .last-news-card:hover{
-  background-color: $light-gray;
+  background-color: #FAFAFB;
   border-radius: 10px;
 }
 

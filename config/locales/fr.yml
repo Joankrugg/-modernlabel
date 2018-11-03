@@ -337,7 +337,7 @@ fr:
   places:
     place:
       city: "ville"
-      loves: "plutôt"
+      loves: "Style"
       creation in: "Création en"
     tabs:
       edit_place: "MODIFIER SALLE"

@@ -1,14 +1,18 @@
-<div class="info-card">
+<div class="index-media-card">
   <%= link_to artist do %>
-    <%= cl_image_tag artist.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
+    <%= cl_image_tag artist.photo, height: 300, width: 400, crop: :fill, class: "image-card img-responsive" %>
   <% end %>
-  <div class="info">
-    <h1>-<%= artist.name.capitalize %>-</h1>
-    <h1>-<%= artist.genre.name %>-</h1>
-    <h1><%= t(".city") %>: <%= artist.city %></h1>
-    <h1><%= t(".creation") %>: <%= artist.year_of_creation %></h1>
-    <h1><%= t(".number_of_musicians") %>: <%= artist.number_of_musicians %></h1>
-    <%= render 'shared/icons' %>
+  <div class="index-card-logo">
+    <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
+  </div>
+  <div class="index-title-card">
+    <p class="band-name"><%= artist.name.capitalize %></p>
+    <p><%= t(".city") %>: <%= artist.city.capitalize %></p>
+    <p><%= artist.genre.name %></p>
+
+  </div>
+  <div class="index-action-card">
+
   </div>
 </div>
 

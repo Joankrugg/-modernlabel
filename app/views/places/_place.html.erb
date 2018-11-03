@@ -1,11 +1,16 @@
-<div class="info-card">
+<div class="index-media-card">
   <%= link_to place do %>
-    <%= cl_image_tag place.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
+    <%= cl_image_tag place.photo, height: 300, width: 400, crop: :fill, class: "image-card img-responsive" %>
   <% end %>
-  <div class="info">
-    <h1>-<%= place.name.capitalize %>-</h1>
-    <h1><%= t(".city") %>: <%= place.city %></h1>
-    <h1><%= t(".loves") %>: <%= place.genre.name %></h1>
-    <%= render 'shared/icons' %>
+  <div class="index-card-logo">
+    <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
+  </div>
+  <div class="index-title-card">
+    <p class="place-name"><%= place.name.capitalize %></p>
+    <p><%= place.city.capitalize %></p>
+    <p><%= place.genre.name %></p>
+  </div>
+  <div class="index-action-card">
+
   </div>
 </div>

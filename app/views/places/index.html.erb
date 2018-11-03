@@ -1,14 +1,12 @@
-<div class="white"></div>
-<div class="container search">
-  <div class="page-title-search">
-    MUSIC MATCH SALLES
+<div class="index-wallpapers">
+  <div class="container search">
+    <div class="page-title-search">
+      MUSIC MATCH SALLES
+    </div>
+    <%= render 'shared/place_search' %>
   </div>
-  <%= render 'shared/place_search' %>
-</div>
-<div class="banner">
-  <div class="banner-content">
-    <!--section d'ensemble-->
-    <div class="container items">
+  <div class="index-page">
+    <div class="container">
       <div class="row">
         <% if @places.present? %>
           <% @places.each do |a|%>
