@@ -1,16 +1,12 @@
-<div class="white"></div>
-<div class="container search">
-  <div class="page-title-search">
-    MUSIC MATCH ASSOS
-  </div>
+<div class="index-wallpapers">
+  <div class="search">
   <%= render 'shared/asso_search' %>
-</div>
-<h5 class="advice">Pour lancer une recherche en fonction de l'activité, les mots clés sont les suivants:<br>Studio de répétition, Magasin de musique, Studio d'enregistrement,<br> Production audiovisuelle, Label, Communication, Polyvalent, Radio et Location de backline</h5>
+  </div>
 
-<div class="banner">
-  <div class="banner-content">
+  <h5 class="advice">Pour lancer une recherche en fonction de l'activité, les mots clés sont les suivants:<br>Studio de répétition, Magasin de musique, Studio d'enregistrement,<br> Production audiovisuelle, Label, Communication, Polyvalent, Radio et Location de backline</h5>
+  <div class="index-page">
     <!--section d'ensemble-->
-    <div class="container items">
+    <div class="container">
       <div class="row">
         <% if @assos.present? %>
           <% @assos.each do |a|%>
