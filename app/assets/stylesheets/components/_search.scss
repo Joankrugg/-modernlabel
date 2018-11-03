@@ -1,8 +1,14 @@
 .search {
   z-index: 1;
-  background-color: black;
   position: sticky;
   top: 60px;
   padding-bottom: 0px;
 }
 
+.form-placement{
+  z-index: 1;
+}
+
+.search-form{
+  width: 100%;
+}
