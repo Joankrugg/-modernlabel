@@ -1,13 +1,17 @@
-<div class="info-card">
+<div class="index-media-card">
   <%= link_to performance do %>
-    <%= cl_image_tag performance.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
+    <%= cl_image_tag performance.photo, height: 300, width: 400, crop: :fill, class: "image-card img-responsive" %>
   <% end %>
-  <div class="info">
-    <h1>-<%= performance.name.capitalize %>-</h1>
-    <h1>-<%= performance.artist.name %>-</h1>
-    <h1><%= performance.city %></h1>
-    <h1><%= performance.start_time %></h1>
-    <h1><%= performance.place_address %></h1>
-    <%= render 'shared/icons' %>
+  <div class="index-card-logo">
+    <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
+  </div>
+  <div class="index-title-card">
+    <p class="asso-name">-<%= performance.name.capitalize %>-</p>
+    <p><%= performance.city.capitalize %></p>
+    <% if performance.place.present? %>
+      <p><%= performance.place_address %></p>
+    <% end %>
+  </div>
+  <div class="index-action-card">
   </div>
 </div>
