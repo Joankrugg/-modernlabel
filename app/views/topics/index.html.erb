@@ -1,14 +1,9 @@
-<div class="white"></div>
-<div class="container search">
-  <div class="page-title-search">
-    MUSIC MATCH TOPICS
+<div class="index-wallpapers">
+  <div class="search">
+    <%= render 'shared/topic_search' %>
   </div>
-  <%= render 'shared/topic_search' %>
-</div>
-<div class="banner">
-  <div class="banner-content">
-    <!--section d'ensemble-->
-    <div class="container items">
+  <div class="index-page">
+    <div class="container">
       <div class="row">
         <% if @topics.present? %>
           <% @topics.each do |a|%>
