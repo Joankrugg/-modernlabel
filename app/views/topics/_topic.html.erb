@@ -1,10 +1,15 @@
-<%= link_to topic do %>
-  <div class="info-card">
-    <div class="info">
-      <h1 style="font-size: 30px;"><%= topic.title.capitalize %></h1>
-      <h1><%= topic.content %></h1>
-      <h1><%= topic.link %></h1>
-      <%= render 'shared/icons' %>
-    </div>
+<div class="index-media-card">
+  <%= link_to topic do %>
+    <%= cl_image_tag("yr6cnvq9tueiivsc9bue.jpg", :quality=>"jpegmini:2", :width=>400, :crop=>"fill", :sign_url=>true, class: "img-responsive") %>
+  <% end %>
+  <div class="index-title-card">
+    <p class="topic-name"><%= topic.title.capitalize %></p>
+    <p><%= topic.content %></p>
+    <%= render 'shared/icons' %>
   </div>
-<% end %>
+  <div class="index-action-card">
+
+  </div>
+</div>
+
+

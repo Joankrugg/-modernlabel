@@ -7,7 +7,13 @@
       <div class="row">
         <% if @topics.present? %>
           <% @topics.each do |a|%>
-            <%= render "topic", topic: a %><br>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+              <div class="main">
+                <div class="index-cards">
+                  <%= render "topic", topic: a %><br>
+                </div>
+              </div>
+            </div>
           <% end %>
         <% else %>
           <%= render 'shared/no_result' %>
@@ -16,3 +22,4 @@
     </div>
   </div>
 </div>
+

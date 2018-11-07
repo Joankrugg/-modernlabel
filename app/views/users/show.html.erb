@@ -95,7 +95,7 @@
         <% if @topics.present? %>
           <% current_user.topics.each do |t| %>
             <%= link_to @topic do %>
-              <%= t.title %>
+              <p style="text-align: center; margin-top: 15px;"><%= t.title %></p>
             <% end %>
           <% end %>
         <% end %>
@@ -107,7 +107,9 @@
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 matches-patern">
         <h3>Matches</h3>
-        <p>Les assos pour toi</p>
+        <hr class="user">
+        <p>Les Assos pour toi</p>
+        <hr class="user">
         <% if current_user.artist.present? %>
           <div class="row matches">
             <% if @assos.present? %>
@@ -126,7 +128,8 @@
           </div>
           <hr class="user">
 
-          <p>Les salles où tu peux jouer</p>
+          <p>Les Salles où tu peux jouer</p>
+          <hr class="user">
           <div class="row matches">
             <% if @places.present? %>
               <% @places.each do |a|%>
@@ -144,7 +147,8 @@
           </div>
           <hr class="user">
 
-          <p>Les groupes avec lesquels jouer</p>
+          <p>Les Groupes avec lesquels jouer</p>
+          <hr class="user">
           <div class="row matches">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
@@ -163,6 +167,7 @@
           <hr class="user">
 
           <p>Tu peux toujours checker ces assos</p>
+          <hr class="user">
           <div class="row matches">
             <% if @assos.present? %>
               <% @assos.each do |a|%>
@@ -181,6 +186,7 @@
           <hr class="user">
 
           <p>Ouvertures possibles sur ces salles</p>
+          <hr class="user">
           <div class="row matches">
             <% if @places.present? %>
               <% @places.each do |a|%>
@@ -199,6 +205,7 @@
           <hr class="user">
 
           <p>Si tu veux faire un plateau ouvert</p>
+          <hr class="user">
           <div class="row matches">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
@@ -223,6 +230,7 @@
 
         <% if current_user.place.present? %>
           <p>Match possible avec d'autres structures</p>
+          <hr class="user">
           <div class="row matches">
             <% if @assos.present? %>
               <% @assos.each do |a|%>
@@ -241,6 +249,7 @@
           <hr class="user">
 
           <p>Les Groupes à faire jouer</p>
+          <hr class="user">
           <div class="row matches">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
@@ -259,6 +268,7 @@
           <hr class="user">
 
           <p>Match possible avec d'autres structures</p>
+          <hr class="user">
           <div class="row matches">
             <% if @assos.present? %>
               <% @assos.each do |a|%>
@@ -276,7 +286,8 @@
           </div>
           <hr class="user">
 
-          <p>Des groupes pour ouvrir la scène</p>
+          <p>Des Groupes pour ouvrir la scène</p>
+          <hr class="user">
           <div class="row matches">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
@@ -299,6 +310,7 @@
 
         <p>Les Salles où jouer</p>
         <% if current_user.asso.present? %>
+        <hr class="user">
           <div class="row matches">
             <% if @places.present? %>
               <% @places.each do |a|%>
@@ -317,7 +329,8 @@
           </div>
           <hr class="user">
 
-          <p>Les groupes à faire jouer</p>
+          <p>Les Groupes à faire jouer</p>
+          <hr class="user">
           <div class="row matches">
             <% if @artist.present? %>
               <% @artists.each do |a|%>
@@ -336,6 +349,7 @@
           <hr class="user">
 
           <p>Match possible avec d'autres structures</p>
+          <hr class="user">
           <div class="row matches">
             <% if @assos.present? %>
               <% @assos.each do |a|%>
@@ -354,6 +368,7 @@
           <hr class="user">
 
           <p>Les groupes à faire venir jouer chez toi</p>
+          <hr class="user">
           <div class="row matches">
             <% if @artists.present? %>
               <% @artists.each do |a|%>
