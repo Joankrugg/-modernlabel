@@ -32,7 +32,7 @@
       <h4 class="section-title-left">
           LAST NEWS
       </h4>
-      <hr class="last-news-segment">
+      <hr class="section">
       <% if @actus.present? %>
         <% @actus.each do |actu| %>
           <%= link_to actu do %>
@@ -68,12 +68,14 @@
           <h4 class="section-title-left">
             NEW ARTISTS
           </h4>
-          <hr class="last-news-segment">
+          <hr class="section">
 
           <% if @artists.present? %>
             <% @artists.each do |artist| %>
               <div class="artists-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
-                <%= image_tag artist.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
+                  <%= link_to @artist do %>
+                  <%= image_tag artist.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
+                <% end %>
               </div>
             <% end %>
           <% end %>
@@ -85,12 +87,14 @@
           <h4 class="section-title-left">
             NEW RELEASES
           </h4>
-          <hr class="last-news-segment">
+          <hr class="section">
 
           <% if @releases.present? %>
             <% @releases.each do |release| %>
               <div class="releases-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
-                <%= image_tag release.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
+                <%= link_to @release do %>
+                  <%= image_tag release.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
+                <% end %>
               </div>
             <% end %>
           <% end %>
