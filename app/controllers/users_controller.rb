@@ -14,6 +14,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @asso = Asso.new
     @artist = Artist.new
     @topic = Topic.new
+    @topics = Topic.all
   end
 
   def edit

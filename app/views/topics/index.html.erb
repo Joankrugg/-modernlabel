@@ -7,7 +7,7 @@
       <div class="row">
         <% if @topics.present? %>
           <% @topics.each do |a|%>
-                <%= render "topic", topic: a %><br>
+            <%= render "topic", topic: a %><br>
           <% end %>
         <% else %>
           <%= render 'shared/no_result' %>

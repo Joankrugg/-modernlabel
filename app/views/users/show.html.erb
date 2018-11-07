@@ -1,9 +1,9 @@
 <div class="index-wallpapers">
   <div class="container">
+    <div class="page-title top" style="color: white; text-align: center;">MON COMPTE</div>
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-offset-1 col-lg-6 user-patern">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 user-patern">
         <div class="registration-content">
-          <h3 class="user-log">MON COMPTE</h3>
           <% if current_user.asso == nil && current_user.place == nil && current_user.artist == nil && current_user == @user %>
             <p class="user-log-step">2ème Etape</p>
             <p class="user-log-step">Choisir une action</p>
@@ -12,25 +12,25 @@
           <% end %>
 
           <% if current_user.asso == nil && current_user.place == nil %>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
               <div class="id-card" data-toggle="modal" data-target="#new_asso">
-                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                 <p class="gate">Créer asso</p>
               </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
               <div class="id-card" data-toggle="modal" data-target="#new_place">
-                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                 <p class="gate">Créer salle</p>
               </div>
             </div>
           <% end %>
 
           <% if current_user.asso != nil %>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
               <%= link_to @user.asso do %>
                 <div class="id-card">
-                  <%= cl_image_tag @user.asso.photo, height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+                  <%= cl_image_tag @user.asso.photo, height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                   <%="#{@user.asso.name.capitalize}" %>
                 </div>
               <% end %>
@@ -38,10 +38,10 @@
           <% end %>
 
           <% if current_user.place != nil %>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
               <%= link_to @user.place do %>
                 <div class="id-card">
-                  <%= cl_image_tag @user.place.photo, height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+                  <%= cl_image_tag @user.place.photo, height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                   <%="#{@user.place.name.capitalize}" %>
                 </div>
               <% end %>
@@ -49,56 +49,71 @@
           <% end %>
 
           <% if current_user.artist == nil %>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
               <div class="id-card" data-toggle="modal" data-target="#new_artist">
-                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+                <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                 <p class="gate">Nouvel artiste</p>
               </div>
             </div>
           <% else %>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
               <%= link_to @user.artist do %>
                 <div class="id-card">
-                  <%= cl_image_tag @user.artist.photo, height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+                  <%= cl_image_tag @user.artist.photo, height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                   <%= "#{@user.artist.name.capitalize}" %>
                 <% end %>
               </div>
             </div>
           <% end %>
 
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
             <div class="id-card" data-toggle="modal" data-target="#new_topic">
-              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+              <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
               <p class="gate">Nouveau sujet</p>
             </div>
           </div>
 
           <% if @user == current_user %>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
               <%= link_to user_path(@user), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <div class="id-card">
-                  <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 300, width: 400, crop: :fill, class: "id-pic img-responsive" %>
+                  <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                   <p class="out"><%= t(".delete", default: "delete my account") %></p>
                 </div>
               <% end %>
             </div>
           <% end %>
-        <div class="notification-space">
-          <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path, class: "btn btn-medium"%>
-        </div>
+
       </div>
       <%= render 'modals'  %>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-offset-2 col-lg-3 matches-patern">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-offset-1 col-lg-4 user-patern">
+        <div class="notification-space">
+          <%= link_to pluralize(Notification.unread_count(current_user), "Notifications"), notifications_path, class: "btn btn-medium"%>
+        </div>
+        <% if @topics.present? %>
+          <% current_user.topics.each do |t| %>
+            <%= link_to @topic do %>
+              <%= t.title %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 matches-patern">
         <h3>Matches</h3>
+        <p>Les assos pour toi</p>
         <% if current_user.artist.present? %>
           <div class="row matches">
-            <p>Les assos pour toi</p>
             <% if @assos.present? %>
               <% @assos.each do |a|%>
                 <% if a.genre.name == current_user.artist.genre.name && a.city == current_user.artist.city.downcase && a.number_of_musicians_max <= current_user.artist.number_of_musicians %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "assos/asso", asso: a %><br>
@@ -109,14 +124,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Les salles où tu peux jouer</p>
           <div class="row matches">
             <% if @places.present? %>
-              <p>Les salles où tu peux jouer</p>
               <% @places.each do |a|%>
                 <% if a.genre.name == current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "places/place", place: a %><br>
@@ -127,14 +142,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Les groupes avec lesquels jouer</p>
           <div class="row matches">
             <% if @artists.present? %>
-              <p>Les groupes avec lesquels jouer</p>
               <% @artists.each do |a|%>
                 <% if a.genre.name == current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.name != current_user.artist.name %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "artists/artist", artist: a %><br>
@@ -145,14 +160,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Tu peux toujours checker ces assos</p>
           <div class="row matches">
             <% if @assos.present? %>
-              <p>Tu peux toujours checker ces assos</p>
               <% @assos.each do |a|%>
                 <% if (a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians) %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "assos/asso", asso: a %><br>
@@ -163,14 +178,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Ouvertures possibles sur ces salles</p>
           <div class="row matches">
             <% if @places.present? %>
-              <p>Ouvertures possibles sur ces salles</p>
               <% @places.each do |a|%>
                 <% if a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "places/place", place: a %><br>
@@ -181,14 +196,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Si tu veux faire un plateau ouvert</p>
           <div class="row matches">
             <% if @artists.present? %>
-              <p>Si tu veux faire un plateau ouvert</p>
               <% @artists.each do |a|%>
                 <% if (a.genre.name == current_user.artist.genre.name && a.city.downcase != current_user.artist.city.downcase && a.name != current_user.artist.name) %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "artists/artist", artist: a %><br>
@@ -199,7 +214,7 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
         <% else %>
           <div class="empty"></div>
         <% end %>
@@ -207,12 +222,12 @@
 
 
         <% if current_user.place.present? %>
+          <p>Match possible avec d'autres structures</p>
           <div class="row matches">
             <% if @assos.present? %>
-              <p>Match possible avec d'autres structures</p>
               <% @assos.each do |a|%>
                 <% if a.genre.name == current_user.place.genre.name && a.city.downcase == current_user.place.city.downcase && a.number_of_musicians_max <= current_user.place.number_of_musicians_max %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "assos/asso", asso: a %><br>
@@ -223,15 +238,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
-
+          <p>Les Groupes à faire jouer</p>
           <div class="row matches">
             <% if @artists.present? %>
-              <p>Les Groupes à faire jouer</p>
               <% @artists.each do |a|%>
                 <% if a.genre.name == current_user.place.genre.name && a.city.downcase == current_user.place.city.downcase && a.number_of_musicians <= current_user.place.number_of_musicians_max %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "artists/artist", artist: a %><br>
@@ -242,15 +256,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
-
+          <p>Match possible avec d'autres structures</p>
           <div class="row matches">
             <% if @assos.present? %>
-              <p>Match possible avec d'autres structures</p>
               <% @assos.each do |a|%>
                 <% if (a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians_max <= current_user.place.number_of_musicians_max) %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "assos/asso", asso: a %><br>
@@ -261,14 +274,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Des groupes pour ouvrir la scène</p>
           <div class="row matches">
             <% if @artists.present? %>
-              <p>Des groupes pour ouvrir la scène</p>
               <% @artists.each do |a|%>
                 <% if a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians <= current_user.place.number_of_musicians_max %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "artists/artist", artist: a %><br>
@@ -279,21 +292,19 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
         <% else %>
           <div class="empty"></div>
         <% end %>
 
-
-
+        <p>Les Salles où jouer</p>
         <% if current_user.asso.present? %>
           <div class="row matches">
-            <p>Les Salles où jouer</p>
             <% if @places.present? %>
               <% @places.each do |a|%>
                 <% if a.genre.name == current_user.asso.genre.name && a.city.downcase == current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max %>
                   <% result = a %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "places/place", place: result %><br>
@@ -304,14 +315,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Les groupes à faire jouer</p>
           <div class="row matches">
             <% if @artist.present? %>
-            <p>Les groupes à faire jouer</p>
               <% @artists.each do |a|%>
                 <% if a.genre.name == current_user.asso.genre.name && a.city.downcase == current_user.asso.city.downcase && a.number_of_musicians <= current_user.asso.number_of_musicians_max %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "artists/artist", artist: a %><br>
@@ -322,14 +333,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Match possible avec d'autres structures</p>
           <div class="row matches">
             <% if @assos.present? %>
-              <p>Match possible avec d'autres structures</p>
               <% @assos.each do |a|%>
                 <% if a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "assos/asso", asso: a %><br>
@@ -340,14 +351,14 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
 
+          <p>Les groupes à faire venir jouer chez toi</p>
           <div class="row matches">
             <% if @artists.present? %>
-              <p>Les groupes à faire venir jouer chez toi</p>
               <% @artists.each do |a|%>
                 <% if a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians <= current_user.asso.number_of_musicians_max %>
-                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-6">
+                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                     <div class="main">
                       <div class="card">
                         <%= render "artists/artist", artist: a %><br>
@@ -358,7 +369,7 @@
               <% end %>
             <% end %>
           </div>
-          <hr>
+          <hr class="user">
         <% else %>
           <div class="empty"></div>
         <% end %>
