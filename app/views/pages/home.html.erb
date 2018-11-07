@@ -73,7 +73,7 @@
           <% if @artists.present? %>
             <% @artists.each do |artist| %>
               <div class="artists-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
-                  <%= link_to @artist do %>
+                  <%= link_to signed_artists_path do %>
                   <%= image_tag artist.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
                 <% end %>
               </div>
@@ -92,7 +92,7 @@
           <% if @releases.present? %>
             <% @releases.each do |release| %>
               <div class="releases-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
-                <%= link_to @release do %>
+                <%= link_to signed_releases_path do %>
                   <%= image_tag release.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
                 <% end %>
               </div>
