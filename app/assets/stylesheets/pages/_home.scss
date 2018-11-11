@@ -47,6 +47,11 @@ hr{
   color: white;
 }
 
+.home-title{
+  color: black;
+  font-size: 30px;
+}
+
 .section{
   background-color: $black;
   height: 3px;
@@ -54,12 +59,13 @@ hr{
 
 .section-title-left{
   color: $blue;
+  font-size: 20px;
 }
 
 .section-title-right{
   color: white;
   background-image: linear-gradient(-270deg, $black, white);
-  font-size: 24px;
+  font-size: 20px;
   padding: 4px 8px;
   font-weight: lighter;
   border-radius: 4px;
@@ -74,6 +80,7 @@ hr{
 .last-news-title{
   color: $black;
   font-weight: bolder;
+  font-size : 16px;
 }
 
 .last-news-edition{

@@ -18,7 +18,7 @@
     </div>
 
     <div class="item">
-      <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--k-7aAwFC--/c_fill,h_530,q_jpegmini,w_1440/v1539004007/Admin/12697006_10153986036986340_8768038031280884595_o.jpg" alt="New York" style="width: 100%;">
+      <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--PfFhxvrf--/c_fill,h_524,q_jpegmini,w_1440/v1539004007/Admin/12697006_10153986036986340_8768038031280884595_o.jpg" alt="New York" style="width: 100%;">
       <div class="carousel-caption">
         <h3>Back to the scars</h3>
         <p>Nouveau groupe en écoute</p>
@@ -27,11 +27,16 @@
   </div>
 </div>
 <div class="container">
+  <h1 class="home-title">
+    MODERN BOX RECORDS
+  </h1>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-md-8 col-lg-8">
-      <h4 class="section-title-left">
+      <h2 class="section-title-left">
           LAST NEWS
-      </h4>
+      </h2>
       <hr class="section">
       <% if @actus.present? %>
         <% @actus.each do |actu| %>
@@ -44,9 +49,9 @@
                       <%= image_tag actu.photo, height: 120, width: 120, crop: :fill, class: "img" %>
                     </div>
                     <div class="col-md-9 col-lg-9">
-                      <div class="last-news-title">
+                      <h4 class="last-news-title">
                         <%= actu.title.upcase %>
-                      </div>
+                      </h4>
                       <div class="last-news-edition">
                         <%= actu.edition %>
                       </div>
@@ -65,9 +70,9 @@
       <% end %>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h4 class="section-title-left">
+          <h2 class="section-title-left">
             NEW ARTISTS
-          </h4>
+          </h2>
           <hr class="section">
 
           <% if @artists.present? %>
@@ -84,9 +89,9 @@
 
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h4 class="section-title-left">
+          <h2 class="section-title-left">
             NEW RELEASES
-          </h4>
+          </h2>
           <hr class="section">
 
           <% if @releases.present? %>
@@ -122,9 +127,9 @@
         }</script>
     </div>
     <div class="col-sm-12 col-md-4 col-lg-4">
-      <h5 class="section-title-right">
+      <h2 class="section-title-right">
         NEW VIDEOS
-      </h5>
+      </h2>
       <% if @videos.present? %>
         <% @videos.each do |video| %>
           <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
