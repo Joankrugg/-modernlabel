@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     end
 
     resources :videos do
+      collection do
+        get 'signed', to: "videos#signed"
+      end
       member do
         post   "videos", to: "videos#create_as_an_asso", as: 'as_an_asso'
       end
