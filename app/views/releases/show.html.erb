@@ -1,8 +1,6 @@
 <% content_for(:title_tag) do %>
   -<%= @release.title %>- on Modern Box Records
 <% end %>
-
-<%= render 'shared/release_search'%>
 <div class="container card-model">
   <div class="row">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
@@ -43,12 +41,12 @@
     </div>
   </div>
   <div class="row">
-    <% if @release.artist == current_user.artist  %>
+    <% if @release.artist.user == current_user  %>
       <div class="option">
          <div class="banner-content">
             <div class="mb">
               <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 last-item">
                   <p style="color: $black;"><%="Edit #{@release.title}"%></p>
                     <%= render 'releases/form', release: @release %>
                     <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
@@ -59,13 +57,12 @@
           </div>
         </div>
       </div>
-    <% end %>
+    <% else %>
   </div>
 
-  <% if @release.artist != current_user.artist  %>
     <div class="row">
       <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-        <div class="social-card-content">
+        <div class="social-card-content last-item">
           <%= link_to 'add ratings to this release', new_release_opinion_path(@release) %>
         </div>
       </div>

@@ -26,7 +26,9 @@
     <%= f.input :twitter_link, placeholder: t(".placeholder_2", default: "Optionnel") %>
     <%= f.input :photo, required: false %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :mp3, as: :attachinary %>
+    <% if current_user.admin? %>
+      <%= f.input :mp3, as: :attachinary %>
+    <% end %>
     <%= f.button :submit, class: "btn btn-medium last-item" %>
   </div>
 <% end %>

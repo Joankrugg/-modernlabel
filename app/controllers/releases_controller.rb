@@ -1,5 +1,5 @@
 class ReleasesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :signed]
+  skip_before_action :authenticate_user!, only: [:index, :signed, :show]
   before_action :set_release, only: [:show, :edit, :update, :destroy]
   def index
     if params[:search].present?
