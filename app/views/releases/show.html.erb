@@ -1,55 +1,38 @@
 <% content_for(:title_tag) do %>
   -<%= @release.title %>- on Modern Box Records
 <% end %>
-<div class="container card-model">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-      <h1 class= "hidden-lg hidden-md hidden-sm title-top">-<%=@release.title.upcase %>-</h1>
-      <div class="info-card">
-        <%= cl_image_tag @release.photo, height: 700, width: 900, crop: :fill, class: "style_image img-responsive"%>
-          <div class="info-card-details">
-            <h3>Artist: <%= @release.artist.name %></h3>
-            <h5><%= t(".out_from") %> <%= @release.year_of_creation %></h5>
-            <h5>FORMAT: <%= @release.record.name %>
-            <h5>GENRE: <%= @release.genre.name %></h5>
-            <h5>PRICE: <%= @release.price %>Euros</h5>
-            <div class="ratings">
-              <%= @release.average_hearts %>
-            </div>
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-network-nav">
-              <% if @release.youtube_link.present? %>
-                <%= link_to @release.youtube_link, target: :_blank do %>
-                  <i class="fa fa-youtube-square social-logo"></i>
-                <% end %>
-              <% end %>
-              <% if @release.bandcamp_link? %>
-                <%= link_to @release.bandcamp_link do %>
-                  <i class="fa fa-bandcamp social-logo"></i>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-                <div class="social-card-content">
-                  <%= link_to "Back to #{@release.artist.name}", artist_path(@release.artist) %>
-                </div>
+<div class="show-wallpapers profil-page">
+  <div class="container card-model">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+        <h1 class= "hidden-lg hidden-md hidden-sm title-top">-<%=@release.title.upcase %>-</h1>
+        <div class="info-card">
+          <%= cl_image_tag @release.photo, height: 700, width: 900, crop: :fill, class: "style_image img-responsive"%>
+            <div class="info-card-details">
+              <h3>Artist: <%= @release.artist.name %></h3>
+              <h5><%= t(".out_from") %> <%= @release.year_of_creation %></h5>
+              <h5>FORMAT: <%= @release.record.name %>
+              <h5>GENRE: <%= @release.genre.name %></h5>
+              <h5>PRICE: <%= @release.price %>Euros</h5>
+              <div class="ratings">
+                <%= @release.average_hearts %>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <% if @release.artist.user == current_user  %>
-      <div class="option">
-         <div class="banner-content">
-            <div class="mb">
-              <div class="action">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 last-item">
-                  <p style="color: $black;"><%="Edit #{@release.title}"%></p>
-                    <%= render 'releases/form', release: @release %>
-                    <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+              <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 social-network-nav">
+                <% if @release.youtube_link.present? %>
+                  <%= link_to @release.youtube_link, target: :_blank do %>
+                    <i class="fa fa-youtube-square social-logo"></i>
+                  <% end %>
+                <% end %>
+                <% if @release.bandcamp_link? %>
+                  <%= link_to @release.bandcamp_link do %>
+                    <i class="fa fa-bandcamp social-logo"></i>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
+                  <div class="social-card-content">
+                    <%= link_to "Back to #{@release.artist.name}", artist_path(@release.artist) %>
                   </div>
                 </div>
               </div>
@@ -57,17 +40,36 @@
           </div>
         </div>
       </div>
-    <% else %>
-  </div>
-
+    </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-        <div class="social-card-content last-item">
-          <%= link_to 'add ratings to this release', new_release_opinion_path(@release) %>
+      <% if @release.artist.user == current_user  %>
+        <div class="option">
+           <div class="banner-content">
+              <div class="mb">
+                <div class="action">
+                  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 last-item">
+                    <p style="color: $black;"><%="Edit #{@release.title}"%></p>
+                      <%= render 'releases/form', release: @release %>
+                      <%= link_to t(".Delete", default: "delete this"), release_path(@release), class: "call-to-action btn-medium btn last-item", method: :delete, data: { confirm: "Are you sure?" } %><br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+    </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+          <div class="social-card-content last-item">
+            <%= link_to 'add ratings to this release', new_release_opinion_path(@release) %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 
