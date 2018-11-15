@@ -1,8 +1,21 @@
-<%= simple_form_for user, remote: true do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :email %>
+<%= simple_form_for @user, defaults: { label_html: { class: 'labels' } } do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
   <%= f.input :city %>
   <%= f.input :description %>
-  <%= f.button :submit, class: 'btn btn-medium' %>
-
+  <%= f.input :fiveties, as: :boolean %>
+  <%= f.input :sixties, as: :boolean %>
+  <%= f.input :seventies, as: :boolean %>
+  <%= f.input :eighties, as: :boolean %>
+  <%= f.input :nineties, as: :boolean %>
+  <%= f.input :millenium, as: :boolean %>
+  <%= f.button :submit, class: 'btn btn-medium last-item' %>
 <% end %>

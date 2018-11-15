@@ -61,8 +61,8 @@
                 <div class="id-card">
                   <%= cl_image_tag @user.artist.photo, height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
                   <%= "#{@user.artist.name.capitalize}" %>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
             </div>
           <% end %>
 
@@ -83,7 +83,7 @@
               <% end %>
             </div>
           <% end %>
-
+        </div>
       </div>
       <%= render 'modals'  %>
     </div>
@@ -109,7 +109,11 @@
       </div>
     </div>
 
-
+    <div class="profil">
+      <div class="id-card" data-toggle="modal" data-target="#update-profil">
+        <p>Update profil</p>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 matches-patern">

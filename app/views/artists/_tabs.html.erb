@@ -33,6 +33,20 @@
           </div>
         </div>
 
+        <div class="modal fade" id="bands-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_artist") %></h5>
+                <div class="modal-body">
+                  <%= render 'form_details', artist: @artist %>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="modal fade" id="prods" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">

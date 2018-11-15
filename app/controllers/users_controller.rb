@@ -22,17 +22,10 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-    @user.update(user_params)
-    if @user.save
-      respond_to do |format|
-        format.html { redirect_to @user }
-        format.js
-      end
+    if @user.update(user_params)
+      redirect_to @user
     else
-      respond_to do |format|
-        format.html { render 'users/show' }
-        format.js
-      end
+      render :edit
     end
   end
 
@@ -48,6 +41,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
   def user_params
-    params.require(:user).permit(:description, :email, :city)
+    params.require(:user).permit(:description, :email, :city, :fiveties, :sixties, :seventies, :eighties, :nineties, :millenium)
   end
 end
