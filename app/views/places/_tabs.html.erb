@@ -1,83 +1,77 @@
-<div class="row">
-  <div class="option">
-    <div class="banner-content">
-      <% if @place.user == current_user  %>
-        <div class="container actions">
-          <div class="row">
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
-              <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6 active" data-toggle="modal" data-target="#place">
-                <%= t(".place") %>
-              </h4>
-              <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#hardwares">
-                <%= t(".hardware") %>
-              </h4>
-              <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#events-place">
-                <%= t(".performance") %>
-              </h4>
-              <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos-place">
-                <%= t(".video") %>
-              </h4>
+<% if @place.user == current_user  %>
+  <div class="container actions">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 tabs">
+        <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6 active" data-toggle="modal" data-target="#place">
+          <%= t(".place") %>
+        </h4>
+        <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#hardwares">
+          <%= t(".hardware") %>
+        </h4>
+        <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#events-place">
+          <%= t(".performance") %>
+        </h4>
+        <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos-place">
+          <%= t(".video") %>
+        </h4>
+      </div>
+    </div>
+
+    <div class="modal fade" id="place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_place") %></h5>
+            <div class="modal-body">
+              <%= render 'form', place: @place %>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
             </div>
           </div>
-
-          <div class="modal fade" id="place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_place") %></h5>
-                  <div class="modal-body">
-                    <%= render 'form', place: @place %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="hardwares" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_hardware") %></h5>
-                  <div class="modal-body">
-                    <%= render 'hardwares/form', hardware: @hardware %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="events-place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></h5>
-                  <div class="modal-body">
-                    <%= render 'performances/form_place', performance: @performance %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="videos-place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></h5>
-                  <div class="modal-body">
-                    <%= render 'videos/form_place', video: @video %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-      <% end %>
+      </div>
+    </div>
+
+    <div class="modal fade" id="hardwares" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_hardware") %></h5>
+            <div class="modal-body">
+              <%= render 'hardwares/form', hardware: @hardware %>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="events-place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></h5>
+            <div class="modal-body">
+              <%= render 'performances/form_place', performance: @performance %>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="videos-place" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></h5>
+            <div class="modal-body">
+              <%= render 'videos/form_place', video: @video %>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+
