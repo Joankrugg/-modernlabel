@@ -43,7 +43,13 @@
           <div class="col-lg-12 head">
             <p class="profil-details col-lg-5">Networks</p>
             <hr class="user col-lg-5">
-            <h1 class="profil-title">Retrouvez le sur</h1>
+            <h1 class="profil-title">Retrouvez nous sur</h1>
+            <% if @place.facebook_page.present? %>
+              <%= link_to @place.facebook_page, target: :_blank do %>
+                <i class="fa fa-facebook-square social-logo"></i>
+              <% end %>
+            <% end %>
+
           </div>
         </div>
       </div>
