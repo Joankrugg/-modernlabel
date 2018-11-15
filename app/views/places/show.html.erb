@@ -21,7 +21,7 @@
             <p class="profil-details"> Style: <%= @place.genre.name %></p>
             <p class="profil-details"> Nombre de musiciens maximum: <%= @place.number_of_musicians_max %></p>
             <% if @place.activity_class.present? %>
-              <p class="profil-details"> <%= @place.activity_class %></p>
+              <p class="profil-details"> Fréquence évènementielle: <%= @place.activity_class.name %></p>
             <% end %>
           </div>
         </div>
