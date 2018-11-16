@@ -22,6 +22,24 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle hidden-lg hidden-md col-xs-2 col-sm-2" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <% unless user_signed_in? %>
+          <li>
+            <%= link_to main_app.new_user_session_path do %>
+              <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
+            <% end %>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to main_app.action_users_path do %>
+              <i class="fa fa-user-circle" ></i> <%= t(".index_user_known", default: "USER") %>
+            <% end %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to main_app.pages_concept_path do %>
+            <i class="fa fa-diamond"></i> <%= t(".index_label", default: "MODERN BOX") %>
+          <% end %>
+        </li>
         <li>
           <%= link_to main_app.actus_path do %>
             <i class="fa fa-newspaper-o"></i> <%= t(".index_news", default: "NEWS") %>
@@ -50,24 +68,6 @@
         <li>
           <%= link_to main_app.shops_path do %>
             <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "STORE") %>
-          <% end %>
-        </li>
-        <% unless user_signed_in? %>
-          <li>
-            <%= link_to main_app.new_user_session_path do %>
-              <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
-            <% end %>
-          </li>
-          <% else %>
-          <li>
-            <%= link_to main_app.action_users_path do %>
-              <i class="fa fa-user-circle" ></i> <%= t(".index_user", default: "USER") %>
-            <% end %>
-          </li>
-        <% end %>
-        <li>
-          <%= link_to main_app.pages_concept_path do %>
-            <i class="fa fa-diamond"></i> <%= t(".index_label", default: "MODERN BOX") %>
           <% end %>
         </li>
 

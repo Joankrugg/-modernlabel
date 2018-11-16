@@ -241,7 +241,8 @@ fr:
       index_forum: "SALONS"
       index_introduction: "CONCEPT"
       index_out: "QUITTER"
-      index_user: "MUSIC MATCH"
+      index_user: "CONNECTION"
+      index_user_known: "COMPTE"
     artistcard:
       city: "Ville"
       number_of_musicians: "Musiciens"
