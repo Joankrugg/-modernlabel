@@ -115,6 +115,12 @@
       </div>
     </div>
 
+    <div class="quality">
+      <p class= "profil-title">Revendiquer un compte artiste, salle ou asso existant?</p>
+        <%= social_share_button_tag("revendication de compte", :allow_sites => %w(email), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/users/#{@user.id}" )%>
+      <p class="profil-details">modernboxrecords@gmail.com</p>
+    </div>
+
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 matches-patern">
         <h3>Matches</h3>
