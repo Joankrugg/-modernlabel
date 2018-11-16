@@ -4,6 +4,7 @@ class Place < ApplicationRecord
   has_many :performances
   has_many :videos
   has_many :hardwares
+  has_many :ratings, dependent: :destroy
   belongs_to :county
   belongs_to :activity_class
 
@@ -42,4 +43,5 @@ class Place < ApplicationRecord
     else Place.all
     end.sorted
   end
+
 end

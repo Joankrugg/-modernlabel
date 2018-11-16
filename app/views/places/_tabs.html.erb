@@ -73,5 +73,9 @@
       </div>
     </div>
   </div>
+<% else %>
+  <div class="quality">
+    <%= link_to 'contacter cette salle', @place.facebook_page, target: :_blank, class: "btn btn-medium" %>
+  </div>
 <% end %>
 
