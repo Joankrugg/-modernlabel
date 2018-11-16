@@ -5,6 +5,7 @@
 <div class="show-wallpapers profil-page">
   <div class="container">
     <hr class="user">
+
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 ">
         <%= cl_image_tag @artist.photo, height: 700, width: 700, crop: :fill, class: "img-responsive"%>
@@ -50,18 +51,20 @@
       </div>
     </div>
     <hr class="user">
+
     <div class="row">
       <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 ">
         <h1 class="profil-title quality">Biographie</h1>
         <% if @artist.bio.present? %>
           <p class="profil-details quality"><%= @artist.bio %></p>
         <% end %>
-          <div class="quality">
-            <%= social_share_button_tag(@artist.name, :allow_sites => %w(facebook tumblr pinterest email linkedin twitter), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/artists/#{@artist.id}", :image => "#{@artist.photo}", desc: "#{@artist.bio}", via: "Modernboxrecords") %>
-          </div>
+        <div class="quality">
+          <%= social_share_button_tag(@artist.name, :allow_sites => %w(facebook tumblr pinterest email linkedin twitter), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/artists/#{@artist.id}", :image => "#{@artist.photo}", desc: "#{@artist.bio}", via: "Modernboxrecords") %>
+        </div>
       </div>
     </div>
     <hr class= "user">
+
     <div class="row">
       <div class="quality">
         <% if @artist.mp3? %>
@@ -72,10 +75,12 @@
         <% end %>
       </div>
     </div>
+    <hr class="user">
+
     <div class="row">
-       <%= render 'tabs' %>
-       <hr class="user">
+      <%= render 'tabs' %>
     </div>
+    <hr class="user">
 
     <div class="row">
       <% if @artist.releases.present? %>
