@@ -130,7 +130,7 @@
                   </div>
                   <div class="index-title-card">
                     <p class="band-name"><%= video.artist.name %></p>
-                    <p><%= video.title.upcase  %><p>
+                    <p class="overwrite"><%= video.title.upcase  %><p>
                     <%= render 'shared/icons' %>
                   </div>
                   <div class="index-action-card">
@@ -161,9 +161,9 @@
                     </div>
                     <div class="index-title-card">
                       <p class="band-name"><%= r.city.capitalize %></p>
-                      <p>DATE: <%= r.start_time.strftime("%d/%m/%Y à %H:%M") %></p>
-                      <p>PRIX: <%= r.price %>Euros</p>
-                      <p>LIEU: <%= r.place_address %>
+                      <p class="overwrite">DATE: <%= r.start_time.strftime("%d/%m/%Y à %H:%M") %></p>
+                      <p class="overwrite">PRIX: <%= r.price %>Euros</p>
+                      <p class="overwrite">LIEU: <%= r.place_address %></p>
                       <% if r.facebook_event? %>
                         <%= link_to r.facebook_event, target: :_blank do %>
                           <i class="fa fa-facebook"></i>
