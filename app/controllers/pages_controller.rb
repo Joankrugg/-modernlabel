@@ -9,7 +9,13 @@ class PagesController < ApplicationController
   end
 
   def concept
-    @artists = Artist.where(signed: true).sample(4)
-    @releases = Release.where(signed: true).sample(4)
+    @places = Place.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+      marker.infowindow render_to_string(partial: "/places/map_box", locals: { place: place })
+    end
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat
   end
 end

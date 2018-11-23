@@ -4,7 +4,6 @@ class Place < ApplicationRecord
   has_many :performances
   has_many :videos
   has_many :hardwares
-  has_many :ratings, dependent: :destroy
   belongs_to :county
   belongs_to :activity_class
 
@@ -18,7 +17,8 @@ class Place < ApplicationRecord
   validates :number_of_musicians_max, presence: true
   validates :activity_class, presence: true
   validates :facebook_page, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
-
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   include PgSearch
   scope :sorted, ->{ order(name: :asc) }
 
