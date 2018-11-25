@@ -22,7 +22,13 @@ class Artist < ApplicationRecord
   validates :soundcloud_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?soundcloud.com\/?/ }, allow_blank: true
   has_attachment :mp3
   mount_uploader :photo, PhotoUploader
-  geocoded_by :city
+
+
+  def address
+    city
+  end
+
+  geocoded_by :address
   after_validation :geocode, if: :city_changed?
   include PgSearch
   scope :sorted, ->{ order(name: :asc) }

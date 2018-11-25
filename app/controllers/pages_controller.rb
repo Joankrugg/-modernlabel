@@ -10,9 +10,11 @@ class PagesController < ApplicationController
 
   def concept
     @places = Place.where.not(latitude: nil, longitude: nil)
+    @artists = Artist.where.not(latitude: nil, longitude: nil)
+    res = @places + @artists
     @geojson = Array.new
 
-    @places.each do |place|
+    res.each do |place|
       @geojson << {
         type: 'Feature',
         geometry: {
@@ -28,6 +30,7 @@ class PagesController < ApplicationController
         }
       }
     end
+
     respond_to do |format|
       format.html
       format.json { render json: @geojson }  # respond with the created JSON object
