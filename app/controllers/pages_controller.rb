@@ -10,11 +10,27 @@ class PagesController < ApplicationController
 
   def concept
     @places = Place.where.not(latitude: nil, longitude: nil)
+    @geojson = Array.new
 
-    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
-      marker.lat place.latitude
-      marker.lng place.longitude
-      marker.infowindow render_to_string(partial: "/places/map_box", locals: { place: place })
+    @places.each do |place|
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [place.longitude, place.latitude]
+        },
+        properties: {
+          name: place.name,
+          address: place.address,
+          :'marker-color' => '#00607d',
+          :'marker-symbol' => 'circle',
+          :'marker-size' => 'medium'
+        }
+      }
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
     end
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat
   end

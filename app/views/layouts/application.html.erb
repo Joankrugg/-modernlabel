@@ -32,6 +32,7 @@
     <%= action_cable_meta_tag %>
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/da2krghvd/image/upload/c_scale,w_57/v1521043530/mabb4ajnq2nkimp4ilei.jpg">
     <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/da2krghvd/image/upload/v1517215472/eeppxdf1ggjyau4q6f5e.jpg" />
+
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
@@ -41,11 +42,10 @@
     <%= render 'shared/connection_modal' %>
     <%= yield %>
     <%= render 'shared/footer' %>
-    <%= cloudinary_js_config %>
-    <%= javascript_include_tag "https://maps.google.com/maps/api/js?key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU"%>
-    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
-    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
     <%= javascript_include_tag "application" %>
+    <%= cloudinary_js_config %>
     <%= yield(:after_js) %>
   </body>
 </html>
