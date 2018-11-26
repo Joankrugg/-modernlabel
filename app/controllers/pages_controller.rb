@@ -10,11 +10,9 @@ class PagesController < ApplicationController
 
   def rock_map
     @places = Place.where.not(latitude: nil, longitude: nil)
-    @artists = Artist.where.not(latitude: nil, longitude: nil)
-    res = @places + @artists
     @geojson = Array.new
 
-    res.each do |place|
+    @places.each do |place|
       @geojson << {
         type: 'Feature',
         geometry: {
@@ -25,6 +23,23 @@ class PagesController < ApplicationController
           name: place.name,
           address: place.address,
           :'marker-color' => '#00607d',
+          :'marker-symbol' => 'circle',
+          :'marker-size' => 'medium'
+        }
+      }
+    end
+    @artists = Artist.where.not(latitude: nil, longitude: nil)
+    @artists.each do |artist|
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [artist.longitude, artist.latitude]
+        },
+        properties: {
+          name: artist.name,
+          address: artist.address,
+          :'marker-color' => '#E0422C',
           :'marker-symbol' => 'circle',
           :'marker-size' => 'medium'
         }
