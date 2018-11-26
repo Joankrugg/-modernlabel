@@ -8,12 +8,12 @@
   </div>
   <div class="navbar-item col-md-9 col-lg-9 hidden-xs hidden-sm">
     <div class="group-label-nav">
+      <%= link_to 'ROCK_MAP', main_app.pages_rock_map_path, class: "label-nav" %>
       <%= link_to 'NEWS', main_app.actus_path, class: "label-nav" %>
       <%= link_to 'ARTISTS', main_app.signed_artists_path, class: "label-nav" %>
       <%= link_to 'RELEASES', main_app.signed_releases_path, class: "label-nav" %>
       <%= link_to 'VIDEOS', main_app.signed_videos_path, class: "label-nav" %>
       <%= link_to 'CONCERTS', main_app.performances_path, class: "label-nav" %>
-      <%= link_to 'SHOP', main_app.shops_path, class: "label-nav" %>
       <i class="fa fa-user on-nav"  data-toggle="modal" data-target="#connect"></i>
     </div>
   </div>
@@ -36,7 +36,7 @@
           </li>
         <% end %>
         <li>
-          <%= link_to main_app.pages_concept_path do %>
+          <%= link_to main_app.pages_rock_map_path do %>
             <i class="fa fa-diamond"></i> <%= t(".index_label", default: "MODERN BOX") %>
           <% end %>
         </li>
@@ -63,11 +63,6 @@
         <li>
           <%= link_to main_app.performances_path do %>
             <i class="fa fa-calendar"></i> <%= t(".index_event", default: "EVENEMENTS") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to main_app.shops_path do %>
-            <i class="fa fa-shopping-bag"></i> <%= t(".index_shop", default: "STORE") %>
           <% end %>
         </li>
 

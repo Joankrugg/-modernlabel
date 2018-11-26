@@ -206,8 +206,8 @@ fr:
       action: "dans laquelle vous renseignez vos projets, prods, concerts et autres"
       method: "partagez les liens vers vos pages officielles et"
       go: "faîtes vivre la scène locale et plus!"
-    concept:
-      title: "MODERN BOX CONCEPT"
+    rock_map:
+      title: "MODERN BOX ROCK MAP"
       function_1: "AUTHENTIQUE LABEL ROCK"
       step_1: "Production & réalisation artistique"
       step_2: "Communication & promotion autour des artistes"

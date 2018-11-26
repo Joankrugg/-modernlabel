@@ -4,6 +4,19 @@
   </h1>
 </div>
 
+<div class="container last-item">
+  <div class="row-fluid">
+    <div id='map' style='width: 100%px; height: 800px;'></div>
+    <% unless user_signed_in? %>
+      <div class="last-item">
+        <%= link_to new_user_registration_path do %>
+          <button class="btn btn-primary">s'incrire sur la carte</button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="container">
   <br>
   <h2 class="concept-section-title">
@@ -265,19 +278,6 @@
     </div>
   </div>
 </div>
-<div class="container last-item">
-  <div class="row-fluid">
-    <div id='map' style='width: 100%px; height: 800px;'></div>
-    <% unless user_signed_in? %>
-      <div class="last-item">
-        <%= link_to new_user_registration_path do %>
-          <button class="btn btn-primary">s'incrire sur la carte</button>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
 
 <script>
   $(document).ready(function() {
@@ -286,7 +286,7 @@
 
     $.ajax({
       dataType: 'text',
-      url: 'concept.json',
+      url: 'rock_map.json',
       success: function(data) {
         var geojson;
         geojson = $.parseJSON(data);

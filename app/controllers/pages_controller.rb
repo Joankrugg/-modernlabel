@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :concept]
+  skip_before_action :authenticate_user!, only: [:home, :rock_map]
 
   def home
     @actus = Actu.where(billboard: true)
@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @videos = Video.all.sample(4)
   end
 
-  def concept
+  def rock_map
     @places = Place.where.not(latitude: nil, longitude: nil)
     @artists = Artist.where.not(latitude: nil, longitude: nil)
     res = @places + @artists

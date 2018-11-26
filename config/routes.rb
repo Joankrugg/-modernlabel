@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine, at: 'attachinary'
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
-    get 'pages/concept'
+    get 'pages/rock_map'
     resources :users, only: [:show, :edit, :update, :destroy] do
       collection do
         get 'action', to: "users#action"
