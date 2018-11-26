@@ -17,6 +17,7 @@ class Place < ApplicationRecord
   validates :number_of_musicians_max, presence: true
   validates :activity_class, presence: true
   validates :facebook_page, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   include PgSearch
