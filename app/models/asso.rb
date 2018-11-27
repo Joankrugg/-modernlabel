@@ -33,7 +33,8 @@ class Asso < ApplicationRecord
                   ],
                   associated_against: {
                     genre: [:name],
-                    activity: [:name]
+                    activity: [:name],
+                    county: [ :name]
                   },
                   using: {
                     tsearch: {

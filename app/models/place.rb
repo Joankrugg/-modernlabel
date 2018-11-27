@@ -29,7 +29,8 @@ class Place < ApplicationRecord
                     :city,
                   ],
                   associated_against: {
-                    genre: [:name]
+                    genre: [:name],
+                    county: [ :name]
                   },
                   using: {
                     tsearch: {
