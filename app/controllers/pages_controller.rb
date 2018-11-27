@@ -46,6 +46,24 @@ class PagesController < ApplicationController
       }
     end
 
+    @assos = Asso.where.not(latitude: nil, longitude: nil)
+    @assos.each do |asso|
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [asso.longitude, asso.latitude]
+        },
+        properties: {
+          name: asso.name,
+          address: asso.address,
+          :'marker-color' => '#64D045',
+          :'marker-symbol' => 'circle',
+          :'marker-size' => 'medium'
+        }
+      }
+    end
+
     respond_to do |format|
       format.html
       format.json { render json: @geojson }  # respond with the created JSON object

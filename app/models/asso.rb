@@ -19,6 +19,9 @@ class Asso < ApplicationRecord
   validates :genre, presence: true
   validates :year_of_creation, presence: true
   validates :facebook_page, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 
   include PgSearch
   scope :sorted, ->{ order(name: :asc) }
