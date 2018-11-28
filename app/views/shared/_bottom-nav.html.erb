@@ -1,0 +1,50 @@
+<div class="container ">
+  <div class="container bottom-nav bottom-nav-fixed">
+    <%= link_to main_app.artists_path do %>
+      <div class="icons-app">
+        <i class="fa fa-users network-nav"></i>
+        <p class="bottom-nav-text">Bands </p>
+      </div>
+    <% end %>
+    <%= link_to main_app.places_path do %>
+      <div class="icons-app">
+        <i class="fa fa-map-marker network-nav"></i>
+        <p class="bottom-nav-text">Salles</p>
+      </div>
+    <% end %>
+    <%= link_to main_app.assos_path do %>
+      <div class="icons-app">
+        <i class="fa fa-handshake-o network-nav"></i>
+        <p class="bottom-nav-text">Assos</p>
+      </div>
+    <% end %>
+    <%= link_to main_app.videos_path do %>
+      <div class="icons-app">
+        <i class="fa fa-video-camera network-nav"></i>
+        <p class="bottom-nav-text">videos</p>
+      </div>
+    <% end %>
+    <%= link_to main_app.topics_path do %>
+      <div class="icons-app">
+        <i class="fa fa-comments network-nav"></i>
+        <p class="bottom-nav-text">Salons</p>
+      </div>
+    <% end %>
+    <% unless user_signed_in? %>
+      <%= link_to main_app.new_user_session_path do %>
+        <div class="icons-app">
+          <i class="fa fa-user-circle network-nav" ></i>
+          <p class="bottom-nav-text">Compte</p>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to main_app.action_users_path do %>
+        <div class="icons-app">
+          <i class="fa fa-user-circle network-nav" ></i>
+          <p class="bottom-nav-text">Compte</p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

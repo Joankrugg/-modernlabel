@@ -1,4 +1,4 @@
-.footer{
+.bottom-nav{
   transition: all 0.3s ease;
   display: flex;
   height: 50px;
@@ -9,7 +9,7 @@
   background: #F4F4F4;
 }
 
-.footer-fixed {
+.bottom-nav-fixed {
   position: fixed;
   left: 0px;
   bottom: 0px;
@@ -27,7 +27,7 @@
   text-decoration: none;
 }
 
-.footer-legends{
+.bottom-nav-legends{
   transition: all 0.3s ease;
   display: flex;
   height: 16px;
@@ -39,7 +39,7 @@
 }
 
 
-.footer-fixed-legends {
+.bottom-nav-fixed-legends {
   position: fixed;
   left: 0px;
   bottom: 0px;
@@ -47,7 +47,7 @@
   width: 100vw;
 }
 
-.footer-text{
+.bottom-nav-text{
   font-size: 12px;
   color: $black;
 }

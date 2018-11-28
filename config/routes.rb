@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
     get 'pages/rock_map'
+    get 'pages/cgu'
     resources :users, only: [:show, :edit, :update, :destroy] do
       collection do
         get 'action', to: "users#action"

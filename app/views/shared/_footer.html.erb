@@ -1,50 +1,45 @@
-<div class="container ">
-  <div class="container footer footer-fixed">
-    <%= link_to main_app.artists_path do %>
-      <div class="icons-app">
-        <i class="fa fa-users network-nav"></i>
-        <p class="footer-text">Bands </p>
-      </div>
-    <% end %>
-    <%= link_to main_app.places_path do %>
-      <div class="icons-app">
-        <i class="fa fa-search-plus network-nav"></i>
-        <p class="footer-text">Salles</p>
-      </div>
-    <% end %>
-    <%= link_to main_app.assos_path do %>
-      <div class="icons-app">
-        <i class="fa fa-medkit network-nav"></i>
-        <p class="footer-text">Assos</p>
-      </div>
-    <% end %>
-    <%= link_to main_app.performances_path do %>
-      <div class="icons-app">
-        <i class="fa fa-calendar network-nav"></i>
-        <p class="footer-text">Shows</p>
-      </div>
-    <% end %>
-    <%= link_to main_app.topics_path do %>
-      <div class="icons-app">
-        <i class="fa fa-comments network-nav"></i>
-        <p class="footer-text">Salons</p>
-      </div>
-    <% end %>
-    <% unless user_signed_in? %>
-      <%= link_to main_app.new_user_session_path do %>
-        <div class="icons-app">
-          <i class="fa fa-user-circle network-nav" ></i>
-          <p class="footer-text">Compte</p>
-        </div>
-      <% end %>
-    <% else %>
-      <%= link_to main_app.action_users_path do %>
-        <div class="icons-app">
-          <i class="fa fa-user-circle network-nav" ></i>
-          <p class="footer-text">Compte</p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
 
+    <!----------- Footer ------------>
+    <footer class="footer-bs">
+        <div class="row">
+          <div class="col-md-3 footer-brand animated fadeInLeft">
+            <div class="logo">
+              <%= cl_image_tag("logo_MBRecords_b4su6x.png", :quality=>"jpegmini:2", :sign_url=>true) %>
+            </div>
+                <p>Créez un compte sur Modern Box Records. Connectez-vous avec les acteurs utiles de la scène musicale Rock ; Artistes, Salles, Associations ou autres. Partagez vos dates de concerts, photos et  vidéos,...</p>
+                <p>© 2018 MODERNBOXRECORDS, All rights reserved</p>
+            </div>
+          <div class="col-md-4 footer-nav animated fadeInUp">
+              <h4>Menu</h4>
+              <div class="col-md-6">
+                    <ul class="pages">
+                        <li><%= link_to 'Accueil', root_path %></li>
+                        <li><%= link_to 'mentions légales', pages_cgu_path %></li>
+                        <li><%= link_to 'Inscription', new_user_registration_path %></li>
+                        <li><%= link_to 'Rock Map', pages_rock_map_path %></li>
+                    </ul>
+                </div>
+              <div class="col-md-6">
+                    <ul class="list">
+                        <li>CONTACTS</li>
+                        <li class="perso">modernboxrecords@gmail.com</li>
+                        <li class="perso">06 52 75 10 72</li>
+                    </ul>
+                </div>
+            </div>
+          <div class="col-md-2 footer-social animated fadeInDown">
+              <h4>Suivez-nous!</h4>
+              <ul>
+                  <li><a href="https://www.facebook.com/modernboxrecords/?ref=br_rs" target = "_blank">Facebook</a></li>
+                  <li><a href="https://twitter.com/Modern_box_rec" target = "_blank">Twitter</a></li>
+                  <li><a href="https://www.instagram.com/modernboxrecords/" target = "_blank">Instagram</a></li>
+                  <li><a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber" target = "_blank">Youtube</a></li>
+                </ul>
+            </div>
+          <div class="col-md-3 footer-ns animated fadeInRight">
+              <h4>Newsletter</h4>
+                <p>Nous ne polluons pas les boîtes mail...</p>
+                <p>Désolé</p>
+            </div>
+        </div>
+    </footer>

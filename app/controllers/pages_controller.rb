@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :rock_map]
+  skip_before_action :authenticate_user!, only: [:home, :rock_map, :cgu]
 
   def home
     @actus = Actu.where(billboard: true)
@@ -67,6 +67,9 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @geojson }  # respond with the created JSON object
+    end
+
+    def cgu
     end
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat
   end
