@@ -1,9 +1,9 @@
 class Place < ApplicationRecord
   belongs_to :user, required: true
   belongs_to :genre
-  has_many :performances
-  has_many :videos
-  has_many :hardwares
+  has_many :performances, dependent: :destroy
+  has_many :videos, dependent: :destroy
+  has_many :hardwares, dependent: :destroy
   belongs_to :county
   belongs_to :activity_class
 

@@ -1,24 +1,27 @@
-<div class="container">
-  <h1 class="page-title-search">
-    MODERN BOX ARTISTES
-  </h1>
-</div>
-
-<div class="container ">
-  <div class="row">
-    <% @artists.each do |artist|%>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <%= link_to artist do %>
-          <div class="id-card">
-            <%= cl_image_tag artist.photo, height: 500, width: 500, crop: :fill, class: "id-pic img-responsive" %>
-            <div class="details">
-              <p><%= artist.name %></p>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+<div class="index-wallpapers">
+  <div class="container">
+    <h1 class="page-title-search" style="color: white; padding-top: 24px;">
+      MODERN BOX ARTISTES
+    </h1>
   </div>
+
+  <div class="container ">
+    <div class="row">
+      <% @artists.each do |artist|%>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+          <%= link_to artist do %>
+            <div class="id-card">
+              <%= cl_image_tag artist.photo, height: 500, width: 500, crop: :fill, class: "id-pic img-responsive" %>
+              <div class="details">
+                <p><%= artist.name %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= render 'shared/footer' %>
 </div>
 
 

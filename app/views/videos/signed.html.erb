@@ -3,38 +3,38 @@
     MODERN BOX VIDEOS
   </h1>
       <!--section d'ensemble-->
-    <div class="container items">
-      <div class="row">
-        <% @videos.each do |video|%>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <div class="main">
-              <div class="card">
-                <div class="info-card">
-                  <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
-                  <%= link_to video do %>
-                  <div class="info">
-                    <h1>-<%= video.title  %>-</h1>
-                    <% if video.artist.present? %>
-                      <h1><%= video.artist.name %></h1>
-                    <% end %>
-                    <% if video.asso.present? %>
-                      <h1><%= video.asso.name %></h1>
-                    <% end %>
-                    <% if video.place.present? %>
-                      <h1><%= video.place.name %></h1>
-                    <% end %>
-                    <h1>-<%= video.genre.name %>-</h1>
-                    <%= render 'shared/icons' %>
-                  </div>
+  <div class="container items">
+    <div class="row">
+      <% @videos.each do |video|%>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+          <div class="main">
+            <div class="card">
+              <div class="info-card">
+                <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+                <%= link_to video do %>
+                <div class="info">
+                  <h1>-<%= video.title  %>-</h1>
+                  <% if video.artist.present? %>
+                    <h1><%= video.artist.name %></h1>
                   <% end %>
+                  <% if video.asso.present? %>
+                    <h1><%= video.asso.name %></h1>
+                  <% end %>
+                  <% if video.place.present? %>
+                    <h1><%= video.place.name %></h1>
+                  <% end %>
+                  <h1>-<%= video.genre.name %>-</h1>
+                  <%= render 'shared/icons' %>
                 </div>
+                <% end %>
               </div>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
   <%= render 'shared/footer' %>
 </div>
+
 

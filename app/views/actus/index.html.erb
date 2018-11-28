@@ -1,23 +1,25 @@
-<div class="container">
-  <h1 class="page-title-search">
-    MODERN BOX NEWS
-  </h1>
-</div>
-<div class="banner">
-  <div class="container banner-content">
-    <% @actus.each do |actu|%>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="id-card">
-         <%= link_to actu do %>
-            <%= cl_image_tag actu.photo, height: 250, width: 250, crop: :fill, class: "img-responsive id-pic" %>
-          <% end %>
-        </div>
-        <div class="details"><%= actu.title.capitalize %></div><br>
-      </div>
-    <% end %>
+<div class="index-wallpapers">
+  <div class="container">
+    <h1 class="page-title-search" style="color: white; padding-top: 24px;">
+      MODERN BOX NEWS
+    </h1>
   </div>
+  <div class="banner">
+    <div class="container banner-content">
+      <% @actus.each do |actu|%>
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+          <div class="id-card">
+           <%= link_to actu do %>
+              <%= cl_image_tag actu.photo, height: 250, width: 250, crop: :fill, class: "img-responsive id-pic" %>
+            <% end %>
+          </div>
+          <div class="details"><%= actu.title.capitalize %></div><br>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    <%= render 'shared/footer' %>
 </div>
-
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({

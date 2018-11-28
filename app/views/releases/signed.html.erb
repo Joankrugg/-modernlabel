@@ -1,23 +1,26 @@
-<div class="container search">
-  <h1 class="page-title-search">
-    MODERN BOX RELEASES
-  </h1>
-</div>
+<div class="index-wallpapers">
+  <div class="container search">
+    <h1 class="page-title-search" style="color: white; padding-top: 24px;">
+      MODERN BOX RELEASES
+    </h1>
+  </div>
 
-<div class="banner">
-  <div class="container banner-content">
-    <% @releases.each do |release|%>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <div class="id-card">
-          <%= link_to release do %>
-            <%= cl_image_tag release.photo, height: 500, width: 500, crop: :fill, class: "img-responsive id-pic" %>
-          <% end %>
-          <div class="details">
-            <%= release.artist.name %><br>
-            <%= release.title %>
+  <div class="banner">
+    <div class="container banner-content">
+      <% @releases.each do |release|%>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+          <div class="id-card">
+            <%= link_to release do %>
+              <%= cl_image_tag release.photo, height: 500, width: 500, crop: :fill, class: "img-responsive id-pic" %>
+            <% end %>
+            <div class="details">
+              <%= release.artist.name %><br>
+              <%= release.title %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+  <%= render 'shared/footer' %>
 </div>

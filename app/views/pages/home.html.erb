@@ -1,147 +1,149 @@
-<div id="myCarousel" class="carousel slide banner" data-ride="carousel">
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner banner-content">
-    <div class="item active">
-      <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--qH23C0VO--/c_fit,h_530,q_jpegmini,w_1440/v1539003356/Admin/banner_page1.jpg" alt="Première sortie" style="width: 100%">
-      <div class="carousel-caption">
-        <h3>Première sortie</h3>
-        <p>© Modern Box Records.</p>
+<div class="index-wallpapers">
+  <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner banner-content">
+      <div class="item active">
+        <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--qH23C0VO--/c_fit,h_530,q_jpegmini,w_1440/v1539003356/Admin/banner_page1.jpg" alt="Première sortie" style="width: 100%">
+        <div class="carousel-caption">
+          <h3>Première sortie</h3>
+          <p>© Modern Box Records.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="item">
-      <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--iRBA2SJp--/c_fit,h_530,q_jpegmini,w_1440/v1539003334/Admin/banner_page2.jpg" alt="Nouvel artiste" style="width: 100%;">
-      <div class="carousel-caption">
-        <h3>Aaron Wheeler</h3>
-        <p>Nouvel artiste en production</p>
+      <div class="item">
+        <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--iRBA2SJp--/c_fit,h_530,q_jpegmini,w_1440/v1539003334/Admin/banner_page2.jpg" alt="Nouvel artiste" style="width: 100%;">
+        <div class="carousel-caption">
+          <h3>Aaron Wheeler</h3>
+          <p>Nouvel artiste en production</p>
+        </div>
       </div>
-    </div>
 
-    <div class="item">
-      <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--PfFhxvrf--/c_fill,h_524,q_jpegmini,w_1440/v1539004007/Admin/12697006_10153986036986340_8768038031280884595_o.jpg" alt="Nouveau groupe" style="width: 100%;">
-      <div class="carousel-caption">
-        <h3>Back to the scars</h3>
-        <p>Nouveau groupe en écoute</p>
+      <div class="item">
+        <img src="https://res.cloudinary.com/da2krghvd/image/upload/s--PfFhxvrf--/c_fill,h_524,q_jpegmini,w_1440/v1539004007/Admin/12697006_10153986036986340_8768038031280884595_o.jpg" alt="Nouveau groupe" style="width: 100%;">
+        <div class="carousel-caption">
+          <h3>Back to the scars</h3>
+          <p>Nouveau groupe en écoute</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <h1 class="home-title">
-    MODERN BOX RECORDS
-  </h1>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-lg-8">
-      <h2 class="section-title-left">
-          LAST NEWS
-      </h2>
-      <hr class="section">
-      <% if @actus.present? %>
-        <% @actus.each do |actu| %>
-          <%= link_to actu do %>
-            <div class="last-news-card">
-              <div class="last-news-picture">
-                <div class="row">
-                  <div class="col-md-12 col-lg-12">
-                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                      <%= image_tag actu.photo, height: 120, width: 120, crop: :fill, class: "img" %>
-                    </div>
-                    <div class="col-md-9 col-lg-9">
-                      <h4 class="last-news-title">
-                        <%= actu.title.upcase %>
-                      </h4>
-                      <div class="last-news-edition">
-                        <%= actu.edition %>
+
+  <div class="container">
+    <h1 class="home-title">
+      MODERN BOX RECORDS
+    </h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-lg-8">
+        <h2 class="section-title-left">
+            LAST NEWS
+        </h2>
+        <hr class="section">
+        <% if @actus.present? %>
+          <% @actus.each do |actu| %>
+            <%= link_to actu do %>
+              <div class="last-news-card">
+                <div class="last-news-picture">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <%= image_tag actu.photo, height: 120, width: 120, crop: :fill, class: "img" %>
                       </div>
-                      <hr class="separation">
-                      <div class="last-news-description">
-                        <%= actu.description %>
+                      <div class="col-md-9 col-lg-9">
+                        <h4 class="last-news-title">
+                          <%= actu.title.upcase %>
+                        </h4>
+                        <div class="last-news-edition">
+                          <%= actu.edition %>
+                        </div>
+                        <hr class="separation">
+                        <div class="last-news-description">
+                          <%= actu.description %>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <% end %>
+            <hr class="last-news-segment">
           <% end %>
-          <hr class="last-news-segment">
         <% end %>
-      <% end %>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h2 class="section-title-left">
-            NEW ARTISTS
-          </h2>
-          <hr class="section">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2 class="section-title-left">
+              NEW ARTISTS
+            </h2>
+            <hr class="section">
 
-          <% if @artists.present? %>
-            <% @artists.each do |artist| %>
-              <div class="artists-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
-                  <%= link_to signed_artists_path do %>
-                  <%= image_tag artist.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
-                <% end %>
-              </div>
+            <% if @artists.present? %>
+              <% @artists.each do |artist| %>
+                <div class="artists-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
+                    <%= link_to signed_artists_path do %>
+                    <%= image_tag artist.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <h2 class="section-title-left">
-            NEW RELEASES
-          </h2>
-          <hr class="section">
-
-          <% if @releases.present? %>
-            <% @releases.each do |release| %>
-              <div class="releases-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
-                <%= link_to signed_releases_path do %>
-                  <%= image_tag release.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
-                <% end %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-4 col-lg-4">
-      <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", class: "img-responsive") %>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 connection">
-      <%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "btn btn-medium" %>
-      <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "btn btn-medium" %>
-        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
-        </div>
-        <fb:login-button
-          scope="public_profile,email"
-          onlogin="checkLoginState();">
-        </fb:login-button>
-        <script type="text/javascript">
-          function checkLoginState() {
-          FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-          });
-        }</script>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4">
-      <h2 class="section-title-right">
-        NEW VIDEOS
-      </h2>
-      <% if @videos.present? %>
-        <% @videos.each do |video| %>
-          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-            <div class="videos-samples">
-              <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='300' width='400' class='img-responsive' frameborder='0' allowfullscreen></iframe>
-            </div>
           </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2 class="section-title-left">
+              NEW RELEASES
+            </h2>
+            <hr class="section">
+
+            <% if @releases.present? %>
+              <% @releases.each do |release| %>
+                <div class="releases-samples col-xs-4 col-sm-4 col-md-3 col-lg-3 ">
+                  <%= link_to signed_releases_path do %>
+                    <%= image_tag release.photo, height: 140, width: 140, crop: :fill, class: "img-responsive" %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", class: "img-responsive") %>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4 connection">
+        <%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "btn btn-medium" %>
+        <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "btn btn-medium" %>
+          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
+          </div>
+          <fb:login-button
+            scope="public_profile,email"
+            onlogin="checkLoginState();">
+          </fb:login-button>
+          <script type="text/javascript">
+            function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+          }</script>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <h2 class="section-title-right">
+          NEW VIDEOS
+        </h2>
+        <% if @videos.present? %>
+          <% @videos.each do |video| %>
+            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+              <div class="videos-samples">
+                <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='300' width='400' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
+  <%= render 'shared/footer' %>
 </div>
-<%= render 'shared/footer' %>
-
 
