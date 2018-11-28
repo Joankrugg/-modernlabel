@@ -26,7 +26,7 @@ hr{
   margin-top: 10px;
   margin-left: 0px;
   height: 2px;
-  background-color: $blue;
+  background-color: #8B8B8B;
   width: 35%;
   border: none;
 }
@@ -48,43 +48,40 @@ hr{
 }
 
 .home-title{
-  color: black;
+  color: white;
   font-size: 30px;
 }
 
 .section{
-  background-color: $black;
-  height: 3px;
+  background-color: white;
+  height: 2px;
 }
 
 .section-title-left{
-  color: $blue;
+  color: white;
   font-size: 20px;
+  font-weight: lighter;
 }
 
 .section-title-right{
   color: white;
-  background-image: linear-gradient(-270deg, $black, white);
   font-size: 20px;
-  padding: 4px 8px;
   font-weight: lighter;
-  border-radius: 4px;
-
 }
 
 .last-news-card:hover{
-  background-color: #FAFAFB;
-  border-radius: 10px;
+  background-color: #0E1219;
 }
 
 .last-news-title{
   color: white;
   font-weight: bolder;
-  font-size : 16px;
+  font-size : 20px;
+  margin-bottom: 10px;
 }
 
 .last-news-edition{
-  color: #8B8B8B;
+  color: white;
   font-size: 14px;
 }
 
@@ -106,9 +103,8 @@ hr{
 }
 
 .last-news-segment{
-  margin-top: 10px;
   height: 1px;
-  background-color: $black;
+  background-color: white;
   border: none; /*on supprime le style par défaut*/
 }
 
@@ -124,3 +120,7 @@ hr{
   padding-bottom: 20px;
 }
 
+.line{
+  padding-top: 14px;
+  padding-bottom: 14px;
+}

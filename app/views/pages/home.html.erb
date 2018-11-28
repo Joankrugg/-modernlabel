@@ -46,14 +46,14 @@
               <div class="last-news-card">
                 <div class="last-news-picture">
                   <div class="row">
-                    <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 line">
                       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <%= image_tag actu.photo, height: 120, width: 120, crop: :fill, class: "img" %>
                       </div>
                       <div class="col-md-9 col-lg-9">
-                        <h4 class="last-news-title">
+                        <div class="last-news-title">
                           <%= actu.title.upcase %>
-                        </h4>
+                        </div>
                         <div class="last-news-edition">
                           <%= actu.edition %>
                         </div>
@@ -67,7 +67,6 @@
                 </div>
               </div>
             <% end %>
-            <hr class="last-news-segment">
           <% end %>
         <% end %>
         <div class="row">
@@ -110,23 +109,13 @@
       </div>
 
       <div class="col-sm-12 col-md-4 col-lg-4">
-        <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", class: "img-responsive") %>
+        <%= cl_image_tag("logo_MBRecords_b4su6x.png", :quality=>"jpegmini", :sign_url=>true, class: "img-responsive") %>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 connection">
         <%= link_to t(".sign_up", default: "SIGN UP"), new_user_registration_path, class: "btn btn-medium" %>
         <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "btn btn-medium" %>
           <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false">
           </div>
-          <fb:login-button
-            scope="public_profile,email"
-            onlogin="checkLoginState();">
-          </fb:login-button>
-          <script type="text/javascript">
-            function checkLoginState() {
-            FB.getLoginStatus(function(response) {
-              statusChangeCallback(response);
-            });
-          }</script>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4">
         <h2 class="section-title-right">
