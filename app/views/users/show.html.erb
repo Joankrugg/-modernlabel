@@ -78,7 +78,7 @@
               <%= link_to user_path(@user), method: :delete, data: { confirm: "Are you sure?" } do %>
                 <div class="id-card">
                   <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 125, width: 125, crop: :fill, class: "id-pic img-responsive" %>
-                  <p class="out"><%= t(".delete", default: "delete my account") %></p>
+                  <p class="destroy"><%= t(".delete", default: "delete my account") %></p>
                 </div>
               <% end %>
             </div>

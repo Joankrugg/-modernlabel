@@ -77,35 +77,6 @@
   border-radius: 40px;
 }
 
-.photo-card{
-  border-radius-top-left: 6px;
-  border-radius-top-right: 6px;
-  margin: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.model-items{
-  align: center;
-  padding-bottom: 20px;
-}
-
-.productions{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: black;
-  border: 1px solid rgb(215, 215, 215);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.social-networks-nav{
-  transition: all 0.3s ease;
-  height: 100px;
-  padding: 0px 0px;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
 .social-logo{
   text-align: center;
   font-size: 50px;
@@ -114,17 +85,6 @@
 .option{
   align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
-#header{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-#bio{
-  height: 348px;
   text-align: center;
 }
 
@@ -153,19 +113,14 @@
   }
 }
 
-.lead{
-  height: 150px;
-  text-align: center;
-    h1 {
-      color: #606668;
-      font-size: 12px;
-      text-transform: uppercase;
-  }
-}
-
 .icons{
   color: #606668;
 }
+
+.icons:hover{
+  color: rgb(0, 167, 255);
+}
+
 .icons_2{
   color: #606668;
 }
@@ -183,44 +138,10 @@
     padding-top: 6px;
   }
 }
-.icons:hover{
-  color: rgb(0, 167, 255);
-}
 
-#perf{
-  height: 120px;
-}
-
-
-#column{
-  height: 120px;
-  background: linear-gradient(to right, #1C2119, #849DCA);
-}
-
-.information{
-  height: 700px;
-  background: linear-gradient(to right, #1C2119, #849DCA);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#flash{
-  color: white;
-}
-.results{
-  padding-top: 20px;
-}
 .items {
   padding-top: 60px;
   padding-bottom: 100px;
-}
-
-.introduction{
-  padding-top: 50px;
-}
-
-.disco{
-  margin-top: 50px;
 }
 
 .text{
@@ -240,10 +161,10 @@
   color: #0076DE;
 }
 
-.out {
+.destroy {
   color: $black;
  }
 
-.out:hover {
+.destroy:hover {
   color: red;
  }

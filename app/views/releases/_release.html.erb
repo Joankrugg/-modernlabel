@@ -1,6 +1,6 @@
-<div class="[ info-card ]">
+<div class="info-card">
   <%= link_to release do %>
-    <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "photo-card img-responsive" %>
+    <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "img-responsive" %>
   <% end %>
   <div class="info">
     <h1>-<%= release.title.capitalize %>-</h1>
