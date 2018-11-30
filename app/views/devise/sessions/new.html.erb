@@ -11,11 +11,11 @@
           <div class="log-option">
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
-          <div class="form-actions box press">
+          <div class="quality press">
             <%= f.button :submit, t(".sign_in") %>
           </div>
         <% end %>
-        <div class="box press"><%= render'devise/shared/links' %></div>
+        <div class="quality press"><%= render'devise/shared/links' %></div>
       </div>
     </div>
   </div>
