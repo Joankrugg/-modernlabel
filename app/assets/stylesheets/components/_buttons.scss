@@ -17,4 +17,21 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
+.btn-medium-white {
+  color: $black;
+  padding: 5px 20px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  transition: background 0.3s ease;
+}
 
+.btn-medium-white:hover {
+  opacity: 1;
+  background: $blue;
+  text-decoration: none;
+  color: $black;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
