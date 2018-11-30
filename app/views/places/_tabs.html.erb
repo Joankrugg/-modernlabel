@@ -21,10 +21,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".edit_place") %></h5>
+            <div class="modal-title" id="exampleModalLongTitle"><%= t(".edit_place") %></div>
             <div class="modal-body">
               <%= render 'form', place: @place %>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
             </div>
           </div>
         </div>
@@ -35,10 +34,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_hardware") %></h5>
+            <div class="modal-title" id="exampleModalLongTitle"><%= t(".create_hardware") %></div>
             <div class="modal-body">
               <%= render 'hardwares/form', hardware: @hardware %>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
             </div>
           </div>
         </div>
@@ -49,10 +47,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></h5>
+            <div class="modal-title" id="exampleModalLongTitle"><%= t(".create_performance") %></div>
             <div class="modal-body">
               <%= render 'performances/form_place', performance: @performance %>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
             </div>
           </div>
         </div>
@@ -63,10 +60,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></h5>
+            <div class="modal-title" id="exampleModalLongTitle"><%= t(".create_video") %></div>
             <div class="modal-body">
               <%= render 'videos/form_place', video: @video %>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
             </div>
           </div>
         </div>
