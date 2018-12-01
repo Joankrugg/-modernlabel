@@ -2,37 +2,39 @@
   <div class="search">
     <%= render 'shared/release_search' %>
   </div>
-    <div class="index-page">
-      <div class="container">
-        <div class="row">
-          <% if @releases.present? %>
-            <% @releases.each do |release|%>
-              <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="main">
-                  <div class="card">
-                    <div class="info-card">
-                      <%= link_to release do %>
-                        <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
-                      <% end %>
-                      <div class="info" id="release">
-                        <h1>-<%= release.title.capitalize %>-</h1>
-                        <h1><%= release.artist.name %></h1>
-                        <h1><%= release.genre.name %></h1>
-                        <h1><%= t(".record_format") %>: <%= release.record.name %></h1>
-                        <h1><%= t(".price") %>: <%= release.price %> Euros</h1>
-                        <%= render 'shared/icons' %>
-                      </div>
+  <div class="index-page">
+    <div class="container">
+      <div class="row">
+        <% if @releases.present? %>
+          <% @releases.each do |release|%>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+              <div class="main">
+                <div class="card">
+                  <div class="info-card">
+                    <%= link_to release do %>
+                      <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "style_image img-responsive" %>
+                    <% end %>
+                    <div class="info" id="release">
+                      <h1>-<%= release.title.capitalize %>-</h1>
+                      <h1><%= release.artist.name %></h1>
+                      <h1><%= release.genre.name %></h1>
+                      <h1><%= t(".record_format") %>: <%= release.record.name %></h1>
+                      <h1><%= t(".price") %>: <%= release.price %> Euros</h1>
+                      <%= render 'shared/icons' %>
                     </div>
                   </div>
                 </div>
               </div>
-            <% end %>
-          <% else %>
-            <%= render 'shared/no_result' %>
+            </div>
           <% end %>
-        </div>
+        <% else %>
+          <%= render 'shared/no_result' %>
+        <% end %>
       </div>
     </div>
   </div>
+  <%= render 'shared/footer' %>
 </div>
+
+
 
