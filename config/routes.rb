@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
     resources :artists do
       resources :ratings, only: :create
+      resources :instagrams, only: [:create, :update, :destroy]
         collection do
           get 'signed', to: "artists#signed"
         end

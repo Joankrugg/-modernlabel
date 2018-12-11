@@ -33,3 +33,61 @@
   text-decoration: none;
   color: white;
 }
+
+.social-network{
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.social-network:hover{
+  background-color: #F7F7F7;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.url{
+  color: $black;
+  font-size: 10px;
+}
+
+.social-links{
+  color: #696969;
+}
+
+.fa-facebook-square:hover{
+  color: #4267B1;
+}
+
+.fa-instagram:hover{
+  color: $black;
+}
+
+.fa-soundcloud:hover{
+  color: #EE512F;
+}
+.fa-twitter:hover{
+  color: #34A1F2;
+}
+
+.fa-youtube-play:hover{
+  color: #ED462F;
+}
+
+.fa-bandcamp:hover{
+  color: #639AA9;
+}
+.modal-trigger:hover{
+  cursor: pointer;
+}
+
+.icon{
+  font-size: 20px;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+
+.bin{
+  position: absolute;
+  right: 3px;
+}

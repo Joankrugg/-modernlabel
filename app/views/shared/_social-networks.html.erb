@@ -1,33 +1,85 @@
-<div class="col-xs-12 col-sm-8 col-md-12 col-lg-12">
+<% if @artist.user == current_user %>
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <i class="fa fa-facebook-square social-links"></i>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+    <% if @artist.instagram.present? %>
+      <div class="url modal-trigger">
+        <i class="fa fa-instagram social-links icon" data-toggle="modal" data-target="#insta"></i>
+        <%= link_to @artist.instagram.link, class: "social-links", target: :blank do %>
+          <%= "#{@artist.instagram.link}" %>
+        <% end %>
+      </div>
+    <% else %>
+      <i class="fa fa-instagram social-links"></i>
+      <div class="url modal-trigger" data-toggle="modal" data-target="#insta"">Cliquez ici pour ajouter Instagram</div>
+    <% end %>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <i class="fa fa-soundcloud social-links"></i>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <i class="fa fa-twitter social-links"></i>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <i class="fa fa-youtube-play social-links"></i>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <i class="fa fa-bandcamp social-links"></i>
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <i class="fa fa-web social-links"></i>
+  </div>
+
+<% else %>
   <% if @artist.facebook_link.present? %>
-    <%= link_to @artist.facebook_link, target: :_blank do %>
-      <i class="fa fa-facebook-square social-logo"></i>
-    <% end %>
+    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <%= link_to @artist.facebook_link, target: :_blank do %>
+        <i class="fa fa-facebook-square social-links icon"></i>
+      <% end %>
+    </div>
   <% end %>
-  <% if @artist.insta_link.present? %>
-    <%= link_to @artist.insta_link, target: :_blank do %>
-      <i class="fa fa-instagram social-logo"></i>
-    <% end %>
+
+  <% if @artist.instagram.present? %>
+    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <%= link_to @artist.instagram.link, target: :_blank do %>
+        <i class="fa fa-instagram social-links icon"></i>
+      <% end %>
+    </div>
   <% end %>
   <% if @artist.soundcloud_link.present? %>
-    <%= link_to @artist.soundcloud_link, target: :_blank do %>
-      <i class="fa fa-soundclound social-logo"></i>
-    <% end %>
+    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <%= link_to @artist.soundcloud_link, target: :_blank do %>
+        <i class="fa fa-soundclound social-links icon"></i>
+      <% end %>
+    </div>
   <% end %>
   <% if @artist.twitter_link.present? %>
-    <%= link_to @artist.twitter_link, target: :_blank do %>
-      <i class="fa fa-twitter social-logo"></i>
-    <% end %>
+    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <%= link_to @artist.twitter_link, target: :_blank do %>
+        <i class="fa fa-twitter social-links icon"></i>
+      <% end %>
+    </div>
   <% end %>
   <% if @artist.youtube_channel.present? %>
-    <%= link_to @artist.soundcloud_link, target: :_blank do %>
-      <i class="fa fa-youtube-square social-logo"></i>
-    <% end %>
+    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <%= link_to @artist.soundcloud_link, target: :_blank do %>
+        <i class="fa fa-youtube-play social-links icon"></i>
+      <% end %>
+    </div>
   <% end %>
   <% if @artist.bandcamp_link.present? %>
-    <%= link_to @artist.bandcamp_link, target: :_blank do %>
-      <i class="fa fa-bandcamp social-logo"></i>
-    <% end %>
+    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <%= link_to @artist.bandcamp_link, target: :_blank do %>
+        <i class="fa fa-bandcamp social-links icon"></i>
+      <% end %>
+    </div>
   <% end %>
-</div>
+<% end %>
 

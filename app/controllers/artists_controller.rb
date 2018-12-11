@@ -33,6 +33,7 @@ class ArtistsController < ApplicationController
     @release = Release.new
     @performance = Performance.new
     @video = Video.new
+    @instagram = Instagram.new
   end
 
   def edit
