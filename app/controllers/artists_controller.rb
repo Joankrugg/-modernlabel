@@ -36,6 +36,7 @@ class ArtistsController < ApplicationController
     @instagram = Instagram.new
     @soundcloud = Soundcloud.new
     @twitter = Twitter.new
+    @youtube =Youtube.new
   end
 
   def edit

@@ -9,6 +9,7 @@ class Artist < ApplicationRecord
   has_one :instagram, dependent: :destroy
   has_one :soundcloud, dependent: :destroy
   has_one :twitter, dependent: :destroy
+  has_one :youtube, dependent: :destroy
 
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true

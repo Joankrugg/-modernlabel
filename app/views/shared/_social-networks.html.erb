@@ -52,7 +52,19 @@
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
-      <i class="fa fa-youtube-play social-links"></i>
+    <% if @artist.youtube.present? %>
+      <div class="url modal-trigger">
+        <i class="fa fa-youtube-play social-links icon" data-toggle="modal" data-target="#youtube"></i>
+        <%= link_to @artist.youtube.link, class: "social-links", target: :blank do %>
+          <%= "#{@artist.youtube.link}" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="url modal-trigger" data-toggle="modal" data-target="#youtube">
+      <i class="fa fa-youtube-play social-links icon"></i>
+        Cliquez ici pour ajouter Youtube
+      </div>
+    <% end %>
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
