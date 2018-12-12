@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181212142653) do
+ActiveRecord::Schema.define(version: 20181212150009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,14 @@ ActiveRecord::Schema.define(version: 20181212142653) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
+
+  create_table "bandcamps", force: :cascade do |t|
+    t.string   "link"
+    t.integer  "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_bandcamps_on_artist_id", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -376,6 +384,7 @@ ActiveRecord::Schema.define(version: 20181212142653) do
   add_foreign_key "assos", "counties"
   add_foreign_key "assos", "genres"
   add_foreign_key "assos", "users"
+  add_foreign_key "bandcamps", "artists"
   add_foreign_key "comments", "topics"
   add_foreign_key "comments", "users"
   add_foreign_key "hardwares", "places"

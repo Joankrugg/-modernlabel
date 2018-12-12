@@ -18,10 +18,11 @@ Rails.application.routes.draw do
     end
     resources :artists do
       resources :ratings, only: :create
-      resources :instagrams, only: [:create, :update, :destroy]
-      resources :soundclouds, only: [:create, :update, :destroy]
-      resources :twitters, only: [:create, :update, :destroy]
-      resources :youtubes, only: [:create, :update, :destroy]
+      resources :instagrams, only: :create
+      resources :soundclouds, only: :create
+      resources :twitters, only: :create
+      resources :youtubes, only: :create
+      resources :bandcamps, only: :create
         collection do
           get 'signed', to: "artists#signed"
         end

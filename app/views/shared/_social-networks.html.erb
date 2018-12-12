@@ -68,7 +68,19 @@
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
-      <i class="fa fa-bandcamp social-links"></i>
+    <% if @artist.bandcamp.present? %>
+      <div class="url modal-trigger">
+        <i class="fa fa-bandcamp social-links icon" data-toggle="modal" data-target="#bandcamp"></i>
+        <%= link_to @artist.bandcamp.link, class: "social-links", target: :blank do %>
+          <%= "#{@artist.bandcamp.link}" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="url modal-trigger" data-toggle="modal" data-target="#bandcamp">
+      <i class="fa fa-bandcamp social-links icon"></i>
+        Cliquez ici pour ajouter Youtube
+      </div>
+    <% end %>
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
