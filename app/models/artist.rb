@@ -7,6 +7,7 @@ class Artist < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :videos, dependent: :destroy
   has_one :instagram, dependent: :destroy
+  has_one :soundcloud, dependent: :destroy
 
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true
@@ -16,11 +17,9 @@ class Artist < ApplicationRecord
   validates :photo, presence: true
   validates :year_of_creation, presence: true
   validates :facebook_link, uniqueness: true, presence: true, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?/ }
-
   validates :youtube_channel, format: { with: /(?:(?:http|https):\/\/)?(www\.youtube\.com|youtu\.?be)\// } , allow_blank: true
   validates :insta_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?instagram.com\/?/ }, allow_blank: true
   validates :twitter_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?twitter.com\/?/ }, allow_blank: true
-  validates :soundcloud_link, format: { with: /(?:(?:http|https):\/\/)?(?:www.)?soundcloud.com\/?/ }, allow_blank: true
   has_attachment :mp3
   mount_uploader :photo, PhotoUploader
 
