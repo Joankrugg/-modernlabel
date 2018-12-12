@@ -36,7 +36,19 @@
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
-      <i class="fa fa-twitter social-links"></i>
+    <% if @artist.twitter.present? %>
+      <div class="url modal-trigger">
+        <i class="fa fa-twitter social-links icon" data-toggle="modal" data-target="#twitter"></i>
+        <%= link_to @artist.twitter.link, class: "social-links", target: :blank do %>
+          <%= "#{@artist.twitter.link}" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="url modal-trigger" data-toggle="modal" data-target="#twitter">
+      <i class="fa fa-twitter social-links icon"></i>
+        Cliquez ici pour ajouter Twitter
+      </div>
+    <% end %>
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">

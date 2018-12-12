@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181212101918) do
+ActiveRecord::Schema.define(version: 20181212124746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -297,6 +297,14 @@ ActiveRecord::Schema.define(version: 20181212101918) do
     t.index ["user_id"], name: "index_topics_on_user_id", using: :btree
   end
 
+  create_table "twitters", force: :cascade do |t|
+    t.string   "link"
+    t.integer  "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_twitters_on_artist_id", using: :btree
+  end
+
   create_table "types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -381,6 +389,7 @@ ActiveRecord::Schema.define(version: 20181212101918) do
   add_foreign_key "services", "assos"
   add_foreign_key "soundclouds", "artists"
   add_foreign_key "topics", "users"
+  add_foreign_key "twitters", "artists"
   add_foreign_key "videos", "artists"
   add_foreign_key "videos", "assos"
   add_foreign_key "videos", "genres"
