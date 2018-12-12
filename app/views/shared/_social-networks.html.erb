@@ -1,6 +1,18 @@
 <% if @artist.user == current_user %>
-  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+  <% if @artist.facebook.present? %>
+    <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+      <div class="url modal-trigger">
+        <i class="fa fa-facebook-square social-links icon" data-toggle="modal" data-target="#fb"></i>
+        <%= link_to @artist.facebook.link, class: "social-links", target: :blank do %>
+          <%= "#{@artist.facebook.link}" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="url modal-trigger" data-toggle="modal" data-target="#fb">
       <i class="fa fa-facebook-square social-links"></i>
+        Cliquez ici pour ajouter Instagram
+      </div>
+    <% end %>
   </div>
 
   <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">

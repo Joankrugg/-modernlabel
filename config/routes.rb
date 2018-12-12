@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       resources :twitters, only: :create
       resources :youtubes, only: :create
       resources :bandcamps, only: :create
+      resources :facebooks, only: :create
         collection do
           get 'signed', to: "artists#signed"
         end
