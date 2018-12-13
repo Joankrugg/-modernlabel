@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181213124427) do
+ActiveRecord::Schema.define(version: 20181213125326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20181213124427) do
     t.integer  "year_of_creation"
     t.string   "city"
     t.integer  "number_of_musicians"
-    t.string   "facebook_link"
     t.integer  "user_id"
     t.boolean  "signed",              default: false
     t.string   "contact"
