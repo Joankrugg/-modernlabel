@@ -17,12 +17,6 @@
     <%= f.input :contact, placeholder: 'band@gmail.com ou 06 .. .. .. ..' %>
     <%= f.input :bio, required: false, placeholder: t(".placeholder_1", default: "Obligatoire"), input_html: { maxlength: 140 }%>
     <%= f.input :year_of_creation, required: false, collection: 1990..2018 %>
-    <%= f.input :facebook_link, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.input :bandcamp_link, placeholder: t(".placeholder_2", default: "Optionnel") %>
-    <%= f.input :soundcloud_link, placeholder: t(".placeholder_2", default: "Optionnel") %>
-    <%= f.input :youtube_channel, placeholder: t(".placeholder_2", default: "Optionnel") %>
-    <%= f.input :insta_link, placeholder: t(".placeholder_2", default: "Optionnel") %>
-    <%= f.input :twitter_link, placeholder: t(".placeholder_2", default: "Optionnel") %>
     <%= f.input :photo, required: false %>
     <%= f.input :photo_cache, as: :hidden %>
     <% if current_user.admin? %>

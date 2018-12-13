@@ -9,8 +9,8 @@
       </div>
     <% else %>
       <div class="url modal-trigger" data-toggle="modal" data-target="#fb">
-      <i class="fa fa-facebook-square social-links"></i>
-        Cliquez ici pour ajouter Instagram
+      <i class="fa fa-facebook-square social-links icon"></i>
+        Cliquez ici pour ajouter Facebook
       </div>
     <% end %>
   </div>
@@ -25,7 +25,7 @@
       </div>
     <% else %>
       <div class="url modal-trigger" data-toggle="modal" data-target="#insta">
-      <i class="fa fa-instagram social-links"></i>
+      <i class="fa fa-instagram social-links icon"></i>
         Cliquez ici pour ajouter Instagram
       </div>
     <% end %>
@@ -74,7 +74,7 @@
     <% else %>
       <div class="url modal-trigger" data-toggle="modal" data-target="#bandcamp">
       <i class="fa fa-bandcamp social-links icon"></i>
-        Cliquez ici pour ajouter Youtube
+        Cliquez ici pour ajouter Bandcamp
       </div>
     <% end %>
   </div>
@@ -107,7 +107,6 @@
       <% end %>
     </div>
   <% end %>
-
   <% if @artist.instagram.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.instagram.link, target: :_blank do %>
@@ -118,7 +117,7 @@
   <% if @artist.soundcloud.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.soundcloud.link, target: :_blank do %>
-        <i class="fa fa-soundclound social-links icon"></i>
+        <i class="fa fa-soundcloud social-links icon"></i>
       <% end %>
     </div>
   <% end %>
