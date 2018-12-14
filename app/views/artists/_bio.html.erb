@@ -1,22 +1,19 @@
 <% if @artist.user == current_user %>
-  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 bio">
     <% if @artist.bio.present? %>
-      <div class="url modal-trigger">
-        <i class="fa fa-history social-links icon" data-toggle="modal" data-target="#bio"></i>
-        <%= link_to @artist.bio.content, class: "social-links", target: :blank do %>
-          <%= "#{@artist.bio.content}" %>
-        <% end %>
+      <div class="modal-trigger">
+        <p data-toggle="modal" data-target="#bio"><%= @artist.bio.content %></p>
       </div>
     <% else %>
       <div class="url modal-trigger" data-toggle="modal" data-target="#bio">
-      <i class="fa fa-history social-links icon"></i>
+      <i class="fa fa-history social-links icon bio"></i>
         Cliquez ici pour ajouter Biographie
       </div>
     <% end %>
   </div>
 <% else %>
   <% if @artist.bio.present? %>
-    <%= @artist.bio.content %>
+    <p><%= @artist.bio.content %></p>
   <% else %>
     <p>biographie</p>
   <% end %>
