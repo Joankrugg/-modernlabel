@@ -12,13 +12,6 @@ class BandcampsController < ApplicationController
     end
   end
 
-  def destroy
-    @artist = current_user.artist
-    @bandcamp = @artist.bandcamp
-    @bandcamp.destroy
-    redirect_to artists_path
-  end
-
   private
 
   def bandcamp_params

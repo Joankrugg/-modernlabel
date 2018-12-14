@@ -19,11 +19,9 @@ class Artist < ApplicationRecord
   validates :genre, presence: true
   validates :number_of_musicians, presence: true
   validates :photo, presence: true
-  validates :year_of_creation, presence: true
 
   has_attachment :mp3
   mount_uploader :photo, PhotoUploader
-
 
   def address
     city

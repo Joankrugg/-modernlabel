@@ -12,13 +12,6 @@ class TwittersController < ApplicationController
     end
   end
 
-  def destroy
-    @artist = current_user.artist
-    @twitter = @artist.twitter
-    @twitter.destroy
-    redirect_to artists_path
-  end
-
   private
 
   def twitter_params

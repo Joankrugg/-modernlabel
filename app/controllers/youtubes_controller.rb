@@ -12,13 +12,6 @@ class YoutubesController < ApplicationController
     end
   end
 
-  def destroy
-    @artist = current_user.artist
-    @youtube = @artist.youtube
-    @youtube.destroy
-    redirect_to artists_path
-  end
-
   private
 
   def youtube_params

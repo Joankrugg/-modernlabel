@@ -161,4 +161,4 @@
 #ActivityClass.create({ name: "High" })
 #ActivityClass.create({ name: "Very high" })
 
-  puts "      💥"
+#  puts "      💥"

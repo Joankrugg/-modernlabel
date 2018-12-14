@@ -12,13 +12,6 @@ class FacebooksController < ApplicationController
     end
   end
 
-  def destroy
-    @artist = current_user.artist
-    @facebook = @artist.facebook
-    @facebook.destroy
-    redirect_to artists_path
-  end
-
   private
 
   def facebook_params

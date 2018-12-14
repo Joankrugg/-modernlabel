@@ -33,12 +33,12 @@ class ArtistsController < ApplicationController
     @release = Release.new
     @performance = Performance.new
     @video = Video.new
-    @instagram = Instagram.new
     @soundcloud = Soundcloud.new
     @twitter = Twitter.new
     @youtube =Youtube.new
     @bandcamp = Bandcamp.new
     @facebook = Facebook.new
+    @instagram = Instagram.new
   end
 
   def edit

@@ -29,19 +29,6 @@
     </div>
   </div>
 
-  <div class="modal fade" id="insta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">insta</div>
-          <div class="modal-body">
-            <%= render 'instagrams/form', artist: @artist, instagram: @instagram %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="modal fade" id="soundcloud" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -62,6 +49,19 @@
           <div class="modal-title" id="exampleModalLongTitle">twitter</div>
           <div class="modal-body">
             <%= render 'twitters/form', artist: @artist, twitter: @twitter %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="instagram" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title" id="exampleModalLongTitle">instagram</div>
+          <div class="modal-body">
+            <%= render 'instagrams/form', artist: @artist, instagram: @instagram %>
           </div>
         </div>
       </div>

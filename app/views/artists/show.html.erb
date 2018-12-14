@@ -24,7 +24,9 @@
             <h1 class="profil-title">Présentation</h1>
             <p class="profil-details"><%= t(".number_of_musicians")%>: <%= @artist.number_of_musicians %></p>
             <p class="profil-details"><%= t(".genre")%>: <%= @artist.genre.name %></p>
-            <p class="profil-details"><%= t(".creation_date")%>: <%= @artist.year_of_creation %></p>
+            <% if @artist.year_of_creation.present?  %>
+              <p class="profil-details"><%= t(".creation_date")%>: <%= @artist.year_of_creation %></p>
+            <% end %>
           </div>
         </div>
       </div>

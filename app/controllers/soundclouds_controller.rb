@@ -12,13 +12,6 @@ class SoundcloudsController < ApplicationController
     end
   end
 
-  def destroy
-    @artist = current_user.artist
-    @soundcloud = @artist.soundcloud
-    @soundcloud.destroy
-    redirect_to artists_path
-  end
-
   private
 
   def soundcloud_params

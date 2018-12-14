@@ -12,13 +12,6 @@ class InstagramsController < ApplicationController
     end
   end
 
-  def destroy
-    @artist = current_user.artist
-    @instagram = @artist.instagram
-    @instagram.destroy
-    redirect_to artists_path
-  end
-
   private
 
   def instagram_params
