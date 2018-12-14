@@ -39,6 +39,7 @@ class ArtistsController < ApplicationController
     @bandcamp = Bandcamp.new
     @facebook = Facebook.new
     @instagram = Instagram.new
+    @bio = Bio.new
   end
 
   def edit

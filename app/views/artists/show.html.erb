@@ -47,7 +47,7 @@
             <p class="profil-details col-lg-5">Networks</p>
             <hr class="user col-lg-5">
             <h1 class="profil-title">Retrouvez les sur</h1>
-            <%= render 'shared/social-networks' %>
+            <%= render 'social_networks' %>
           </div>
         </div>
       </div>
@@ -57,9 +57,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 ">
         <h1 class="profil-title quality">Biographie</h1>
-        <% if @artist.bio.present? %>
-          <p class="profil-details quality"><%= @artist.bio %></p>
-        <% end %>
+          <%= render 'bio' %>
         <div class="quality">
           <%= social_share_button_tag(@artist.name, :allow_sites => %w(facebook tumblr pinterest email linkedin twitter), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/artists/#{@artist.id}", :image => "#{@artist.photo}", desc: "#{@artist.bio}", via: "Modernboxrecords") %>
         </div>

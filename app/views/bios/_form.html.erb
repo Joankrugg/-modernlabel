@@ -1,0 +1,15 @@
+<%= simple_form_for ([ artist, bio]), defaults: { label_html: { class: 'labels' } } do |f| %>
+  <% if @bio.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @bio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
+    <%= f.input :content, required: false %>
+    <%= f.button :submit, class: "btn btn-medium-white last-item" %>
+  </div>
+<% end %>

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       resources :youtubes, only: :create
       resources :bandcamps, only: :create
       resources :facebooks, only: :create
+      resources :bios, only: :create
         collection do
           get 'signed', to: "artists#signed"
         end
