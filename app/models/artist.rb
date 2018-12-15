@@ -13,6 +13,9 @@ class Artist < ApplicationRecord
   has_one :bandcamp, dependent: :destroy
   has_one :facebook, dependent: :destroy
   has_one :bio, dependent: :destroy
+  has_many :contacts, dependent: :destroy
+  has_many :users, through: :contacts
+
 
   validates :name, uniqueness: true, presence: true
   validates :city, presence: true

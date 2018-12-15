@@ -15,6 +15,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @artist = Artist.new
     @topic = Topic.new
     @topics = Topic.all
+    @contact = Contact.all
   end
 
   def edit

@@ -40,6 +40,7 @@ class ArtistsController < ApplicationController
     @facebook = Facebook.new
     @instagram = Instagram.new
     @bio = Bio.new
+    @contact = Contact.new
   end
 
   def edit

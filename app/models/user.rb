@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_one :place, dependent: :destroy
   has_many :topics
   has_many :comments
+  has_many :contacts
+  has_many :artists, through: :contacts
+
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)

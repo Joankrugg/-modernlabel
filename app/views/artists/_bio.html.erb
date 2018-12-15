@@ -12,11 +12,13 @@
     <% end %>
   </div>
 <% else %>
-  <% if @artist.bio.present? %>
-    <p><%= @artist.bio.content %></p>
-  <% else %>
-    <p>biographie</p>
-  <% end %>
+  <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 bio">
+    <% if @artist.bio.present? %>
+      <p><%= @artist.bio.content %></p>
+    <% else %>
+      <p>Rien à renseigner pour l'instant</p>
+    <% end %>
+  </div>
 <% end %>
 
 <div class="modal fade" id="bio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
