@@ -9,21 +9,23 @@
     </div>
   <% end %>
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
-    <%= f.input :name, required: false, placeholder: 'we need one' %>
-    <%= f.input :photo, required: false %>
+    <%= f.input :name, required: false, label: 'Nom (obligatoire)' %>
+    <%= f.input :photo, required: false, label: 'Photo (obligatoire)'  %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.association :activity, required: false, placeholder: 'we need one' %>
-    <%= f.input :city, required: false, placeholder: 'we need one'%>
-    <%= f.association :county, required: false %>
-    <%= f.input :address, required: false %>
-    <%= f.input :phone_number, required: false %>
-    <%= f.association :activity_class, required: false %>
-    <%= f.input :number_of_musicians_max, required: false, collection: 1..9 %>
-    <%= f.association :genre, required: false %>
-    <%= f.input :description, required: false, placeholder: 'we need one' %>
-    <%= f.input :year_of_creation, required: false, collection: 2000..2018 %>
-    <%= f.input :facebook_page, required: false, placeholder: 'we need one' %>
-    <%= f.button :submit, class: "btn btn-medium-white last-item" %>
+    <%= f.association :activity, required: false, label: 'Activité (Choisir)'  %>
+    <%= f.association :county, required: false, label: 'Département (obligatoire)' %>
+    <%= f.input :city, required: false, label: 'Ville (obligatoire)' %>
+    <%= f.input :address, required: false, label: 'Adresse (obligatoire)' %>
+    <%= f.input :phone_number, required: false, label: 'Téléphone' %>
+    <%= f.association :activity_class, required: false, label: 'Fréquence évènementielle (Choisir)' %>
+    <%= f.input :number_of_musicians_max, required: false, collection: 1..9, label: 'Nombre de musiciens maximum (obligatoire)' %>
+    <%= f.association :genre, required: false, label: 'Style (obligatoire)' %>
+    <%= f.input :description, required: false, label: 'Description' %>
+    <%= f.input :year_of_creation, required: false, collection: 2000..2018, label: 'Année de création (obligatoire)' %>
+    <%= f.input :facebook_page, required: false, label: 'Lien vers page Facebook (obligatoire)' %>
+    <div class="validate">
+      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    </div>
   </div>
 <% end %>
 
