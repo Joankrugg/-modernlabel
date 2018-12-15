@@ -13,35 +13,32 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-offset-2 col-lg-8">
+      <div class="col-lg-offset-1 col-lg-10">
         <div class="last-news-title">
           <h3><%= @actu.title.upcase %></h3>
           <h5><%= @actu.edition.strftime("%d/%m/%Y") %></h5>
         </div>
-        <hr>
+        <hr class ="section">
         <div class="last-news-description">
           <h5><%= @actu.description %></h5>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-offset-2 col-lg-8">
-      <hr>
+      <div class="col-lg-offset-1 col-lg-10">
+      <hr class ="section">
         <div class="last-news-description">
           <p><%= @actu.content %></p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="banner">
-    <div class="banner-content">
-      <div class="last-item">
-      <hr>
-        <div class="card-description">
-          <%= link_to "#{@actu.link}", "#{@actu.link}" , target: "_blank" %>
-          <%= social_share_button_tag(@actu.title, :allow_sites => %w(twitter facebook tumblr pinterest email linkedin), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/actus/#{@actu.id}", :image => "#{@actu.photo}", desc: "#{@actu.description}", via: "Modernboxrecords")%>
-        </div>
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-10 actu-link">
+      <hr class ="section">
+      <p class="actu-link"><%= link_to "#{@actu.link}", "#{@actu.link}" , target: "_blank" %></p>
+      <%= social_share_button_tag(@actu.title, :allow_sites => %w(twitter facebook tumblr pinterest email linkedin), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/actus/#{@actu.id}", :image => "#{@actu.photo}", desc: "#{@actu.description}", via: "Modernboxrecords")%>
       </div>
     </div>
   </div>
+  <%= render 'shared/footer' %>
 </div>
