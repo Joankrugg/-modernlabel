@@ -9,11 +9,13 @@
     </div>
   <% end %>
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
-    <%= f.input :name, required: false, placeholder: 'we need one' %>
-    <%= f.input :number, required: false %>
-    <%= f.input :description, required: false, placeholder: 'we need one' %>
-    <%= f.input :photo, required: false %>
+    <%= f.input :name, required: false, label: 'Nom (Obligatoire)' %>
+    <%= f.input :number, required: false, label: 'Nombre (Obligatoire)' %>
+    <%= f.input :description, required: false, label: 'Description (Obligatoire)' %>
+    <%= f.input :photo, required: false, label: 'Photo (Obligatoire)'%>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit, class: "btn btn-medium-white last-item" %>
+    <div class="validate">
+      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    </div>
   </div>
 <% end %>

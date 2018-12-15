@@ -1,19 +1,17 @@
 <% if @artist.user == current_user %>
-  <div class="row">
-    <div class="col-lg-12">
-      <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#bands">
-        <%= t(".band") %>
-      </h4>
-      <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#prods">
-        <%= t(".prod") %>
-      </h4>
-      <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#shows">
-        <%= t(".show") %>
-      </h4>
-      <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos">
-        <%= t(".video") %>
-      </h4>
-    </div>
+  <div class="col-lg-12">
+    <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#bands">
+      <%= t(".band") %>
+    </h4>
+    <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#prods">
+      <%= t(".prod") %>
+    </h4>
+    <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#shows">
+      <%= t(".show") %>
+    </h4>
+    <h4 class="tab col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#videos">
+      <%= t(".video") %>
+    </h4>
   </div>
 
   <div class="modal fade" id="bands" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
