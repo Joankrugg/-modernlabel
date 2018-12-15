@@ -9,15 +9,17 @@
     </div>
   <% end %>
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
-    <%= f.input :name, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.input :city, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.input :start_time, required: false, placeholder: t(".placeholder_1")%>
-    <%= f.input :place_address, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.input :price, required: false, placeholder: t(".placeholder_1", default: "Obligatoire")  %>
-    <%= f.input :facebook_event, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.association :type, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.input :photo, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.button :submit, class: "btn btn-medium-white last-item" %>
+    <%= f.input :name, required: false, label: "Nom de l'évènement (obligatoire)"%>
+    <%= f.input :city, required: false, label: "Ville (obligatoire)" %>
+    <%= f.input :start_time, required: false, label: "Date et Heure de Début (obligatoire)" %>
+    <%= f.input :place_address, required: false, label: "Adresse (obligatoire)" %>
+    <%= f.input :price, required: false, label: "Prix (obligatoire)" %>
+    <%= f.input :facebook_event, required: false, label: "Page Facebook de l'évènement (obligatoire)" %>
+    <%= f.association :type, required: false, label: "Style" %>
+    <%= f.input :photo, required: false, label: "Affiche (obligatoire)" %>
+    <div class="validate">
+      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    </div>
   </div>
 
 <% end %>

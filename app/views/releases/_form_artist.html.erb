@@ -9,16 +9,18 @@
     </div>
   <% end %>
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
-    <%= f.input :title, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <%= f.association :record, required: false %>
-    <%= f.association :genre, required: false %>
-    <%= f.input :price, required: false, collection: 1..20 %>
-    <%= f.input :year_of_creation, required: false, collection: 1990..2018  %>
-    <%= f.input :description, required: false, placeholder: t(".placeholder_1", default: "Obligatoire"), input_html: { maxlength: 140 } %>
-    <%= f.input :youtube_link, placeholder: t(".placeholder_2", default: "optionnel") %>
-    <%= f.input :bandcamp_link, placeholder: t(".placeholder_2", default: "optionnel") %>
-    <%= f.input :photo, required: false%>
+    <%= f.input :title, required: false, label: 'Titre (obligatoire)' %>
+    <%= f.association :record, required: false, label: 'Format (obligatoire)' %>
+    <%= f.input :price, required: false, collection: 1..20, label: 'Prix (obligatoire)' %>
+    <%= f.association :genre, required: false, label: 'Style (obligatoire)' %>
+    <%= f.input :year_of_creation, required: false, collection: 1990..2018, label: 'Année de création (obligatoire)' %>
+    <%= f.input :description, required: false, input_html: { maxlength: 140 }, label: 'Description' %>
+    <%= f.input :youtube_link, label: 'Lien vers page Youtube' %>
+    <%= f.input :bandcamp_link, label: 'Lien vers page Bandcamp' %>
+    <%= f.input :photo, required: false, label: 'Image (obligatoire)' %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit, class: "btn btn-medium-white last-item" %>
+    <div class="validate">
+      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    </div>
   </div>
 <% end %>
