@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine, at: 'attachinary'
   scope '(:locale)', locale: /fr|en/ do
     root to: 'pages#home'
+    get 'pages/chat'
     get 'pages/rock_map'
     get 'pages/cgu'
     resources :users, only: [:show, :edit, :update, :destroy] do
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
         end
       end
     end
+    get 'pages/chat'
+    mount ActionCable.server =>"/cable"
     resources :artists do
       resources :ratings, only: :create
       resources :instagrams, only: :create

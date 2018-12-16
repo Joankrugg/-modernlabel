@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     @videos = Video.all.sample(4)
   end
 
+  def chat
+    @user = current_user
+  end
+
   def rock_map
     @places = Place.where.not(latitude: nil, longitude: nil)
     @geojson = Array.new

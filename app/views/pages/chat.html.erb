@@ -1,0 +1,44 @@
+<div class="index-wallpapers">
+  <div class="container">
+    <h1 class="page-title-search" style="color: white; padding-top: 24px;">
+      MODERN BOX CHAT
+    </h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      Chat:
+      <br>
+      <span class="sender" id="chat"></span>
+      <hr class= "user">
+    </div>
+  </div>
+
+  <div class="container chat-form">
+    <div class="row">
+      <div class="sender" id="messenger"><%= "#{@user.email} says: " %></div>
+      <textarea class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="msg" style="color: black;"></textarea>
+    </div>
+    <br>
+    <div class="row">
+      <button class="col-xs-offset-9 col-xs-3 col-sm-offset-10 col-sm-2 col-md-offset-10 col-md-2 col-lg-offset-11 col-lg-1 btn btn-medium-white" id="send">Envoyer</button>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    /* RECEIVE MESSAGE */
+    App.chat.received = function(data)
+    {
+      $("#chat").append(data['message']+"<br>")
+    }
+
+    $("#send").click(function(){
+      msg = $("#messenger").html()+ $("#msg").val()
+
+      /* SEND MESSAGE */
+      App.chat.send_msg(msg)
+        $('#msg').val('');
+    })
+  })
+  $("#messenger").hide()
+</script>
