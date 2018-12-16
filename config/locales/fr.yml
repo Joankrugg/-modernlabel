@@ -243,6 +243,7 @@ fr:
       index_out: "QUITTER"
       index_user: "CONNECTION"
       index_user_known: "COMPTE"
+      chat: "CHAT"
     artistcard:
       city: "Ville"
       number_of_musicians: "Musiciens"

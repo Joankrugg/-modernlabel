@@ -65,6 +65,11 @@
             <i class="fa fa-calendar"></i> <%= t(".index_event", default: "EVENEMENTS") %>
           <% end %>
         </li>
+        <li>
+          <%= link_to main_app.pages_chat_path do %>
+            <i class="fa fa-commenting"></i> <%= t(".chat", default: "CHAT") %>
+          <% end %>
+        </li>
 
         <% if user_signed_in? %>
           <li>
@@ -84,8 +89,8 @@
       <a href="https://soundcloud.com/modern-box" target = "_blank"><i class="fa fa-soundcloud on-nav" aria-hidden="true"></i>
       <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber" target = "_blank"><i class="fa fa-youtube-play on-nav" aria-hidden="true"></i>
       <a href="https://twitter.com/Modern_box_rec" target = "_blank"><i class="fa fa-twitter-square on-nav" aria-hidden="true"></i>
-      <%= link_to main_app.rails_admin_path do %>
-        <i class="fa fa-lock on-nav"></i>
+      <%= link_to main_app.pages_chat_path do %>
+        <i class="fa fa-commenting on-nav"></i>
       <% end %>
     </div>
   </div>
