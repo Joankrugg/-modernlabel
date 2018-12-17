@@ -12,6 +12,8 @@
     <%= f.input :title, required: false, input_html: { maxlength: 50 }  %>
     <%= f.input :content, required: false %>
     <%= f.input :link, required: false, placeholder: 'we need one' %>
-    <%= f.button :submit, class: "btn btn-medium-white last-item" %>
+    <div class="validate">
+      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    </div>
   </div>
 <% end %>

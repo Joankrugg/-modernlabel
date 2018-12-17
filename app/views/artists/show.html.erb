@@ -149,32 +149,10 @@
           <h2>CONCERTS</h2>
           <hr class="user">
         </div>
-        <% @artist.performances.each do |r| %>
+        <% @artist.performances.each do |performance| %>
           <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
             <div class="main">
-              <div class="index-cards">
-                <%= link_to r do %>
-                  <div class="index-media-card">
-                    <%= cl_image_tag r.photo, height: 300, width: 400, crop: :fill, class: "image-card img-responsive" %>
-                    <div class="index-card-logo">
-                      <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
-                    </div>
-                    <div class="index-title-card">
-                      <p class="band-name"><%= r.city.capitalize %></p>
-                      <p class="overwrite">DATE: <%= r.start_time.strftime("%d/%m/%Y à %H:%M") %></p>
-                      <p class="overwrite">PRIX: <%= r.price %>Euros</p>
-                      <p class="overwrite">LIEU: <%= r.place_address %></p>
-                      <% if r.facebook_event? %>
-                        <%= link_to r.facebook_event, target: :_blank do %>
-                          <i class="fa fa-facebook"></i>
-                        <% end %>
-                      <% end %>
-                    </div>
-                    <div class="index-action-card">
-                    </div>
-                  </div>
-                <% end %>
-              </div>
+              <%= render "performances/performance", performance: performance %><br>
             </div>
           </div>
         <% end %>
