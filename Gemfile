@@ -8,7 +8,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.6'
 gem 'rails-i18n', '~> 5.0.0'
-gem 'redis', '~> 4.1'
+gem 'redis', '~> 3.3'
 gem 'devise-i18n', '~> 1.2'
 
 gem 'autoprefixer-rails'
