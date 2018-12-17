@@ -6,11 +6,10 @@
     <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
   </div>
   <div class="index-title-card">
-    <p class="asso-name">-<%= performance.name.capitalize %>-</p>
-    <p><%= performance.city.capitalize %></p>
-    <% if performance.place.present? %>
-      <p><%= performance.place_address %></p>
-    <% end %>
+    <p class="band-name"><%= performance.name.capitalize %></p>
+    <p class="band-name"><%= performance.city.capitalize %></p>
+    <p class="band-name">Le <%= performance.start_time.strftime("%d/%m/%Y à %H:%M") %></p>
+    <p class="band-name"><%= performance.price %> Euros</p>
   </div>
   <div class="index-action-card">
   </div>
