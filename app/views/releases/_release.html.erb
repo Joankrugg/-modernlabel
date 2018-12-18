@@ -1,13 +1,18 @@
-<div class="info-card">
+<div class="index-cards">
   <%= link_to release do %>
-    <%= cl_image_tag release.photo, height: 250, width: 400, crop: :fill, class: "img-responsive" %>
+    <div class="index-media-card">
+      <%= cl_image_tag release.photo, height: 300, width: 400, crop: :fill, class: "image-card img-responsive" %>
+      <div class="index-card-logo">
+        <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
+      </div>
+      <div class="index-title-card">
+        <p class="band-name">-<%= release.title.capitalize %>-</p>
+        <p class="overwrite"><%= release.artist.name %></p>
+        <p class="overwrite"><%= release.genre.name %></p>
+        <p class="overwrite"><%= release.record.name %></p>
+      </div>
+      <div class="index-action-card">
+      </div>
+    </div>
   <% end %>
-  <div class="info">
-    <h1>-<%= release.title.capitalize %>-</h1>
-    <h1>-<%= release.artist.name %>-</h1>
-    <h1><%= t(".type") %>:<%= release.record.name %></h1>
-    <h1><%= t(".creation") %> <%= release.year_of_creation %></h1>
-    <h1><%= t(".genre") %><%= release.genre.name %>%></h1>
-    <%= render 'shared/icons' %>
-  </div>
 </div>

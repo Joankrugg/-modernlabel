@@ -1,16 +1,19 @@
+<!--TYPICAL CARD-->
 <div class="index-media-card">
   <%= link_to artist do %>
     <%= cl_image_tag artist.photo, height: 300, width: 400, crop: :fill, class: "image-card img-responsive" %>
   <% end %>
+
   <div class="index-card-logo">
     <%= cl_image_tag("logo_9_aiamw0.png", :quality=>"jpegmini:1", :sign_url=>true) %>
   </div>
+
   <div class="index-title-card">
     <p class="band-name"><%= artist.name.capitalize %></p>
     <p><%= t(".city") %>: <%= artist.city.capitalize %></p>
     <p><%= artist.genre.name %></p>
-
   </div>
+
   <div class="index-action-card">
 
   </div>

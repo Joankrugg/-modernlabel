@@ -1,12 +1,19 @@
-<div class="info-card">
+<div class="index-cards video-card">
   <%= link_to video do %>
-    <% screen = youtube_link.delete!('https://www.youtube.com/watch?v=')%>
-    <iframe src='https://www.youtube.com/embed/<%= screen %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+
+    <div class="index-media-card">
+      <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..120] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+    </div>
+
+    <div class="index-title-card">
+      <p class="band-name">-<%= video.title.upcase %>-<p>
+      <p class="overwrite"><%= video.artist.name %></p>
+      <p class="overwrite"><%= video.genre.name %></p>
+      <%= render 'shared/icons' %>
+    </div>
+
+    <div class="index-action-card">
+    </div>
+
   <% end %>
-  <div class="info">
-    <h1>-<%= video.title  %>-</h1>
-    <h1>-<%= video.artist.name %>-</h1>
-    <h1>-<%= video.genre.name %>-</h1>
-    <%= render 'shared/icons' %>
-  </div>
 </div>
