@@ -65,17 +65,17 @@
     </div>
     <hr class= "user">
 
-    <div class="row">
-      <div class="quality">
-        <% if @artist.mp3? %>
+    <% if @artist.mp3? %>
+      <div class="row">
+        <div class="quality">
           <% mp3 = @artist.mp3.path %>
           <audio controls>
             <source src=<%= cl_video_path(mp3) %> type="audio/mpeg">
           </audio>
-        <% end %>
+        </div>
       </div>
-    </div>
-    <hr class="user">
+      <hr class="user">
+    <% end %>
 
     <div class="row">
       <%= render 'tabs' %>
