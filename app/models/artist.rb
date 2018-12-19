@@ -17,7 +17,7 @@ class Artist < ApplicationRecord
   has_many :users, through: :contacts
 
 
-  validates :name, uniqueness: true, presence: true
+  validates :name, presence: true
   validates :city, presence: true
   validates :county, presence: true
   validates :genre, presence: true

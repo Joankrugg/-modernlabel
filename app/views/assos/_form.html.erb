@@ -19,9 +19,9 @@
     <%= f.input :phone_number, required: false, label: 'Téléphone' %>
     <%= f.association :activity_class, required: false, label: 'Fréquence évènementielle (Choisir)' %>
     <%= f.input :number_of_musicians_max, required: false, collection: 1..9, label: 'Nombre de musiciens maximum (obligatoire)' %>
-    <%= f.association :genre, required: false, label: 'Style (obligatoire)' %>
+    <%= f.association :genre, required: false, label: 'Tendance (obligatoire)' %>
     <%= f.input :description, required: false, label: 'Description' %>
-    <%= f.input :year_of_creation, required: false, collection: 2000..2018, label: 'Année de création (obligatoire)' %>
+    <%= f.input :year_of_creation, required: false, collection: 2000..2018, label: 'Année de création' %>
     <%= f.input :facebook_page, required: false, label: 'Lien vers page Facebook (obligatoire)' %>
     <div class="validate">
       <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
