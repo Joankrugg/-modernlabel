@@ -11,7 +11,7 @@
   <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
     <%= f.input :name, required: false, label: "Nom de l'évènement (obligatoire)"%>
     <%= f.input :city, required: false, label: "Ville (obligatoire)" %>
-    <%= f.input :start_time, label: "Date et Heure de Début (obligatoire)" %>
+    <%= f.input :start_time, required: false, label: "Date et Heure de Début (obligatoire)" %>
     <%= f.input :place_address, required: false, label: "Adresse (obligatoire)" %>
     <%= f.input :price, required: false, label: "Prix (obligatoire)" %>
     <%= f.input :facebook_event, required: false, label: "Page Facebook de l'évènement (obligatoire)" %>

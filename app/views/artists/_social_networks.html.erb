@@ -100,42 +100,60 @@
   <% if @artist.facebook.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.facebook.link, target: :_blank do %>
-        <i class="fa fa-facebook-square social-links icon"></i>
+        <div class="url modal-trigger">
+          <i class="fa fa-facebook-square social-links icon"></i>
+          <%= "#{@artist.facebook.link}" %>
+        </div>
       <% end %>
     </div>
   <% end %>
   <% if @artist.instagram.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.instagram.link, target: :_blank do %>
-        <i class="fa fa-instagram social-links icon"></i>
+        <div class="url modal-trigger">
+          <i class="fa fa-instagram social-links icon"></i>
+          <%= "#{@artist.instagram.link}" %>
+        </div>
       <% end %>
     </div>
   <% end %>
   <% if @artist.soundcloud.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.soundcloud.link, target: :_blank do %>
-        <i class="fa fa-soundcloud social-links icon"></i>
+        <div class="url modal-trigger">
+          <i class="fa fa-soundcloud social-links icon"></i>
+          <%= "#{@artist.soundcloud.link}" %>
+        </div>
       <% end %>
     </div>
   <% end %>
   <% if @artist.twitter.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.twitter.link, target: :_blank do %>
-        <i class="fa fa-twitter social-links icon"></i>
+        <div class="url modal-trigger">
+          <i class="fa fa-twitter social-links icon"></i>
+          <%= "#{@artist.twitter.link}" %>
+        </div>
       <% end %>
     </div>
   <% end %>
   <% if @artist.youtube.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.youtube.link, target: :_blank do %>
-        <i class="fa fa-youtube-play social-links icon"></i>
+        <div class="url modal-trigger">
+          <i class="fa fa-youtube-play social-links icon"></i>
+          <%= "#{@artist.youtube.link}" %>
+        </div>
       <% end %>
     </div>
   <% end %>
   <% if @artist.bandcamp.present? %>
     <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network">
       <%= link_to @artist.bandcamp.link, target: :_blank do %>
-        <i class="fa fa-bandcamp social-links icon"></i>
+        <div class="url modal-trigger">
+          <i class="fa fa-bandcamp social-links icon"></i>
+          <%= "#{@artist.bancamp.link}" %>
+        </div>
       <% end %>
     </div>
   <% end %>
