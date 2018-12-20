@@ -2,43 +2,40 @@
   <div class="search">
     <%= render 'shared/video_search' %>
   </div>
-  <div class="banner">
-    <div class="banner-content">
-      <!--section d'ensemble-->
-      <div class="container items">
-        <div class="row">
-          <% if @videos.present? %>
-            <% @videos.each do |video|%>
-              <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="main">
-                  <div class="card">
-                    <div class="info-card">
-                      <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
-                      <%= link_to video do %>
+  <div class="index-page">
+    <div class="container">
+      <div class="row">
+        <% if @videos.present? %>
+          <% @videos.each do |video|%>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+              <div class="main">
+                <div class="card">
+                  <div class="info-card">
+                    <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
+                    <%= link_to video do %>
                       <div class="info">
-                        <p>-<%= video.title  %>-</p>
+                        <p class="band-name">-<%= video.title  %>-</p>
                         <% if video.artist.present? %>
-                          <p><%= video.artist.name %></p>
+                          <p class="band-name"><%= video.artist.name %></p>
                         <% end %>
                         <% if video.asso.present? %>
-                          <p><%= video.asso.name %></p>
+                          <p class="band-name"><%= video.asso.name %></p>
                         <% end %>
                         <% if video.place.present? %>
-                          <p><%= video.place.name %></p>
+                          <p class="band-name"><%= video.place.name %></p>
                         <% end %>
-                        <p>-<%= video.genre.name %>-</p>
+                        <p class="band-name">-<%= video.genre.name %>-</p>
                         <%= render 'shared/icons' %>
                       </div>
-                      <% end %>
-                    </div>
+                    <% end %>
                   </div>
                 </div>
               </div>
-            <% end %>
-          <% else %>
-            <%= render 'shared/no_result' %>
+            </div>
           <% end %>
-        </div>
+        <% else %>
+          <%= render 'shared/no_result' %>
+        <% end %>
       </div>
     </div>
   </div>
