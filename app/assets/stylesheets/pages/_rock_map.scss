@@ -4,7 +4,7 @@
 }
 
 .concept-card{
-  background-color: black;
+  background-color: white;
   margin: 3px;
   border-radius: 3px;
 }
@@ -16,7 +16,7 @@
 }
 
 .concept-card-details{
-  color: white;
+  color: $black;
   font-size: 10px;
   margin: 10px;
 }
@@ -39,4 +39,35 @@
   margin-top: 20px;
 }
 
+.blue{
+  color: #00607d;
+}
 
+.red{
+  color: #E0422C;
+}
+
+.green{
+  color: #64D045;
+}
+
+.rock-map-slogan{
+  background-color: #AEB6C0;
+  border-radius: 3px;
+  box-shadow: 0px 3px, #99a2ae;
+  margin-bottom: 20px;
+}
+
+.rock-map-slogan:hover{
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0px 3px, #99a2ae;
+  margin-bottom: 20px;
+}
+
+.slogan{
+  font-size: 15px;
+  color: $black;
+  text-align: center;
+
+}

@@ -1,6 +1,16 @@
 <div class="index-wallpapers">
   <div class="container">
-    <div id='map' style='width: 100%px; height: 700px;'></div>
+    <h1 class="page-title-search" style="color: white; padding-top: 24px;">
+      MODERN BOX ROCK_MAP
+    </h1>
+  </div>
+  <div class="container">
+    <div style="color: white;"><i class="fa fa-map-marker blue" aria-hidden="true"></i>  SALLES</div>
+    <div style="color: white;"><i class="fa fa-map-marker red" aria-hidden="true"></i>  ARTISTES</div>
+    <div style="color: white;"><i class="fa fa-map-marker green" aria-hidden="true"></i>  STRUCTURES</div>
+  </div>
+  <div class="container">
+    <div id='map' style='width: 100%px; height: 700px; margin-bottom: 30px;'></div>
     <% unless user_signed_in? %>
     <p class="call-to-action"> Créez un compte et faîtes figurer votre établissement sur la carte </p>
       <div class="quality">
@@ -10,268 +20,107 @@
       </div>
     <% end %>
   </div>
+  <div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
+      <h2 class="slogan">
+        Une carte pour organiser tes tournées!
+      </h2>
+    </div>
+  </div>
+  <div class="container">
+    <br>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner" style="background-image: url('https://res.cloudinary.com/da2krghvd/image/upload/v1542990996/gskeecqdnrhxp9crdjny.jpg'); margin-bottom: 30px;">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
+      <h2 class="slogan">
+        Trouve les contacts utiles avec le moteur de recherche
+      </h2>
+    </div>
 
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      <div class="concept-card">
+        <div class="concept-card-image">
+          <%= cl_image_tag("rock-1832605_640_o7je0r.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+        </div>
+        <h3 class="concept-card-title">
+          Trouvez des groupes
+        </h3>
+        <h4 class="concept-card-details">
+          <p>Recherchez les par genres</p>
+          <p>Recherchez les par ville ou département</p>
+          <p>Recherchez les par nombre de musiciens</p>
+          <p>Combinez vos critères de recherche</p>
+        </h4>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      <div class="concept-card">
+        <div class="concept-card-image">
+          <%= cl_image_tag("stage-2089831_640_iuvcxq.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+        </div>
+        <h3 class="concept-card-title">
+          Trouvez des structures
+        </h3>
+        <h4 class="concept-card-details">
+          <p>Recherchez les par genres</p>
+          <p>Recherchez les par ville ou département</p>
+          <p>Recherchez les par nombre de musiciens max</p>
+          <p>Combinez vos critères de recherche</p>
+        </h4>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      <div class="concept-card">
+        <div class="concept-card-image">
+          <%= cl_image_tag("concert-1748102_640_a4jbjg.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+        </div>
+        <h3 class="concept-card-title">
+          Trouvez des salles
+        </h3>
+        <h4 class="concept-card-details">
+          <p>Recherchez les par genres</p>
+          <p>Recherchez les par ville ou département</p>
+          <p>Recherchez les par nombre de musiciens max</p>
+          <p>Combinez vos critères de recherche</p>
+        </h4>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
     <br>
-    <h2 class="concept-section-title">
-      Pour les groupes
-    </h2>
-    <div class="row">
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("rock-1832605_640_o7je0r.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Trouver d'autres groupes et créer des plateaux
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Création d'un compte</p>
-            <p>Accés aux profils d'autres groupes</p>
-            <p>Contacter et être contacté en fonction du profil</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("stage-2089831_640_iuvcxq.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Trouver des structures actives et utiles
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Organisateurs de concerts</p>
-            <p>Studios d'enregistrements ou de répétitions</p>
-            <p>Labels, Radios et d'autres</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("concert-1748102_640_a4jbjg.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Trouver des salles au format et à l'ambiance adaptée
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Spécialisées dans un genre</p>
-            <p>Capacité et fréquence évènementielle</p>
-            <p>Localisée en étape sur une tournée</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("drum-1597948_640_nbeyxx.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Communiquer efficacement sur son activité
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Partage de liens vers des productions ou vidéos</p>
-            <p>Renseignement des dates de concert</p>
-            <p>Partage de conseils sur le forum de discussion</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner" style="background-image: url('https://res.cloudinary.com/da2krghvd/image/upload/v1545239384/hrlald7tz0fmrg3r9fqq.jpg');">
     </div>
+  </div>
 
-
+  <div class="container">
     <br>
-    <hr class="user">
-      <h2 class="concept-section-title">
-      Pour les structures
-    </h2>
-    <div class="row">
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("musician-2708190_640_g7swm6.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Découvrir de nouveaux groupes à faire jouer
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Création d'un compte</p>
-            <p>Accés aux profils des groupes</p>
-            <p>Contacter des groupes ou être contacté</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
+    <%= link_to main_app.topics_path do %>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
+        <h2 class="slogan">
+          Ecris et consulte articles, tutos, liens, etc...
+        </h2>
       </div>
+    <% end %>
+  </div>
 
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("guitar-amplifier-3649042_640_iwqu6n.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Faire la promotion de son activité à un public spécifique
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Communiquer sur son travail</p>
-            <p>Envisager des collaborations</p>
-            <p>Passer à la vitesse supérieure</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("concert-497182_640_s2ifth.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Trouver des salles au format et à l'ambiance adaptée
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Spécialisées dans un genre</p>
-            <p>Capacité et fréquence évènementielle</p>
-            <p>Locale ou exotique</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("musician-802029_640_czihar.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Communiquer efficacement sur son activité
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Partage de liens vers des productions ou vidéos</p>
-            <p>Renseignement des dates de concerts ou collaborations</p>
-            <p>Partage de conseils sur le forum de discussion</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-    </div>
-
+  <div class="container">
     <br>
-    <h2 class="concept-section-title">
-      Pour les salles
-    </h2>
-    <div class="row last-item">
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("hostile-886032_640_oewul7.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Trouver des groupes et créer des plateaux
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Création d'un compte</p>
-            <p>Accés aux profils de groupes</p>
-            <p>Contacter et être contacté en fonction du public visé</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("concert-896786_640_o1lrbb.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Trouver des structures actives et utiles
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Organisateurs de concerts</p>
-            <p>Location de Backline</p>
-            <p>Labels, Radios et d'autres</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("concerts-836141_640_h6whyl.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Rester indépendant et gérer sa programmation
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Spécialisation dans un genre</p>
-            <p>Capacité et fréquence évènementielle</p>
-            <p>Adaptation à la fiche technique des groupes</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6
-      col-sm-6 col-xs-12">
-        <div class="concept-card">
-          <div class="concept-card-image">
-            <%= cl_image_tag("live-music-2219036_640_metpfk.jpg", height: 540, width: 630, crop: :fill , class: "img-responsive")%>
-          </div>
-          <h3 class="concept-card-title">
-            Communiquer efficacement sur son activité
-          </h3>
-          <h4 class="concept-card-details">
-            <p>Partage de liens vers ses vidéos de concerts</p>
-            <p>Renseignement des dates de concert</p>
-            <p>Partage d'annonces sur le forum de discussion</p>
-          </h4>
-          <h4 class="concept-card-action">
-            <%= link_to 'SIGN IN', new_user_session_path, class: "btn btn-medium small-card" %>
-          </h4>
-        </div>
-      </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner" style="background-image: url('https://res.cloudinary.com/da2krghvd/image/upload/s--G_AtFRYu--/c_fill,h_660,q_jpegmini/v1545324736/adult-alcohol-bar-274192_j9tfin.jpg');">
     </div>
+  </div>
+
+  <div class="container">
+    <br>
+    <%= link_to main_app.pages_chat_path do %>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
+        <h2 class="slogan">
+          Vas sur le Chat comme si t'allais au bar!
+        </h2>
+      </div>
+    <% end %>
   </div>
   <%= render 'shared/footer' %>
 </div>
