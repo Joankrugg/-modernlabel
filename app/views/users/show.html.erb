@@ -447,10 +447,11 @@
         <% else %>
           <div class="empty"></div>
         <% end %>
-        <%= link_to main_app.rails_admin_path do %>
-          <i class="fa fa-lock on-nav"></i>
+        <% if @user.admin == true %>
+          <%= link_to main_app.rails_admin_path do %>
+            <i class="fa fa-lock on-nav"></i>
+          <% end %>
         <% end %>
-
         <%= link_to t(".sign_out", default: "SIGN OUT"), main_app.destroy_user_session_path, method: :delete, class: "btn btn-medium" %>
         <div class="copyright last-item">
           © Modern Box Records, All Rights Reserved.
