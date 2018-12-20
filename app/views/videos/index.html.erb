@@ -16,17 +16,17 @@
                       <iframe src='https://www.youtube.com/embed/<%= video.youtube_link[32..80] %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' height='600' width='760' class='img-responsive' frameborder='0' allowfullscreen></iframe>
                       <%= link_to video do %>
                       <div class="info">
-                        <h1>-<%= video.title  %>-</h1>
+                        <p>-<%= video.title  %>-</p>
                         <% if video.artist.present? %>
-                          <h1><%= video.artist.name %></h1>
+                          <p><%= video.artist.name %></p>
                         <% end %>
                         <% if video.asso.present? %>
-                          <h1><%= video.asso.name %></h1>
+                          <p><%= video.asso.name %></p>
                         <% end %>
                         <% if video.place.present? %>
-                          <h1><%= video.place.name %></h1>
+                          <p><%= video.place.name %></p>
                         <% end %>
-                        <h1>-<%= video.genre.name %>-</h1>
+                        <p>-<%= video.genre.name %>-</p>
                         <%= render 'shared/icons' %>
                       </div>
                       <% end %>
