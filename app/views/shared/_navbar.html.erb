@@ -6,7 +6,8 @@
       <% end %>
     </div>
   </div>
-  <div class="navbar-item col-md-9 col-lg-9 hidden-xs hidden-sm">
+
+  <div class="navbar-item hidden-xs hidden-sm col-md-12 col-lg-9 ">
     <div class="group-label-nav">
       <%= link_to 'ROCK MAP', main_app.pages_rock_map_path, class: "label-nav" %>
       <%= link_to 'NEWS', main_app.actus_path, class: "label-nav" %>
@@ -14,8 +15,22 @@
       <%= link_to 'RELEASES', main_app.signed_releases_path, class: "label-nav" %>
       <%= link_to 'VIDEOS', main_app.signed_videos_path, class: "label-nav" %>
       <%= link_to 'CONCERTS', main_app.performances_path, class: "label-nav" %>
-      <i class="fa fa-user on-nav"  data-toggle="modal" data-target="#connect"></i>
     </div>
+  </div>
+
+  <div class="navbar-item navbar-links hidden-xs hidden-sm hidden-md col-lg-3">
+    <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs" target = "_blank"><i class="fa fa-facebook-square on-nav" aria-hidden="true"></i>
+    <a href="https://www.instagram.com/modernboxrecords/" target = "_blank"><i class="fa fa-instagram on-nav" aria-hidden="true"></i>
+    <a href="https://soundcloud.com/modern-box" target = "_blank"><i class="fa fa-soundcloud on-nav" aria-hidden="true"></i>
+    <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber" target = "_blank"><i class="fa fa-youtube-play on-nav" aria-hidden="true"></i>
+    <a href="https://twitter.com/Modern_box_rec" target = "_blank"><i class="fa fa-twitter-square on-nav" aria-hidden="true"></i>
+    <%= link_to main_app.pages_rock_map_path do %>
+      <i class="fa fa-commenting on-nav" ></i>
+    <% end %>
+  </div>
+
+  <div class="hidden-xs hidden-sm col-lg-2">
+    <div class="btn btn-medium-white" data-toggle="modal" data-target="#connect">CONNEXION</div>
   </div>
 
   <div class="navbar-item trigger">
@@ -81,21 +96,7 @@
       </ul>
     </div>
   </div>
-
-  <div class="navbar-item navbar-links col-md-3 col-lg-2">
-    <div class="hidden-xs hidden-sm">
-      <a href="https://www.facebook.com/modernboxrecords/?ref=br_rs" target = "_blank"><i class="fa fa-facebook-square on-nav" aria-hidden="true"></i>
-      <a href="https://www.instagram.com/modernboxrecords/" target = "_blank"><i class="fa fa-instagram on-nav" aria-hidden="true"></i>
-      <a href="https://soundcloud.com/modern-box" target = "_blank"><i class="fa fa-soundcloud on-nav" aria-hidden="true"></i>
-      <a href="https://www.youtube.com/channel/UCD-V4n6eugETPlfr16DqM_Q?view_as=subscriber" target = "_blank"><i class="fa fa-youtube-play on-nav" aria-hidden="true"></i>
-      <a href="https://twitter.com/Modern_box_rec" target = "_blank"><i class="fa fa-twitter-square on-nav" aria-hidden="true"></i>
-      <%= link_to main_app.pages_chat_path do %>
-        <i class="fa fa-commenting on-nav"></i>
-      <% end %>
-    </div>
-  </div>
 </div>
-
 
 
 
