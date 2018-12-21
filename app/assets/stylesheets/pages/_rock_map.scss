@@ -7,15 +7,20 @@
   background-color: white;
   margin: 3px;
   border-radius: 3px;
+  box-shadow: 2px 2px 1px #99a2ae;
+  margin-bottom: 50px;
 }
 
 .concept-card-title{
+  text-align: center;
   color: #99a2ae;
   font-size: 14px;
   margin: 14px 10px 14px 10px;
 }
 
 .concept-card-details{
+  padding-bottom: 10px;
+  text-align: center;
   color: $black;
   font-size: 10px;
   margin: 10px;
@@ -69,5 +74,8 @@
   font-size: 15px;
   color: $black;
   text-align: center;
+}
 
+.rock-map-wallpapers{
+  background-color: black;
 }

@@ -1,4 +1,4 @@
-<div class="index-wallpapers">
+<div class="rock-map-wallpapers">
   <div class="container">
     <h1 class="page-title-search" style="color: white; padding-top: 24px;">
       MODERN BOX ROCK_MAP
@@ -9,8 +9,11 @@
     <div style="color: white;"><i class="fa fa-map-marker red" aria-hidden="true"></i>  ARTISTES</div>
     <div style="color: white;"><i class="fa fa-map-marker green" aria-hidden="true"></i>  STRUCTURES</div>
   </div>
+
   <div class="container">
-    <div id='map' style='width: 100%px; height: 700px; margin-bottom: 30px;'></div>
+    <div id='map' style='width: 100%; height: 700px; margin-bottom: 120px;'></div>
+  </div>
+  <div class="container">
     <% unless user_signed_in? %>
     <p class="call-to-action"> Créez un compte et faîtes figurer votre établissement sur la carte </p>
       <div class="quality">
@@ -20,108 +23,139 @@
       </div>
     <% end %>
   </div>
-  <div class="container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
-      <h2 class="slogan">
-        Une carte pour organiser tes tournées!
-      </h2>
-    </div>
-  </div>
-  <div class="container">
-    <br>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner" style="background-image: url('https://res.cloudinary.com/da2krghvd/image/upload/v1542990996/gskeecqdnrhxp9crdjny.jpg'); margin-bottom: 30px;">
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
-      <h2 class="slogan">
-        Trouve les contacts utiles avec le moteur de recherche
-      </h2>
-    </div>
+</div>
 
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <div class="concept-card">
-        <div class="concept-card-image">
-          <%= cl_image_tag("rock-1832605_640_o7je0r.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+<div class="container" style="margin-top: 120px; margin-bottom: 120px;">
+  <h1 class="page-title-search" style="color: black; padding-top: 24px;">
+    MODERN BOX NETWORK
+  </h1>
+  <div class="row">
+    <%= link_to artists_path do %>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="concept-card">
+          <div class="concept-card-image">
+            <%= cl_image_tag("concert-896786_640_o1lrbb.jpg", height: 400, width: 600, crop: :fill, class: "img-responsive")%>
+          </div>
+          <h2 class="concept-card-title">
+            Trouvez des groupes
+          </h2>
+          <hr>
+          <h4 class="concept-card-details">
+            <p>Recherchez les artistes <i class="fa fa-users"></i></p>
+            <p>-par ville ou département-</p>
+            <p>-par nombre de musiciens-</p>
+            <p>-par tendance-</p>
+            <p>Combinez vos critères de recherche</p>
+          </h4>
         </div>
-        <h3 class="concept-card-title">
-          Trouvez des groupes
-        </h3>
-        <h4 class="concept-card-details">
-          <p>Recherchez les par genres</p>
-          <p>Recherchez les par ville ou département</p>
-          <p>Recherchez les par nombre de musiciens</p>
-          <p>Combinez vos critères de recherche</p>
-        </h4>
       </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <div class="concept-card">
-        <div class="concept-card-image">
-          <%= cl_image_tag("stage-2089831_640_iuvcxq.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+    <% end %>
+    <%= link_to assos_path do %>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="concept-card">
+          <div class="concept-card-image">
+            <%= cl_image_tag("stage-2089831_640_iuvcxq.jpg", height: 400, width: 600, crop: :fill, class: "img-responsive")%>
+          </div>
+          <h2 class="concept-card-title">
+            Trouvez des structures
+          </h2>
+          <hr>
+          <h4 class="concept-card-details">
+            <p>Recherchez les structures <i class="fa fa-handshake-o"></i></p>
+            <p>-par ville ou département-</p>
+            <p>-par nombre de musiciens max-</p>
+            <p>-par activité et tendance-</p>
+            <p>Combinez vos critères de recherche</p>
+          </h4>
         </div>
-        <h3 class="concept-card-title">
-          Trouvez des structures
-        </h3>
-        <h4 class="concept-card-details">
-          <p>Recherchez les par genres</p>
-          <p>Recherchez les par ville ou département</p>
-          <p>Recherchez les par nombre de musiciens max</p>
-          <p>Combinez vos critères de recherche</p>
-        </h4>
       </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <div class="concept-card">
-        <div class="concept-card-image">
-          <%= cl_image_tag("concert-1748102_640_a4jbjg.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+    <% end %>
+    <%= link_to places_path do %>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="concept-card">
+          <div class="concept-card-image">
+            <%= cl_image_tag("concert-1748102_640_a4jbjg.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+          </div>
+          <h2 class="concept-card-title">
+            Trouvez des salles
+          </h2>
+          <hr>
+          <h4 class="concept-card-details">
+            <p>Recherchez les salles <i class="fa fa-map-marker"></i></p>
+            <p>-par ville ou département-</p>
+            <p>-par nombre de musiciens max-</p>
+            <p>-par tendance-</p>
+            <p>Combinez vos critères de recherche</p>
+          </h4>
         </div>
-        <h3 class="concept-card-title">
-          Trouvez des salles
-        </h3>
-        <h4 class="concept-card-details">
-          <p>Recherchez les par genres</p>
-          <p>Recherchez les par ville ou département</p>
-          <p>Recherchez les par nombre de musiciens max</p>
-          <p>Combinez vos critères de recherche</p>
-        </h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <br>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner" style="background-image: url('https://res.cloudinary.com/da2krghvd/image/upload/v1545239384/hrlald7tz0fmrg3r9fqq.jpg');">
-    </div>
-  </div>
-
-  <div class="container">
-    <br>
-    <%= link_to main_app.topics_path do %>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
-        <h2 class="slogan">
-          Ecris et consulte articles, tutos, liens, etc...
-        </h2>
       </div>
     <% end %>
   </div>
-
-  <div class="container">
-    <br>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 banner" style="background-image: url('https://res.cloudinary.com/da2krghvd/image/upload/s--G_AtFRYu--/c_fill,h_660,q_jpegmini/v1545324736/adult-alcohol-bar-274192_j9tfin.jpg');">
+</div>
+<div class="rock-map-wallpapers">
+  <div class="container" style="padding-top: 120px; padding-bottom: 120px;">
+    <h1 class="page-title-search" style="color: white; padding-top: 24px;">
+      MODERN BOX EXTRAS
+    </h1>
+    <div class="row">
+      <%= link_to topics_path do %>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="concept-card">
+            <div class="concept-card-image">
+              <%= cl_image_tag("guitar-amplifier-3649042_640_iwqu6n.jpg", height: 400, width: 600, crop: :fill, class: "img-responsive")%>
+            </div>
+            <h2 class="concept-card-title">
+              Forum de Discussion
+            </h2>
+            <hr>
+            <h4 class="concept-card-details">
+              <p>Lancez des sujets ou demandes de conseils et liens</p>
+              <p>-Notifications-</p>
+              <p>-Catégories multiples-</p>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to main_app.action_users_path do %>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="concept-card">
+            <div class="concept-card-image">
+              <%= cl_image_tag("music-2225358_640_jhs2cw.jpg", height: 400, width: 600, crop: :fill, class: "img-responsive")%>
+            </div>
+            <h2 class="concept-card-title">
+              Algorythme d'affinités
+            </h2>
+            <hr>
+            <h4 class="concept-card-details">
+              <p>Liens automatiques vers des acteurs correspondants</p>
+              <p>-Tableau sur vos profils persos-</p>
+              <p>-Affinez vos critères sur votre profil</p>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to main_app.pages_chat_path do %>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="concept-card">
+            <div class="concept-card-image">
+              <%= cl_image_tag("Admin/modern_box_home.jpg", height: 400, width: 600, crop: :fill , class: "img-responsive")%>
+            </div>
+            <h2 class="concept-card-title">
+              Tchatez en direct
+            </h2>
+            <hr>
+            <h4 class="concept-card-details">
+              <p>Quand il y a aura du monde ce sera marrant</p>
+              <p>Un tchat old school</p>
+              <p>faîtes des appels quand vous jouez</p>
+            </h4>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-
-  <div class="container">
-    <br>
-    <%= link_to main_app.pages_chat_path do %>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rock-map-slogan">
-        <h2 class="slogan">
-          Vas sur le Chat comme si t'allais au bar!
-        </h2>
-      </div>
-    <% end %>
-  </div>
+</div>
+<div class="index-wallpapers">
   <%= render 'shared/footer' %>
 </div>
 <script>
