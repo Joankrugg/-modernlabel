@@ -1,6 +1,16 @@
+.user-card{
+  margin-bottom: 20px;
+  border-bottom-style: solid;
+  border-color: white;
+  border-width: 1px;
+}
+
+.notif{
+  margin-bottom: 60px;
+}
+
 .user-card:hover{
   background-color: #0E1219;
-  padding-left: 125px;
 }
 
 .user-patern{
@@ -41,6 +51,6 @@
 }
 
 .user-profil{
-  text-align: left;
+  text-align: center;
   color: white;
 }
