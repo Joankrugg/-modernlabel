@@ -16,6 +16,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @topic = Topic.new
     @topics = Topic.all
     @contact = Contact.all
+    @releases = Release.all
   end
 
   def edit
