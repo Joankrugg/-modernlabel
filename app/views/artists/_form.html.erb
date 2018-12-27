@@ -20,7 +20,7 @@
     <% if current_user.admin? %>
       <%= f.input :mp3, as: :attachinary %>
     <% end %>
-    <%= f.input :bookable, as: :select, collection: [['0', 'oqp'], ['1', 'dispo']], label_method: :second, value_method: :first %>
+    <%= f.input :bookable, as: :boolean %>
     <div class="validate">
       <%= f.button :submit, 'Valider', class: "btn btn-medium-white last-item" %>
     </div>
