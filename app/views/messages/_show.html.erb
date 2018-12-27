@@ -1,0 +1,4 @@
+<%= link_to artist_message_path(@artist.id, message.id), method: :delete, data: {confirm: 'Effacer ce message ?'} do %>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 message-content"><%=message.user.email %> says <%= message.content %>
+  </div>
+<% end %>

@@ -41,6 +41,7 @@ class ArtistsController < ApplicationController
     @instagram = Instagram.new
     @bio = Bio.new
     @contact = Contact.new
+    @message = Message.new
   end
 
   def edit

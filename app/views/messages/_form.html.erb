@@ -1,0 +1,17 @@
+<%= simple_form_for ([ artist, message ]) , defaults: { label_html: { class: 'labels' } } do |form| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
+    <%= form.input :content, required: false %>
+    <div class="validate">
+      <%= form.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    </div>
+  </div>
+<% end %>

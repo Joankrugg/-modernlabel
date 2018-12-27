@@ -2,7 +2,6 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:destroy, :edit, :update]
 
   def create
-
     @contact = current_user.contacts.new(contact_params)
     if @contact.save
       redirect_to action_users_path
