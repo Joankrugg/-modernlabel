@@ -5,11 +5,13 @@
 <div class="show-wallpapers profil-page">
   <div class="container">
     <hr class="user">
+
     <div class="row">
       <%= render 'tabs' %>
     </div>
     <hr class="user">
-      <%= render 'message' %>
+
+    <%= render 'message' %>
     <hr class="user">
 
     <div class="row">
@@ -63,7 +65,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 ">
         <h1 class="profil-title quality">Biographie</h1>
-          <%= render 'bio' %>
+        <%= render 'bio' %>
         <div class="quality">
           <%= social_share_button_tag(@artist.name, :allow_sites => %w(facebook tumblr pinterest email linkedin twitter), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/artists/#{@artist.id}", :image => "#{@artist.photo}", desc: "#{@artist.bio}", via: "Modernboxrecords") %>
         </div>
