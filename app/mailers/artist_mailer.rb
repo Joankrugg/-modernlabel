@@ -5,17 +5,17 @@ class ArtistMailer < ApplicationMailer
 
     mail(
       to: @artist.user.email,
-      subject: 'you successfully created an artist')
+      subject: 'Tu as créé un compte artiste dans modernboxrecords')
   end
 
   def contact_artist(contact)
     @contact = contact
-    mail(to: @contact.artist.user.email, subject: @contact.user.email + ' voudrait enter en contact avec vous')
+    mail(to: @contact.artist.user.email, subject: @contact.user.email + ' voudrait entrer en contact avec vous')
   end
 
   def message_artist(message)
     @message = message
-    mail(to: @message.artist.user.email, subject: @message.user.email + 'Vous a envoyé un message sur modernboxrecords')
+    mail(to: @message.artist.user.email, subject: @message.user.email + ' vous a envoyé un message sur modernboxrecords')
   end
 
 end

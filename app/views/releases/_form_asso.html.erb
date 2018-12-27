@@ -15,6 +15,7 @@
     <%= f.association :genre, required: false, label: 'Style (obligatoire)' %>
     <%= f.input :year_of_creation, required: false, collection: 1990..2018, label: 'Année de création (obligatoire)' %>
     <%= f.input :description, required: false, input_html: { maxlength: 140 }, label: 'Description' %>
+    <%= f.input :production, as: :select, collection: [['0', 'DIY'], ['1', 'STUDIO']], label_method: :second, value_method: :first %>
     <%= f.input :youtube_link, label: 'Lien vers page Youtube' %>
     <%= f.input :bandcamp_link, label: 'Lien vers page Bandcamp' %>
     <%= f.input :photo, required: false, label: 'Image (obligatoire)' %>

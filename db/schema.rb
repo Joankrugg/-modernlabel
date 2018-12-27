@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181226144716) do
+ActiveRecord::Schema.define(version: 20181227213513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -291,6 +291,7 @@ ActiveRecord::Schema.define(version: 20181226144716) do
     t.integer  "artist_id"
     t.boolean  "signed",           default: false
     t.integer  "year_of_creation"
+    t.boolean  "production",       default: false
     t.index ["artist_id"], name: "index_releases_on_artist_id", using: :btree
     t.index ["genre_id"], name: "index_releases_on_genre_id", using: :btree
     t.index ["record_id"], name: "index_releases_on_record_id", using: :btree
