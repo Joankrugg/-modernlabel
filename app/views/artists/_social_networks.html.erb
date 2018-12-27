@@ -163,99 +163,100 @@
       <% end %>
     </div>
   <% end %>
+<% end %>
 <!-- <div class="col-xs-12 col-sm-8 col-md-12 col-lg-12 social-network quality">
       <i class="fa fa-web social-links" data-toggle="modal" data-target="#contact">  Contacter ce groupe</i>
   </div>-->
 
 
-  <div class="modal fade" id="soundcloud" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">soundcloud</div>
-          <div class="modal-body">
-            <%= render 'soundclouds/form', artist: @artist, soundcloud: @soundcloud %>
-          </div>
+<div class="modal fade" id="soundcloud" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLongTitle">soundcloud</div>
+        <div class="modal-body">
+          <%= render 'soundclouds/form', artist: @artist, soundcloud: @soundcloud %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="twitter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">twitter</div>
-          <div class="modal-body">
-            <%= render 'twitters/form', artist: @artist, twitter: @twitter %>
-          </div>
+<div class="modal fade" id="twitter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLongTitle">twitter</div>
+        <div class="modal-body">
+          <%= render 'twitters/form', artist: @artist, twitter: @twitter %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="instagram" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">instagram</div>
-          <div class="modal-body">
-            <%= render 'instagrams/form', artist: @artist, instagram: @instagram %>
-          </div>
+<div class="modal fade" id="instagram" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLongTitle">instagram</div>
+        <div class="modal-body">
+          <%= render 'instagrams/form', artist: @artist, instagram: @instagram %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="youtube" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">youtube</div>
-          <div class="modal-body">
-            <%= render 'youtubes/form', artist: @artist, youtube: @youtube %>
-          </div>
+<div class="modal fade" id="youtube" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLongTitle">youtube</div>
+        <div class="modal-body">
+          <%= render 'youtubes/form', artist: @artist, youtube: @youtube %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="bandcamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">bandcamp</div>
-          <div class="modal-body">
-            <%= render 'bandcamps/form', artist: @artist, bandcamp: @bandcamp %>
-          </div>
+<div class="modal fade" id="bandcamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLongTitle">bandcamp</div>
+        <div class="modal-body">
+          <%= render 'bandcamps/form', artist: @artist, bandcamp: @bandcamp %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="fb" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">facebook</div>
-          <div class="modal-body">
-            <%= render 'facebooks/form', artist: @artist, facebook: @facebook %>
-          </div>
+<div class="modal fade" id="fb" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLongTitle">facebook</div>
+        <div class="modal-body">
+          <%= render 'facebooks/form', artist: @artist, facebook: @facebook %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title" id="exampleModalLongTitle">contact</div>
-          <div class="modal-body">
-            <%= render 'contacts/form', contact: @contact %>
-          </div>
+<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="exampleModalLongTitle">contact</div>
+        <div class="modal-body">
+          <%= render 'contacts/form', contact: @contact %>
         </div>
       </div>
     </div>
   </div>
-<% end %>
+</div>
+

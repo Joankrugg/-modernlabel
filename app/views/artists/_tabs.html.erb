@@ -68,17 +68,19 @@
 
 <% else %>
   <br>
-  <% if @artist.ratings.blank? %>
-    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-8 col-lg-offset-3 col-lg-6 tabs">
-      <p class="tab col-lg-12" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Be_the_first") %><%= @artist.name %>
-      </p>
-    </div>
-  <% else %>
-    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-8 col-lg-offset-3 col-lg-6 tabs">
-      <p class="tab col-lg-12" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Press_to_rate") %><%= @artist.name %>
-      </p>
-    </div>
-  <% end %>
+  <div class="row">
+    <% if @artist.ratings.blank? %>
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-8 col-lg-offset-3 col-lg-6 tabs">
+        <p class="tab col-lg-12" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Be_the_first") %><%= @artist.name %>
+        </p>
+      </div>
+    <% else %>
+      <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-8 col-lg-offset-3 col-lg-6 tabs">
+        <p class="tab col-lg-12" data-toggle="modal" data-target="#rate" style="text-align: center;"><%=t(".Press_to_rate") %><%= @artist.name %>
+        </p>
+      </div>
+    <% end %>
+  </div>
   <div class="modal fade" id="rate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
