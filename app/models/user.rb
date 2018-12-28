@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :artists, through: :contacts
   has_many :messages
   has_many :artists, through: :messages
+  has_many :user_genres
+  has_many :genres, through: :user_genres
 
 
   def self.find_for_facebook_oauth(auth)
