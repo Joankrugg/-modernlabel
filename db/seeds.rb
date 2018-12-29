@@ -164,18 +164,18 @@
 #  puts "      💥"
 
 
-Instrument.create({ name: "Basse 4 cordes" })
-Instrument.create({ name: "Basse 5 cordes" })
-Instrument.create({ name: "Batterie" })
-Instrument.create({ name: "Chant lead" })
-Instrument.create({ name: "Choeurs" })
-Instrument.create({ name: "Guitare 6 cordes" })
-Instrument.create({ name: "Guitare 7 cordes" })
-Instrument.create({ name: "Guitare 8 cordes" })
-Instrument.create({ name: "Keyboards" })
-Instrument.create({ name: "Lunières" })
-Instrument.create({ name: "Machines" })
-Instrument.create({ name: "Sonos" })
+#Instrument.create({ name: "Basse 4 cordes" })
+#Instrument.create({ name: "Basse 5 cordes" })
+#Instrument.create({ name: "Batterie" })
+#Instrument.create({ name: "Chant lead" })
+#Instrument.create({ name: "Choeurs" })
+#Instrument.create({ name: "Guitare 6 cordes" })
+#Instrument.create({ name: "Guitare 7 cordes" })
+#Instrument.create({ name: "Guitare 8 cordes" })
+#Instrument.create({ name: "Keyboards" })
+#Instrument.create({ name: "Lunières" })
+#Instrument.create({ name: "Machines" })
+#Instrument.create({ name: "Sonos" })
 
 #puts "      💥"
 

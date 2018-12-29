@@ -40,3 +40,14 @@
   border-radius: 3px;
   padding-left: 10px;
 }
+.instrument{
+  font-size: 16px;
+  color: $black;
+  background-color: white;
+  border-radius: 3px;
+  padding-left: 10px;
+  &:hover{
+    cursor: pointer;
+    background-color: #BCBBBB;
+  }
+}
