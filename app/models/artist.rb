@@ -16,7 +16,8 @@ class Artist < ApplicationRecord
   has_many :contacts, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :users, through: :contacts
-
+  has_many :instrument_hirings
+  has_many :instruments, through: :instrument_hirings
 
   validates :name, presence: true
   validates :city, presence: true

@@ -17,6 +17,7 @@
         <% end %>
       </div>
     </div>
+
     <div class="row">
       <div class="registration-content">
         <% if current_user.asso == nil && current_user.place == nil && current_user.artist == nil && current_user == @user %>
@@ -25,6 +26,7 @@
         <% end %>
       </div>
     </div>
+
     <div class="row">
       <% if current_user.artist == nil %>
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
@@ -117,6 +119,15 @@
         </div>
       </div>
 
+      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+        <div class="user-card" data-toggle="modal" data-target="#instruments">
+          <%= cl_image_tag ("oeyoruj52wwpszcmdwqy.jpg"), height: 300, width: 300, crop: :fill, class: "img-responsive" %>
+          <p class="user-profil">Ajouter instruments</p>
+          <p class="user-profil">Rendez vous disponible ou non</p>
+          <p class="user-profil">En recherche de groupes ou non</p>
+        </div>
+      </div>
+
       <% if @user == current_user %>
         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
           <div class="user-card">
@@ -128,15 +139,16 @@
         </div>
       <% end %>
     </div>
-    <%= render 'modals'  %>
-  </div>
 
-  <div class="quality">
-    <p class= "profil-title">Revendiquer un compte artiste, salle ou asso existant?</p>
-      <%= social_share_button_tag("revendication de compte", :allow_sites => %w(email), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/users/#{@user.id}" )%>
-    <p class="profil-details">modernboxrecords@gmail.com</p>
-  </div>
-  <%= render 'matches' %>
+    <%= render 'modals' %>
+
+    <div class="quality">
+      <p class= "profil-title">Revendiquer un compte artiste, salle ou asso existant?</p>
+        <%= social_share_button_tag("revendication de compte", :allow_sites => %w(email), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/users/#{@user.id}" )%>
+      <p class="profil-details">modernboxrecords@gmail.com</p>
+    </div>
+    <%= render 'matches' %>
+    </div>
   </div>
 </div>
 

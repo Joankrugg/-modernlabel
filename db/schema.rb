@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181228171602) do
+ActiveRecord::Schema.define(version: 20181229180005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -175,6 +175,30 @@ ActiveRecord::Schema.define(version: 20181228171602) do
     t.datetime "updated_at", null: false
     t.integer  "artist_id"
     t.index ["artist_id"], name: "index_instagrams_on_artist_id", using: :btree
+  end
+
+  create_table "instrument_hirings", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.integer  "instrument_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["artist_id"], name: "index_instrument_hirings_on_artist_id", using: :btree
+    t.index ["instrument_id"], name: "index_instrument_hirings_on_instrument_id", using: :btree
+  end
+
+  create_table "instrument_playings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "instrument_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["instrument_id"], name: "index_instrument_playings_on_instrument_id", using: :btree
+    t.index ["user_id"], name: "index_instrument_playings_on_user_id", using: :btree
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -433,6 +457,10 @@ ActiveRecord::Schema.define(version: 20181228171602) do
   add_foreign_key "facebooks", "artists"
   add_foreign_key "hardwares", "places"
   add_foreign_key "instagrams", "artists"
+  add_foreign_key "instrument_hirings", "artists"
+  add_foreign_key "instrument_hirings", "instruments"
+  add_foreign_key "instrument_playings", "instruments"
+  add_foreign_key "instrument_playings", "users"
   add_foreign_key "messages", "artists"
   add_foreign_key "messages", "users"
   add_foreign_key "opinions", "releases"

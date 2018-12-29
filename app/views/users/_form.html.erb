@@ -10,29 +10,31 @@
       </div>
     <% end %>
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
-    <%= f.input :city, label: 'Ville' %>
-    <%= f.input :description, label: 'Description' %>
-    <%= f.input :fiveties, as: :boolean %>
-    <%= f.input :sixties, as: :boolean %>
-    <%= f.input :seventies, as: :boolean %>
-    <%= f.input :eighties, as: :boolean %>
-    <%= f.input :nineties, as: :boolean %>
-    <%= f.input :millenium, as: :boolean %>
-    <div class="form-group">
-      <label class="control-label check_boxes optional">Styles</label>
-      <input type="hidden" name="user[genre_ids][]" value="">
-      <div class="genre-choices">
-        <% Genre.all.each do |genre| %>
-          <input type="checkbox" class="hidden" value="<%= genre.id %>" name="user[genre_ids][]" id="user_genre_ids_<%= genre.id %>">
-          <label class="genre-choice" for="user_genre_ids_<%= genre.id %>">
-            <%= genre.name %>
-          </label>
-        <% end %>
-       </div>
-    </div>
-    <%= f.input :production, label: 'Préférence de productions', as: :select, collection: [['0', 'DIY'], ['1', 'STUDIO']], label_method: :second, value_method: :first %>
-    <div class="validate">
-      <%= f.button :submit, 'valider', class: 'btn btn-medium-white last-item' %>
+      <%= f.input :city, label: 'Ville' %>
+      <%= f.input :description, label: 'Description' %>
+      <%= f.input :fiveties, as: :boolean %>
+      <%= f.input :sixties, as: :boolean %>
+      <%= f.input :seventies, as: :boolean %>
+      <%= f.input :eighties, as: :boolean %>
+      <%= f.input :nineties, as: :boolean %>
+      <%= f.input :millenium, as: :boolean %>
+      <div class="form-group">
+        <label class="control-label check_boxes optional">Styles</label>
+        <input type="hidden" name="user[genre_ids][]" value="">
+        <div class="genre-choices">
+          <% Genre.all.each do |genre| %>
+            <input type="checkbox" class="hidden" value="<%= genre.id %>" name="user[genre_ids][]" id="user_genre_ids_<%= genre.id %>">
+            <label class="genre-choice" for="user_genre_ids_<%= genre.id %>">
+              <%= genre.name %>
+            </label>
+          <% end %>
+         </div>
+      </div>
+      <%= f.association :instruments, as: :check_boxes %>
+      <%= f.input :production, label: 'Préférence de productions', as: :select, collection: [['0', 'DIY'], ['1', 'STUDIO']], label_method: :second, value_method: :first %>
+      <div class="validate">
+        <%= f.button :submit, 'valider', class: 'btn btn-medium-white last-item' %>
+      </div>
     </div>
   <% end %>
 </div>

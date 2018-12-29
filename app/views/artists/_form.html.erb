@@ -14,6 +14,7 @@
     <%= f.input :city, required: false, label: 'Ville(obligatoire)' %>
     <%= f.input :number_of_musicians, required: false, collection: 1..12, label: 'Nombre de Musiciens (obligatoire)'  %>
     <%= f.association :genre, required: false, label: 'Style (obligatoire)' %>
+    <%= f.association :instruments, as: :check_boxes %>
     <%= f.input :year_of_creation, required: false, collection: 1990..2018, label: 'Année de création'  %>
     <%= f.input :photo, required: false, label: 'Photo (obligatoire)'  %>
     <%= f.input :photo_cache, as: :hidden %>
