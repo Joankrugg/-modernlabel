@@ -1,6 +1,5 @@
 $(document).ready(function(){
-  $(".genre-choice").click(function(){
+  $(".instrument-choice").click(function(){
     $(this).toggleClass("active");
   });
 });
-
