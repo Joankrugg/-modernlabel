@@ -1,239 +1,75 @@
-<% if current_user.artist.present? %>
-  <h5>Tes matchs en tant qu'artiste</h5>
-  <hr class="user">
-  <% if @assos.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les Assos pour toi</p>
-      <hr class="user">
-      <% @assos.each do |a|%>
-        <% if a.genre.name == current_user.artist.genre.name && a.city == current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "assos/asso", asso: a %><br>
-              </div>
+<% if @artists.present? %>
+  <div class="col-lg-12 matches">
+    <p>Les Groupes avec lesquels jouer</p>
+    <hr class="user">
+    <% @artists.each do |a|%>
+      <% if current_user.genres.include?(a.genre) %>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="main">
+            <div class="card">
+              <%= render "artists/artist", artist: a %><br>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
-
-  <% if @places.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les Salles où tu peux jouer</p>
-      <hr class="user">
-      <% @places.each do |a|%>
-        <% if a.genre.name == current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.number_of_musicians_max >= current_user.artist.number_of_musicians %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "places/place", place: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if @artists.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les Groupes avec lesquels jouer</p>
-      <hr class="user">
-      <% @artists.each do |a|%>
-        <% if a.genre.name == current_user.artist.genre.name && a.city.downcase == current_user.artist.city.downcase && a.name != current_user.artist.name %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "artists/artist", artist: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-<% else %>
-    <div class="empty"></div>
+    <% end %>
+  </div>
 <% end %>
 
-
-
-<% if current_user.place.present? %>
-  <h5>Tes Matchs en tant que salle</h5>
-  <hr class="user">
-  <% if @assos.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les structures intéressantes</p>
-      <hr class="user">
-      <% @assos.each do |a|%>
-        <% if a.genre.name == current_user.place.genre.name && a.city.downcase == current_user.place.city.downcase && a.number_of_musicians_max <= current_user.place.number_of_musicians_max %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "assos/asso", asso: a %><br>
-              </div>
+<% if @releases.present? %>
+  <div class="col-lg-12 matches">
+    <p>Les prods à écouter</p>
+    <hr class="user">
+    <% @releases.each do |release|%>
+      <% if current_user.genres.include?(release.genre)%>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="main">
+            <div class="card">
+              <%= render "releases/release", release: release %><br>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
-
-  <% if @artists.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les Groupes à faire jouer</p>
-      <hr class="user">
-      <% @artists.each do |a|%>
-        <% if a.genre.name == current_user.place.genre.name && a.city.downcase == current_user.place.city.downcase && a.number_of_musicians <= current_user.place.number_of_musicians_max %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "artists/artist", artist: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if @assos.present? %>
-    <div class="col-lg-12 matches">
-      <p>Match possible avec d'autres structures</p>
-      <hr class="user">
-      <% @assos.each do |a|%>
-        <% if (a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians_max <= current_user.place.number_of_musicians_max) %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "assos/asso", asso: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if @artists.present? %>
-    <div class="col-lg-12 matches">
-      <p>Des Groupes pour ouvrir la scène</p>
-      <hr class="user">
-      <% @artists.each do |a|%>
-        <% if a.genre.name == current_user.place.genre.name && a.city.downcase != current_user.place.city.downcase && a.number_of_musicians <= current_user.place.number_of_musicians_max %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "artists/artist", artist: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-<% else %>
-  <div class="empty"></div>
+    <% end %>
+  </div>
 <% end %>
 
-<% if current_user.asso.present? %>
-  <h5>Tes Matches en tant que Structure</h5>
-  <hr class="user">
-  <% if @places.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les Salles où jouer</p>
-      <hr class="user">
-      <% @places.each do |a|%>
-        <% if a.genre.name == current_user.asso.genre.name && a.city.downcase == current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max %>
-          <% result = a %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "places/place", place: result %><br>
-              </div>
+<% if @places.present? %>
+  <div class="col-lg-12 matches">
+    <p>Les Salles où jouer ou voir des concerts</p>
+    <hr class="user">
+    <% @places.each do |a|%>
+      <% if current_user.genres.include?(a.genre) %>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="main">
+            <div class="card">
+              <%= render "places/place", place: a %><br>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
-
-  <% if @artist.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les Groupes à faire jouer</p>
-      <hr class="user">
-      <% @artists.each do |a|%>
-        <% if a.genre.name == current_user.asso.genre.name && a.city.downcase == current_user.asso.city.downcase && a.number_of_musicians <= current_user.asso.number_of_musicians_max %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "artists/artist", artist: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if @assos.present? %>
-    <div class="col-lg-12 matches">
-      <p>Match possible avec d'autres structures</p>
-      <hr class="user">
-      <% @assos.each do |a|%>
-        <% if a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians_max <= current_user.asso.number_of_musicians_max %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "assos/asso", asso: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if @artists.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les groupes à faire venir jouer chez toi</p>
-      <hr class="user">
-      <% @artists.each do |a|%>
-        <% if a.genre.name == current_user.asso.genre.name && a.city.downcase != current_user.asso.city.downcase && a.number_of_musicians <= current_user.asso.number_of_musicians_max %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "artists/artist", artist: a %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if @releases.present? %>
-    <div class="col-lg-12 matches">
-      <p>Les prods à écouter</p>
-      <hr class="user">
-      <% @releases.each do |release|%>
-        <% if release.genre.name == current_user.asso.genre.name %>
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-            <div class="main">
-              <div class="card">
-                <%= render "releases/release", release: release %><br>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
-<% else %>
-  <div class="empty"></div>
+    <% end %>
+  </div>
 <% end %>
+
+<% if @assos.present? %>
+  <div class="col-lg-12 matches">
+    <p>Les Structures utiles</p>
+    <hr class="user">
+    <% @assos.each do |a|%>
+      <% if current_user.genres.include?(a.genre) %>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="main">
+            <div class="card">
+              <%= render "assos/asso", asso: a %><br>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
 
 
 <% if @user.admin == true %>
