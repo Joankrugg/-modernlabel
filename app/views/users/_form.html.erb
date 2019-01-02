@@ -11,7 +11,6 @@
     <% end %>
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
       <%= f.input :city, label: 'Ville' %>
-      <%= f.input :description, label: 'Description' %>
       <%= f.input :fiveties, as: :boolean %>
       <%= f.input :sixties, as: :boolean %>
       <%= f.input :seventies, as: :boolean %>
@@ -24,7 +23,7 @@
         <div class="genre-choices">
           <% Genre.all.each do |genre| %>
             <input type="checkbox" class="hidden" value="<%= genre.id %>" name="user[genre_ids][]" id="user_genre_ids_<%= genre.id %>">
-            <label class="genre-choice" for="user_genre_ids_<%= genre.id %>">
+            <label class="genre-choice" for="user_genre_ids_<%= genre.id %>" >
               <%= genre.name %>
             </label>
           <% end %>
