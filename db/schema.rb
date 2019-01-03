@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190103215852) do
+ActiveRecord::Schema.define(version: 20190103222136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -373,6 +373,15 @@ ActiveRecord::Schema.define(version: 20190103215852) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_counties", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "county_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["county_id"], name: "index_user_counties_on_county_id", using: :btree
+    t.index ["user_id"], name: "index_user_counties_on_user_id", using: :btree
+  end
+
   create_table "user_genres", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "genre_id"
@@ -473,6 +482,8 @@ ActiveRecord::Schema.define(version: 20190103215852) do
   add_foreign_key "soundclouds", "artists"
   add_foreign_key "topics", "users"
   add_foreign_key "twitters", "artists"
+  add_foreign_key "user_counties", "counties"
+  add_foreign_key "user_counties", "users"
   add_foreign_key "user_genres", "genres"
   add_foreign_key "user_genres", "users"
   add_foreign_key "videos", "artists"

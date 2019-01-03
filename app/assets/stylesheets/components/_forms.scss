@@ -96,3 +96,28 @@
   opacity: 1;
 }
 
+// Checkboxes design
+.county-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.county-choice {
+  background: #b7b7b7;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 48%;
+  text-align: center;
+}
+.county-choice:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.county-choice.active {
+  background: $brand-primary;
+  color: white;
+  opacity: 1;
+}

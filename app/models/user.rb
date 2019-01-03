@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :genres, through: :user_genres
   has_many :instrument_playings
   has_many :instruments, through: :instrument_playings
+  has_many :user_counties
+  has_many :counties, through: :user_counties
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
