@@ -43,6 +43,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
   def user_params
-    params.require(:user).permit(:email, :production, genre_ids:[], instrument_ids:[], localisation_ids:[])
+    params.require(:user).permit(:email, :production, genre_ids:[], instrument_ids:[], county_ids:[])
   end
 end
