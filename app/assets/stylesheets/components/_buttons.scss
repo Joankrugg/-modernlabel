@@ -96,3 +96,16 @@
 .validate{
   text-align: right;
 }
+
+.user-preference{
+  background-color: #b7b7b7;
+  color: $black;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+  &:hover{
+    background-color: #3EA2F5;
+    color: white;
+    cusor: pointer;
+  }
+}
