@@ -3,7 +3,7 @@
     <p>Les Groupes avec lesquels jouer</p>
     <hr class="user">
     <% @artists.each do |a|%>
-      <% if current_user.genres.include?(a.genre) %>
+      <% if current_user.genres.include?(a.genre) && current_user.counties.include?(a.county) %>
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
           <div class="main">
             <div class="card">
@@ -39,7 +39,7 @@
     <p>Les Salles où jouer ou voir des concerts</p>
     <hr class="user">
     <% @places.each do |a|%>
-      <% if current_user.genres.include?(a.genre) %>
+      <% if current_user.counties.include?(a.county) %>
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
           <div class="main">
             <div class="card">
@@ -57,7 +57,7 @@
     <p>Les Structures utiles</p>
     <hr class="user">
     <% @assos.each do |a|%>
-      <% if current_user.genres.include?(a.genre) %>
+      <% if current_user.counties.include?(a.county) %>
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
           <div class="main">
             <div class="card">
