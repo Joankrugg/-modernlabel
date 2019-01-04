@@ -1,0 +1,30 @@
+<div class="form-user">
+  <%= simple_form_for @user, defaults: { label_html: { class: 'labels' } } do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
+      <div class="form-group">
+        <label class="control-label check_boxes optional">Structures recherchées</label>
+        <input type="hidden" name="user[activity_ids][]" value="">
+        <div class="activity-choices">
+          <% Activity.all.each do |activity| %>
+            <input type="checkbox" class="hidden" value="<%= activity.id %>" name="user[activity_ids][]" id="user_activity_ids_<%= activity.id %>">
+            <label class="activity-choice" for="user_activity_ids_<%= activity.id %>">
+              <%= activity.name %>
+            </label>
+          <% end %>
+        </div>
+      </div>
+      <div class="validate">
+        <%= f.button :submit, 'valider', class: 'btn btn-medium-white last-item' %>
+      </div>
+    </div>
+  <% end %>
+</div>
