@@ -16,29 +16,29 @@
     <div class="row">
       <% if current_user.artist == nil %>
         <div class="col-lg-12">
-          <h5 class="user-preference" data-toggle="modal" data-target="#new_artist">Créer un Artiste</h5>
+          <div class="user-preference" data-toggle="modal" data-target="#new_artist">Créer un Artiste</div>
         </div>
       <% else %>
         <%= link_to @user.artist do %>
           <div class="col-lg-12">
-            <h5 class="user-preference">Actualiser <%= @user.artist.name.capitalize %></h5>
+            <div class="user-preference">Actualiser <%= @user.artist.name.capitalize %></div>
           </div>
         <% end %>
       <% end %>
 
       <% if current_user.asso == nil && current_user.place == nil %>
         <div class="col-lg-12">
-          <h5 class ="user-preference" data-toggle="modal" data-target="#new_asso">Créer une structure</h5>
+          <div class ="user-preference" data-toggle="modal" data-target="#new_asso">Créer une structure</div>
         </div>
         <div class="col-lg-12">
-          <h5 class="user-preference" data-toggle="modal" data-target="#new_place">Créer salle</h5>
+          <div class="user-preference" data-toggle="modal" data-target="#new_place">Créer salle</div>
         </div>
       <% end %>
 
       <% if current_user.asso != nil %>
         <%= link_to @user.asso do %>
           <div class="col-lg-12">
-            <h5 class="user-preference">Actualiser <%= @user.asso.name.capitalize %></h5>
+            <div class="user-preference">Actualiser <%= @user.asso.name.capitalize %></div>
           </div>
         <% end %>
       <% end %>
@@ -46,33 +46,33 @@
       <% if current_user.place != nil %>
         <%= link_to @user.place do %>
           <div class="col-lg-12">
-            <h5 class="user-preference">Actualiser <%= @user.place.name.capitalize %></h5>
+            <div class="user-preference">Actualiser <%= @user.place.name.capitalize %></div>
           </div>
         <% end %>
       <% end %>
 
       <div class="col-lg-12">
-        <h5 class="user-preference" data-toggle="modal" data-target="#new_topic">Créer Sujet</h5>
+        <div class="user-preference" data-toggle="modal" data-target="#new_topic">Créer Sujet</div>
       </div>
 
       <div class="col-lg-12">
-        <h5 class="user-preference" data-toggle="modal" data-target="#update-profil">Ajouter préférences</h5>
+        <div class="user-preference" data-toggle="modal" data-target="#update-profil">Ajouter préférences</div>
       </div>
 
       <div class="col-lg-12">
-        <h5 class="user-preference" data-toggle="modal" data-target="#instruments">Ajouter instruments</h5>
+        <div class="user-preference" data-toggle="modal" data-target="#instruments">Ajouter instruments</div>
       </div>
 
       <div class="col-lg-12">
-        <h5 class="user-preference" data-toggle="modal" data-target="#localisations">Ajouter départements de recherche</h5>
+        <div class="user-preference" data-toggle="modal" data-target="#localisations">Ajouter départements de recherche</div>
       </div>
 
       <div class="col-lg-12">
-        <h5 class="user-preference" data-toggle="modal" data-target="#activities">Ajouter recherche de structures</p>
+        <div class="user-preference" data-toggle="modal" data-target="#activities">Ajouter recherche de structures</div>
       </div>
+
+      <%= render 'modals' %>
     </div>
-
-    <%= render 'modals' %>
 
     <div class="quality">
       <p class= "profil-title">Revendiquer un compte artiste, salle ou asso existant?</p>
