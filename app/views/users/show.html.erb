@@ -16,7 +16,7 @@
     <div class="row">
       <% if current_user.artist == nil %>
         <div class="col-lg-12">
-          <div class="user-preference" data-toggle="modal" data-target="#new_artist">Créer un Artiste</div>
+          <div class="user-preference clickable" data-toggle="modal" data-target="#new_artist">Créer un Artiste</div>
         </div>
       <% else %>
         <%= link_to @user.artist do %>
@@ -28,10 +28,10 @@
 
       <% if current_user.asso == nil && current_user.place == nil %>
         <div class="col-lg-12">
-          <div class ="user-preference" data-toggle="modal" data-target="#new_asso">Créer une structure</div>
+          <div class ="user-preference clickable" data-toggle="modal" data-target="#new_asso">Créer une structure</div>
         </div>
         <div class="col-lg-12">
-          <div class="user-preference" data-toggle="modal" data-target="#new_place">Créer salle</div>
+          <div class="user-preference clickable" data-toggle="modal" data-target="#new_place">Créer salle</div>
         </div>
       <% end %>
 
@@ -52,23 +52,23 @@
       <% end %>
 
       <div class="col-lg-12">
-        <div class="user-preference" data-toggle="modal" data-target="#new_topic">Créer Sujet</div>
+        <div class="user-preference clickable" data-toggle="modal" data-target="#new_topic">Créer Sujet</div>
       </div>
 
       <div class="col-lg-12">
-        <div class="user-preference" data-toggle="modal" data-target="#update-profil">Ajouter préférences</div>
+        <div class="user-preference clickable" data-toggle="modal" data-target="#update-profil">Ajouter préférences</div>
       </div>
 
       <div class="col-lg-12">
-        <div class="user-preference" data-toggle="modal" data-target="#instruments">Ajouter instruments</div>
+        <div class="user-preference clickable" data-toggle="modal" data-target="#instruments">Ajouter instruments</div>
       </div>
 
       <div class="col-lg-12">
-        <div class="user-preference" data-toggle="modal" data-target="#localisations">Ajouter départements de recherche</div>
+        <div class="user-preference clickable" data-toggle="modal" data-target="#localisations">Ajouter départements de recherche</div>
       </div>
 
       <div class="col-lg-12">
-        <div class="user-preference" data-toggle="modal" data-target="#activities">Ajouter recherche de structures</div>
+        <div class="user-preference clickable" data-toggle="modal" data-target="#activities">Ajouter recherche de structures</div>
       </div>
 
       <%= render 'modals' %>
