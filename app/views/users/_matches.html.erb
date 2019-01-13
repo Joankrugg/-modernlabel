@@ -15,6 +15,23 @@
     <% end %>
   </div>
 <% end %>
+<% if @artists.present? %>
+  <div class="col-lg-12 matches">
+    <p>Les Groupes qui recherchent</p>
+    <hr class="user">
+    <% @artists.each do |a|%>
+      <% if a.instruments & current_user.instruments != [] && current_user.counties.include?(a.county) %>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="main">
+            <div class="card">
+              <%= render "artists/artist", artist: a %><br>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
 
 <% if @releases.present? %>
   <div class="col-lg-12 matches">

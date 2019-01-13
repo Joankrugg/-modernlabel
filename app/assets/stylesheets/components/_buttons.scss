@@ -109,3 +109,21 @@
 .clickable{
   cursor: pointer;
 }
+
+.btn-large-white {
+  color: $black;
+  padding: 5px 20px;
+  border-radius: 3px;
+  font-weight: lighter;
+  background-color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  transition: background 0.3s ease;
+  width: 100%;
+  &:hover{
+  opacity: 1;
+  background: $blue;
+  text-decoration: none;
+  color: white;
+  }
+}

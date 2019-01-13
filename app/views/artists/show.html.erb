@@ -62,35 +62,35 @@
     </div>
     <hr class="user">
 
-    <% if @artist.user == current_user && @artist.instruments == nil %>
+    <% if @artist.user == current_user && @artist.instruments == [] %>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-offset-sm-3 col-sm-6">
-          <div class="quality instrument" data-toggle="modal" data-target="#instrument-hiring">cliquez ici si vous recrutez un musicien
+          <div class="quality instrument" data-toggle="modal" data-target="#artist-instrument">cliquez ici si vous recrutez un musicien
           </div>
         </div>
       </div>
       <hr class="user">
-    <% elsif @artist.user == current_user && @artist.instruments != nil %>
+    <% elsif @artist.user == current_user && @artist.instruments != [] %>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-offset-sm-3 col-sm-6">
-          <div class=" quality instrument" data-toggle="modal" data-target="#instrument-hiring">cliquez ici pour actualiser votre recherche de musicien
+          <div class="quality instrument" data-toggle="modal" data-target="#artist-instrument">cliquez ici pour actualiser votre recherche de musicien
           </div>
         </div>
       </div>
       <hr class="user">
-      <div class="modal fade" id="instrument-hiring" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <% end %>
+      <div class="modal fade" id="artist-instrument" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <div class="modal-title" id="exampleModalLongTitle">Instruments</div>
+              <div class="modal-title" id="exampleModalLongTitle">Recherche de musicien(s)</div>
               <div class="modal-body">
-                <%= render 'instrument-hiring', artist: @artist %>
+                <%= render 'instruments', artist: @artist %>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
 
 
 
