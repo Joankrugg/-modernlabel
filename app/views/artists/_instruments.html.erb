@@ -10,7 +10,18 @@
       </div>
     <% end %>
     <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-1 col-lg-10 form">
-      <%= f.association :instruments, as: :check_boxes %>
+      <div class="form-group">
+        <label class="control-label check_boxes optional">Instruments hiring</label>
+        <input type="hidden" name="artist[instrument_ids][]" value="">
+        <div class="instrument-choices">
+          <% Instrument.all.each do |instrument| %>
+            <input type="checkbox" class="hidden" value="<%= instrument.id %>" name="artist[instrument_ids][]" id="artist_instrument_ids_<%= instrument.id %>">
+            <label class="instrument-choice" for="artist_instrument_ids_<%= instrument.id %>">
+              <%= instrument.name %>
+            </label>
+          <% end %>
+        </div>
+      </div>
       <div class="quality">
         <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
         <button type="button" class="btn btn-large-white last-item" data-dismiss="modal">Fermer</button>
