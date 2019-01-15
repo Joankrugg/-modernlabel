@@ -70,31 +70,27 @@
       <div class="col-lg-12">
         <div class="user-preference clickable" data-toggle="modal" data-target="#activities">Ajouter recherche de structures</div>
       </div>
-
-      <%= render 'modals' %>
     </div>
+
+    <%= render 'modals' %>
 
     <div class="quality">
       <p class= "profil-title">Revendiquer un compte artiste, salle ou asso existant?</p>
         <%= social_share_button_tag("revendication de compte", :allow_sites => %w(email), :rel => "modernboxrecords", :url => "https://modernboxrecords.com/users/#{@user.id}" )%>
       <p class="profil-details">modernboxrecords@gmail.com</p>
     </div>
+
     <%= render 'matches' %>
-    </div>
 
-    <div class="copyright last-item">
-      © Modern Box Records, All Rights Reserved.
-    </div>
-
-    <div class="row">
-      <% if @user == current_user %>
+    <% if @user == current_user %>
+      <div class="row">
         <div class="col-lg-12">
           <%= link_to user_path(@user), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <p class=" user-preference"><%= t(".delete", default: "delete my account") %></p>
+            <p class="user-preference"><%= t(".delete", default: "delete my account") %></p>
           <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
 
     <% if @user.admin == true %>
       <%= link_to main_app.rails_admin_path do %>
@@ -104,6 +100,7 @@
 
     <%= render "shared/footer" %>
 
+    </div>
   </div>
 </div>
 

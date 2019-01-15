@@ -127,3 +127,34 @@
   color: white;
   }
 }
+
+.btn-large-white-off {
+  color: $black;
+  padding: 5px 20px;
+  border-radius: 3px;
+  font-weight: lighter;
+  background-color: #b7b7b7;
+  opacity: 0.4;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  transition: background 0.3s ease;
+  width: 100%;
+  &:hover{
+  opacity: 1;
+  background: $blue;
+  text-decoration: none;
+  color: white;
+  }
+}
+
+.instrument{
+  font-size: 16px;
+  color: $black;
+  background-color: white;
+  border-radius: 3px;
+  padding-left: 10px;
+  &:hover{
+    cursor: pointer;
+    background-color: #BCBBBB;
+  }
+}
