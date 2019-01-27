@@ -376,7 +376,7 @@ fr:
       posted: "posté le "
       edit_topic: "modifier le sujet"
       delete_topic: "effacer ce sujet"
-      add_a_comment: "Répondre à "
+      add_a_comment: "Publiez quelque chose"
 
   performances:
     show:
