@@ -13,6 +13,14 @@
       </div>
     </div>
 
+    <%= link_to Topic.first do %>
+      <div class="user-preference">Modernbox Wall</div>
+    <% end %>
+
+    <div class="user-preference clickable" data-toggle="modal" data-target="#update-profil">Préférences musicales</div>
+
+    <div class="user-preference clickable" data-toggle="modal" data-target="#instruments">Instrument(s) pratiqué(s)</div>
+
     <div class="row">
       <% if current_user.artist == nil %>
         <div class="col-lg-12">
@@ -50,20 +58,6 @@
           </div>
         <% end %>
       <% end %>
-
-      <%= link_to Topic.first do %>
-        <div class="col-lg-12">
-          <div class="user-preference">Modernbox Wall</div>
-        </div>
-      <% end %>
-
-      <div class="col-lg-12">
-        <div class="user-preference clickable" data-toggle="modal" data-target="#update-profil">Ajouter préférences</div>
-      </div>
-
-      <div class="col-lg-12">
-        <div class="user-preference clickable" data-toggle="modal" data-target="#instruments">Ajouter instruments</div>
-      </div>
 
       <div class="col-lg-12">
         <div class="user-preference clickable" data-toggle="modal" data-target="#localisations">Ajouter départements de recherche</div>
