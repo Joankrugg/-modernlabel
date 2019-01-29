@@ -17,8 +17,9 @@
     <%= f.input :facebook_event, required: false, label: "Page Facebook de l'évènement (obligatoire)" %>
     <%= f.association :type, required: false, label: "Style" %>
     <%= f.input :photo, required: false, label: "Affiche (obligatoire)" %>
-    <div class="validate">
-      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    <div class="quality">
+      <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
+      <button type="button" class="btn btn-large-white-off last-item" data-dismiss="modal">Fermer</button>
     </div>
   </div>
 <% end %>

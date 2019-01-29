@@ -5,8 +5,6 @@ class Comment < ApplicationRecord
 
   after_commit :create_notifications, on: :create
 
-
-
   private
 
   def create_notifications

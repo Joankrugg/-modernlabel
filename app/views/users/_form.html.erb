@@ -23,8 +23,9 @@
          </div>
       </div>
       <%= f.input :production, label: 'Préférence de productions', as: :select, collection: [['0', 'DIY'], ['1', 'STUDIO']], label_method: :second, value_method: :first %>
-      <div class="validate">
-        <%= f.button :submit, 'valider', class: 'btn btn-medium-white last-item' %>
+      <div class="quality">
+        <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
+        <button type="button" class="btn btn-large-white-off last-item" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   <% end %>

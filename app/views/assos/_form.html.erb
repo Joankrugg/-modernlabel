@@ -20,8 +20,9 @@
     <%= f.input :number_of_musicians_max, required: false, collection: 1..9, label: 'Nombre de musiciens maximum (obligatoire)' %>
     <%= f.association :genre, required: false, label: 'Tendance (obligatoire)' %>
     <%= f.input :facebook_page, required: false, label: 'Lien vers page Facebook (obligatoire)' %>
-    <div class="validate">
-      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    <div class="quality">
+      <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
+      <button type="button" class="btn btn-large-white-off last-item" data-dismiss="modal">Fermer</button>
     </div>
   </div>
 <% end %>

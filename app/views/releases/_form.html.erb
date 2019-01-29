@@ -20,8 +20,9 @@
     <%= f.input :bandcamp_link, label: 'Lien vers page Bandcamp' %>
     <%= f.input :photo, required: false, label: 'Image (obligatoire)' %>
     <%= f.input :photo_cache, as: :hidden %>
-    <div class="validate">
-      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    <div class="quality">
+      <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
+      <button type="button" class="btn btn-large-white-off last-item" data-dismiss="modal">Fermer</button>
     </div>
   </div>
 <% end %>

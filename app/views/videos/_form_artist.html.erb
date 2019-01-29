@@ -12,8 +12,9 @@
     <%= f.input :title, required: false, label: 'Titre (obligatoire)' %>
     <%= f.input :youtube_link, required: false, label: 'Lien vers youtube (obligatoire)' %>
     <%= f.association :genre, required: false, label: 'Style (obligatoire)' %>
-    <div class="validate">
-      <%= f.button :submit, 'Valider', class: "btn btn-medium-white last-item" %>
+    <div class="quality">
+      <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
+      <button type="button" class="btn btn-large-white-off last-item" data-dismiss="modal">Fermer</button>
     </div>
   </div>
 <% end %>

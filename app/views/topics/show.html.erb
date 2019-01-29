@@ -8,18 +8,16 @@
   <div class="page-title top" style="color: white; text-align: center;">MODERNBOX WALL</div>
   <div class="option">
     <div class="banner-content">
-      <div class="container actions">
-        <div class="row">
-          <p class="tab col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 clickable" data-toggle="modal" data-target="#comment" style="text-align: center;"><%= t(".add_a_comment")%> '<%= current_user.email%>'
-          </p>
-        </div>
-        <hr>
-        <div class="row">
-          <% @topic.comments.reverse_each do |comment| %>
-            <%= render 'comments/show', comment: comment %>
-          <% end %>
+      <div class="row">
+        <p class="tab col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 clickable" data-toggle="modal" data-target="#comment" style="text-align: center;"><%= t(".add_a_comment")%> '<%= current_user.email%>'
+        </p>
+      </div>
+      <hr>
+      <div class="row">
+        <% @topic.comments.reverse_each do |comment| %>
+          <%= render 'comments/show', comment: comment %>
+        <% end %>
 
-        </div>
       </div>
     </div>
   </div>
@@ -35,7 +33,6 @@
                   <h5 class="modal-title" id="exampleModalLongTitle">Comment</h5>
                   <div class="modal-body">
                     <%= render 'comments/form', topic: @topic, comment: @comment %>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
                   </div>
                 </div>
               </div>

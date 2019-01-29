@@ -12,8 +12,9 @@
     <%= f.input :title, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
     <%= f.input :youtube_link, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
     <%= f.association :genre, required: false, placeholder: t(".placeholder_1", default: "Obligatoire") %>
-    <div class="validate">
-      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    <div class="quality">
+      <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
+      <button type="button" class="btn btn-large-white-off last-item" data-dismiss="modal">Fermer</button>
     </div>
   </div>
 <% end %>

@@ -14,8 +14,9 @@
     <%= f.input :adhesion_fee, required: false, label: "Prix de l'adhésion (Obligatoire)"%>
     <%= f.input :photo, required: false, label: 'Image (Obligatoire)' %>
     <%= f.input :photo_cache, as: :hidden %>
-    <div class="validate">
-      <%= f.button :submit, 'valider', class: "btn btn-medium-white last-item" %>
+    <div class="quality">
+      <%= f.button :submit, 'Valider', class: 'btn btn-large-white' %>
+      <button type="button" class="btn btn-large-white-off last-item" data-dismiss="modal">Fermer</button>
     </div>
   </div>
 <% end %>
