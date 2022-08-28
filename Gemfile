@@ -3,7 +3,6 @@ ruby '2.6.3'
 
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
-gem 'pg', '~> 1.4', '>= 1.4.3'
 gem 'puma'
 gem 'rails', '5.0.6'
 gem 'rails-i18n', '~> 5.0.0'
@@ -50,6 +49,4 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  gem 'pg', '~> 1.4', '>= 1.4.3'
-end
+
