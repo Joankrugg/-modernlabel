@@ -131,9 +131,9 @@ ActiveRecord::Schema.define(version: 20190104180919) do
   create_table "contacts", force: :cascade do |t|
     t.text     "content"
     t.integer  "artist_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
     t.index ["artist_id"], name: "index_contacts_on_artist_id", using: :btree
     t.index ["user_id"], name: "index_contacts_on_user_id", using: :btree
   end

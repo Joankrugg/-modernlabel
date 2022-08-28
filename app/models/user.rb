@@ -42,8 +42,6 @@ class User < ApplicationRecord
     return user
   end
 
-    after_create :welcome
-
   private
 
     def welcome

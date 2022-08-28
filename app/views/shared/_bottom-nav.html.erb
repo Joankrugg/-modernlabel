@@ -24,12 +24,6 @@
         <p class="bottom-nav-text">videos</p>
       </div>
     <% end %>
-    <%= link_to main_app.pages_chat_path do %>
-      <div class="icons-app">
-        <i class="fa fa-comments network-nav"></i>
-        <p class="bottom-nav-text">Salons</p>
-      </div>
-    <% end %>
     <% unless user_signed_in? %>
       <%= link_to main_app.new_user_session_path do %>
         <div class="icons-app">

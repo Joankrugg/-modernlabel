@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 gem 'devise'
-gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
@@ -34,13 +33,14 @@ gem "simple_calendar", "~> 2.0"
 gem 'will_paginate', '~> 3.1.0'
 gem 'notifications'
 gem 'social-share-button', '1.1.0'
-
+gem 'certified'
 
 
 
 group :development, :test do
   gem 'faker'
   gem 'pry-byebug'
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
