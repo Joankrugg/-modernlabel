@@ -23,7 +23,7 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', '~> 1.3', '>= 1.3.1'
 gem 'jquery-fileupload-rails'
 gem 'carrierwave', '~> 0.11.2'
-gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'remotipart', '~> 1.4', '>= 1.4.4'
 gem 'geocoder', '~>1.5.0'
 gem "coffee-rails"
 gem 'omniauth'
@@ -34,6 +34,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'notifications'
 gem 'social-share-button', '1.1.0'
 gem 'certified'
+gem 'mimemagic', '~> 0.4.3'
 
 
 
