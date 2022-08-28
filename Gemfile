@@ -8,7 +8,7 @@ gem 'rails', '5.0.6'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'redis', '~> 3.3'
 gem 'devise-i18n', '~> 1.2'
-
+gem 'pg', "~> 0.20"
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass', '~> 5.0.13'
