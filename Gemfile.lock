@@ -361,7 +361,7 @@ DEPENDENCIES
   rails_admin-i18n
   remotipart (~> 1.4, >= 1.4.4)
   sass-rails
-  simple_calendar (~> 2.0)
+  simple_calendar (~> 2.4, >= 2.4.3)
   simple_form
   social-share-button (= 1.1.0)
   spring
@@ -374,4 +374,4 @@ RUBY VERSION
    ruby 2.7.6p219
 
 BUNDLED WITH
-   2.3.22
+   2.4.13

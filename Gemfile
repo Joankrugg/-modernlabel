@@ -27,7 +27,7 @@ gem "coffee-rails"
 gem 'omniauth'
 gem 'omniauth-facebook', '5.0.0'
 gem 'pg_search'
-gem "simple_calendar", "~> 2.0"
+gem 'simple_calendar', '~> 2.4', '>= 2.4.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'notifications'
 gem 'social-share-button', '1.1.0'
